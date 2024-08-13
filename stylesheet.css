@@ -3,7 +3,6 @@
     align-items: center;
     text-align: center;
     border: none;
-    font-size: 5vh;
     text-decoration: none;
 }
 
@@ -11,6 +10,11 @@
     display: flex;
     flex-direction: column;
 }
+
+.text{
+    font-size: 5vh;
+}
+
 p {
     font-size: 10vh;
     margin-top: 5vh;
@@ -28,6 +32,7 @@ body{
     background-color: #003366;
     width: 20vw;
     height: 15vh;
+    font-size: 5vh;
     color: white;
     border: 1vh solid #003366;
     border-radius: 40vh;
@@ -62,7 +67,7 @@ body{
 }
 
 #box-wide {
-    width: 40vw;
+    width: 110vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -70,7 +75,7 @@ body{
 }
 
 #evaluation{
-    width: 25vw;
+    width: 80vh;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -91,7 +96,7 @@ body{
 }
 
 #yourself {
-    width: 25vw;
+    width: 60vh;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -140,8 +145,8 @@ body{
 
 #tryit{
     font-size: 3vh;
-    width: 15vw;
-    height: 7.5vh;
+    width: 20vw;
+    height: 8vh;
     position: absolute;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -202,6 +207,7 @@ body{
     left: 13vw;
     top: 23vh;
     width: 23vw;
+    font-size: 5vh;
 }
 
 #show_internals_slider{
@@ -209,13 +215,13 @@ body{
 }
 
 progress{
-    width: 30vh;
+    width: 60vh;
     height: 5vh;
     position: absolute;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     left: 50vw;
-    top: 60vh;
+    top: 62vh;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -273,7 +279,7 @@ video{
 #plotly_epoch_history{ display: none; }
 
 #__fcnn_canvas{
-    position: absolute;
+    position: fixed;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     left: 70vw;
@@ -285,59 +291,182 @@ video{
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 68%;
-    top: 55%;
+    top: 26vh;
+    left: 49%;
+    font-size: 0;
 }
 
 #neuron_0{
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 64%;
-    top: 55%;
+    font-size: 0;
+    top: 24.5vh;
+    left: 43%;
+}
+
+#neuron_0>div>canvas{
+    height: 8vh;
+    width: 8vh;
+    margin: 2vh !important;
+}
+
+#kernel_0>div>canvas{
+    height: 2vh;
+    width: 2vh;
+    margin: 0.5vh !important;
+}
+
+#layer_0_kernel_3{
+    margin-top: 3vh !important;
+}
+
+#layer_0_kernel_6{
+    margin-top: 3vh !important;
+}
+
+#layer_0_kernel_9{
+    margin-top: 3vh !important;
 }
 
 #kernel_1{
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 82%;
-    top: 55%;
-
+    top: 26vh;
+    left: 58.5%;
+    font-size: 0;
 }
 
 #neuron_1{
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 78%;
-    top: 55%;
+    font-size: 0;
+    top: 24.5vh;
+    left: 52.5%;
+}
+
+#neuron_1>div>canvas{
+    height: 8vh;
+    width: 8vh;
+    margin: 2vh !important;
+}
+
+#kernel_1>div>canvas{
+    height: 2vh;
+    width: 2vh;
+    margin: 0.5vh !important;
+}
+
+#layer_1_kernel_3{
+    margin-top: 3vh !important;
+}
+
+#layer_1_kernel_6{
+    margin-top: 3vh !important;
+}
+
+#layer_1_kernel_9{
+    margin-top: 3vh !important;
 }
 
 #kernel_2{
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 96%;
-    top: 55%;
+    top: 26vh;
+    left: 68%;
+    font-size: 0;
 }
 
 #neuron_2{
     display: flex;
     flex-direction: column;
     position: absolute;
-    left: 92%;
-    top: 55%;
+    font-size: 0;
+    top: 24.5vh;
+    left: 62%;
+}
+
+#neuron_2>div>canvas{
+    height: 8vh;
+    width: 8vh;
+    margin: 2vh !important;
+}
+
+#kernel_2>div>canvas{
+    height: 2vh;
+    width: 2vh;
+    margin: 0.5vh !important;
+}
+
+#layer_3_kernel_3{
+    margin-top: 3vh !important;
+}
+
+
+#layer_3{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 32.5vh;
+    left: 69%;
+    font-size: 0;
+}
+
+#layer_5_neuron_0>canvas{
+    height: 8vh;
+    width: 20vh;
+}
+
+#layer_4{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 23.5vh;
+    left: 83.5%;
+    font-size: 0;
+}
+
+#layer_4>div>canvas{
+    height: 8vh;
+    width: 2vh;
 }
 
 #text_training {
     position: absolute;
-    top: 65%;
-    left: 50%;
-    width: 75%;
+    top: 40vh;
+    left: 50vw;
+    width: 85%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    line-height: 90%;
+    line-height: 110%;
     font-family: "Open Sans", sans-serif;
-    font-size: 3vh !important;
+    font-size: 2.5vh !important;
+    margin: 1vh;
+}
+
+#progress-text{
+    width: 60vh;
+    height: 5vh;
+    color: #003366;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    left: 50vw;
+    top: 57vh;
+    margin-top: 2vh;
+    margin-bottom: 0.5vh;
+}
+
+#erklärung{
+    font-size: 2.5vh;
+    text-align: left;
+    position: absolute;
+    left: 63.5vw;
+    top: 45vh;
+    width: 30vw;
+    line-height: 110%;
 }

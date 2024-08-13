@@ -56,3 +56,14 @@ p { font-family: "Open Sans", sans-serif;
 #icon1{
     border-left: 0.8vh solid #003366;
 }
+
+#bild4{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    left: 69vw;
+    top: 51.8vh;
+    width: 87.5vh;
+    object-fit: cover;
+    object-position: 50%;
+}

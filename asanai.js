@@ -2,8 +2,12 @@
 //
 //HERE_TENSOR_DIVISION_ERROR
 
+var log = console.log;
+
 class asanAI {
 	#max_activation_iterations = 5;
+
+	#hide_fcnn_text = false;
 
 	#fcnn_width = 800;
 	#fcnn_height = 800;
@@ -1217,7 +1221,8 @@ class asanAI {
 		return [names, units, meta_infos];
 	}
 
-	restart_fcnn (divname=this.#fcnn_div_name) {
+	restart_fcnn (divname=this.#fcnn_div_name, hide_text=this.#hide_fcnn_text) {
+		this.#hide_fcnn_text = hide_text;
 		var fcnn_data = this.#get_fcnn_data();
 
 		if(!fcnn_data) {
@@ -1227,16 +1232,17 @@ class asanAI {
 
 		var [names, units, meta_infos] = fcnn_data;
 
-		this.#draw_new_fcnn(divname, units, names, meta_infos);
+		this.#draw_new_fcnn(divname, units, names, meta_infos, hide_text);
 	}
 
 	#draw_new_fcnn(...args) {
-		this.assert(args.length == 4, "#draw_new_fcnn must have 4 arguments");
+		this.assert(args.length == 4 || args.length == 5, "#draw_new_fcnn must have 4 or 5 arguments");
 
 		var divname = args[0];
 		var layers = args[1];
 		var labels = args[2];
 		var meta_infos = args[3];
+		var hide_text = args.length >= 3 ? args[4] : false;
 
 		var $div = $("#" + divname);
 		if(!$div.length) {
@@ -1274,7 +1280,9 @@ class asanAI {
 
 		this.#_draw_neurons_and_connections(ctx, layers, meta_infos, layerSpacing, canvasHeight, maxSpacing, maxShapeSize, maxRadius);
 
-		this.#_draw_layers_text(layers, meta_infos, ctx, canvasHeight, canvasWidth, layerSpacing);
+		if(!hide_text) {
+			this.#_draw_layers_text(layers, meta_infos, ctx, canvasHeight, canvasWidth, layerSpacing);
+		}
 	}
 
 	set_fcnn_width (new_width) {
@@ -1391,9 +1399,8 @@ class asanAI {
 			} else {
 				alert("Unknown shape Type: " + shapeType);
 			}
-
-			this.#_draw_connections_between_layers(ctx, layers, layerSpacing, meta_infos, maxSpacing, canvasHeight, layerY, layerX, maxRadius, _height);
 		}
+		this.#_draw_connections_between_layers(ctx, layers, layerSpacing, meta_infos, maxSpacing, canvasHeight, layerY, layerX, maxRadius, _height);
 	}
 
 	#_draw_flatten (ctx, meta_info, maxShapeSize, canvasHeight, layerX, layerY, _height) {
@@ -1504,7 +1511,8 @@ class asanAI {
 		}
 	}
 
-	draw_fcnn (divname=this.#fcnn_div_name, max_neurons=32) { // TODO: max neurons
+	draw_fcnn (divname=this.#fcnn_div_name, max_neurons=32, hide_text=this.#hide_fcnn_text) { // TODO: max neurons
+		this.#hide_fcnn_text = hide_text;
 		if(!divname) {
 			this.err("[draw_fcnn] Cannot continue draw_fcnn without a divname");
 			return;
@@ -1514,7 +1522,7 @@ class asanAI {
 
 		this.#fcnn_div_name = divname;
 
-		this.restart_fcnn(divname);
+		this.restart_fcnn(divname, hide_text);
 	}
 
 	is_model (_m) {
@@ -5113,8 +5121,6 @@ class asanAI {
 		var canvases = [];
 
 		var _height = $("#visualization").height()
-
-		console.log("_height:", _height);
 
 		if(!_height) {
 			_height = 460;
