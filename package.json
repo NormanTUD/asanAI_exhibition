@@ -1,0 +1,9 @@
+{
+  "name": "asanAI_exhibition",
+  "version": "1.0.0",
+  "author": "norman koch <norman.koch@tu-dresden.de>",
+  "license": "ISC",
+  "scripts": {
+	  "start": "yarn start"
+  }
+}

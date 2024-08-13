@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20.660187mm"
+   height="43.248993mm"
+   viewBox="0 0 20.660187 43.248993"
+   version="1.1"
+   id="svg135"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview137"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs132">
+    <rect
+       x="154.21259"
+       y="801.30072"
+       width="390.06714"
+       height="368.9007"
+       id="rect2008" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-121.78305,-220.45855)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26489682,0,0,0.25845972,-0.15653165,5.11446)"
+       id="text2006"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:220.517px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:end;white-space:pre;shape-inside:url(#rect2008);fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:7.55906;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.996078;paint-order:fill markers stroke"
+       inkscape:export-filename="2.svg"
+       inkscape:export-xdpi="293.64847"
+       inkscape:export-ydpi="293.64847"><tspan
+         x="456.09403"
+         y="996.68966"
+         id="tspan2482">2</tspan></text>
+  </g>
+</svg>

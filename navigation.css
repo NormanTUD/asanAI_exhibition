@@ -1,0 +1,37 @@
+.navbar{
+    background-color: #003366;
+    height: 20vh;
+    position: absolute;
+    left: 3vw;
+    top: 3vh;
+    border-radius: 10vh;
+}
+
+.navbar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li{
+    width: 5vh;
+    height: 5vh;
+    cursor: pointer;
+    padding: 2.5vh;
+    position: relative;
+    top: -5vh;
+}
+
+.navbar ul li img{
+    width: 6vh;
+    height: 5vh;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#only_1{
+    height: 10vh;
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="44.999996mm"
+   height="37.700314mm"
+   viewBox="0 0 44.999996 37.700314"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="home, back.svg"
+   inkscape:export-filename="AsanAiMedia\reload_icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.3228492"
+     inkscape:cx="368.52274"
+     inkscape:cy="57.073778"
+     inkscape:window-width="1346"
+     inkscape:window-height="728"
+     inkscape:window-x="88"
+     inkscape:window-y="50"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect3123"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Füllregel Gerade-Ungerade im &lt;b&gt;Füllung und Kontur&lt;/b&gt;-Dialog verwenden, wenn das Anwenden des Ausschnitts mit nachfolgendem Umwandeln in Pfade kein Ergebnis bringt" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2992"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="32"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="false"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3119">
+      <rect
+         style="display:none;fill:#cf5463;fill-opacity:0.410526;stroke:none;stroke-width:3.7161;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect3121"
+         width="12.262857"
+         height="12.018213"
+         x="38.143692"
+         y="45.977783"
+         d="M 38.143692,45.977783 H 50.406549 V 57.995996 H 38.143692 Z" />
+      <path
+         id="lpe_path-effect3123"
+         style="fill:#cf5463;fill-opacity:0.410526;stroke:none;stroke-width:3.7161;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         class="powerclip"
+         d="m 14.380001,27.996162 h 60 v 35 h -60 z M 38.143692,45.977783 V 57.995996 H 50.406549 V 45.977783 Z" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.1310297e-8,-1.3400428)">
+    <g
+       id="g3405"
+       transform="matrix(0.69230769,0,0,0.69230769,-8.2246155,-1.1108337)"
+       inkscape:export-filename="AsanAiMedia\Home_Icon.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       style="fill:#ffffff;fill-opacity:1">
+      <path
+         sodipodi:type="star"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.47089;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="path2988"
+         inkscape:flatsided="false"
+         sodipodi:sides="3"
+         sodipodi:cx="75.805717"
+         sodipodi:cy="27.719999"
+         sodipodi:r1="54.900524"
+         sodipodi:r2="27.450262"
+         sodipodi:arg1="0.52359878"
+         sodipodi:arg2="1.5707963"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="m 123.35097,55.170262 -47.545252,-10e-7 -47.545249,0 23.772624,-41.175392 23.772625,-41.175394 23.772623,41.175393 z"
+         inkscape:transform-center-y="-5.0000001"
+         transform="matrix(0.68355937,0,0,0.36429525,-7.437708,13.441891)"
+         inkscape:path-effect="#path-effect2992" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.38232;stroke-linejoin:bevel;paint-order:markers fill stroke"
+         id="rect2196"
+         width="50"
+         height="25"
+         x="19.380001"
+         y="32.996162"
+         clip-path="url(#clipPath3119)"
+         inkscape:path-effect="#path-effect3123"
+         d="m 19.380001,32.996162 h 50 v 25 h -50 z"
+         sodipodi:type="rect" />
+    </g>
+  </g>
+</svg>

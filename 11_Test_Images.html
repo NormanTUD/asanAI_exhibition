@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <title>Option 1</title>
+    <script src="https://asanai.scads.ai/beta/asanai.js.php"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="groeße">
+        <div class="general">
+            <button class="box" id="box-wide" onclick="load_exhib_data_and_train();toggle_button(1)">Load test images and
+            train
+            </button>
+            <div id="test_images"></div>
+            <div hidden="hidden" id="plotly">
+                <div id="plotly_history"></div>
+            </div>
+            <div hidden="hidden" id="visualization">
+                <input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
+                <div id="canvas_grid_visualization"></div>
+                <div id="text_training">Erklärung Training</div>
+                <progress id="progress" value="0" max="100"></progress>
+            </div>
+            <div id="math_tab_code"></div>
+            <button hidden="hidden" class="box" id="evaluation" onclick="toggle_button(2); matrix_texts()">show
+            evaluation
+            </button>
+            <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
+            <p hidden="hidden" class="matrix_text" id="matrix_text"></p>
+            <p hidden="hidden" class="matrix_text" id="matrix_text_apple"></p>
+            <p hidden="hidden" class="matrix_text" id="matrix_text_orange"></p>
+            <p hidden="hidden" class="matrix_text" id="matrix_text_banana"></p>
+            <button hidden="hidden" class="box" id="yourself" onclick="asanai.show_internals(); toggle_button(3)">
+            Try it yourself!
+            </button>
+            <div hidden="hidden" id="status_3">
+                <div id="fcnn_div"></div>
+                <div hidden="hidden">
+                    <div hidden="hidden" id="internal_states"></div>
+                </div>
+                <p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
+                <div id="webcam_prediction"></div>
+            </div>
+            <div hidden="hidden" id="internal">
+                <div id="layer_0">
+                    <div id="kernel_0">
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_0"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_1"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_2"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_3"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_4"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_5"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_6"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_7"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_8"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_9"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_10"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_kernel_11"></div>
+                    </div>
+                    <div id="neuron_0">
+                        <div class="custom_internal_states_layer" id="layer_0_neuron_0" style="width: 50px; height: 50px"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_neuron_1"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_neuron_2"></div>
+                        <div class="custom_internal_states_layer" id="layer_0_neuron_3"></div>
+                    </div>
+                </div>
+                <div id="layer_1">
+                    <div id="kernel_1">
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_0"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_1"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_2"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_3"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_4"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_5"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_6"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_7"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_8"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_9"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_10"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_kernel_11"></div>
+                    </div>
+                    <div id="neuron_1">
+                        <div class="custom_internal_states_layer" id="layer_1_neuron_0"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_neuron_1"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_neuron_2"></div>
+                        <div class="custom_internal_states_layer" id="layer_1_neuron_3"></div>
+                    </div>
+                </div>
+                <div id="layer_2">
+                    <div id="kernel_2">
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_0"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_1"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_2"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_3"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_4"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_5"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_6"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_7"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_8"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_9"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_10"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_kernel_11"></div>
+                    </div>
+                    <div id="neuron_2">
+                        <div class="custom_internal_states_layer" id="layer_2_neuron_0"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_neuron_1"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_neuron_2"></div>
+                        <div class="custom_internal_states_layer" id="layer_2_neuron_3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a class="icon" href="01_StartScreen.html"><img src="media/images/Home_icon.svg"></a></li>
+                <li><a class="icon" onclick="history.back()"><img src="media/images/Back_icon.svg"></a></li>
+            </ul>
+        </div>
+        <div id="optimizer_div" hidden="hidden"></div>
+    </div>
+</body>
+</html>
+<script>
+
+</script>
