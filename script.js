@@ -118,38 +118,6 @@ $(document).ready(async function() {
 	asanai.enable_fcnn_internals();
 });
 
-function test_model_switch () {
-	var fl = tf.layers.dense({units: 3, activation: "softmax", inputShape: [20, 20, 3]});
-	var xxx = tf.sequential({layers: [fl]});
-	xxx.compile(optimizer_config);
-	asanai.set_model(xxx)
-}
-
-function test_model_switch_two () {
-	var new_model_struct = [
-		{conv2d: {filters: 4, kernelSize: [3, 3], inputShape: [20, 20, 3], activation: "relu"}},
-		{conv2d: {filters: 4, kernelSize: [3, 3], activation: "relu"}},
-		{conv2d: {filters: 4, kernelSize: [3, 3], activation: "relu"}},
-		{conv2d: {filters: 4, kernelSize: [3, 3], activation: "relu"}},
-		{conv2d: {filters: 4, kernelSize: [3, 3], activation: "relu"}},
-		{conv2d: {filters: 4, kernelSize: [3, 3], activation: "relu"}},
-		{flatten: {}},
-		{dense: {units: 5, activation: "relu"}},
-		{dense: {units: 4, activation: "softmax"}}
-	];
-
-	asanai.create_model_from_model_data(new_model_struct, optimizer_config);
-}
-
-function test_model_switch_three () {
-	var new_model_struct = [
-		{dense: {units: 5, activation: "relu", inputShape: [5]}},
-		{dense: {units: 4, activation: "softmax"}}
-	];
-
-	asanai.create_model_from_model_data(new_model_struct, optimizer_config);
-}
-
 async function load_test_images_and_train () {
 	var __categories = ["Apfel", "Banane", "Orange"];
 	var __max_nr = 50; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
