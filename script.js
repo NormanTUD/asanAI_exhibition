@@ -65,7 +65,7 @@ $(document).ready(async function() {
 	// The first parameter to show_internals is the id-name of a div, in which the internals are printed.
 	// Internals are that which you see as input/output of each layer/neuron, which are visualized to make it easier to understand what the network does.
 	// The second parameter allows you to enable (1) or disable (0) the size sliders for neurons/outputs
-	asanai.show_internals("internal_states", 1);
+	//asanai.show_internals("internal_states", 1);
 
 	// Hide internals, when called, hides the internals again after they've been shown
 	//asanai.hide_internals();
