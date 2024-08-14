@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<div class="general">
-			<form action = "10_SelectDatasetScreen.html">
+			<form action = "10_SelectDatasetScreen.php">
 				<button class="box">Try it yourself</button>
 			</form>
 		</div>

@@ -11,7 +11,7 @@
 <body>
 <div class="groeße">
     <div class="general">
-        <a href="10_SelectDatasetScreen.html">
+        <a href="10_SelectDatasetScreen.php">
             <button id="tryit" class="box">Probier es selbst!</button>
         </a>
         <div class="navbar">
