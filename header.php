@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>asanAI exhibition</title>
 		<link rel="stylesheet" href="stylesheet.css">
 <?php
 		if(isset($GLOBALS["use_navigation"])) {
@@ -15,14 +16,7 @@
 		}
 ?>
 		<meta charset="UTF-8">
-		<title>Start Screen</title>
-<?php
-		if(!isset($GLOBALS["dont_load_asanai"])) {
-?>
-			<script src="https://asanai.scads.ai/asanai.js.php"></script>
-			<script src="script.js"></script>
-<?php
-		}
-?>
+		<script src="https://asanai.scads.ai/asanai.js.php"></script>
+		<script src="script.js"></script>
 	</head>
 <body>
