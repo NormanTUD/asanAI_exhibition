@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>Klasse 1</title>
-    <script src="script.js"></script>
-</head>
-<body>
+<?php
+	include("header.php");
+?>
 <div class="general">
 </div>
 <div class="navbar">

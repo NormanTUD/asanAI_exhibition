@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>Select Dataset Screen</title>
-    <script src="script.js"></script>
-</head>
-<body>
+<?php
+	include("header.php");
+?>
 <div class="general">
     <p>Choose a use-case or train <br> your own dataset</p>
     <div class="container">

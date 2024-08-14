@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>NeuralNetworksExplained</title>
-    <script src="https://asanai.scads.ai/asanai.js.php"></script>
-    <script src="script.js"></script>
-</head>
-<body>
+<?php
+	include("header.php");
+?>
 <div class="groeße">
     <div class="general">
     </div>

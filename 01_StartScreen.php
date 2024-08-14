@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="sidebar.css">
-    <meta charset="UTF-8">
-    <title>Start Screen</title>
-    <script src="https://asanai.scads.ai/asanai.js.php"></script>
-    <script src="script.js"></script>
-</head>
-<body>
+<?php
+	include("header.php");
+?>
 <div class="groeße">
     <div class="general">
         <a href="10_SelectDatasetScreen.php">

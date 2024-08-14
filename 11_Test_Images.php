@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>Option 1</title>
-    <script src="https://asanai.scads.ai/beta/asanai.js.php"></script>
-    <script src="script.js"></script>
-</head>
-<body>
+<?php
+	include("header.php");
+?>
     <div class="groeße">
         <div class="general">
             <button class="box" id="box-wide" onclick="load_exhib_data_and_train();toggle_button(1)">Test-Bilder laden und Training beginnen</button>

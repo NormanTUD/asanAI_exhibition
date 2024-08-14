@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<link rel="stylesheet" href="navigation.css">
-		<link rel="stylesheet" href="stylesheet.css">
-		<meta charset="UTF-8">
-		<title>Get started</title>
-		<script src="script.js"></script>
-	</head>
-	<body>
+<?php
+	include("header.php");
+?>
 		<div class="general">
 			<form action = "10_SelectDatasetScreen.php">
 				<button class="box">Try it yourself</button>

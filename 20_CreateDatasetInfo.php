@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>Create Dataset Info</title>
-    <script src="script.js"></script>
-</head>
+<?php
+	include("header.php");
+?>
 <body>
     <div class="general">
         <div class="rectangle">Use your camera to create Data</div>

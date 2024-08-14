@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>Evaluation3</title>
-    <script src="https://asanai.scads.ai/asanai.js.php"></script>
-    <script src="script.js"></script>
-</head>
-    <body>
-      <div class="general">
+<?php
+	include("header.php");
+?>
+<div class="general">
       <div style="clear: both;"></div>
           <div class="flex_box">
               <div id="webcam_prediction"></div>

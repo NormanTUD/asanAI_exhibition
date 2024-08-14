@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta charset="UTF-8">
-    <title>webcam layer output</title>
-    <script src="script.js"></script>
-</head>
-<body>
+<?php
+	include("header.php");
+?>
 <div class="general">
     <div class="rectangle">
         <p>Option2 </p>
