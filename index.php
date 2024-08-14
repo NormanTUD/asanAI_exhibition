@@ -1,4 +1,5 @@
 <?php
+	$GLOBALS["dont_load_asanai"] = 1;
 	include("header.php");
 ?>
 <div class="groeße">

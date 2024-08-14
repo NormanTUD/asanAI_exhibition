@@ -16,7 +16,13 @@
 ?>
 		<meta charset="UTF-8">
 		<title>Start Screen</title>
-		<script src="https://asanai.scads.ai/asanai.js.php"></script>
-		<script src="script.js"></script>
+<?php
+		if(!isset($GLOBALS["dont_load_asanai"])) {
+?>
+			<script src="https://asanai.scads.ai/asanai.js.php"></script>
+			<script src="script.js"></script>
+<?php
+		}
+?>
 	</head>
 <body>
