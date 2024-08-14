@@ -173,8 +173,7 @@ async function load_exhib_data_and_train () {
 		{conv2d: {filters: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
 		{conv2d: {filters: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-		//{maxPooling2d: {poolSize: [3, 3] }},
-		{conv2d: {filters: 1, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{maxPooling2d: {poolSize: [3, 3] }},
 		{flatten: {}},
 		{dense: {units: 8, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: 4, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
@@ -200,7 +199,6 @@ async function load_exhib_data_and_train () {
 	}
 
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
-
 
 	try {
 		console.log("loaded data unique and flattened: ", uniqueArray1(loaded_data.x.arraySync().flat().flat().flat()))
