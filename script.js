@@ -171,20 +171,15 @@ async function load_exhib_data_and_train () {
 
 	var new_model_struct = [
 		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
-		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		//{maxPooling2d: {poolSize: [3, 3] }},
 		{conv2d: {filters: 1, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{flatten: {}},
-		{dense: {units: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 
 	asanai.create_model_from_model_data(new_model_struct, { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.025 });
-
-	await asanai.predict_image("exhib_example_a", "test_image_prediction_exhib_a", true, true);
-	await asanai.predict_image("exhib_example_b", "test_image_prediction_exhib_b", true, true);
-	await asanai.predict_image("exhib_example_c", "test_image_prediction_exhib_c", true, true);
 
 	var exhib_data = [];
 
