@@ -150,7 +150,7 @@ function test_model_switch_three () {
 
 async function load_test_images_and_train () {
 	var __categories = ["Apfel", "Banane", "Orange"];
-	var __max_nr = 20; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = 50; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
 	var exhib_data = [];
 
 	for (var k = 0; k < __categories.length; k++) {
@@ -220,7 +220,7 @@ async function load_exhib_data_and_train () {
 
 	var __categories = ["Apfel", "Banane", "Orange"];
 	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = 20; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = 50; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
 
 	for (var k = 0; k < __categories.length; k++) {
 		var _cat = __categories[k];
@@ -244,7 +244,7 @@ async function load_exhib_data_and_train () {
 	if(loaded_data) {
 		asanai.visualize_train();
 		//Ladebalken über 100 Epochen
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 10, batchSize: 40, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 100, batchSize: 40, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(history) {
 			console.log("history:", history);
 		} else {
