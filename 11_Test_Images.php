@@ -25,7 +25,7 @@
             <p hidden="hidden" class="matrix_text" id="matrix_text_apple"></p>
             <p hidden="hidden" class="matrix_text" id="matrix_text_orange"></p>
             <p hidden="hidden" class="matrix_text" id="matrix_text_banana"></p>
-            <button hidden="hidden" class="box" id="yourself" onclick="asanai.show_internals(); toggle_button(3)">Probier es aus</button>
+            <button hidden="hidden" class="box" id="yourself" onclick="toggle_button(3)">Probier es aus</button>
             <div hidden="hidden" id="status_3">
                 <div id="fcnn_div"></div>
                 <div hidden="hidden">
