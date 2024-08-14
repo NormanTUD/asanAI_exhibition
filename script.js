@@ -201,7 +201,7 @@ async function load_exhib_data_and_train () {
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
 
 	try {
-		console.log("loaded data unique and flattened: ", uniqueArray1(loaded_data.x.arraySync().flat().flat().flat()))
+		console.log("loaded data unique and flattened: ", uniqueArray(loaded_data.x.arraySync().flat().flat().flat()))
 	} catch (e) {
 		console.error(e)
 	}
@@ -223,7 +223,7 @@ async function load_exhib_data_and_train () {
 	}
 }
 
-function uniqueArray1( ar ) {
+function uniqueArray( ar ) {
 	var j = {};
 
 	ar.forEach( function(v) {
@@ -245,7 +245,7 @@ function toggle_button(status) {
 	if (status === 1) {
 		toggle(document.getElementById("box-wide"));
 		toggle(document.getElementById("visualization"));
-	}else if (status === 2){
+	} else if (status === 2) {
 		toggle(document.getElementById("text_training"));
 		toggle(document.getElementById("evaluation"));
 		toggle(document.getElementById("visualization"));
@@ -256,7 +256,7 @@ function toggle_button(status) {
 		toggle(document.getElementById("test_images"));
 		toggle(document.getElementById("math_tab_code"));
 		toggle(document.getElementById("yourself"));
-	}else if (status === 3){
+	} else if (status === 3) {
 		asanai.start_camera();
 		toggle(document.getElementById("matrix_text"));
 		toggle(document.getElementById("matrix_text_apple"));
