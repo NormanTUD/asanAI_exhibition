@@ -137,7 +137,7 @@ async function load_test_images_and_train () {
 
 	if(loaded_data) {
 		asanai.visualize_train();
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 20, batchSize: 40, shuffle: true}, {});
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 20, batchSize: 100, shuffle: true}, {});
 
 		if(history) {
 			console.log("history:", history);
@@ -171,11 +171,7 @@ async function load_exhib_data_and_train () {
 
 	var new_model_struct = [
 		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
-		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-		{conv2d: {filters: 2, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-		{maxPooling2d: {poolSize: [3, 3] }},
-		{conv2d: {filters: 2, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-		{maxPooling2d: {poolSize: [3, 3] }},
+		{conv2d: {filters: 1, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{flatten: {}},
 		{dense: {units: 5, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
@@ -215,7 +211,7 @@ async function load_exhib_data_and_train () {
 	if(loaded_data) {
 		asanai.visualize_train();
 		//Ladebalken über 100 Epochen
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: 40, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: 100, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(history) {
 			console.log("history:", history);
 		} else {
