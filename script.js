@@ -462,7 +462,7 @@ async function new_model_load_test_images_and_train () {
 
 async function load_test_images_and_train () {
 	var __categories = ["Apfel", "Banane", "Orange"];
-	var __max_nr = 40; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = 20; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
 	var exhib_data = [];
 
 	for (var k = 0; k < __categories.length; k++) {
@@ -532,7 +532,7 @@ async function load_exhib_data_and_train () {
 
 	var __categories = ["Apfel", "Banane", "Orange"];
 	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = 40; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = 20; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
 
 	for (var k = 0; k < __categories.length; k++) {
 		var _cat = __categories[k];
