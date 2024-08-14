@@ -3,6 +3,8 @@
 // then I don't need to define it in other places.
 // You can also build a GUI for this.
 
+var max_epochs = 100;
+
 var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
 
 // This variable will hold the asanAI object. Each object can have exactly one model loaded.
@@ -244,7 +246,7 @@ async function load_exhib_data_and_train () {
 	if(loaded_data) {
 		asanai.visualize_train();
 		//Ladebalken über 100 Epochen
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 100, batchSize: 40, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: 40, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(history) {
 			console.log("history:", history);
 		} else {
@@ -410,7 +412,7 @@ function un_highlight(tab) {
 //Ladebalken
 var update_progress_bar = async function () {
 	document.getElementById("progress").value += 1;
-	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</grün>/10<br><rot>"
+	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</grün>/" + max_epochs + "<br><rot>"
 }
 
 //Ladebalken verschwindet / Button erscheint
