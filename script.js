@@ -30,16 +30,23 @@ $(document).ready(async function() {
 
 	// Declaration of asanAI-object, which was previously globally defined.
 
-	asanai = new asanAI({
-		model_data: model_data,					// The default model structure that should be loaded
-		optimizer_config: optimizer_config,			// The config for the optimizer (which trains the model)
-		translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this case
-		optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
-		asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
-		// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
-		// `var asanai`.
-		//math_tab_code_div: "math_tab_code"			// When commented in, this looks for a div with the id `math_tab_code`, and automatically writes the math mode contents to it.
-	});
+	try {
+		asanai = new asanAI({
+			model_data: model_data,					// The default model structure that should be loaded
+			optimizer_config: optimizer_config,			// The config for the optimizer (which trains the model)
+			translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this case
+			optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
+			asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
+			// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
+			// `var asanai`.
+			//math_tab_code_div: "math_tab_code"			// When commented in, this looks for a div with the id `math_tab_code`, and automatically writes the math mode contents to it.
+		});
+	} catch (e) {
+		if(!("" + e).includes("optimizer_div could not be found")) {
+			console.debug(e);
+		}
+		return;
+	}
 
 	// This sets the mode, there is expert and beginner. This is not used anywhere (yet)
 	asanai.set_mode("expert");
