@@ -14,7 +14,7 @@
                 <div id="text_training">Für jedes Obst werden kategorisierte Test-Bilder geladen.<br>
                     Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.<br> Kommt es zu einem falschen Ergebnis, wird es korrigiert.<br>
                     Mithilfe dieses Feedbacks wird der Weg angepasst bis das Netz zu einem richtigen Output gelangt.<br>
-                    Je mehr Durchgänge es gibt, desto effektiver ist das Training.<br> In diesem Beispiel sind es 100 Durchgänge.</div>
+                    Je mehr Durchgänge es gibt, desto effektiver ist das Training.<br> In diesem Beispiel sind es 10 Durchgänge.</div>
                 <div id="progress-text"></div>
                 <progress id="progress" value="0" max="100"></progress>
             </div>
