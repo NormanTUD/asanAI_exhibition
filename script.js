@@ -208,7 +208,7 @@ async function load_exhib_data_and_train () {
 
 	if(loaded_data) {
 		asanai.visualize_train();
-		//Ladebalken über 100 Epochen
+		//Ladebalken über max_epochs Epochen
 		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: 100, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(history) {
 			console.log("history:", history);
