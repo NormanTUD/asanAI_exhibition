@@ -33,7 +33,7 @@
                 </div>
                 <p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
                 <div id="webcam_prediction"></div>
-                <p id="erklärung">Das Input-Bild wird zu einer 3x3-Pixel-Matrix, die Höhe und Breite sowie
+                <p id="erklärung">Das Input-Bild wird zu einer 40x40-Pixel-Matrix, die Höhe und Breite sowie
                     in der 3. Dimension die Farbkanäle rot, grün und blau abbildet. </br>
                 In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</br>
                     In jedem Neuron wird das Bild abschnittsweise über Kernels abgetastet.</br>
