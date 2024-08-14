@@ -83,14 +83,14 @@ $(document).ready(async function() {
 	asanai.draw_fcnn("fcnn_div", 32, true);
 
 	// Shows the output of model.summary in a div.
-	asanai.write_model_summary("summary")
+	//asanai.write_model_summary("summary")
 
 	asanai.show_and_predict_webcam_in_div("webcam_prediction");
 
 	//await asanai.predict_image("test_image", "test_image_prediction", true, true);
 	//await asanai.predict_image("test_image_two", "test_image_two_prediction", true, true);
 
-	asanai.write_tensors_info("memory");
+	//asanai.write_tensors_info("memory");
 
 	$('#enable-btn').click(function() {
 		$('#del-table-btn').enable();
