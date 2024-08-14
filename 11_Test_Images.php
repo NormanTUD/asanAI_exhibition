@@ -1,4 +1,5 @@
 <?php
+	$GLOBALS["use_navigation"] = 1;
 	include("header.php");
 ?>
     <div class="groeße">
