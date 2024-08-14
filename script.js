@@ -617,6 +617,10 @@ function toggle_button(status) {
 
 //3 Funktionen, welche Hidden toggeln
 let toggle = (element) => {
+	if(!element) {
+		console.error("Could not find null element")
+		return
+	}
 	let hidden = element.getAttribute("hidden");
 	if (hidden) {
 		element.removeAttribute("hidden");
