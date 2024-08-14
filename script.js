@@ -311,6 +311,7 @@ let toggle = (element) => {
 		console.error("Could not find null element")
 		return
 	}
+
 	let hidden = element.getAttribute("hidden");
 	if (hidden) {
 		element.removeAttribute("hidden");
