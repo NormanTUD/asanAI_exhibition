@@ -54,18 +54,18 @@ $(document).ready(async function() {
 	}
 
 	// This sets the mode, there is expert and beginner. This is not used anywhere (yet)
-	asanai.set_mode("expert");
+	//asanai.set_mode("expert");
 
 	// This enables the status bar at the bottom, where a tensor debugger is shown, and also the messages via log, warn and error are shown.
 	//asanai.show_status_bar();
 
 	// This is optional, but lets you allow colors of the bars in predictions
-	await asanai.set_default_bar_color("yellow")
-	await asanai.set_max_bar_color("red")
-	await asanai.set_bar_background_color("#003366")
+	//await asanai.set_default_bar_color("yellow")
+	//await asanai.set_max_bar_color("red")
+	//await asanai.set_bar_background_color("#003366")
 
 	// This sets the maximum amount of iterations for "layer visualization images".
-	asanai.set_max_activation_iterations(4)
+	//asanai.set_max_activation_iterations(4)
 
 	// This sets the number the input is divided by by default, so that, for example, images. whose values are between 0 and 255, get shrinked to 0 and 1.
 	// This makes training more effective in many cases.
@@ -152,16 +152,6 @@ async function load_test_images_and_train () {
 		await asanai.dispose(loaded_data.y);
 	} else {
 		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
-	}
-}
-
-function maximally_activate_all_neurons () {
-	var model = asanai.get_model();
-
-	var layers = model.layers;
-
-	for (var i = 0; i < layers.length; i++) {
-		asanai.draw_maximally_activated_layer(i);
 	}
 }
 
@@ -429,9 +419,13 @@ function matrix_texts(){
 
 		var _lower_first_key = _first_key.toLowerCase();
 
-		$(`matrix_text_${_lower_first_key}`).html(
-			`Das Training für Bananen hat ergeben: <br><grün>${asanai.confusion_matrix_data[_first_key]["Banane"]}</grün> von 40 Bananen wurden richtig erkannt. <br><rot>` +
-			+ `${asanai.confusion_matrix_data[_first_key]["Apfel"]}</rot> Bananen wurden als Apfel erkannt, <br><rot>${asanai.confusion_matrix_data[_first_key]["Orange"]}</rot> Bananen wurden als Orange erkannt. <br>`
-		);
+		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${asanai.confusion_matrix_data[_first_key][_first_key]}</grün> von 40 Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt. <br>`;
+		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
+			var _second_key = _keys[second_key_idx];
+			_matrix_string += `<rot>${asanai.confusion_matrix_data[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt`;
+		}
+
+		$(`matrix_text_${_lower_first_key}`).html(_matrix_string)
+
 	}
 }
