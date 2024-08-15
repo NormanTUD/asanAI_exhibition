@@ -123,7 +123,7 @@ $(document).ready(async function() {
 
 async function load_test_images_and_train () {
 	var __categories = ["Apfel", "Banane", "Orange"];
-	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
 	var exhib_data = [];
 
 	for (var k = 0; k < __categories.length; k++) {
@@ -178,8 +178,8 @@ async function load_exhib_data_and_train () {
 	var exhib_data = [];
 
 	var __categories = ["Apfel", "Banane", "Orange"];
-	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
 
 	for (var k = 0; k < __categories.length; k++) {
 		var _cat = __categories[k];
@@ -381,6 +381,8 @@ var training_end = async function(){
 
 //Confusion Matrix als Text
 function matrix_texts(){
+	var cmd = asanai.confusion_matrix_data;
+
 	var _keys = ["Banane", "Orange", "Apfel"]
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
@@ -388,41 +390,58 @@ function matrix_texts(){
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
 
-			if (asanai.confusion_matrix_data[_first_key][_second_key] === undefined){
-				asanai.confusion_matrix_data[_second_key][_second_key] = 0;
+			if (cmd[_first_key][_second_key] === undefined){
+				cmd[_second_key][_second_key] = 0;
 			}
 		}
 		
 	}
 
 	var correctly_predicted = 0;
+	var nr_correct_imgs_per_cat = {};
 
-	log("asanai.confusion_matrix_data:", asanai.confusion_matrix_data);
+	log("cmd:", cmd);
 	log("asanai.nr_images_per_category:", asanai.nr_images_per_category);
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
-		correctly_predicted += asanai.confusion_matrix_data[_first_key][_first_key];
+		correctly_predicted += cmd[_first_key][_first_key];
 	}
 
-	var prozent = Math.round(correctly_predicted/1.2);
 
-	document.getElementById("matrix_text").innerHTML = "Es wurden insgesamt <grün>"
-		+ correctly_predicted
-		+ "</grün>  von 120 Bildern richtig erkannt. <br>"
-		+ "Das entspricht <grün>"
-		+ prozent
-		+ "%.</grün>";
+	var total_nr_images = 0
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
 
-		var _lower_first_key = _first_key.toLowerCase();
+		var this_cat_nr_imgs = 0;
 
-		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${asanai.confusion_matrix_data[_first_key][_first_key]}</grün> von 40 Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt. <br>`;
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			_matrix_string += `<rot>${asanai.confusion_matrix_data[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt`;
+			this_cat_nr_imgs += cmd[_second_key];
+
+		}
+		nr_correct_imgs_per_cat[_first_key] = this_cat_nr_imgs;
+
+		total_nr_images += this_cat_nr_imgs;
+	}
+
+
+	var percentage = Math.round(Math.round(correctly_predicted/total_nr_images) * 100);
+
+	$("#matrix_text").html(`Es wurden insgesamt <grün>${correctly_predicted}</grün> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <grün>${percentage}%.</grün>`);
+
+	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
+		var _first_key = _keys[first_key_idx];
+
+		var this_cat_nr_imgs = nr_correct_imgs_per_cat[_first_key];
+
+		var _lower_first_key = _first_key.toLowerCase();
+		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${cmd[_first_key][_first_key]}</grün> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt. <br>`;
+
+		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
+			var _second_key = _keys[second_key_idx];
+			_matrix_string += `<rot>${cmd[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt<br>`;
 		}
 
 		$(`matrix_text_${_lower_first_key}`).html(_matrix_string)
