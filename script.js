@@ -407,7 +407,8 @@ function matrix_texts(){
 
 	var correctly_predicted = 0;
 
-	log(asanai.confusion_matrix_data);
+	log("asanai.confusion_matrix_data:", asanai.confusion_matrix_data);
+	log("asanai.nr_images_per_category:", asanai.nr_images_per_category);
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
