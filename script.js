@@ -380,7 +380,7 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			if(cmd[_first_key][_second_key]) {
+			if(cmd[_first_key][_second_key] !== undefined) {
 				this_cat_nr_imgs += cmd[_first_key][_second_key];
 			}
 		}
