@@ -11,7 +11,7 @@ function assert(cond, msg) {
 
 var log = console.log;
 
-var max_epochs = 30;
+var max_epochs = 50;
 var max_nr_images = 5;
 var batch_size = 200;
 
@@ -458,7 +458,7 @@ function matrix_texts(){
 
 		assert($(_matrix_col_name).length >= 1, `Could not find ${_matrix_col_name}`)
 
-		log("_matrix_col_name:", _matrix_col_name, "_matrix_string:", _matrix_string);
+		//log("_matrix_col_name:", _matrix_col_name, "_matrix_string:", _matrix_string);
 
 		$(_matrix_col_name).html(_matrix_string)
 
