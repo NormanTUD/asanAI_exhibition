@@ -98,14 +98,6 @@ async function load_exhib_data_and_train () {
 
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
 
-	/*
-	try {
-		log("loaded data unique and flattened: ", uniqueArray(loaded_data.x.arraySync().flat().flat().flat()))
-	} catch (e) {
-		console.error(e)
-	}
-	*/
-
 	if(loaded_data) {
 		asanai.visualize_train();
 		//Ladebalken über nr_epochs Epochen
@@ -119,18 +111,6 @@ async function load_exhib_data_and_train () {
 	} else {
 		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
 	}
-}
-
-function uniqueArray( ar ) {
-	var j = {};
-
-	ar.forEach( function(v) {
-		j[v+ '::' + typeof v] = v;
-	});
-
-	return Object.keys(j).map(function(v){
-		return j[v];
-	});
 }
 
 function toggle_button2() {
