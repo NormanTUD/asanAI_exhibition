@@ -33,11 +33,12 @@ var _bias_initializer = "leCunNormal";
 var model_struct = [
 	{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
 	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-	{maxPooling2d: {poolSize: [3, 3] }},
+	//{maxPooling2d: {poolSize: [3, 3] }},
 	{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{flatten: {}},
 	{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
@@ -412,15 +413,13 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			if(_second_key != _first_key) {
-				var _nr = cmd[_first_key][_second_key]
-				if(_nr === undefined) {
-					_nr = 0;
-				}
-
-				var new_line = `<rot>${_nr}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt.<br>\n`;
-				_matrix_string += new_line;
+			var _nr = cmd[_first_key][_second_key]
+			if(_nr === undefined) {
+				_nr = 0;
 			}
+
+			var new_line = `<rot>${_nr}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt.<br>\n`;
+			_matrix_string += new_line;
 		}
 
 		var _matrix_col_name = `#matrix_text_${_first_key.toLowerCase()}`;
