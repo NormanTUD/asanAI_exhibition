@@ -16,7 +16,10 @@ var max_nr_images = 5;
 var batch_size = 200;
 var __categories = ["Apfel", "Banane", "Orange"];
 
-var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
+var optimizer_config = {
+	optimizer: "adam",
+	loss: "categoricalCrossentropy", "learningRate": 0.0025
+};
 
 // This variable will hold the asanAI object. Each object can have exactly one model loaded.
 // But you can have as many objects as you wish, or, e.g., save them in an array or a dictionary
@@ -132,7 +135,7 @@ $(document).ready(async function() {
 async function load_exhib_data_and_train () {
 	asanai.set_validation_split(0.1);
 
-	asanai.create_model_from_model_data(model_struct, { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.025 });
+	//asanai.create_model_from_model_data(model_struct, optimizer_config);
 
 	var exhib_data = [];
 
@@ -151,11 +154,13 @@ async function load_exhib_data_and_train () {
 
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
 
+	/*
 	try {
 		log("loaded data unique and flattened: ", uniqueArray(loaded_data.x.arraySync().flat().flat().flat()))
 	} catch (e) {
 		console.error(e)
 	}
+	*/
 
 	if(loaded_data) {
 		asanai.visualize_train();
