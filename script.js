@@ -11,7 +11,7 @@ function assert(cond, msg) {
 
 var log = console.log;
 
-var nr_epochs = 40;
+var nr_epochs = 50;
 var max_nr_images = 5;
 var batch_size = 200;
 var __categories = ["Apfel", "Banane", "Orange"];
