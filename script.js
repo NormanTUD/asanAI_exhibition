@@ -128,40 +128,6 @@ $(document).ready(async function() {
 	$("#progress").attr("max", max_epochs);
 });
 
-async function load_test_images_and_train () {
-	var __categories = ["Apfel", "Banane", "Orange"];
-	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
-	var exhib_data = [];
-
-	for (var k = 0; k < __categories.length; k++) {
-		var _cat = __categories[k];
-
-		for (var l = 1; l <= __max_nr; l++) {
-			var this_path = `traindata/signs/${_cat}/${_cat}_${l}.jpg`
-
-			exhib_data.push([this_path, _cat])
-		}
-	}
-
-	var loaded_data = asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
-
-	if(loaded_data) {
-		asanai.visualize_train();
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 20, batchSize: batch_size, shuffle: true}, {});
-
-		if(history) {
-			log("history:", history);
-		} else {
-			console.error("Training failed");
-		}
-
-		await asanai.dispose(loaded_data.x);
-		await asanai.dispose(loaded_data.y);
-	} else {
-		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
-	}
-}
-
 async function load_exhib_data_and_train () {
 	asanai.set_validation_split(0.1);
 
