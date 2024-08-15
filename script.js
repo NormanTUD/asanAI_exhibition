@@ -425,15 +425,22 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			this_cat_nr_imgs += cmd[_first_key][_second_key];
-
+			if(cmd[_first_key][_second_key]) {
+				this_cat_nr_imgs += cmd[_first_key][_second_key];
+			}
 		}
+
+		assert(typeof(this_cat_nr_imgs) == "number" && !Number.isNaN(this_cat_nr_imgs), `this_cat_nr_imgs is not a number but ${typeof(this_cat_nr_imgs)}, ${this_cat_nr_imgs}`);
+
 		nr_correct_imgs_per_cat[_first_key] = this_cat_nr_imgs;
 
 		total_nr_images += this_cat_nr_imgs;
+
+		assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(A) total_nr_images is not a number but ${typeof(total_nr_images)}, ${total_nr_images}`);
 	}
 
-	assert(typeof(total_nr_images) == "number", `total_nr_images is not a number but ${typeof(total_nr_images)}`);
+	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
+	assert(total_nr_images > 0, `total_nr_images is smaller than 1: ${total_nr_images}`);
 
 	var percentage = Math.round(Math.round(correctly_predicted/total_nr_images) * 100);
 
