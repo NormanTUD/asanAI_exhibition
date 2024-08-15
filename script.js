@@ -6,7 +6,7 @@
 var log = console.log;
 
 var max_epochs = 2;
-var max_nr_images = 5;
+var max_nr_images = 3;
 
 var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
 
