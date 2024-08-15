@@ -15,24 +15,24 @@
                 <div id="text_training">Für jedes Obst werden kategorisierte Test-Bilder geladen.<br>
                     Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.<br> Kommt es zu einem falschen Ergebnis, wird es korrigiert.<br>
                     Mithilfe dieses Feedbacks wird der Weg angepasst bis das Netz zu einem richtigen Output gelangt.<br>
-                    Je mehr Durchgänge es gibt, desto effektiver ist das Training.<br> In diesem Beispiel sind es <span id="nr_epochs">0</span> Durchgänge.</div>
-                <div id="progress-text"></div>
-                <progress id="progress" value="0" max="100"></progress>
-            </div>
-            <div id="math_tab_code"></div>
-            <button hidden="hidden" class="box" id="evaluation" onclick="toggle_button(2); matrix_texts()">Auswertung anzeigen</button>
-            <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
-            <p hidden="hidden" class="matrix_text" id="matrix_text"></p>
-            <p hidden="hidden" class="matrix_text" id="matrix_text_apfel"></p>
-            <p hidden="hidden" class="matrix_text" id="matrix_text_orange"></p>
-            <p hidden="hidden" class="matrix_text" id="matrix_text_banane"></p>
-            <button hidden="hidden" class="box" id="yourself" onclick="toggle_button(3)">Probier es aus</button>
-            <div hidden="hidden" id="status_3">
-                <div id="fcnn_div"></div>
-                <div hidden="hidden">
-                    <div hidden="hidden" id="internal_states"></div>
-                </div>
-                <p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
+		    Je mehr Durchgänge es gibt, desto effektiver ist das Training.<br> In diesem Beispiel sind es <span id="nr_epochs">0</span> Durchgänge.</div>
+		<div id="progress-text"></div>
+		<progress id="progress" value="0" max="100"></progress>
+	    </div>
+	    <div id="math_tab_code"></div>
+	    <button hidden="hidden" class="box" id="evaluation" onclick="toggle_button(2); matrix_texts()">Auswertung anzeigen</button>
+	    <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
+	    <p hidden="hidden" class="matrix_text" id="matrix_text"></p>
+	    <p hidden="hidden" class="matrix_text" id="matrix_text_apfel"></p>
+	    <p hidden="hidden" class="matrix_text" id="matrix_text_orange"></p>
+	    <p hidden="hidden" class="matrix_text" id="matrix_text_banane"></p>
+	    <button hidden="hidden" class="box" id="yourself" onclick="toggle_button(3)">Probier es aus</button>
+	    <div hidden="hidden" id="status_3">
+		<div id="fcnn_div"></div>
+		<div hidden="hidden">
+		    <div hidden="hidden" id="internal_states"></div>
+		</div>
+		<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
                 <div id="webcam_prediction"></div>
                 <p id="erklärung">Das Input-Bild wird zu einer 40x40-Pixel-Matrix, die Höhe und Breite sowie
                     in der 3. Dimension die Farbkanäle rot, grün und blau abbildet. </br>

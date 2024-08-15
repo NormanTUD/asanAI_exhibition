@@ -125,6 +125,7 @@ $(document).ready(async function() {
 	asanai.enable_fcnn_internals();
 
 	$("#nr_epochs").html(max_epochs);
+	$("#progress").attr("max", max_epochs);
 });
 
 async function load_test_images_and_train () {
