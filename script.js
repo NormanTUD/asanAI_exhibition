@@ -342,7 +342,7 @@ var training_end = async function(){
 
 //Confusion Matrix als Text
 function matrix_texts(){
-	var cmd = asanai.confusion_matrix_data;
+	var c_m_d = asanai.confusion_matrix_data;
 
 	var _keys = asanai.get_labels();
 
@@ -351,8 +351,8 @@ function matrix_texts(){
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
 
-			if (cmd[_first_key][_second_key] === undefined){
-				cmd[_second_key][_second_key] = 0;
+			if (c_m_d[_first_key][_second_key] === undefined){
+				c_m_d[_second_key][_second_key] = 0;
 			}
 		}
 		
@@ -363,7 +363,7 @@ function matrix_texts(){
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
-		correctly_predicted += cmd[_first_key][_first_key];
+		correctly_predicted += c_m_d[_first_key][_first_key];
 	}
 
 	assert(typeof(correctly_predicted) == "number", `correctly_predicted is not a number but ${typeof(correctly_predicted)}`);
@@ -380,8 +380,8 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			if(cmd[_first_key][_second_key] !== undefined) {
-				this_cat_nr_imgs += cmd[_first_key][_second_key];
+			if(c_m_d[_first_key][_second_key] !== undefined) {
+				this_cat_nr_imgs += c_m_d[_first_key][_second_key];
 			}
 		}
 
@@ -395,6 +395,8 @@ function matrix_texts(){
 
 		num_categories_went_through++;
 	}
+
+	log("nr_correct_imgs_per_cat:", nr_correct_imgs_per_cat);
 
 	assert(num_categories_went_through == __categories.length, "Went through a different number of categories (${num_categories_went_through}) than __categories.length ({__categories.length})")
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
@@ -411,11 +413,11 @@ function matrix_texts(){
 
 		var this_cat_nr_imgs = nr_correct_imgs_per_cat[_first_key];
 
-		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><green>${cmd[_first_key][_first_key]}</green> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt.<br>\n`;
+		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><green>${c_m_d[_first_key][_first_key]}</green> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			var _nr = cmd[_first_key][_second_key]
+			var _nr = c_m_d[_first_key][_second_key]
 			if(_nr === undefined) {
 				_nr = 0;
 			}
