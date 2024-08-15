@@ -33,10 +33,10 @@ var _bias_initializer = _kernel_initializer //"leCunNormal";
 var model_struct = [
 	{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
 	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-	{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	{conv2d: {filters: 2, acddtivation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{maxPooling2d: {poolSize: [3, 3] }},
 	{flatten: {}},
-	{dense: {units: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 4, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
@@ -46,7 +46,7 @@ $(document).ready(async function() {
 		asanai = new asanAI({
 			model_data: model_struct,					// The default model structure that should be loaded
 			optimizer_config: optimizer_config,			// The config for the optimizer (which trains the model)
-			translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this case
+			translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this casesanai
 			optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
 			asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
 			// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
