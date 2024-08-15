@@ -11,8 +11,8 @@ function assert(cond, msg) {
 
 var log = console.log;
 
-var nr_epochs = 30;
-var max_nr_images = 2;
+var nr_epochs = 50;
+var max_nr_images = 20;
 var batch_size = 200;
 var __categories = ["Apfel", "Banane", "Orange"];
 
@@ -32,12 +32,12 @@ var _bias_initializer = "leCunNormal";
 
 var model_struct = [
 	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
-	{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-	//{maxPooling2d: {poolSize: [3, 3] }},
 	{conv2d: {filters: 1, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	//{maxPooling2d: {poolSize: [3, 3] }},
+	//{conv2d: {filters: 1, activation: "linear", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{flatten: {}},
-	//{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	//{dense: {units: 5, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	//{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
