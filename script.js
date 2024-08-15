@@ -5,7 +5,8 @@
 
 var log = console.log;
 
-var max_epochs = 100;
+var max_epochs = 2;
+var max_nr_images = 5;
 
 var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
 
@@ -122,7 +123,7 @@ $(document).ready(async function() {
 
 async function load_test_images_and_train () {
 	var __categories = ["Apfel", "Banane", "Orange"];
-	var __max_nr = 50; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
 	var exhib_data = [];
 
 	for (var k = 0; k < __categories.length; k++) {
@@ -188,7 +189,7 @@ async function load_exhib_data_and_train () {
 
 	var __categories = ["Apfel", "Banane", "Orange"];
 	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = 50; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils  eines pro kategorie (nr 95)  aus dem training auszunehmen und manuell zu predicten
 
 	for (var k = 0; k < __categories.length; k++) {
 		var _cat = __categories[k];
