@@ -457,13 +457,15 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			var _nr = cmd[_first_key][_second_key]
-			if(_nr === undefined) {
-				_nr = 0;
-			}
+			if(_second_key != _first_key) {
+				var _nr = cmd[_first_key][_second_key]
+				if(_nr === undefined) {
+					_nr = 0;
+				}
 
-			var new_line = `<rot>${_nr}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt.<br>\n`;
-			_matrix_string += new_line;
+				var new_line = `<rot>${_nr}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt.<br>\n`;
+				_matrix_string += new_line;
+			}
 		}
 
 		var _matrix_col_name = `#matrix_text_${_first_key.toLowerCase()}`;
