@@ -23,9 +23,9 @@
             <button hidden="hidden" class="box" id="evaluation" onclick="toggle_button(2); matrix_texts()">Auswertung anzeigen</button>
             <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
             <p hidden="hidden" class="matrix_text" id="matrix_text"></p>
-            <p hidden="hidden" class="matrix_text" id="matrix_text_apple"></p>
+            <p hidden="hidden" class="matrix_text" id="matrix_text_apfel"></p>
             <p hidden="hidden" class="matrix_text" id="matrix_text_orange"></p>
-            <p hidden="hidden" class="matrix_text" id="matrix_text_banana"></p>
+            <p hidden="hidden" class="matrix_text" id="matrix_text_banane"></p>
             <button hidden="hidden" class="box" id="yourself" onclick="toggle_button(3)">Probier es aus</button>
             <div hidden="hidden" id="status_3">
                 <div id="fcnn_div"></div>

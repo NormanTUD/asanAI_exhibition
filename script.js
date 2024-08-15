@@ -249,18 +249,18 @@ function toggle_button(status) {
 		toggle(document.getElementById("evaluation"));
 		toggle(document.getElementById("visualization"));
 		toggle(document.getElementById("matrix_text"));
-		toggle(document.getElementById("matrix_text_apple"));
+		toggle(document.getElementById("matrix_text_apfel"));
 		toggle(document.getElementById("matrix_text_orange"));
-		toggle(document.getElementById("matrix_text_banana"));
+		toggle(document.getElementById("matrix_text_banane"));
 		toggle(document.getElementById("test_images"));
 		toggle(document.getElementById("math_tab_code"));
 		toggle(document.getElementById("yourself"));
 	} else if (status === 3) {
 		asanai.start_camera();
 		toggle(document.getElementById("matrix_text"));
-		toggle(document.getElementById("matrix_text_apple"));
+		toggle(document.getElementById("matrix_text_apfel"));
 		toggle(document.getElementById("matrix_text_orange"));
-		toggle(document.getElementById("matrix_text_banana"));
+		toggle(document.getElementById("matrix_text_banane"));
 		toggle(document.getElementById("yourself"));
 		toggle(document.getElementById("status_3"));
 		toggle(document.getElementById("internal"));
@@ -375,7 +375,7 @@ function un_highlight(tab) {
 //Ladebalken
 var update_progress_bar = async function () {
 	document.getElementById("progress").value += 1;
-	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</grün>/" + max_epochs + "<br><rot>"
+	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</green>/" + max_epochs + "<br><rot>"
 }
 
 //Ladebalken verschwindet / Button erscheint
@@ -446,14 +446,14 @@ function matrix_texts(){
 
 	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}`);
 
-	$("#matrix_text").html(`Es wurden insgesamt <grün>${correctly_predicted}</grün> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <grün>${percentage}%</grün>.`);
+	$("#matrix_text").html(`Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <green>${percentage}%</green>.`);
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
 
 		var this_cat_nr_imgs = nr_correct_imgs_per_cat[_first_key];
 
-		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${cmd[_first_key][_first_key]}</grün> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt.<br>\n`;
+		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><green>${cmd[_first_key][_first_key]}</green> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
@@ -463,9 +463,13 @@ function matrix_texts(){
 			}
 		}
 
-		log(_matrix_string);
+		var _matrix_col_name = `#matrix_text_${_first_key.toLowerCase()}`;
 
-		$(`#matrix_text_${_first_key.toLowerCase()}`).html(_matrix_string)
+		assert($(_matrix_col_name).length >= 1, `Could not find ${_matrix_col_name}`)
+
+		log("_matrix_col_name:", _matrix_col_name, "_matrix_string:", _matrix_string);
+
+		$(_matrix_col_name).html(_matrix_string)
 
 	}
 }
