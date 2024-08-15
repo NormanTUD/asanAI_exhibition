@@ -391,9 +391,7 @@ function matrix_texts(){
 
 	var percentage = Math.round(correctly_predicted/total_nr_images * 100);
 
-	assert(typeof(percentage) == "number" && !Number.isNaN(percentage), `percentage is not a number but ${typeof(percentage)}, ${percentage}`);
-
-	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}`);
+	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}, correctly_predicted: ${correctly_predicted}, total_nr_images: ${total_nr_images}`);
 
 	$("#matrix_text").html(`Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <green>${percentage}%</green>.`);
 
