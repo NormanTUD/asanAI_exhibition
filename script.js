@@ -38,8 +38,7 @@ var model_struct = [
 	{conv2d: {filters: 1, activation: "linear", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{flatten: {}},
 	{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	{dense: {units: 16, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	{dense: {units: 16, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 6, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
@@ -362,8 +361,6 @@ function matrix_texts(){
 
 	var correctly_predicted = 0;
 	var nr_correct_imgs_per_cat = {};
-
-	log("cmd:", cmd);
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
