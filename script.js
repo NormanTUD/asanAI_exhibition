@@ -36,9 +36,9 @@ var model_struct = [
 	//{maxPooling2d: {poolSize: [3, 3] }},
 	{conv2d: {filters: 1, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{flatten: {}},
-	{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	{dense: {units: 5, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
+	//{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	//{dense: {units: 5, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
 // When the site has fully loaded, initialize the objects
@@ -71,6 +71,8 @@ $(document).ready(async function() {
 	//await asanai.set_default_bar_color("yellow")
 	//await asanai.set_max_bar_color("red")
 	//await asanai.set_bar_background_color("#003366")
+	
+	asanai.disable_show_bars();
 
 	// This sets the maximum amount of iterations for "layer visualization images".
 	//asanai.set_max_activation_iterations(4)
