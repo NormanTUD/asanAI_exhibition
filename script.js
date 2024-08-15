@@ -3,6 +3,12 @@
 // then I don't need to define it in other places.
 // You can also build a GUI for this.
 
+function assert(cond, msg) {
+	if(!cond) {
+		console.error(msg);
+	}
+}
+
 var log = console.log;
 
 var max_epochs = 2;
@@ -401,12 +407,13 @@ function matrix_texts(){
 	var nr_correct_imgs_per_cat = {};
 
 	log("cmd:", cmd);
-	log("asanai.nr_images_per_category:", asanai.nr_images_per_category);
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
 		correctly_predicted += cmd[_first_key][_first_key];
 	}
+
+	assert(typeof(correctly_predicted) == "number", `correctly_predicted is not a number but ${typeof(correctly_predicted)}`);
 
 
 	var total_nr_images = 0
@@ -418,7 +425,7 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			this_cat_nr_imgs += cmd[_second_key];
+			this_cat_nr_imgs += cmd[_first_key][_second_key];
 
 		}
 		nr_correct_imgs_per_cat[_first_key] = this_cat_nr_imgs;
@@ -426,8 +433,11 @@ function matrix_texts(){
 		total_nr_images += this_cat_nr_imgs;
 	}
 
+	assert(typeof(total_nr_images) == "number", `total_nr_images is not a number but ${typeof(total_nr_images)}`);
 
 	var percentage = Math.round(Math.round(correctly_predicted/total_nr_images) * 100);
+
+	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}`);
 
 	$("#matrix_text").html(`Es wurden insgesamt <grün>${correctly_predicted}</grün> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <grün>${percentage}%.</grün>`);
 
