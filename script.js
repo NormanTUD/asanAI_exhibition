@@ -446,14 +446,13 @@ function matrix_texts(){
 
 	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}`);
 
-	$("#matrix_text").html(`Es wurden insgesamt <grün>${correctly_predicted}</grün> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <grün>${percentage}%.</grün>`);
+	$("#matrix_text").html(`Es wurden insgesamt <grün>${correctly_predicted}</grün> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <grün>${percentage}%</grün>.`);
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
 
 		var this_cat_nr_imgs = nr_correct_imgs_per_cat[_first_key];
 
-		var _lower_first_key = _first_key.toLowerCase();
 		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${cmd[_first_key][_first_key]}</grün> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
@@ -466,7 +465,7 @@ function matrix_texts(){
 
 		log(_matrix_string);
 
-		$(`matrix_text_${_lower_first_key}`).html(_matrix_string)
+		$(`#matrix_text_${_first_key.toLowerCase()}`).html(_matrix_string)
 
 	}
 }
