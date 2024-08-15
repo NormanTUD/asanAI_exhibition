@@ -32,7 +32,7 @@ var _kernel_initializer = "leCunNormal";
 var _bias_initializer = _kernel_initializer //"leCunNormal";
 
 var model_struct = [
-	{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
+	{conv2d: {filters: 1, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
 	{maxPooling2d: {poolSize: [3, 3] }},
 	{flatten: {}},
 	{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
@@ -60,81 +60,26 @@ $(document).ready(async function() {
 		return;
 	}
 
-	// This sets the mode, there is expert and beginner. This is not used anywhere (yet)
-	//asanai.set_mode("expert");
+	asanai.show_status_bar();
 
-	// This enables the status bar at the bottom, where a tensor debugger is shown, and also the messages via log, warn and error are shown.
-	//asanai.show_status_bar();
-
-	// This is optional, but lets you allow colors of the bars in predictions
-	//await asanai.set_default_bar_color("yellow")
-	//await asanai.set_max_bar_color("red")
-	//await asanai.set_bar_background_color("#003366")
-	
 	asanai.disable_show_bars();
 
-	// This sets the maximum amount of iterations for "layer visualization images".
-	//asanai.set_max_activation_iterations(4)
-
-	// This sets the number the input is divided by by default, so that, for example, images. whose values are between 0 and 255, get shrinked to 0 and 1.
-	// This makes training more effective in many cases.
 	asanai.set_divide_by(255);
 
-	// With this, you can set the labels that are used all throughout the GUI whenever it shows which categories are there or predicts something
 	asanai.set_labels(__categories);
 
-	// The first parameter to show_internals is the id-name of a div, in which the internals are printed.
-	// Internals are that which you see as input/output of each layer/neuron, which are visualized to make it easier to understand what the network does.
-	// The second parameter allows you to enable (1) or disable (0) the size sliders for neurons/outputs
-	//asanai.show_internals("internal_states", 1);
-
-	// Hide internals, when called, hides the internals again after they've been shown
-	//asanai.hide_internals();
-
-	// draw_fcnn shows the FCNN style visualization the a div with the provided ID.
 	asanai.set_fcnn_height(400);
 	asanai.set_fcnn_width(800);
 	asanai.draw_fcnn("fcnn_div", 32, true);
-
-	// Shows the output of model.summary in a div.
-	//asanai.write_model_summary("summary")
-
-	//await asanai.predict_image("test_image", "test_image_prediction", true, true);
-	//await asanai.predict_image("test_image_two", "test_image_two_prediction", true, true);
-
-	//asanai.write_tensors_info("memory");
-
-	$('#enable-btn').click(function() {
-		$('#del-table-btn').enable();
-		$('#del-page-btn').enable();
-		$('#save-btn').enable();
-		$('#other-btn-2').enable();
-
-		$('#enable-btn').hide();
-		$('#disable-btn').show();
-	});
-
-	$('#disable-btn').click(function() {
-		$('#del-table-btn').disable();
-		$('#del-page-btn').disable();
-		$('#save-btn').disable();
-		$('#other-btn-2').disable();
-
-		$('#disable-btn').hide();
-		$('#enable-btn').show();
-	});
-
-	// enable live view of nn
 	asanai.enable_fcnn_internals();
+
+	asanai.set_validation_split(0);
 
 	$("#nr_epochs").html(nr_epochs);
 	$("#progress").attr("max", nr_epochs);
 });
 
 async function load_exhib_data_and_train () {
-	asanai.set_validation_split(0);
-
-	//asanai.create_model_from_model_data(model_struct, optimizer_config);
 
 	var exhib_data = [];
 
@@ -343,7 +288,6 @@ var training_end = async function(){
 	toggle(document.getElementById("progress"));
 }
 
-
 //Confusion Matrix als Text
 function matrix_texts(){
 	var c_m_d = asanai.confusion_matrix_data;
@@ -358,7 +302,6 @@ function matrix_texts(){
 			correctly_predicted += c_m_d[_first_key][_first_key];
 		}
 	}
-
 
 	var total_nr_images = 0
 
@@ -432,6 +375,5 @@ function matrix_texts(){
 		//log("_matrix_col_name:", _matrix_col_name, "_matrix_string:", _matrix_string);
 
 		$(_matrix_col_name).html(_matrix_string)
-
 	}
 }
