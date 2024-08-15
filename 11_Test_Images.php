@@ -34,7 +34,7 @@
                 <p id="erklärung">Das Input-Bild wird zu einer 40x40-Pixel-Matrix, die Höhe und Breite sowie
                     in der 3. Dimension die Farbkanäle rot, grün und blau abbildet. </br>
                 In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</br>
-                    In jedem Neuron wird das Bild abschnittsweise über Kernels abgetastet.</br>
+                    In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.</br>
                     Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
             </div>
         </div>
