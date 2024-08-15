@@ -11,8 +11,9 @@ function assert(cond, msg) {
 
 var log = console.log;
 
-var max_epochs = 2;
-var max_nr_images = 3;
+var max_epochs = 30;
+var max_nr_images = 5;
+var batch_size = 200;
 
 var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
 
@@ -22,28 +23,25 @@ var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "le
 
 var asanai;
 
+var _kernel_initializer = "leCunNormal";
+var _bias_initializer = "leCunNormal";
+
+var model_struct = [
+	{conv2d: {filters: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
+	{conv2d: {filters: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	{maxPooling2d: {poolSize: [3, 3] }},
+	{flatten: {}},
+	{dense: {units: 8, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 4, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
+];
+
 // When the site has fully loaded, initialize the objects
 $(document).ready(async function() {
-	// Default model:
-	// 2 Conv layers, one flatten, 2 dense layers, last one having 4 categories and SoftMax activation function.
-	// This allows classification of images into 4 categories.
-
-	var model_data = [
-		{conv2d: {filters: 16, kernelSize: [3, 3], inputShape: [20, 20, 3], activation: "relu", kernelInitializer: "glorotUniform"}},
-		{conv2d: {filters: 8, kernelSize: [3, 3], activation: "relu", kernelInitializer: "glorotUniform"}},
-		{conv2d: {filters: 4, kernelSize: [3, 3], activation: "relu", biasInitializer: "glorotUniform"}},
-		{flatten: {}},
-		{dense: {units: 32, activation: "relu"}},
-		{dense: {units: 16, activation: "relu"}},
-		{dense: {units: 8, activation: "relu"}},
-		{dense: {units: 3, activation: "softmax"}}
-	];
-
-	// Declaration of asanAI-object, which was previously globally defined.
-
 	try {
 		asanai = new asanAI({
-			model_data: model_data,					// The default model structure that should be loaded
+			model_data: model_struct,					// The default model structure that should be loaded
 			optimizer_config: optimizer_config,			// The config for the optimizer (which trains the model)
 			translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this case
 			optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
@@ -146,7 +144,7 @@ async function load_test_images_and_train () {
 
 	if(loaded_data) {
 		asanai.visualize_train();
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 20, batchSize: 100, shuffle: true}, {});
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 20, batchSize: batch_size, shuffle: true}, {});
 
 		if(history) {
 			log("history:", history);
@@ -162,24 +160,9 @@ async function load_test_images_and_train () {
 }
 
 async function load_exhib_data_and_train () {
-	var _kernel_initializer = "leCunNormal";
-	var _bias_initializer = "leCunNormal";
-
-
 	asanai.set_validation_split(0.1);
 
-	var new_model_struct = [
-		{conv2d: {filters: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
-		{conv2d: {filters: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-		{maxPooling2d: {poolSize: [3, 3] }},
-		{flatten: {}},
-		{dense: {units: 8, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-		{dense: {units: 4, activation: "sigmoid", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-		{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
-	];
-
-	asanai.create_model_from_model_data(new_model_struct, { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.025 });
+	asanai.create_model_from_model_data(model_struct, { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.025 });
 
 	var exhib_data = [];
 
@@ -208,7 +191,7 @@ async function load_exhib_data_and_train () {
 	if(loaded_data) {
 		asanai.visualize_train();
 		//Ladebalken über max_epochs Epochen
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: 100, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(history) {
 			log("history:", history);
 		} else {
