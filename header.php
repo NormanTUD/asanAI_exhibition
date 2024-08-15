@@ -16,7 +16,17 @@
 		}
 ?>
 		<meta charset="UTF-8">
-		<script src="https://asanai.scads.ai/asanai.js.php"></script>
+<?php
+		if(gethostname() == "thinkpad44020211128") {
+?>
+			<script src="http://localhost/TensorFlowJS-GUI/asanai.js.php"></script>
+<?php
+		} else {
+?>
+			<script src="https://asanai.scads.ai/asanai.js.php"></script>
+<?php
+		}
+?>
 		<script src="script.js"></script>
 	</head>
 <body>
