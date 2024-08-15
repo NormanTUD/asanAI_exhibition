@@ -11,8 +11,8 @@ function assert(cond, msg) {
 
 var log = console.log;
 
-var nr_epochs = 50;
-var max_nr_images = 20;
+var nr_epochs = 5;
+var max_nr_images = 2;
 var batch_size = 200;
 var __categories = ["Apfel", "Banane", "Orange"];
 
@@ -99,8 +99,6 @@ $(document).ready(async function() {
 
 	// Shows the output of model.summary in a div.
 	//asanai.write_model_summary("summary")
-
-	asanai.show_and_predict_webcam_in_div("webcam_prediction");
 
 	//await asanai.predict_image("test_image", "test_image_prediction", true, true);
 	//await asanai.predict_image("test_image_two", "test_image_two_prediction", true, true);
@@ -196,6 +194,19 @@ function toggle_button2() {
 	toggle(element);
 }
 
+function try_yourself () {
+	asanai.show_and_predict_webcam_in_div("webcam_prediction");
+
+	asanai.start_camera();
+	toggle(document.getElementById("matrix_text"));
+	toggle(document.getElementById("matrix_text_apfel"));
+	toggle(document.getElementById("matrix_text_orange"));
+	toggle(document.getElementById("matrix_text_banane"));
+	toggle(document.getElementById("yourself"));
+	toggle(document.getElementById("status_3"));
+	toggle(document.getElementById("internal"));
+}
+
 //Anzeigen/Verstecken von Dingen auf Seite 11_Test_Images
 function toggle_button(status) {
 	if (status === 1) {
@@ -212,15 +223,8 @@ function toggle_button(status) {
 		toggle(document.getElementById("test_images"));
 		toggle(document.getElementById("math_tab_code"));
 		toggle(document.getElementById("yourself"));
-	} else if (status === 3) {
-		asanai.start_camera();
-		toggle(document.getElementById("matrix_text"));
-		toggle(document.getElementById("matrix_text_apfel"));
-		toggle(document.getElementById("matrix_text_orange"));
-		toggle(document.getElementById("matrix_text_banane"));
-		toggle(document.getElementById("yourself"));
-		toggle(document.getElementById("status_3"));
-		toggle(document.getElementById("internal"));
+	} else {
+		throw new Error(`Unknown status: ${status}`);
 	}
 }
 
