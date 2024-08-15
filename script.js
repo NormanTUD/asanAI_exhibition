@@ -11,8 +11,8 @@ function assert(cond, msg) {
 
 var log = console.log;
 
-var max_epochs = 100;
-var max_nr_images = 10;
+var nr_epochs = 30;
+var max_nr_images = 2;
 var batch_size = 200;
 var __categories = ["Apfel", "Banane", "Orange"];
 
@@ -128,8 +128,8 @@ $(document).ready(async function() {
 	// enable live view of nn
 	asanai.enable_fcnn_internals();
 
-	$("#nr_epochs").html(max_epochs);
-	$("#progress").attr("max", max_epochs);
+	$("#nr_epochs").html(nr_epochs);
+	$("#progress").attr("max", nr_epochs);
 });
 
 async function load_exhib_data_and_train () {
@@ -164,8 +164,8 @@ async function load_exhib_data_and_train () {
 
 	if(loaded_data) {
 		asanai.visualize_train();
-		//Ladebalken über max_epochs Epochen
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		//Ladebalken über nr_epochs Epochen
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: nr_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(!history) {
 			console.error("Training failed");
 		}
@@ -330,7 +330,7 @@ function un_highlight(tab) {
 //Ladebalken
 var update_progress_bar = async function () {
 	document.getElementById("progress").value += 1;
-	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</green>/" + max_epochs + "<br><rot>"
+	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</green>/" + nr_epochs + "<br><rot>"
 }
 
 //Ladebalken verschwindet / Button erscheint
@@ -371,6 +371,8 @@ function matrix_texts(){
 
 	var total_nr_images = 0
 
+	var kk = 0;
+
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
 
@@ -390,7 +392,11 @@ function matrix_texts(){
 		total_nr_images += this_cat_nr_imgs;
 
 		assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(A) total_nr_images is not a number but ${typeof(total_nr_images)}, ${total_nr_images}`);
+
+		kk++;
 	}
+
+	log("kk:", kk);
 
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
 	assert(total_nr_images > 0, `total_nr_images is smaller than 1: ${total_nr_images}`);
