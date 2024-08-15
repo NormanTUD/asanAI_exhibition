@@ -383,8 +383,8 @@ function matrix_texts(){
 		num_categories_went_through++;
 	}
 
-	log("c_m_d:", c_m_d);
-	log("nr_correct_imgs_per_cat:", nr_correct_imgs_per_cat);
+	//log("c_m_d:", c_m_d);
+	//log("nr_correct_imgs_per_cat:", nr_correct_imgs_per_cat);
 
 	assert(num_categories_went_through == __categories.length, "Went through a different number of categories (${num_categories_went_through}) than __categories.length ({__categories.length})")
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
