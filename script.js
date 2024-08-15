@@ -168,7 +168,7 @@ let toggle = (element) => {
 
 let toggle_off = (element) => {
 	let hidden = element.getAttribute("hidden");
-	if (hidden) {} else {
+	if (!hidden) {
 		element.setAttribute("hidden", "hidden");
 	}
 }
