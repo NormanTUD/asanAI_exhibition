@@ -36,8 +36,8 @@ var model_struct = [
 	//{maxPooling2d: {poolSize: [3, 3] }},
 	{conv2d: {filters: 1, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{flatten: {}},
-	{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	{dense: {units: 5, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 5, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: 3, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
