@@ -3,6 +3,8 @@
 // then I don't need to define it in other places.
 // You can also build a GUI for this.
 
+var log = console.log;
+
 var max_epochs = 100;
 
 var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
@@ -140,7 +142,7 @@ async function load_test_images_and_train () {
 		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: 20, batchSize: 100, shuffle: true}, {});
 
 		if(history) {
-			console.log("history:", history);
+			log("history:", history);
 		} else {
 			console.error("Training failed");
 		}
@@ -201,7 +203,7 @@ async function load_exhib_data_and_train () {
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
 
 	try {
-		console.log("loaded data unique and flattened: ", uniqueArray(loaded_data.x.arraySync().flat().flat().flat()))
+		log("loaded data unique and flattened: ", uniqueArray(loaded_data.x.arraySync().flat().flat().flat()))
 	} catch (e) {
 		console.error(e)
 	}
@@ -211,7 +213,7 @@ async function load_exhib_data_and_train () {
 		//Ladebalken über max_epochs Epochen
 		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: 100, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(history) {
-			console.log("history:", history);
+			log("history:", history);
 		} else {
 			console.error("Training failed");
 		}
@@ -388,65 +390,46 @@ var training_end = async function(){
 
 //Confusion Matrix als Text
 function matrix_texts(){
-	if (asanai.confusion_matrix_data["Banane"]["Banane"] === undefined){
-		asanai.confusion_matrix_data["Banane"]["Banane"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Orange"]["Banane"] === undefined){
-		asanai.confusion_matrix_data["Orange"]["Banane"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Apfel"]["Banane"] === undefined){
-		asanai.confusion_matrix_data["Apfel"]["Banane"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Banane"]["Apfel"] === undefined){
-		asanai.confusion_matrix_data["Banane"]["Apfel"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Apfel"]["Apfel"] === undefined){
-		asanai.confusion_matrix_data["Apfel"]["Apfel"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Orange"]["Apfel"] === undefined){
-		asanai.confusion_matrix_data["Orange"]["Apfel"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Banane"]["Orange"] === undefined){
-		asanai.confusion_matrix_data["Banane"]["Orange"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Apfel"]["Orange"] === undefined){
-		asanai.confusion_matrix_data["Apfel"]["Orange"] = 0;
-	}
-	if (asanai.confusion_matrix_data["Orange"]["Orange"] === undefined){
-		asanai.confusion_matrix_data["Orange"]["Orange"] = 0;
+	var _keys = ["Banane", "Orange", "Apfel"]
+
+	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
+		var _first_key = _keys[first_key_idx];
+		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
+			var _second_key = _keys[second_key_idx];
+
+			if (asanai.confusion_matrix_data[_first_key][_second_key] === undefined){
+				asanai.confusion_matrix_data[_second_key][_second_key] = 0;
+			}
+		}
+		
 	}
 
-	var richtig = asanai.confusion_matrix_data["Banane"]["Banane"] + asanai.confusion_matrix_data["Orange"]["Orange"] + asanai.confusion_matrix_data["Apfel"]["Apfel"];
+	var correctly_predicted = 0;
+
+	log(asanai.confusion_matrix_data);
+
+	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
+		var _first_key = _keys[first_key_idx];
+		correctly_predicted += asanai.confusion_matrix_data[_first_key][_first_key];
+	}
+
 	var prozent = Math.round(richtig/1.2);
 
 	document.getElementById("matrix_text").innerHTML = "Es wurden insgesamt <grün>"
-		+ richtig
+		+ correctly_predicted
 		+ "</grün>  von 120 Bildern richtig erkannt. <br>"
 		+ "Das entspricht <grün>"
 		+ prozent
 		+ "%.</grün>";
 
-	document.getElementById("matrix_text_banana").innerHTML = "Das Training für Bananen hat ergeben: <br><grün>"
-		+ asanai.confusion_matrix_data["Banane"]["Banane"]
-		+ "</grün> von 40 Bananen wurden richtig erkannt. <br><rot>"
-		+ asanai.confusion_matrix_data["Banane"]["Apfel"]
-		+ "</rot> Bananen wurden als Apfel erkannt, <br><rot>"
-		+ asanai.confusion_matrix_data["Banane"]["Orange"]
-		+ "</rot> Bananen wurden als Orange erkannt. <br>";
+	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
+		var _first_key = _keys[first_key_idx];
 
-	document.getElementById("matrix_text_orange").innerHTML = "Das Training für Orangen hat ergeben: <br><grün>"
-		+ asanai.confusion_matrix_data["Orange"]["Orange"]
-		+ "</grün> von 40 Orangen wurden richtig erkannt. <br><rot>"
-		+ asanai.confusion_matrix_data["Orange"]["Apfel"]
-		+ "</rot> Orangen wurden als Apfel erkannt, <br><rot>"
-		+ asanai.confusion_matrix_data["Orange"]["Banane"]
-		+ "</rot> Orangen wurden als Banane erkannt. <br>";
+		var _lower_first_key = _first_key.toLowerCase();
 
-	document.getElementById("matrix_text_apple").innerHTML = "Das Training für Äpfel hat ergeben: <br><grün>"
-		+ asanai.confusion_matrix_data["Apfel"]["Apfel"]
-		+ "</grün> von 40 Äpfel wurden richtig erkannt. <br><rot>"
-		+ asanai.confusion_matrix_data["Apfel"]["Banane"]
-		+ "</rot> Äpfel wurden als Banane erkannt, <br><rot>"
-		+ asanai.confusion_matrix_data["Apfel"]["Orange"]
-		+ "</rot> Äpfel wurden als Orange erkannt. <br>";
+		$(`matrix_text_${_lower_first_key}`).html(
+			`Das Training für Bananen hat ergeben: <br><grün>${asanai.confusion_matrix_data[_first_key]["Banane"]}</grün> von 40 Bananen wurden richtig erkannt. <br><rot>` +
+			+ `${asanai.confusion_matrix_data[_first_key]["Apfel"]}</rot> Bananen wurden als Apfel erkannt, <br><rot>${asanai.confusion_matrix_data[_first_key]["Orange"]}</rot> Bananen wurden als Orange erkannt. <br>`
+		);
+	}
 }
