@@ -203,7 +203,6 @@ function try_yourself () {
 	toggle(document.getElementById("matrix_text_banane"));
 	toggle(document.getElementById("yourself"));
 	toggle(document.getElementById("status_3"));
-	toggle(document.getElementById("internal"));
 }
 
 //Anzeigen/Verstecken von Dingen auf Seite 11_Test_Images

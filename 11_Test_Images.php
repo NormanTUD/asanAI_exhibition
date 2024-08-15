@@ -29,9 +29,6 @@
 	    <button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
 	    <div hidden="hidden" id="status_3">
 		<div id="fcnn_div"></div>
-		<div hidden="hidden">
-		    <div hidden="hidden" id="internal_states"></div>
-		</div>
 		<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
                 <div id="webcam_prediction"></div>
                 <p id="erklärung">Das Input-Bild wird zu einer 40x40-Pixel-Matrix, die Höhe und Breite sowie

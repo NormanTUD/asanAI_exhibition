@@ -6,7 +6,6 @@
       <div style="clear: both;"></div>
           <div class="flex_box">
               <div id="webcam_prediction"></div>
-              <div id="internal_states">
               </div>
           </div>
       </div>
