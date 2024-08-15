@@ -350,7 +350,9 @@ function matrix_texts(){
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
-		correctly_predicted += c_m_d[_first_key][_first_key];
+		if(c_m_d[_first_key][_first_key]) {
+			correctly_predicted += c_m_d[_first_key][_first_key];
+		}
 	}
 
 
@@ -391,7 +393,7 @@ function matrix_texts(){
 
 	var percentage = Math.round(correctly_predicted/total_nr_images * 100);
 
-	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}, correctly_predicted: ${correctly_predicted}, total_nr_images: ${total_nr_images}`);
+	assert(typeof(percentage) == "number" && !Number.isNaN(percentage), `percentage is not a number but ${typeof(percentage)}, percentage: ${percentage}, correctly_predicted: ${correctly_predicted}, total_nr_images: ${total_nr_images}`);
 
 	$("#matrix_text").html(`Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <green>${percentage}%</green>.`);
 
