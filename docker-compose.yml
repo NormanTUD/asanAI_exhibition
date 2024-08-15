@@ -1,0 +1,7 @@
+version: '3'
+services:
+  asanaiexhibition:
+    build:
+      context: .
+    ports:
+      - $LOCAL_PORT:80
