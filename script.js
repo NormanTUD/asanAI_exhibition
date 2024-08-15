@@ -32,14 +32,11 @@ var _bias_initializer = "leCunNormal";
 
 var model_struct = [
 	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
-	{maxPooling2d: {poolSize: [3, 3] }},
-	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-	{maxPooling2d: {poolSize: [3, 3] }},
-	//{conv2d: {filters: 1, activation: "linear", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	//{maxPooling2d: {poolSize: [3, 3] }},
+	{conv2d: {filters: 3, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	//{maxPooling2d: {poolSize: [3, 3] }},
 	{flatten: {}},
-	//{layerNormalization: {}},
 	{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-	//{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
@@ -95,7 +92,7 @@ $(document).ready(async function() {
 	//asanai.hide_internals();
 
 	// draw_fcnn shows the FCNN style visualization the a div with the provided ID.
-	asanai.set_fcnn_height(300);
+	asanai.set_fcnn_height(400);
 	asanai.set_fcnn_width(700);
 	asanai.draw_fcnn("fcnn_div", 32, true);
 
