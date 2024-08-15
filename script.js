@@ -442,7 +442,7 @@ function matrix_texts(){
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
 	assert(total_nr_images > 0, `total_nr_images is smaller than 1: ${total_nr_images}`);
 
-	var percentage = Math.round(Math.round(correctly_predicted/total_nr_images) * 100);
+	var percentage = Math.round(correctly_predicted/total_nr_images * 100);
 
 	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}`);
 
@@ -458,7 +458,9 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			_matrix_string += `<rot>${cmd[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt<br>`;
+			if(cmd[_first_key][_second_key]) {
+				_matrix_string += `<rot>${cmd[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt<br>`;
+			}
 		}
 
 		$(`matrix_text_${_lower_first_key}`).html(_matrix_string)
