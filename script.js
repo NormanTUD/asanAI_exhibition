@@ -345,19 +345,6 @@ function matrix_texts(){
 	var c_m_d = asanai.confusion_matrix_data;
 
 	var _keys = asanai.get_labels();
-
-	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
-		var _first_key = _keys[first_key_idx];
-		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
-			var _second_key = _keys[second_key_idx];
-
-			if (c_m_d[_first_key][_second_key] === undefined){
-				c_m_d[_second_key][_second_key] = 0;
-			}
-		}
-		
-	}
-
 	var correctly_predicted = 0;
 	var nr_correct_imgs_per_cat = {};
 
@@ -396,6 +383,7 @@ function matrix_texts(){
 		num_categories_went_through++;
 	}
 
+	log("c_m_d:", c_m_d);
 	log("nr_correct_imgs_per_cat:", nr_correct_imgs_per_cat);
 
 	assert(num_categories_went_through == __categories.length, "Went through a different number of categories (${num_categories_went_through}) than __categories.length ({__categories.length})")
