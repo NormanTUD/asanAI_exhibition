@@ -133,7 +133,7 @@ $(document).ready(async function() {
 });
 
 async function load_exhib_data_and_train () {
-	asanai.set_validation_split(0.1);
+	asanai.set_validation_split(0);
 
 	//asanai.create_model_from_model_data(model_struct, optimizer_config);
 
@@ -371,7 +371,7 @@ function matrix_texts(){
 
 	var total_nr_images = 0
 
-	var kk = 0;
+	var num_categories_went_through = 0;
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
@@ -393,11 +393,10 @@ function matrix_texts(){
 
 		assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(A) total_nr_images is not a number but ${typeof(total_nr_images)}, ${total_nr_images}`);
 
-		kk++;
+		num_categories_went_through++;
 	}
 
-	log("kk:", kk);
-
+	assert(num_categories_went_through == __categories.length, "Went through a different number of categories (${num_categories_went_through}) than __categories.length ({__categories.length})")
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
 	assert(total_nr_images > 0, `total_nr_images is smaller than 1: ${total_nr_images}`);
 
