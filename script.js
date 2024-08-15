@@ -389,7 +389,7 @@ var training_end = async function(){
 function matrix_texts(){
 	var cmd = asanai.confusion_matrix_data;
 
-	var _keys = ["Banane", "Orange", "Apfel"]
+	var _keys = asanai.get_labels();
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
@@ -458,7 +458,7 @@ function matrix_texts(){
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			if(cmd[_first_key][_second_key]) {
+			if(cmd[_first_key][_second_key] !== undefined) {
 				_matrix_string += `<rot>${cmd[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt<br>`;
 			}
 		}
