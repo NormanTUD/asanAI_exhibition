@@ -353,8 +353,6 @@ function matrix_texts(){
 		correctly_predicted += c_m_d[_first_key][_first_key];
 	}
 
-	assert(typeof(correctly_predicted) == "number", `correctly_predicted is not a number but ${typeof(correctly_predicted)}`);
-
 
 	var total_nr_images = 0
 
@@ -389,8 +387,11 @@ function matrix_texts(){
 	assert(num_categories_went_through == __categories.length, "Went through a different number of categories (${num_categories_went_through}) than __categories.length ({__categories.length})")
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
 	assert(total_nr_images > 0, `total_nr_images is smaller than 1: ${total_nr_images}`);
+	assert(typeof(correctly_predicted) == "number", `correctly_predicted is not a number but ${typeof(correctly_predicted)}`);
 
 	var percentage = Math.round(correctly_predicted/total_nr_images * 100);
+
+	assert(typeof(percentage) == "number" && !Number.isNaN(percentage), `percentage is not a number but ${typeof(percentage)}, ${percentage}`);
 
 	assert(typeof(percentage) == "number", `percentage is not a number but ${typeof(percentage)}`);
 
