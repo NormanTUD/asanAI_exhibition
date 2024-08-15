@@ -414,7 +414,7 @@ function matrix_texts(){
 		correctly_predicted += asanai.confusion_matrix_data[_first_key][_first_key];
 	}
 
-	var prozent = Math.round(richtig/1.2);
+	var prozent = Math.round(correctly_predicted/1.2);
 
 	document.getElementById("matrix_text").innerHTML = "Es wurden insgesamt <grün>"
 		+ correctly_predicted
