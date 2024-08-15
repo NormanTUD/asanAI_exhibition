@@ -454,14 +454,17 @@ function matrix_texts(){
 		var this_cat_nr_imgs = nr_correct_imgs_per_cat[_first_key];
 
 		var _lower_first_key = _first_key.toLowerCase();
-		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${cmd[_first_key][_first_key]}</grün> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt. <br>`;
+		var _matrix_string = `Das Training für '${_first_key}' hat ergeben: <br><grün>${cmd[_first_key][_first_key]}</grün> von ${this_cat_nr_imgs} Bildern aus der Kategorie '${_first_key}' wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
 			if(cmd[_first_key][_second_key] !== undefined) {
-				_matrix_string += `<rot>${cmd[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt<br>`;
+				var new_line = `<rot>${cmd[_first_key][_second_key]}</rot> Bilder der Kategorie '${_first_key}' wurden als Kategorie '${_second_key}' erkannt.<br>\n`;
+				_matrix_string += new_line;
 			}
 		}
+
+		log(_matrix_string);
 
 		$(`matrix_text_${_lower_first_key}`).html(_matrix_string)
 
