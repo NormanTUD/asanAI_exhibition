@@ -93,7 +93,7 @@ $(document).ready(async function() {
 
 	// draw_fcnn shows the FCNN style visualization the a div with the provided ID.
 	asanai.set_fcnn_height(400);
-	asanai.set_fcnn_width(700);
+	asanai.set_fcnn_width(800);
 	asanai.draw_fcnn("fcnn_div", 32, true);
 
 	// Shows the output of model.summary in a div.
