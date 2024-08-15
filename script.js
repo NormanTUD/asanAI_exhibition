@@ -14,6 +14,7 @@ var log = console.log;
 var max_epochs = 50;
 var max_nr_images = 5;
 var batch_size = 200;
+var __categories = ["Apfel", "Banane", "Orange"];
 
 var optimizer_config = { optimizer: "adam", loss: "categoricalCrossentropy", "learningRate": 0.001 }
 
@@ -76,7 +77,7 @@ $(document).ready(async function() {
 	asanai.set_divide_by(255);
 
 	// With this, you can set the labels that are used all throughout the GUI whenever it shows which categories are there or predicts something
-	asanai.set_labels(["Apfel", "Banane", "Orange"]);
+	asanai.set_labels(__categories);
 
 	// The first parameter to show_internals is the id-name of a div, in which the internals are printed.
 	// Internals are that which you see as input/output of each layer/neuron, which are visualized to make it easier to understand what the network does.
@@ -135,7 +136,6 @@ async function load_exhib_data_and_train () {
 
 	var exhib_data = [];
 
-	var __categories = ["Apfel", "Banane", "Orange"];
 	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
 	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
 
@@ -161,9 +161,7 @@ async function load_exhib_data_and_train () {
 		asanai.visualize_train();
 		//Ladebalken über max_epochs Epochen
 		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: max_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
-		if(history) {
-			log("history:", history);
-		} else {
+		if(!history) {
 			console.error("Training failed");
 		}
 
