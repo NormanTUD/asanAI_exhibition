@@ -81,7 +81,7 @@ async function load_and_train_bridge_building_or_airplane() {
 
 	var exhib_data = [];
 
-	var local_categories = ["bridge", "building", "airplane"];
+	var local_categories = ["scheine", "muenzen", "schluessel"];
 
 	asanai.set_labels(local_categories);
 
@@ -92,7 +92,7 @@ async function load_and_train_bridge_building_or_airplane() {
 		var _cat = local_categories[k];
 
 		for (var l = 1; l <= __max_nr; l++) {
-			var this_path = `traindata/bridge_building_or_airplane/${_cat}/${l}.jpg`
+			var this_path = `traindata/scheine_muenzen_schluessel/${_cat}/${l}.jpg`
 
 			exhib_data.push([this_path, _cat])
 		}
