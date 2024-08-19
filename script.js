@@ -77,6 +77,7 @@ $(document).ready(async function() {
 });
 
 async function load_exhib_data_and_train () {
+	start_training_show_divs()
 
 	var exhib_data = [];
 
