@@ -77,6 +77,19 @@ $(document).ready(async function() {
 });
 
 async function load_and_train_bridge_building_or_airplane() {
+	var model_struct = [
+		{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [120, 120, 3] }},
+		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{maxPooling2d: {poolSize: [3, 3] }},
+		{flatten: {}},
+		{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
+	];
+
+	asanai.set_model(asanai.create_model_from_model_data(model_struct));
+
 	start_training_show_divs()
 
 	var exhib_data = [];
