@@ -152,7 +152,7 @@ body{
     transform: translate(-50%, -50%);
     left: 23%;
     margin: 0;
-    bottom: 13%;
+    bottom: 0%;
 }
 
 .rectangle  {
@@ -467,4 +467,8 @@ video {
     top: 45vh;
     width: 30vw;
     line-height: 110%;
+}
+
+.halfvideo {
+	max-width: 75% !important;
 }

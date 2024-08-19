@@ -54,7 +54,7 @@
                     bis im Output-Layer das richtige Ergebnis ausgegeben wird. </p>
             </div>
         <div hidden="hidden" id="bild4">
-            <video class="largeimg" autoplay loop muted>
+            <video class="halfvideo" autoplay loop muted>
                 <source type="video/webm" src="media/images/fcnn_animation_new_3.mp4">
             </video>
         </div>
