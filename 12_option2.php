@@ -13,7 +13,7 @@
 				<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 				<div id="canvas_grid_visualization"></div>
 				<div id="text_training">
-					<p class="smaller">Für jedes Obst werden kategorisierte Test-Bilder geladen.</p>
+					<p class="smaller">Für jede Kategorie werden kategorisierte Test-Bilder geladen.</p>
 					<p class="smaller">Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.</p>
 					<p class="smaller">Kommt es zu einem falschen Ergebnis, wird es korrigiert.</p>
 					<p class="smaller">Mithilfe dieses Feedbacks wird der Weg angepasst bis das Netz zu einem richtigen Output gelangt.</p>
