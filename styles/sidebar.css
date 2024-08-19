@@ -37,7 +37,6 @@ p { font-family: "Open Sans", sans-serif;
     width: 35%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    line-height: 90%;
 }
 
 .icon{
