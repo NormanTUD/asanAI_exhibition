@@ -11,7 +11,7 @@
 		} else {
 ?>
 
-			<link rel="stylesheet" href="sidebar.css">
+			<link rel="stylesheet" href="styles/sidebar.css">
 <?php
 		}
 ?>
