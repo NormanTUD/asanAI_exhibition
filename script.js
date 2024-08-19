@@ -88,7 +88,7 @@ async function load_exhib_data_and_train () {
 		var _cat = __categories[k];
 
 		for (var l = 1; l <= __max_nr; l++) {
-			var this_path = `traindata/signs/${_cat}/${_cat}_${l}.jpg`
+			var this_path = `traindata/fruits/${_cat}/${_cat}_${l}.jpg`
 
 			exhib_data.push([this_path, _cat])
 		}
