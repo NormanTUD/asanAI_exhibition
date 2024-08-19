@@ -149,12 +149,10 @@ function show_auswertung () {
 	];
 
 	for (var i = 0; i < _elems_ids.length; i++) {
-		log(`Toggling ${_elems_ids[i]}.toggle()`);
 		$("#" + _elems_ids[i]).toggle();
 	}
 
 	for (var i = 0; i < _elems_classes.length; i++) {
-		log(`Toggling #${_elems_classes[i]}.toggle()`);
 		$("." + _elems_classes[i]).toggle();
 	}
 }
