@@ -2,11 +2,11 @@
 <html lang="en">
 	<head>
 		<title>asanAI exhibition</title>
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="styles/stylesheet.css">
 <?php
 		if(isset($GLOBALS["use_navigation"])) {
 ?>
-			<link rel="stylesheet" href="navigation.css">
+			<link rel="stylesheet" href="styles/navigation.css">
 <?php
 		} else {
 ?>
