@@ -145,8 +145,8 @@ body{
 
 #tryit{
     font-size: 3vh;
-    width: 20vw;
-    height: 8vh;
+    width: 25vw;
+    height: fit-content;
     position: absolute;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
