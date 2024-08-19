@@ -109,12 +109,12 @@ body{
 	margin-top: 0;
 }
 
-.matrix_text rot{
+red{
 	font-size: 2.5vh;
 	background-color: red;
 }
 
-.matrix_text green {
+green {
 	font-size: 2.5vh;
 	background-color: green;
 }

@@ -265,7 +265,7 @@ function un_highlight(tab) {
 //Ladebalken
 var update_progress_bar = async function () {
 	document.getElementById("progress").value += 1;
-	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</green>/" + nr_epochs + "<br><rot>"
+	document.getElementById("progress-text").innerHTML = document.getElementById("progress").value + "</green>/" + nr_epochs + "<br>"
 }
 
 //Ladebalken verschwindet / Button erscheint
@@ -350,7 +350,7 @@ function matrix_texts(){
 				_nr = 0;
 			}
 
-			var new_line = `<rot>${_nr}</rot> Bilder der Kategorie <b>${_first_key}</b> wurden als Kategorie <b>${_second_key}</b> erkannt.<br>\n`;
+			var new_line = `<red>${_nr}</red> Bilder der Kategorie <b>${_first_key}</b> wurden als Kategorie <b>${_second_key}</b> erkannt.<br>\n`;
 			_matrix_string += new_line;
 		}
 
