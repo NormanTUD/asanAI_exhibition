@@ -333,3 +333,8 @@ video {
 #auswertung {
 	display: none;
 }
+
+#auswertung_element {
+	margin: 200px;
+	font-size: x-large;
+}
