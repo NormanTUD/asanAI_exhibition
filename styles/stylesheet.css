@@ -309,14 +309,13 @@ video {
 	margin-bottom: 0.5vh;
 }
 
-#erklärung{
+#erklärung {
 	font-size: 2.5vh;
 	text-align: left;
 	position: relative;
-	left: 20.5vw;
-	top: 29vh;
 	width: 30vw;
 	line-height: 110%;
+	left: 50%;
 }
 
 .halfvideo {
