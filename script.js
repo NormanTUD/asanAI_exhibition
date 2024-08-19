@@ -110,40 +110,52 @@ async function load_exhib_data_and_train () {
 	}
 }
 
-function toggle_button2() {
-	let element = document.getElementById("hiddenButton");
-	toggle(element);
-}
-
 function try_yourself () {
 	asanai.show_and_predict_webcam_in_div("webcam_prediction");
 
 	asanai.start_camera();
-	toggle(document.getElementById("matrix_text"));
-	toggle(document.getElementById("matrix_text_apfel"));
-	toggle(document.getElementById("matrix_text_orange"));
-	toggle(document.getElementById("matrix_text_banane"));
-	toggle(document.getElementById("yourself"));
-	toggle(document.getElementById("status_3"));
+
+	$("#matrix_text").hide();
+	$("#matrix_text_apfel").hide();
+	$("#matrix_text_orange").hide();
+	$("#matrix_text_banane").hide();
+	$("#yourself").hide();
+	$("#status_3").show();
 }
 
-//Anzeigen/Verstecken von Dingen auf Seite 11_Test_Images
-function toggle_button(status) {
-	if (status === 1) {
-		toggle(document.getElementById("box-wide"));
-		toggle(document.getElementById("visualization"));
-	} else if (status === 2) {
-		toggle(document.getElementById("text_training"));
-		toggle(document.getElementById("evaluation"));
-		toggle(document.getElementById("visualization"));
-		toggle(document.getElementById("matrix_text"));
-		toggle(document.getElementById("matrix_text_apfel"));
-		toggle(document.getElementById("matrix_text_orange"));
-		toggle(document.getElementById("matrix_text_banane"));
-		toggle(document.getElementById("test_images"));
-		toggle(document.getElementById("yourself"));
-	} else {
-		throw new Error(`Unknown status: ${status}`);
+function start_training_show_divs() {
+	$("#box-wide").toggle();
+	$("#visualization").toggle();
+}
+
+function show_auswertung () {
+	var _elems_ids = [
+		"auswertung",
+		"text_training",
+		"evaluation",
+		"visualization",
+		"matrix_text",
+		"matrix_text_apfel",
+		"matrix_text_orange",
+		"matrix_text_banane",
+		"test_images",
+		"yourself"
+	];
+
+
+
+	var _elems_classes = [
+		"auswertung_element",
+	];
+
+	for (var i = 0; i < _elems_ids.length; i++) {
+		log(`Toggling ${_elems_ids[i]}.toggle()`);
+		$("#" + _elems_ids[i]).toggle();
+	}
+
+	for (var i = 0; i < _elems_classes.length; i++) {
+		log(`Toggling #${_elems_classes[i]}.toggle()`);
+		$("." + _elems_classes[i]).toggle();
 	}
 }
 
@@ -178,63 +190,63 @@ let toggle_on = (element) => {
 
 //Startseiten erklärungen toggle
 function neural_network_explanation(){
-	toggle_on(document.getElementById("text1"));
-	toggle_off(document.getElementById("text2"));
-	toggle_off(document.getElementById("text3"));
-	toggle_off(document.getElementById("text4"));
-	toggle_on(document.getElementById("bild1"));
-	toggle_off(document.getElementById("bild2"));
-	toggle_off(document.getElementById("bild3"));
-	toggle_off(document.getElementById("bild4"));
-	highlight(document.getElementById("icon1"));
-	un_highlight(document.getElementById("icon2"));
-	un_highlight(document.getElementById("icon3"));
-	un_highlight(document.getElementById("icon4"));
+	toggle_on($("#text1"));
+	toggle_off($("#text2"));
+	toggle_off($("#text3"));
+	toggle_off($("#text4"));
+	toggle_on($("#bild1"));
+	toggle_off($("#bild2"));
+	toggle_off($("#bild3"));
+	toggle_off($("#bild4"));
+	highlight($("#icon1"));
+	un_highlight($("#icon2"));
+	un_highlight($("#icon3"));
+	un_highlight($("#icon4"));
 }
 
 function layer_explanation(){
-	toggle_off(document.getElementById("text1"));
-	toggle_on(document.getElementById("text2"));
-	toggle_off(document.getElementById("text3"));
-	toggle_off(document.getElementById("text4"));
-	toggle_off(document.getElementById("bild1"));
-	toggle_on(document.getElementById("bild2"));
-	toggle_off(document.getElementById("bild3"));
-	toggle_off(document.getElementById("bild4"));
-	highlight(document.getElementById("icon2"));
-	un_highlight(document.getElementById("icon1"));
-	un_highlight(document.getElementById("icon3"));
-	un_highlight(document.getElementById("icon4"));
+	toggle_off($("#text1"));
+	toggle_on($("#text2"));
+	toggle_off($("#text3"));
+	toggle_off($("#text4"));
+	toggle_off($("#bild1"));
+	toggle_on($("#bild2"));
+	toggle_off($("#bild3"));
+	toggle_off($("#bild4"));
+	highlight($("#icon2"));
+	un_highlight($("#icon1"));
+	un_highlight($("#icon3"));
+	un_highlight($("#icon4"));
 }
 
 function forward_propagation_explanation(){
-	toggle_off(document.getElementById("text1"));
-	toggle_off(document.getElementById("text2"));
-	toggle_on(document.getElementById("text3"));
-	toggle_off(document.getElementById("text4"));
-	toggle_off(document.getElementById("bild1"));
-	toggle_off(document.getElementById("bild2"));
-	toggle_on(document.getElementById("bild3"));
-	toggle_off(document.getElementById("bild4"));
-	highlight(document.getElementById("icon3"));
-	un_highlight(document.getElementById("icon1"));
-	un_highlight(document.getElementById("icon2"));
-	un_highlight(document.getElementById("icon4"));
+	toggle_off($("#text1"));
+	toggle_off($("#text2"));
+	toggle_on($("#text3"));
+	toggle_off($("#text4"));
+	toggle_off($("#bild1"));
+	toggle_off($("#bild2"));
+	toggle_on($("#bild3"));
+	toggle_off($("#bild4"));
+	highlight($("#icon3"));
+	un_highlight($("#icon1"));
+	un_highlight($("#icon2"));
+	un_highlight($("#icon4"));
 }
 
 function training_explanation(){
-	toggle_off(document.getElementById("text1"));
-	toggle_off(document.getElementById("text2"));
-	toggle_off(document.getElementById("text3"));
-	toggle_on(document.getElementById("text4"));
-	toggle_off(document.getElementById("bild1"));
-	toggle_off(document.getElementById("bild2"));
-	toggle_off(document.getElementById("bild3"));
-	toggle_on(document.getElementById("bild4"));
-	highlight(document.getElementById("icon4"));
-	un_highlight(document.getElementById("icon1"));
-	un_highlight(document.getElementById("icon2"));
-	un_highlight(document.getElementById("icon3"));
+	toggle_off($("#text1"));
+	toggle_off($("#text2"));
+	toggle_off($("#text3"));
+	toggle_on($("#text4"));
+	toggle_off($("#bild1"));
+	toggle_off($("#bild2"));
+	toggle_off($("#bild3"));
+	toggle_on($("#bild4"));
+	highlight($("#icon4"));
+	un_highlight($("#icon1"));
+	un_highlight($("#icon2"));
+	un_highlight($("#icon3"));
 }
 
 //Startseite "Tab" highlight

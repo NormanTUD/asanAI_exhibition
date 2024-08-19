@@ -329,3 +329,7 @@ video {
 
 	font-size: unset !important;
 }
+
+#auswertung {
+	display: none;
+}

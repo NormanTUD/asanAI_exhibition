@@ -4,7 +4,7 @@
 ?>
 	<div class="groeße">
 		<div class="general">
-			<button class="box" id="box-wide" onclick="load_exhib_data_and_train();toggle_button(1)">Test-Bilder laden und Training beginnen</button>
+			<button class="box" id="box-wide" onclick="load_exhib_data_and_train();start_training_show_divs()">Test-Bilder laden und Training beginnen</button>
 			<div id="test_images"></div>
 			<div hidden="hidden" id="plotly">
 				<div id="plotly_history"></div>
@@ -24,18 +24,18 @@
 				<progress id="progress" value="0" max="100"></progress>
 			</div>
 
-			<button hidden="hidden" class="box" id="evaluation" onclick="toggle_button(2); matrix_texts()">Auswertung anzeigen</button>
+			<button hidden="hidden" class="box" id="evaluation" onclick="show_auswertung(); matrix_texts()">Auswertung anzeigen</button>
 
 			<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
-			<table>
+			<table id="auswertung_element">
 				<tr>
-					<td id="matrix_text_apfel"></td>
-					<td id="matrix_text_orange"></td>
-					<td id="matrix_text_banane"></td>
+					<td class="auswertung_element" id="matrix_text_apfel"></td>
+					<td class="auswertung_element" id="matrix_text_orange"></td>
+					<td class="auswertung_element" id="matrix_text_banane"></td>
 				</tr>
 				<tr>
-					<td id="matrix_text" colspan=3></td>
+					<td class="auswertung_element" id="matrix_text" colspan=3></td>
 				</tr>
 			</table>
 
