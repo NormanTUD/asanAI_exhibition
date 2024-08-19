@@ -341,7 +341,12 @@ function matrix_texts(){
 			nr_correct_category = 0;
 		}
 
-		var _matrix_string = `Das Training für <b>${_first_key}</b> hat ergeben: <br><green>${nr_correct_category}</green> von ${this_cat_nr_imgs} Bildern aus der Kategorie <b>${_first_key}</b> wurden richtig erkannt.<br>\n`;
+		var color_got = `<green>${nr_correct_category}</green>`;
+		if (nr_correct_category != this_cat_nr_imgs) {
+			color_got = `<red>${nr_correct_category}</red>`;
+		}
+
+		var _matrix_string = `Das Training für <b>${_first_key}</b> hat ergeben: <br>${color_got} von <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key}</b> wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
@@ -350,7 +355,12 @@ function matrix_texts(){
 				_nr = 0;
 			}
 
-			var new_line = `<red>${_nr}</red> Bilder der Kategorie <b>${_first_key}</b> wurden als Kategorie <b>${_second_key}</b> erkannt.<br>\n`;
+			var nr_string = _nr;
+			if(_nr != this_cat_nr_imgs) {
+				nr_string = `<red>${_nr}</red>`
+			}
+
+			var new_line = `${nr_string} Bilder der Kategorie <b>${_first_key}</b> wurden als Kategorie <b>${_second_key}</b> erkannt.<br>\n`;
 			_matrix_string += new_line;
 		}
 
