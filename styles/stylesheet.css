@@ -4,6 +4,7 @@
 	text-align: center;
 	border: none;
 	text-decoration: none;
+	user-select: none;
 }
 
 .general {
