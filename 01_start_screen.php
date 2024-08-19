@@ -9,10 +9,10 @@
         </a>
         <div class="navbar">
             <ul>
-                <li><a id="icon1" class="icon" onclick="button1()">Neuronales Netz</a></li>
-                <li><a id="icon2" class="icon" onclick="button2()">Layer</a></li>
-                <li><a id="icon3" class="icon" onclick="button3()">Forward Propagation</a></li>
-                <li><a id="icon4" class="icon" onclick="button4()">Training</a></li>
+                <li><a id="icon1" class="icon" onclick="neural_network_explanation()">Neuronales Netz</a></li>
+                <li><a id="icon2" class="icon" onclick="layer_explanation()">Layer</a></li>
+                <li><a id="icon3" class="icon" onclick="forward_propagation_explanation()">Forward Propagation</a></li>
+                <li><a id="icon4" class="icon" onclick="training_explanation()">Training</a></li>
             </ul>
         </div>
             <div class="text" id="text1">

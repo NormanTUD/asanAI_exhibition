@@ -181,7 +181,7 @@ let toggle_on = (element) => {
 }
 
 //Startseiten erklärungen toggle
-function button1(){
+function neural_network_explanation(){
 	toggle_on(document.getElementById("text1"));
 	toggle_off(document.getElementById("text2"));
 	toggle_off(document.getElementById("text3"));
@@ -196,7 +196,7 @@ function button1(){
 	un_highlight(document.getElementById("icon4"));
 }
 
-function button2(){
+function layer_explanation(){
 	toggle_off(document.getElementById("text1"));
 	toggle_on(document.getElementById("text2"));
 	toggle_off(document.getElementById("text3"));
@@ -211,7 +211,7 @@ function button2(){
 	un_highlight(document.getElementById("icon4"));
 }
 
-function button3(){
+function forward_propagation_explanation(){
 	toggle_off(document.getElementById("text1"));
 	toggle_off(document.getElementById("text2"));
 	toggle_on(document.getElementById("text3"));
@@ -226,7 +226,7 @@ function button3(){
 	un_highlight(document.getElementById("icon4"));
 }
 
-function button4(){
+function training_explanation(){
 	toggle_off(document.getElementById("text1"));
 	toggle_off(document.getElementById("text2"));
 	toggle_off(document.getElementById("text3"));
