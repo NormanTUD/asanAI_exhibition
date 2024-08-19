@@ -49,7 +49,6 @@ $(document).ready(async function() {
 			asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
 			// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
 			// `var asanai`.
-			//math_tab_code_div: "math_tab_code"			// When commented in, this looks for a div with the id `math_tab_code`, and automatically writes the math mode contents to it.
 		});
 	} catch (e) {
 		if(!("" + e).includes("optimizer_div could not be found")) {
@@ -142,7 +141,6 @@ function toggle_button(status) {
 		toggle(document.getElementById("matrix_text_orange"));
 		toggle(document.getElementById("matrix_text_banane"));
 		toggle(document.getElementById("test_images"));
-		toggle(document.getElementById("math_tab_code"));
 		toggle(document.getElementById("yourself"));
 	} else {
 		throw new Error(`Unknown status: ${status}`);
