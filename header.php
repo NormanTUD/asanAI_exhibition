@@ -26,8 +26,10 @@
 			<script src="https://asanai.scads.ai/asanai.js.php"></script>
 <?php
 		}
+
 		$default_max_nr_images = 10;
 		$default_nr_epochs = 100;
+		$default_width_and_height = 40;
 
 		// max_nr_images Wert überprüfen und setzen
 		if (isset($_GET['max_nr_images']) && is_numeric($_GET['max_nr_images']) && intval($_GET['max_nr_images']) == $_GET['max_nr_images']) {
@@ -42,11 +44,19 @@
 		} else {
 			$nr_epochs = $default_nr_epochs;
 		}
+
+		// width_and_height Wert überprüfen und setzen
+		if (isset($_GET['width_and_height']) && is_numeric($_GET['width_and_height']) && intval($_GET['width_and_height']) == $_GET['width_and_height']) {
+			$width_and_height = intval($_GET['width_and_height']);
+		} else {
+			$width_and_height = $default_width_and_height;
+		}
 ?>
 
 		<script>
 			var max_nr_images = <?php echo $max_nr_images; ?>;
 			var nr_epochs = <?php echo $nr_epochs; ?>;
+			var width_and_height = <?php echo $width_and_height; ?>;
 		</script>
 
 		<script src="script.js"></script>
