@@ -285,188 +285,41 @@ video {
     top: 22vh;
 }
 
-#kernel_0{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 26vh;
-    left: 49%;
-    font-size: 0;
-}
-
-#neuron_0{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    font-size: 0;
-    top: 24.5vh;
-    left: 43%;
-}
-
-#neuron_0>div>canvas{
-    height: 8vh;
-    width: 8vh;
-    margin: 2vh !important;
-}
-
-#kernel_0>div>canvas{
-    height: 2vh;
-    width: 2vh;
-    margin: 0.5vh !important;
-}
-
-#layer_0_kernel_3{
-    margin-top: 3vh !important;
-}
-
-#layer_0_kernel_6{
-    margin-top: 3vh !important;
-}
-
-#layer_0_kernel_9{
-    margin-top: 3vh !important;
-}
-
-#kernel_1{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 26vh;
-    left: 58.5%;
-    font-size: 0;
-}
-
-#neuron_1{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    font-size: 0;
-    top: 24.5vh;
-    left: 52.5%;
-}
-
-#neuron_1>div>canvas{
-    height: 8vh;
-    width: 8vh;
-    margin: 2vh !important;
-}
-
-#kernel_1>div>canvas{
-    height: 2vh;
-    width: 2vh;
-    margin: 0.5vh !important;
-}
-
-#layer_1_kernel_3{
-    margin-top: 3vh !important;
-}
-
-#layer_1_kernel_6{
-    margin-top: 3vh !important;
-}
-
-#layer_1_kernel_9{
-    margin-top: 3vh !important;
-}
-
-#kernel_2{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 26vh;
-    left: 68%;
-    font-size: 0;
-}
-
-#neuron_2{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    font-size: 0;
-    top: 24.5vh;
-    left: 62%;
-}
-
-#neuron_2>div>canvas{
-    height: 8vh;
-    width: 8vh;
-    margin: 2vh !important;
-}
-
-#kernel_2>div>canvas{
-    height: 2vh;
-    width: 2vh;
-    margin: 0.5vh !important;
-}
-
-#layer_3_kernel_3{
-    margin-top: 3vh !important;
-}
-
-
-#layer_3{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 32.5vh;
-    left: 69%;
-    font-size: 0;
-}
-
-#layer_5_neuron_0>canvas{
-    height: 8vh;
-    width: 20vh;
-}
-
-#layer_4{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 23.5vh;
-    left: 83.5%;
-    font-size: 0;
-}
-
-#layer_4>div>canvas{
-    height: 8vh;
-    width: 2vh;
-}
-
 #text_training {
-    position: absolute;
-    top: 40vh;
-    left: 50vw;
-    width: 85%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    line-height: 110%;
-    font-family: "Open Sans", sans-serif;
-    font-size: 2.5vh !important;
-    margin: 1vh;
+	position: absolute;
+	top: 40vh;
+	left: 50vw;
+	width: 85%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	line-height: 110%;
+	font-family: "Open Sans", sans-serif;
+	font-size: 2.5vh !important;
+	margin: 1vh;
 }
 
 #progress-text{
-    width: 60vh;
-    height: 5vh;
-    color: #003366;
-    font-weight: bold;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    left: 50vw;
-    top: 57vh;
-    margin-top: 2vh;
-    margin-bottom: 0.5vh;
+	width: 60vh;
+	height: 5vh;
+	color: #003366;
+	font-weight: bold;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	left: 50vw;
+	top: 57vh;
+	margin-top: 2vh;
+	margin-bottom: 0.5vh;
 }
 
 #erklärung{
-    font-size: 2.5vh;
-    text-align: left;
-    position: absolute;
-    left: 63.5vw;
-    top: 45vh;
-    width: 30vw;
-    line-height: 110%;
+	font-size: 2.5vh;
+	text-align: left;
+	position: relative;
+	left: 20.5vw;
+	top: 29vh;
+	width: 30vw;
+	line-height: 110%;
 }
 
 .halfvideo {
