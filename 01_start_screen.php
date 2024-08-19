@@ -4,7 +4,7 @@
 ?>
 <div class="groeße">
     <div class="general">
-        <a href="10_SelectDatasetScreen.php">
+        <a href="10_select_data_screen.php">
             <button id="tryit" class="box">Probier es selbst!</button>
         </a>
         <div class="navbar">
