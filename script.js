@@ -76,7 +76,46 @@ $(document).ready(async function() {
 	$("#progress").attr("max", nr_epochs);
 });
 
-async function load_exhib_data_and_train () {
+async function load_and_train_bridge_building_or_airplane() {
+	start_training_show_divs()
+
+	var exhib_data = [];
+
+	var local_categories = ["bridge", "building", "airplane"];
+
+	asanai.set_labels(local_categories);
+
+	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = 40; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
+
+	for (var k = 0; k < local_categories.length; k++) {
+		var _cat = local_categories[k];
+
+		for (var l = 1; l <= __max_nr; l++) {
+			var this_path = `traindata/bridge_building_or_airplane/${_cat}/${l}.jpg`
+
+			exhib_data.push([this_path, _cat])
+		}
+	}
+
+	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
+
+	if(loaded_data) {
+		asanai.visualize_train();
+		//Ladebalken über nr_epochs Epochen
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: nr_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		if(!history) {
+			console.error("Training failed");
+		}
+
+		await asanai.dispose(loaded_data.x);
+		await asanai.dispose(loaded_data.y);
+	} else {
+		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
+	}
+}
+
+async function load_and_train_fruits_example() {
 	start_training_show_divs()
 
 	var exhib_data = [];

@@ -4,7 +4,7 @@
 ?>
 	<div>
 		<div class="general">
-			<button class="box" id="box-wide" onclick="load_exhib_data_and_train();">Test-Bilder laden und Training beginnen</button>
+			<button class="box" id="box-wide" onclick="load_and_train_bridge_building_or_airplane();">Test-Bilder laden und Training beginnen</button>
 			<div id="test_images"></div>
 			<div hidden="hidden" id="plotly">
 				<div id="plotly_history"></div>
