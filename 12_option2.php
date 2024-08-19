@@ -44,7 +44,7 @@
 				<div id="fcnn_div"></div>
 				<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
 				<div id="webcam_prediction"></div>
-					<p id="erklärung">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet. </p>
+					<p id="erklärung">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
 					<p id="erklärung">In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</p>
 					<p id="erklärung">In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.</p>
 					<p id="erklärung">Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
