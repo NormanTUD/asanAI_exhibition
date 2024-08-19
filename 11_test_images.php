@@ -2,7 +2,7 @@
 	$GLOBALS["use_navigation"] = 1;
 	include("header.php");
 ?>
-	<div class="groeße">
+	<div>
 		<div class="general">
 			<button class="box" id="box-wide" onclick="load_exhib_data_and_train();start_training_show_divs()">Test-Bilder laden und Training beginnen</button>
 			<div id="test_images"></div>

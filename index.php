@@ -2,7 +2,7 @@
 	$GLOBALS["dont_load_asanai"] = 1;
 	include("header.php");
 ?>
-<div class="groeße">
+<div>
     <div class="general">
     </div>
     <div class="start">
