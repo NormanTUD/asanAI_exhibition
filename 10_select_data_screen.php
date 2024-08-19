@@ -3,7 +3,7 @@
 	include("header.php");
 ?>
 <div class="general">
-	<p>Wähle einen existierenden Datensatz <br> oder erstelle deinen Eigenen</p>
+	<p>Wähle einen existierenden Datensatz oder erstelle deinen Eigenen</p>
 	<div class="container">
 		<button id="box1" class="box" onclick="location.href='11_test_images.php'">Obst</button>
 		<button id="box2" class="box" onclick="location.href='12_option2.php'">option2</button>
