@@ -4,6 +4,7 @@
 // You can also build a GUI for this.
 
 var keyboard = null;
+var myKeyboard = null;
 var done_loading = false;
 
 function assert(cond, msg) {
@@ -483,41 +484,22 @@ function initialize_keyboard(elem) {
 		}
 	}
 
-	const myKeyboard = new keyboard({
+	myKeyboard = new keyboard({
 		onChange: input => onChange(input),
 		onKeyPress: button => onKeyPress(button),
 		mergeDisplay: true,
 		layoutName: "default",
 		layout: {
 			default: [
+				"1 2 3 4 5 6 7 8 9 0",
 				"q w e r t y u i o p",
 				"a s d f g h j k l",
-				"{shift} z x c v b n m {backspace}",
-				"{numbers} {space} {ent}"
-			],
-			shift: [
-				"Q W E R T Y U I O P",
-				"A S D F G H J K L",
-				"{shift} Z X C V B N M {backspace}",
-				"{numbers} {space} {ent}"
-			],
-			numbers: ["1 2 3", "4 5 6", "7 8 9", "{abc} 0 {backspace}"]
+				"z x c v b n m {backspace}",
+				"{space}"
+			]
 		},
 		display: {
-			"{numbers}": "123",
-			"{ent}": "return",
-			"{escape}": "esc ⎋",
-			"{tab}": "tab ⇥",
 			"{backspace}": "⌫",
-			"{capslock}": "caps lock ⇪",
-			"{shift}": "⇧",
-			"{controlleft}": "ctrl ⌃",
-			"{controlright}": "ctrl ⌃",
-			"{altleft}": "alt ⌥",
-			"{altright}": "alt ⌥",
-			"{metaleft}": "cmd ⌘",
-			"{metaright}": "cmd ⌘",
-			"{abc}": "ABC"
 		}
 	});
 }
@@ -527,6 +509,10 @@ function hide_keyboard (elem) {
 }
 
 function show_keyboard (elem) {
+	if(myKeyboard) {
+		myKeyboard.destroy();
+	}
+
 	initialize_keyboard(elem);
 
 	$(".simple-keyboard").show();
