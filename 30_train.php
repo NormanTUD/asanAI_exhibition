@@ -23,9 +23,24 @@
 			<tr>
 				<td><video id="webcam_preview_video"></video></td>
 				<td>
-					<button onclick="generateThumbnail('thumbnailContainer')">Take screenshot</button>
-					<div id="thumbnailContainer">
-					</div>
+					<table>
+						<tr>
+							<th colspan=2 style="background-color: #003366;">
+								<input placeholder="category_name" style="width: 100%; color: white; background-color: #003366" value="Category name" />
+							</th>
+						</tr>
+						<tr>
+							<td style="width: 50%;">
+								<button onclick="generateThumbnail('thumbnailContainer')">Take screenshot</button>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 50%;">
+								<div id="thumbnailContainer">
+								</div>
+							</td>
+						</tr>
+					</table>
 				</td>
 			</tr>
 		</table>
