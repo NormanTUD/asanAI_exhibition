@@ -311,7 +311,7 @@ video {
 }
 
 #erklärung {
-	font-size: 2.5vh;
+	font-size: min(2vh, 2vw);
 	text-align: left;
 	position: relative;
 	width: 30vw;
