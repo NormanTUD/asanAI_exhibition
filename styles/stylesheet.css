@@ -336,7 +336,7 @@ video {
 
 #auswertung_element {
 	margin: 200px;
-	font-size: x-large;
+	font-size: min(2vh, 2vw);
 }
 
 .tab {
