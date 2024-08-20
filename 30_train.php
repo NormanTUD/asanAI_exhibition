@@ -42,26 +42,6 @@
 							</td>
 						</tr>
 					</table>
-
-					<table>
-						<tr>
-							<th style="background-color: #003366;">
-								<input class="category_name" onclick="show_keyboard(this)" placeholder="Category Name" style="width: 80%; color: white; background-color: #003366" value="Category name" />
-								<span onclick="delete_category(this)">&#10060;</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<button onclick="generateThumbnail('thumbnailContainerTwo')">Take screenshot</button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div id="thumbnailContainerTwo">
-								</div>
-							</td>
-						</tr>
-					</table>
 				</td>
 			</tr>
 		</table>
