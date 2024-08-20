@@ -223,14 +223,18 @@ let toggle = (element) => {
 	}
 }
 
-let toggle_off = (element) => {
+let toggle_off = (name) => {
+	var element = $("#" + name)[0];
+
 	let hidden = element.getAttribute("hidden");
 	if (!hidden) {
 		element.setAttribute("hidden", "hidden");
 	}
 }
 
-let toggle_on = (element) => {
+let toggle_on = (name) => {
+	var element = $("#" + name)[0];
+
 	let hidden = element.getAttribute("hidden");
 	if (hidden) {
 		element.removeAttribute("hidden");
@@ -239,79 +243,85 @@ let toggle_on = (element) => {
 
 //Startseiten erklärungen toggle
 function neural_network_explanation(){
-	toggle_on($("#example_static_fcnn"));
+	toggle_on("example_static_fcnn");
 
-	toggle_off($("#startseite_text_2"));
-	toggle_off($("#startseite_text_3"));
-	toggle_off($("#startseite_text_4"));
-	toggle_off($("#example_static_fcnn_with_boxes"));
-	toggle_off($("#bild3"));
-	toggle_off($("#fcnn_animated_video"));
+	toggle_off("startseite_text_2");
+	toggle_off("startseite_text_3");
+	toggle_off("startseite_text_4");
+	toggle_off("example_static_fcnn_with_boxes");
+	toggle_off("bild3");
+	toggle_off("fcnn_animated_video");
 
-	highlight($("#icon1"));
+	highlight("icon1");
 
-	un_highlight($("#icon2"));
-	un_highlight($("#icon3"));
-	un_highlight($("#icon4"));
+	un_highlight("icon2");
+	un_highlight("icon3");
+	un_highlight("icon4");
 }
 
 function layer_explanation(){
-	toggle_on($("#startseite_text_2"));
-	toggle_on($("#example_static_fcnn_with_boxes"));
+	toggle_on("startseite_text_2");
+	toggle_on("example_static_fcnn_with_boxes");
 
-	toggle_off($("#startseite_text_3"));
-	toggle_off($("#startseite_text_4"));
-	toggle_off($("#example_static_fcnn"));
-	toggle_off($("#bild3"));
-	toggle_off($("#fcnn_animated_video"));
+	toggle_off("startseite_text_3");
+	toggle_off("startseite_text_4");
+	toggle_off("example_static_fcnn");
+	toggle_off("bild3");
+	toggle_off("fcnn_animated_video");
 
-	highlight($("#icon2"));
+	highlight("icon2");
 
-	un_highlight($("#icon1"));
-	un_highlight($("#icon3"));
-	un_highlight($("#icon4"));
+	un_highlight("icon1");
+	un_highlight("icon3");
+	un_highlight("icon4");
 }
 
 function forward_propagation_explanation(){
-	toggle_on($("#startseite_text_3"));
-	toggle_on($("#bild3"));
+	toggle_on("startseite_text_3");
+	toggle_on("bild3");
 
-	toggle_off($("#startseite_text_2"));
-	toggle_off($("#startseite_text_4"));
-	toggle_off($("#example_static_fcnn"));
-	toggle_off($("#example_static_fcnn_with_boxes"));
-	toggle_off($("#fcnn_animated_video"));
+	toggle_off("startseite_text_2");
+	toggle_off("startseite_text_4");
+	toggle_off("example_static_fcnn");
+	toggle_off("example_static_fcnn_with_boxes");
+	toggle_off("fcnn_animated_video");
 
-	highlight($("#icon3"));
+	highlight("icon3");
 
-	un_highlight($("#icon1"));
-	un_highlight($("#icon2"));
-	un_highlight($("#icon4"));
+	un_highlight("icon1");
+	un_highlight("icon2");
+	un_highlight("icon4");
 }
 
 function training_explanation(){
-	toggle_off($("#startseite_text_2"));
-	toggle_off($("#startseite_text_3"));
-	toggle_on($("#startseite_text_4"));
-	toggle_off($("#example_static_fcnn"));
-	toggle_off($("#example_static_fcnn_with_boxes"));
-	toggle_off($("#bild3"));
-	toggle_on($("#fcnn_animated_video"));
-	highlight($("#icon4"));
-	un_highlight($("#icon1"));
-	un_highlight($("#icon2"));
-	un_highlight($("#icon3"));
+	toggle_on("startseite_text_4");
+	toggle_on("fcnn_animated_video");
+
+	toggle_off("startseite_text_2");
+	toggle_off("startseite_text_3");
+	toggle_off("example_static_fcnn");
+	toggle_off("example_static_fcnn_with_boxes");
+	toggle_off("bild3");
+
+	highlight("icon4");
+	un_highlight("icon1");
+	un_highlight("icon2");
+	un_highlight("icon3");
 }
 
 //Startseite "Tab" highlight
-function highlight(tab) {
+function highlight(name) {
+	var tab = $("#" + name)[0];
+
 	if (tab.style.backgroundColor !== "#003366"){
 		tab.style.backgroundColor = "#003366";
 		tab.style.color = "white";
 	}
 }
 
-function un_highlight(tab) {
+function un_highlight(name) {
+	var tab = $("#" + name)[0];
+
 	if (tab.style.backgroundColor !== "white"){
 		tab.style.backgroundColor = "white";
 		tab.style.color = "black";
