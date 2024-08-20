@@ -142,7 +142,7 @@ function try_yourself () {
 
 	$("#matrix_text").hide();
 	$("#yourself").hide();
-	$("#status_3").show();
+	$("#explanation_after_training").show();
 
 	var _l = asanai.get_labels().map(v => v.toLowerCase());
 
