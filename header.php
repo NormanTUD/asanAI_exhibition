@@ -21,6 +21,10 @@
 ?>
 			<script src="http://localhost/TensorFlowJS-GUI/asanai.js.php"></script>
 <?php
+		} else if (gethostname() == "arbeitsrechner") {
+?>
+			<script src="http://localhost/tf/asanai.js.php"></script>
+<?php
 		} else {
 ?>
 			<script src="https://asanai.scads.ai/asanai.js.php"></script>
