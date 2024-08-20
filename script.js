@@ -3,6 +3,8 @@
 // then I don't need to define it in other places.
 // You can also build a GUI for this.
 
+var done_loading = false;
+
 function assert(cond, msg) {
 	if(!cond) {
 		console.error(msg);
@@ -37,6 +39,10 @@ var default_model_struct = [
 	{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
+
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 // When the site has fully loaded, initialize the objects
 $(document).ready(async function() {
@@ -74,6 +80,8 @@ $(document).ready(async function() {
 
 	$("#nr_epochs").html(nr_epochs);
 	$("#progress").attr("max", nr_epochs);
+
+	done_loading = true;
 });
 
 async function load_and_train_scheine_muenzen_schluessel() {
