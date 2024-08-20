@@ -89,6 +89,31 @@ $(document).ready(async function() {
 	done_loading = true;
 });
 
+
+function generateThumbnail() {
+	var $video = $("#webcam_preview_video");
+
+	if($video.length != 1) {
+		return;
+	}
+
+	var video = $video[0];
+
+	var $thecanvas = $(`<canvas width=220 height=150></canvas>`);
+	var thecanvas = $thecanvas[0];
+
+	var context = thecanvas.getContext('2d');
+	context.drawImage(video, 0, 0, 220, 150);
+	var dataURL = thecanvas.toDataURL();
+
+	//create img
+	var img = document.createElement('img');
+	img.setAttribute('src', dataURL);
+
+	//append img in container div
+	$('#thumbnailContainer').append(img);
+}
+
 async function load_and_train_scheine_muenzen_schluessel() {
 	var model_struct = [
 		{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},

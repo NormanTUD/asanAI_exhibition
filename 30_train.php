@@ -21,15 +21,15 @@
 
 		<table style="margin-left: 200px;">
 			<tr>
-				<td><div id="webcam_preview"><video id="webcam_preview_video"></video></div></td>
-				<td>ASDF</td>
+				<td><video id="webcam_preview_video"></video></td>
+				<td><div id="thumbnailContainer"></div></td>
 			</tr>
 		</table>
 
 		<script>
 			$(document).ready(async function() {
 				if(asanai) {
-					asanai.tf_data_webcam($("#webcam_preview").find("video")[0])
+					asanai.tf_data_webcam($("#webcam_preview_video")[0])
 				} else {
 					log("asanai is undefined");
 				}
