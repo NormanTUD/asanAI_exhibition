@@ -72,10 +72,14 @@ $(document).ready(async function() {
 
 	asanai.set_labels(__categories);
 
-	asanai.set_fcnn_height(400);
-	asanai.set_fcnn_width(800);
-	asanai.draw_fcnn("fcnn_div", 32, true);
-	asanai.enable_fcnn_internals();
+
+	if($("#fcnn_div").length) {
+		asanai.set_fcnn_height(400);
+		asanai.set_fcnn_width(800);
+		asanai.draw_fcnn("fcnn_div", 32, true);
+	}
+
+	//asanai.enable_fcnn_internals();
 
 	asanai.set_validation_split(0);
 

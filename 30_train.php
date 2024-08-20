@@ -28,10 +28,6 @@
 
 		<script>
 			$(document).ready(async function() {
-				while (!done_loading) {
-					await sleep(50);
-				}
-
 				if(asanai) {
 					asanai.tf_data_webcam($("#webcam_preview").find("video")[0])
 				} else {
