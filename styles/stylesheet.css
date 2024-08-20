@@ -41,7 +41,7 @@ body{
 	transform: translate(-50%, -50%);
 	position: absolute;
 	bottom: 0%;
-	font-size: 3vw;
+	font-size: min(3vw, 3vh);
 }
 
 .box:hover {
