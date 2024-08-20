@@ -6,7 +6,7 @@
 	<p style="margin: 200px;">Wähle einen existierenden Datensatz oder erstelle deinen Eigenen</p>
 	<div class="container">
 		<button id="box1" class="box" onclick="location.href='11_test_images.php'">Obst</button>
-		<button id="box2" class="box" onclick="location.href='12_option2.php'">option2</button>
+		<button id="box2" class="box" onclick="location.href='12_option2.php'">Alltags&shy;gegenstände</button>
 		<button id="box3" class="box" onclick="location.href='30_train.php'">Eigener Datensatz</button>
 	</div>
 </div>
