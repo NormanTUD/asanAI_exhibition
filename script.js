@@ -3,6 +3,7 @@
 // then I don't need to define it in other places.
 // You can also build a GUI for this.
 
+var keyboard = null;
 var done_loading = false;
 
 function assert(cond, msg) {
@@ -463,5 +464,23 @@ function matrix_texts(){
 		//log("_matrix_col_name:", _matrix_col_name, "_matrix_string:", _matrix_string);
 
 		$(_matrix_col_name).html(_matrix_string)
+	}
+}
+
+function initialize_keyboard() {
+	keyboard = window.SimpleKeyboard.default;
+
+	const myKeyboard = new keyboard({
+		onChange: input => onChange(input),
+		onKeyPress: button => onKeyPress(button)
+	});
+
+	function onChange(input) {
+		document.querySelector(".input").value = input;
+		console.log("Input changed", input);
+	}
+
+	function onKeyPress(button) {
+		console.log("Button pressed", button);
 	}
 }

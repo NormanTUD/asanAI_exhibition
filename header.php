@@ -3,6 +3,8 @@
 	<head>
 		<title>asanAI exhibition</title>
 		<link rel="stylesheet" href="styles/stylesheet.css">
+		<link rel="stylesheet" href="simple-keyboard.css">
+		<script src="simple-keyboard.js"></script>
 <?php
 		if(isset($GLOBALS["use_navigation"])) {
 ?>
@@ -66,3 +68,4 @@
 		<script src="script.js"></script>
 	</head>
 <body>
+<div style="display: none" class="simple-keyboard"></div>

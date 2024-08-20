@@ -348,3 +348,8 @@ video {
 .halftext {
 	width: 40%;
 }
+
+.simple-keyboard {
+	position: absolute;
+	bottom: 0px;
+}
