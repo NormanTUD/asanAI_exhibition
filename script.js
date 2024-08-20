@@ -243,70 +243,47 @@ let toggle_on = (name) => {
 
 //Startseiten erklärungen toggle
 function neural_network_explanation(){
-	toggle_on("example_static_fcnn");
+	$(".tab").hide();
+	$("#neural_network_explanation_tab").show();
 
-	toggle_off("startseite_text_2");
-	toggle_off("startseite_text_3");
-	toggle_off("startseite_text_4");
-	toggle_off("example_static_fcnn_with_boxes");
-	toggle_off("bild3");
-	toggle_off("fcnn_animated_video");
+	highlight("neural_network_explanation_link");
 
-	highlight("icon1");
-
-	un_highlight("icon2");
-	un_highlight("icon3");
-	un_highlight("icon4");
+	un_highlight("layer_explanation_link");
+	un_highlight("forward_propagation_link");
+	un_highlight("training_link");
 }
 
 function layer_explanation(){
-	toggle_on("startseite_text_2");
-	toggle_on("example_static_fcnn_with_boxes");
+	$(".tab").hide();
+	$("#layer_explanation_tab").show();
 
-	toggle_off("startseite_text_3");
-	toggle_off("startseite_text_4");
-	toggle_off("example_static_fcnn");
-	toggle_off("bild3");
-	toggle_off("fcnn_animated_video");
+	highlight("layer_explanation_link");
 
-	highlight("icon2");
-
-	un_highlight("icon1");
-	un_highlight("icon3");
-	un_highlight("icon4");
+	un_highlight("neural_network_explanation_link");
+	un_highlight("forward_propagation_link");
+	un_highlight("training_link");
 }
 
 function forward_propagation_explanation(){
-	toggle_on("startseite_text_3");
-	toggle_on("bild3");
+	$(".tab").hide();
+	$("#forward_propagation_explanation_tab").show();
 
-	toggle_off("startseite_text_2");
-	toggle_off("startseite_text_4");
-	toggle_off("example_static_fcnn");
-	toggle_off("example_static_fcnn_with_boxes");
-	toggle_off("fcnn_animated_video");
+	highlight("forward_propagation_link");
 
-	highlight("icon3");
-
-	un_highlight("icon1");
-	un_highlight("icon2");
-	un_highlight("icon4");
+	un_highlight("neural_network_explanation_link");
+	un_highlight("layer_explanation_link");
+	un_highlight("training_link");
 }
 
 function training_explanation(){
-	toggle_on("startseite_text_4");
-	toggle_on("fcnn_animated_video");
+	$(".tab").hide();
+	$("#training_explanation_tab").show();
 
-	toggle_off("startseite_text_2");
-	toggle_off("startseite_text_3");
-	toggle_off("example_static_fcnn");
-	toggle_off("example_static_fcnn_with_boxes");
-	toggle_off("bild3");
+	highlight("training_link");
 
-	highlight("icon4");
-	un_highlight("icon1");
-	un_highlight("icon2");
-	un_highlight("icon3");
+	un_highlight("neural_network_explanation_link");
+	un_highlight("layer_explanation_link");
+	un_highlight("forward_propagation_link");
 }
 
 //Startseite "Tab" highlight
