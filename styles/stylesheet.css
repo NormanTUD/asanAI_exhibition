@@ -338,3 +338,13 @@ video {
 	margin: 200px;
 	font-size: x-large;
 }
+
+.tab {
+	margin-top: 120px;
+	margin-left: 120px;
+	margin-right: 120px;
+}
+
+.halftext {
+	width: 40%;
+}
