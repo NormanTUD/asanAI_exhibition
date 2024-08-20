@@ -239,59 +239,64 @@ let toggle_on = (element) => {
 
 //Startseiten erklärungen toggle
 function neural_network_explanation(){
-	toggle_on($("#text1"));
-	toggle_off($("#text2"));
-	toggle_off($("#text3"));
-	toggle_off($("#text4"));
-	toggle_on($("#bild1"));
-	toggle_off($("#bild2"));
+	toggle_on($("#example_static_fcnn"));
+
+	toggle_off($("#startseite_text_2"));
+	toggle_off($("#startseite_text_3"));
+	toggle_off($("#startseite_text_4"));
+	toggle_off($("#example_static_fcnn_with_boxes"));
 	toggle_off($("#bild3"));
-	toggle_off($("#bild4"));
+	toggle_off($("#fcnn_animated_video"));
+
 	highlight($("#icon1"));
+
 	un_highlight($("#icon2"));
 	un_highlight($("#icon3"));
 	un_highlight($("#icon4"));
 }
 
 function layer_explanation(){
-	toggle_off($("#text1"));
-	toggle_on($("#text2"));
-	toggle_off($("#text3"));
-	toggle_off($("#text4"));
-	toggle_off($("#bild1"));
-	toggle_on($("#bild2"));
+	toggle_on($("#startseite_text_2"));
+	toggle_on($("#example_static_fcnn_with_boxes"));
+
+	toggle_off($("#startseite_text_3"));
+	toggle_off($("#startseite_text_4"));
+	toggle_off($("#example_static_fcnn"));
 	toggle_off($("#bild3"));
-	toggle_off($("#bild4"));
+	toggle_off($("#fcnn_animated_video"));
+
 	highlight($("#icon2"));
+
 	un_highlight($("#icon1"));
 	un_highlight($("#icon3"));
 	un_highlight($("#icon4"));
 }
 
 function forward_propagation_explanation(){
-	toggle_off($("#text1"));
-	toggle_off($("#text2"));
-	toggle_on($("#text3"));
-	toggle_off($("#text4"));
-	toggle_off($("#bild1"));
-	toggle_off($("#bild2"));
+	toggle_on($("#startseite_text_3"));
 	toggle_on($("#bild3"));
-	toggle_off($("#bild4"));
+
+	toggle_off($("#startseite_text_2"));
+	toggle_off($("#startseite_text_4"));
+	toggle_off($("#example_static_fcnn"));
+	toggle_off($("#example_static_fcnn_with_boxes"));
+	toggle_off($("#fcnn_animated_video"));
+
 	highlight($("#icon3"));
+
 	un_highlight($("#icon1"));
 	un_highlight($("#icon2"));
 	un_highlight($("#icon4"));
 }
 
 function training_explanation(){
-	toggle_off($("#text1"));
-	toggle_off($("#text2"));
-	toggle_off($("#text3"));
-	toggle_on($("#text4"));
-	toggle_off($("#bild1"));
-	toggle_off($("#bild2"));
+	toggle_off($("#startseite_text_2"));
+	toggle_off($("#startseite_text_3"));
+	toggle_on($("#startseite_text_4"));
+	toggle_off($("#example_static_fcnn"));
+	toggle_off($("#example_static_fcnn_with_boxes"));
 	toggle_off($("#bild3"));
-	toggle_on($("#bild4"));
+	toggle_on($("#fcnn_animated_video"));
 	highlight($("#icon4"));
 	un_highlight($("#icon1"));
 	un_highlight($("#icon2"));
