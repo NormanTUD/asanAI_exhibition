@@ -484,3 +484,11 @@ function initialize_keyboard() {
 		console.log("Button pressed", button);
 	}
 }
+
+function hide_keyboard () {
+	$(".simple-keyboard").hide();
+}
+
+function show_keyboard () {
+	$(".simple-keyboard").show();
+}

@@ -26,7 +26,7 @@
 					<table>
 						<tr>
 							<th style="background-color: #003366;">
-								<input onclick="show_keyboard()" onblur="hide_keyboard" placeholder="category_name" style="width: 100%; color: white; background-color: #003366" value="Category name" />
+								<input onclick="show_keyboard(this)" onblur="hide_keyboard(this)" placeholder="category_name" style="width: 100%; color: white; background-color: #003366" value="Category name" />
 							</th>
 						</tr>
 						<tr>

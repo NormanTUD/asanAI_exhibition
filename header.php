@@ -71,12 +71,4 @@
 	<div style="display: none" class="simple-keyboard"></div>
 	<script>
 		initialize_keyboard();
-
-		function hide_keyboard () {
-			$(".simple-keyboard").hide();
-		}
-
-		function show_keyboard () {
-			$(".simple-keyboard").show();
-		}
 	</script>
