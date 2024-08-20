@@ -21,21 +21,21 @@
 
 		<table style="margin-left: 200px;">
 			<tr>
-				<td><video id="webcam_preview_video"></video></td>
-				<td>
+				<td style="width: 50%;"><video id="webcam_preview_video"></video></td>
+				<td style="width: 50%;">
 					<table>
 						<tr>
-							<th colspan=2 style="background-color: #003366;">
+							<th style="background-color: #003366;">
 								<input placeholder="category_name" style="width: 100%; color: white; background-color: #003366" value="Category name" />
 							</th>
 						</tr>
 						<tr>
-							<td style="width: 50%;">
+							<td>
 								<button onclick="generateThumbnail('thumbnailContainer')">Take screenshot</button>
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 50%;">
+							<td>
 								<div id="thumbnailContainer">
 								</div>
 							</td>
