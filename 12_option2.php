@@ -29,17 +29,10 @@
 			<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
 			<table id="auswertung_element">
-				<tr>
-					<td class="auswertung_element" id="matrix_text_apfel"></td>
-					<td class="auswertung_element" id="matrix_text_orange"></td>
-					<td class="auswertung_element" id="matrix_text_banane"></td>
-				</tr>
-				<tr>
-					<td class="auswertung_element" id="matrix_text" colspan=3></td>
-				</tr>
 			</table>
 
 			<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
+
 			<div hidden="hidden" id="explanation_after_training">
 				<div id="fcnn_div"></div>
 				<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>

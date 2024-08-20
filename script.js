@@ -12,7 +12,7 @@ function assert(cond, msg) {
 var log = console.log;
 
 var batch_size = 200;
-var __categories = ["Apfel", "Banane", "Orange"];
+var __categories = ["apfel", "banane", "orange"];
 
 var default_optimizer_config = {
 	optimizer: "adam",
@@ -133,6 +133,28 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 	} else {
 		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
 	}
+
+	createAuswertungTable(local_categories);
+}
+
+function createAuswertungTable(elements) {
+	// Entferne alle Inhalte der Tabelle
+	$("#auswertung_element").empty();
+
+	// Erste Zeile erstellen
+	let firstRow = $("<tr></tr>");
+	elements.forEach(function(element) {
+		let td = $("<td></td>").addClass("auswertung_element").attr("id", "matrix_text_" + element);
+		firstRow.append(td);
+	});
+
+	// Zweite Zeile erstellen
+	let secondRow = $("<tr></tr>");
+	let colspanTd = $("<td></td>").addClass("auswertung_element").attr("id", "matrix_text").attr("colspan", elements.length);
+	secondRow.append(colspanTd);
+
+	// Füge beide Zeilen an den Anfang der Tabelle hinzu
+	$("#auswertung_element").append(firstRow).append(secondRow);
 }
 
 function try_yourself () {
