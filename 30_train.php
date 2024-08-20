@@ -19,7 +19,7 @@
 
 		<div id="optimizer_div" style="display:none"></div>
 
-		<table>
+		<table style="margin-left: 200px;">
 			<tr>
 				<td><div id="webcam_preview"><video id="webcam_preview_video"></video></div></td>
 				<td>ASDF</td>
