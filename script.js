@@ -76,7 +76,7 @@ $(document).ready(async function() {
 	$("#progress").attr("max", nr_epochs);
 });
 
-async function load_and_train_bridge_building_or_airplane() {
+async function load_and_train_scheine_muenzen_schluessel() {
 	var model_struct = [
 		{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
 		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
@@ -136,7 +136,7 @@ async function load_and_train_fruits_example() {
 	var exhib_data = [];
 
 	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
+	var __max_nr = 2; //max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
 
 	for (var k = 0; k < __categories.length; k++) {
 		var _cat = __categories[k];
@@ -171,11 +171,14 @@ function try_yourself () {
 	asanai.start_camera();
 
 	$("#matrix_text").hide();
-	$("#matrix_text_apfel").hide();
-	$("#matrix_text_orange").hide();
-	$("#matrix_text_banane").hide();
 	$("#yourself").hide();
 	$("#status_3").show();
+
+	var _l = asanai.get_labels().map(v => v.toLowerCase());
+
+	for (var k = 0; k < _l.length; k++) {
+		$("#matrix_text_" + _l[k]).hide();
+	}
 }
 
 function start_training_show_divs() {
@@ -190,14 +193,15 @@ function show_auswertung () {
 		"evaluation",
 		"visualization",
 		"matrix_text",
-		"matrix_text_apfel",
-		"matrix_text_orange",
-		"matrix_text_banane",
 		"test_images",
 		"yourself"
 	];
 
+	var _l = asanai.get_labels().map(v => v.toLowerCase());
 
+	for (var k = 0; k < _l.length; k++) {
+		_elems_ids.push("matrix_text_" + _l[k]);
+	}
 
 	var _elems_classes = [
 		"auswertung_element",
