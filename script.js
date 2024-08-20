@@ -375,11 +375,16 @@ function matrix_texts(){
 			color_got = `<red>${nr_correct_category}</red>`;
 		}
 
-		var _matrix_string = `Das Training für <b>${_first_key}</b> hat ergeben: <br>${color_got} von <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key}</b> wurden richtig erkannt.<br>\n`;
+		var _first_key_uppercase = _first_key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+
+		var _matrix_string = `Das Training für <b>${_first_key_uppercase}</b> hat ergeben: <br>${color_got} von <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key_uppercase}</b> wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
 			var _nr = c_m_d[_first_key][_second_key]
+			var _second_key_uppercase = _second_key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
 			if(_nr === undefined) {
 				_nr = 0;
 			}
@@ -389,7 +394,7 @@ function matrix_texts(){
 				nr_string = `<red>${_nr}</red>`
 			}
 
-			var new_line = `${nr_string} Bilder der Kategorie <b>${_first_key}</b> wurden als Kategorie <b>${_second_key}</b> erkannt.<br>\n`;
+			var new_line = `${nr_string} Bilder der Kategorie <b>${_first_key_uppercase}</b> wurden als Kategorie <b>${_second_key_uppercase}</b> erkannt.<br>\n`;
 			_matrix_string += new_line;
 		}
 
