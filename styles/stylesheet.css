@@ -17,7 +17,7 @@
 }
 
 p {
-	font-size: 7vw;
+	font-size: min(7vh, 7vw);
 	margin-top: 5vh;
 }
 
