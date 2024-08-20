@@ -536,18 +536,18 @@ function uuidv4() {
 }
 
 function addCustomCategory() {
-    // Get the target row element by its ID
-    var rowElement = document.getElementById('custom_images');
+	// Get the target row element by its ID
+	var rowElement = document.getElementById('custom_images');
 
-    // Count existing categories to generate the category name
-    var existingCategories = rowElement.children.length;
-    var categoryName = 'Category ' + (existingCategories + 1);
+	// Count existing categories to generate the category name
+	var existingCategories = rowElement.children.length;
+	var categoryName = 'Category ' + (existingCategories + 1);
 
-    // Generate a unique ID for the thumbnail container
-    var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
+	// Generate a unique ID for the thumbnail container
+	var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
 
-    // Define the new td content
-    var newCategoryContent = `
+	// Define the new td content
+	var newCategoryContent = `
 	<td style="width: 50%;">
 	    <table>
 		<tr>
@@ -568,13 +568,55 @@ function addCustomCategory() {
 		</tr>
 	    </table>
 	</td>
-    `;
+	`;
 
-    // Create a new td element
-    var newTdElement = document.createElement('td');
-    newTdElement.style.width = "50%";
-    newTdElement.innerHTML = newCategoryContent;
+	// Create a new td element
+	var newTdElement = document.createElement('td');
+	newTdElement.style.width = "50%";
+	newTdElement.innerHTML = newCategoryContent;
 
-    // Insert the new td at the beginning of the row
-    rowElement.insertBefore(newTdElement, rowElement.firstChild);
+	// Insert the new td at the beginning of the row
+	rowElement.insertBefore(newTdElement, rowElement.firstChild);
 }
+
+
+function is_tablet () {
+	var userAgent = navigator.userAgent.toLowerCase();
+	var isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+
+	return isTablet;
+}
+
+function is_touch_device () {
+	if(is_touch_device_cache !== null) {
+		return is_touch_device_cache;
+	}
+
+	var res = (("ontouchstart" in window) ||
+		(navigator.maxTouchPoints > 0) ||
+		(navigator.msMaxTouchPoints > 0));
+
+	if(!res) {
+		res = !!window.matchMedia("(pointer: coarse)").matches;
+	}
+
+	is_touch_device_cache = res;
+
+	return res;
+}
+
+function get_cursor_or_none (cursorname) {
+	try {
+		if(is_touch_device() && is_tablet()) {
+			return "none";
+		}
+	} catch (e) {
+		if(("" + e).includes("is_touch_device is not defined")) {
+			return cursorname;
+		}
+	}
+
+	return cursorname;
+}
+
+document.body.style.cursor = get_cursor_or_none("default");
