@@ -166,7 +166,7 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor(to_div_name, exhib_data);
 
-	$("#" + to_div_name).hide();
+	//$("#" + to_div_name).hide();
 
 	if(loaded_data) {
 		asanai.visualize_train();

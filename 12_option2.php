@@ -52,5 +52,10 @@
 			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
 	</div>
+	<script>
+		$(document).ready(async function() {
+			asanai.set_image_div_name("second_example_images");
+		});
+	</script>
 </body>
 </html>
