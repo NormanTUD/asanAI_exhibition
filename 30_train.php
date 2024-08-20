@@ -26,7 +26,8 @@
 					<table>
 						<tr>
 							<th style="background-color: #003366;">
-								<input onclick="show_keyboard(this)" placeholder="category_name" style="width: 100%; color: white; background-color: #003366" value="Category name" />
+								<input onclick="show_keyboard(this)" placeholder="category_name" style="width: 80%; color: white; background-color: #003366" value="Category name" />
+								<span onclick="delete_category(this)">&#10060;</span>
 							</th>
 						</tr>
 						<tr>

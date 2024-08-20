@@ -517,3 +517,7 @@ function show_keyboard (elem) {
 
 	$(".simple-keyboard").show();
 }
+
+function delete_category (elem) {
+	log("delete_category:", elem);
+}
