@@ -2,6 +2,7 @@
 	$GLOBALS["use_navigation"] = 1;
 	include("header.php");
 ?>
+		<div id="optimizer_div" style="display: none;"></div>
 		<div class="general">
 			<p style="margin: 200px;">Wähle einen existierenden Datensatz oder erstelle deinen Eigenen</p>
 			<div class="container">
