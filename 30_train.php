@@ -22,7 +22,7 @@
 		<table style="margin-left: 200px;">
 			<tr>
 				<td style="width: 50%;"><video id="webcam_preview_video"></video></td>
-				<td style="width: 50%;">
+				<td style="width: 50%;" id="custom_images">
 					<table>
 						<tr>
 							<th style="background-color: #003366;">

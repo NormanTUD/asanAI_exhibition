@@ -531,3 +531,47 @@ function uuidv4() {
 		(+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
 	);
 }
+
+function addCustomCategory() {
+    // Get the target row element by its ID
+    var rowElement = document.getElementById('custom_images');
+
+    // Count existing categories to generate the category name
+    var existingCategories = rowElement.children.length;
+    var categoryName = 'Category ' + (existingCategories + 1);
+
+    // Generate a unique ID for the thumbnail container
+    var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
+
+    // Define the new td content
+    var newCategoryContent = `
+	<td style="width: 50%;">
+	    <table>
+		<tr>
+		    <th>
+			<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" value="${categoryName}" />
+			<span onclick="delete_category(this)">&#10060;</span>
+		    </th>
+		</tr>
+		<tr>
+		    <td>
+			<button onclick="generateThumbnail('${thumbnailContainerId}')">Take screenshot</button>
+		    </td>
+		</tr>
+		<tr>
+		    <td>
+			<div id="${thumbnailContainerId}"></div>
+		    </td>
+		</tr>
+	    </table>
+	</td>
+    `;
+
+    // Create a new td element
+    var newTdElement = document.createElement('td');
+    newTdElement.style.width = "50%";
+    newTdElement.innerHTML = newCategoryContent;
+
+    // Insert the new td at the beginning of the row
+    rowElement.insertBefore(newTdElement, rowElement.firstChild);
+}
