@@ -77,12 +77,14 @@
 			<table>
 				<tr>
 					<td>
-						<div class="halftext">
+						<div>
 							<p>Das Netzwerk wird anhand eines klassifizierten Datensatzes trainiert.</p>
 							<p>Es lernt durch Feedback, ob der vermutete Output richtig oder falsch ist.</p>
 							<p>Die Werte im Input-Layer sind zu Beginn zufällig gewählt und werden mit jedem Durchgang durch das Neuronale Netzwerk angepasst, bis im Output-Layer das richtige Ergebnis ausgegeben wird.</p>
 						</div>
-						<video class="halfvideo" autoplay loop muted>
+					</td>
+					<td>
+						<video autoplay loop muted>
 							<source type="video/webm" src="media/images/fcnn_animation_new_3.mp4">
 						</video>
 					</td>
