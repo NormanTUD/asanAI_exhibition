@@ -17,6 +17,8 @@
 			</ul>
 		</div>
 
+		<div id="optimizer_div" style="display:none"></div>
+
 		<table>
 			<tr>
 				<td><div id="webcam_preview"><video id="webcam_preview_video"></video></div></td>

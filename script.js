@@ -57,9 +57,7 @@ $(document).ready(async function() {
 			// `var asanai`.
 		});
 	} catch (e) {
-		if(!("" + e).includes("optimizer_div could not be found")) {
-			console.debug(e);
-		}
+		console.error(e);
 
 		done_loading = true;
 
