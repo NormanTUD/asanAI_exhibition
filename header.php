@@ -69,6 +69,3 @@
 	</head>
 <body>
 	<div style="display: none" class="simple-keyboard"></div>
-	<script>
-		initialize_keyboard();
-	</script>

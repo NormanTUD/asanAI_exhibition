@@ -467,16 +467,21 @@ function matrix_texts(){
 	}
 }
 
-function initialize_keyboard() {
+function initialize_keyboard(elem) {
 	keyboard = window.SimpleKeyboard.default;
 
 
 	function onChange(input) {
-		console.log("Input changed", input);
+		elem.value = input;
 	}
 
 	function onKeyPress(button) {
 		console.log("Button pressed", button);
+
+		if(button == "bksp") {
+			log("remove last");
+			elem.value = elem.value.substring(0, elem.value.length - 1);
+		}
 	}
 
 	const myKeyboard = new keyboard({
@@ -485,10 +490,12 @@ function initialize_keyboard() {
 	});
 }
 
-function hide_keyboard () {
+function hide_keyboard (elem) {
 	$(".simple-keyboard").hide();
 }
 
-function show_keyboard () {
+function show_keyboard (elem) {
+	initialize_keyboard(elem);
+
 	$(".simple-keyboard").show();
 }
