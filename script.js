@@ -90,10 +90,18 @@ $(document).ready(async function() {
 });
 
 
-function generateThumbnail() {
+function generateThumbnail(container_id) {
+	var _container = $('#' + container_id);
+
+	if(_container.length != 1) {
+		console.error(`Did not find exactly 1 #${_container_id} element`);
+		return;
+	}
+
 	var $video = $("#webcam_preview_video");
 
 	if($video.length != 1) {
+		console.error(`Did not find exactly 1 #webcam_preview_video element`);
 		return;
 	}
 
@@ -106,12 +114,10 @@ function generateThumbnail() {
 	context.drawImage(video, 0, 0, 220, 150);
 	var dataURL = thecanvas.toDataURL();
 
-	//create img
 	var img = document.createElement('img');
 	img.setAttribute('src', dataURL);
 
-	//append img in container div
-	$('#thumbnailContainer').append(img);
+	_container.append(img);
 }
 
 async function load_and_train_scheine_muenzen_schluessel() {
