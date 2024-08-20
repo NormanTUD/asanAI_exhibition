@@ -454,8 +454,10 @@ function matrix_texts(){
 				nr_string = `<red>${_nr}</red>`
 			}
 
-			var new_line = `${nr_string} Bilder der Kategorie <b>${_first_key_uppercase}</b> wurden als Kategorie <b>${_second_key_uppercase}</b> erkannt.<br>\n`;
-			_matrix_string += new_line;
+			if(_first_key != _second_key) {
+				var new_line = `${nr_string} Bilder der Kategorie <b>${_first_key_uppercase}</b> wurden als Kategorie <b>${_second_key_uppercase}</b> erkannt.<br>\n`;
+				_matrix_string += new_line;
+			}
 		}
 
 		var _matrix_col_name = `#matrix_text_${_first_key.toLowerCase()}`;
