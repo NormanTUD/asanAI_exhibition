@@ -22,7 +22,10 @@
 		<table style="margin-left: 200px;">
 			<tr>
 				<td><video id="webcam_preview_video"></video></td>
-				<td><div id="thumbnailContainer"></div></td>
+				<td>
+					<div id="thumbnailContainer">
+					</div>
+				</td>
 			</tr>
 		</table>
 
