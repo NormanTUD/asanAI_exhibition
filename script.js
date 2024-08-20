@@ -14,7 +14,7 @@ var log = console.log;
 var batch_size = 200;
 var __categories = ["Apfel", "Banane", "Orange"];
 
-var optimizer_config = {
+var default_optimizer_config = {
 	optimizer: "adam",
 	loss: "categoricalCrossentropy",
 	"learningRate": 0.01
@@ -29,7 +29,7 @@ var asanai;
 var _kernel_initializer = "leCunNormal";
 var _bias_initializer = "leCunNormal";
 
-var model_struct = [
+var default_model_struct = [
 	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [width_and_height, width_and_height, 3] }},
 	{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{maxPooling2d: {poolSize: [3, 3] }},
@@ -42,8 +42,8 @@ var model_struct = [
 $(document).ready(async function() {
 	try {
 		asanai = new asanAI({
-			model_data: model_struct,					// The default model structure that should be loaded
-			optimizer_config: optimizer_config,			// The config for the optimizer (which trains the model)
+			model_data: default_model_struct,					// The default model structure that should be loaded
+			optimizer_config: default_optimizer_config,			// The config for the optimizer (which trains the model)
 			translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this casesanai
 			optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
 			asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
@@ -88,71 +88,41 @@ async function load_and_train_scheine_muenzen_schluessel() {
 		{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 
+	return await _load_example("scheine_muenzen_schluessel", "test_images", 2, model_struct, default_optimizer_config, ["scheine", "muenzen", "schluessel"]);
+}
+
+async function load_and_train_fruits_example() {
+	return await _load_example("fruits", "test_images", 2, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
+}
+
+async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 	var _created_model = asanai.create_model_from_model_data(model_struct, optimizer_config);
 
 	asanai.set_model(_created_model);
 
-	start_training_show_divs()
-
-	var exhib_data = [];
-
-	var local_categories = ["scheine", "muenzen", "schluessel"];
-
 	asanai.set_labels(local_categories);
 
-	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = 40; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
-
-	for (var k = 0; k < local_categories.length; k++) {
-		var _cat = local_categories[k];
-
-		for (var l = 1; l <= __max_nr; l++) {
-			var this_path = `traindata/scheine_muenzen_schluessel/${_cat}/${l}.jpg`
-
-			exhib_data.push([this_path, _cat])
-		}
-	}
-
-	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
-
-	if(loaded_data) {
-		asanai.visualize_train();
-		//Ladebalken über nr_epochs Epochen
-		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: nr_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
-		if(!history) {
-			console.error("Training failed");
-		}
-
-		await asanai.dispose(loaded_data.x);
-		await asanai.dispose(loaded_data.y);
-	} else {
-		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
-	}
-}
-
-async function load_and_train_fruits_example() {
 	start_training_show_divs()
 
 	var exhib_data = [];
 
-	//var __max_nr = 94; // 94, obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
-	var __max_nr = 2; //max_nr_images; // obwohl 95 bilder da sind, um jeweils eines pro kategorie (nr 95) aus dem training auszunehmen und manuell zu predicten
+	var _cats = asanai.get_labels();
 
-	for (var k = 0; k < __categories.length; k++) {
-		var _cat = __categories[k];
+	for (var k = 0; k < _cats.length; k++) {
+		var _cat = _cats[k];
 
-		for (var l = 1; l <= __max_nr; l++) {
-			var this_path = `traindata/fruits/${_cat}/${_cat}_${l}.jpg`
+		for (var l = 1; l <= max_nr; l++) {
+			var this_path = `traindata/${example_name}/${_cat}/${l}.jpg`
 
 			exhib_data.push([this_path, _cat])
 		}
 	}
 
-	var loaded_data = await asanai.load_image_urls_to_div_and_tensor("test_images", exhib_data);
+	var loaded_data = await asanai.load_image_urls_to_div_and_tensor(to_div_name, exhib_data);
 
 	if(loaded_data) {
 		asanai.visualize_train();
-		//Ladebalken über nr_epochs Epochen
+
 		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: nr_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
 		if(!history) {
 			console.error("Training failed");
