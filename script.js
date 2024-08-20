@@ -81,7 +81,7 @@ $(document).ready(async function() {
 		asanai.draw_fcnn("fcnn_div", 32, true);
 	}
 
-	//asanai.enable_fcnn_internals();
+	asanai.enable_fcnn_internals();
 
 	asanai.set_validation_split(0);
 
