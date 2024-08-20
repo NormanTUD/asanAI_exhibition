@@ -492,10 +492,10 @@ function initialize_keyboard(elem) {
 		layout: {
 			default: [
 				"1 2 3 4 5 6 7 8 9 0",
-				"q w e r t y u i o p",
-				"a s d f g h j k l",
-				"z x c v b n m {backspace}",
-				"{space}"
+				"q w e r t z u i o p ü",
+				"a s d f g h j k l ö ä",
+				"y x c v b n m",
+				"{space} {backspace}"
 			]
 		},
 		display: {
