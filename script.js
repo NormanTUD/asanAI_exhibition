@@ -348,7 +348,7 @@ function matrix_texts(){
 	//log("c_m_d:", c_m_d);
 	//log("nr_correct_imgs_per_cat:", nr_correct_imgs_per_cat);
 
-	assert(num_categories_went_through == __categories.length, "Went through a different number of categories (${num_categories_went_through}) than __categories.length ({__categories.length})")
+	assert(num_categories_went_through == asanai.get_labels().length, "Went through a different number of categories (${num_categories_went_through}) than asanai.get_labels().length ({asanai.get_labels().length})")
 	assert(typeof(total_nr_images) == "number" && !Number.isNaN(total_nr_images), `(B) total_nr_images is not a number but ${typeof(total_nr_images)}`);
 	assert(total_nr_images > 0, `total_nr_images is smaller than 1: ${total_nr_images}`);
 	assert(typeof(correctly_predicted) == "number", `correctly_predicted is not a number but ${typeof(correctly_predicted)}`);
