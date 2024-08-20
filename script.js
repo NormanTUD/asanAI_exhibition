@@ -60,6 +60,9 @@ $(document).ready(async function() {
 		if(!("" + e).includes("optimizer_div could not be found")) {
 			console.debug(e);
 		}
+
+		done_loading = true;
+
 		return;
 	}
 
