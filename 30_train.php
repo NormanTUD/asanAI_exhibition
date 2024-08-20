@@ -23,6 +23,7 @@
 			<tr>
 				<td><video id="webcam_preview_video"></video></td>
 				<td>
+					<button onclick="generateThumbnail('thumbnailContainer')">Take screenshot</button>
 					<div id="thumbnailContainer">
 					</div>
 				</td>
