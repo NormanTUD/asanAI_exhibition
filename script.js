@@ -519,5 +519,9 @@ function show_keyboard (elem) {
 }
 
 function delete_category (elem) {
-	log("delete_category:", elem);
+	if($(".category_name").length > 1) {
+		$(elem).parent().parent().parent().parent().remove()
+	} else {
+		log("Cannot delete last element")
+	}	
 }
