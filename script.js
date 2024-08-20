@@ -134,11 +134,11 @@ async function load_and_train_scheine_muenzen_schluessel() {
 		{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 
-	return await _load_example("scheine_muenzen_schluessel", "test_images", 2, model_struct, default_optimizer_config, ["scheine", "muenzen", "schluessel"]);
+	return await _load_example("scheine_muenzen_schluessel", "second_example_images", 2, model_struct, default_optimizer_config, ["scheine", "muenzen", "schluessel"]);
 }
 
 async function load_and_train_fruits_example() {
-	return await _load_example("fruits", "test_images", 2, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
+	return await _load_example("fruits", "first_example_images", 2, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
 }
 
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
@@ -233,7 +233,6 @@ function show_auswertung () {
 		"evaluation",
 		"visualization",
 		"matrix_text",
-		"test_images",
 		"yourself"
 	];
 
