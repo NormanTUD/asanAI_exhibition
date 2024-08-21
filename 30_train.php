@@ -43,14 +43,16 @@
 			<tr>
 				<td style="width: 330px;">
 					<div style="top: 50%; position: sticky;">
-						<video id="webcam_preview_video"></video><br>
+						<button style="display: none;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
+						<br>
+						<br>
 						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
+						<br>
+						<br>
+						<video id="webcam_preview_video"></video>
 					</div>
 				</td>
 				<td style="width: max-content;" id="custom_images">
-				</td>
-				<td>
-					<button style="display: none;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
 				</td>
 			</tr>
 		</table>
