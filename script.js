@@ -6,6 +6,8 @@
 var keyboard = null;
 var myKeyboard = null;
 var done_loading = false;
+var stringToNumberMap = [];
+var currentNumber = 0;
 
 function assert(cond, msg) {
 	if(!cond) {
@@ -156,8 +158,47 @@ async function load_and_train_fruits_example() {
 	return await _load_example("fruits", "first_example_images", 2, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
 }
 
+function assignNumberToString(inputString) {
+	// Überprüfen, ob der String bereits im Array vorhanden ist
+	for (var i = 0; i < stringToNumberMap.length; i++) {
+		if (stringToNumberMap[i].string === inputString) {
+			// Wenn der String bereits existiert, die zugehörige Nummer zurückgeben
+			return stringToNumberMap[i].number;
+		}
+	}
+
+	// Wenn der String nicht existiert, eine neue Zuordnung erstellen
+	var newMapping = {
+		string: inputString,
+		number: currentNumber
+	};
+
+	// Die Zuordnung zum globalen Array hinzufügen
+	stringToNumberMap.push(newMapping);
+
+	// Die aktuelle Nummer zurückgeben und den Zähler erhöhen
+	return currentNumber++;
+}
+
+function generateOneHotArray(position, length) {
+	// Ein Array der gewünschten Länge erstellen, gefüllt mit Nullen
+	var oneHotArray = new Array(length).fill(0);
+
+	// An der Position 'position' eine 1 setzen
+	if (position >= 0 && position < length) {
+		oneHotArray[position] = 1;
+	} else {
+		throw new Error("Position out of bounds");
+	}
+
+	return oneHotArray;
+}
+
 //async function _start_custom_training(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 async function _start_custom_training(optimizer_config) {
+	stringToNumberMap = [];
+	currentNumber = 0;
+
 	var local_categories = getCustomCategoryNames();
 
 	if(!shouldCustomTrainingBeEnabled(local_categories)) {
@@ -165,8 +206,10 @@ async function _start_custom_training(optimizer_config) {
 		return;
 	}
 
+	var _width_and_height = 40;
+
 	var model_struct = [
-		{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
+		{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [_width_and_height, _width_and_height, 3] }},
 		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{maxPooling2d: {poolSize: [3, 3] }},
@@ -184,12 +227,46 @@ async function _start_custom_training(optimizer_config) {
 
 	start_training_show_divs();
 
-	var exhib_data = [];
+	var loaded_data = {};
 
-	$(".custom_images_category").each((i, e) => {
+	var $custom_images_category = $(".custom_images_category");
+
+
+	var _x = [];
+	var _y = [];
+
+	$custom_images_category.each((i, e) => {
 		var category_name = $(e).find("input").val();
+		var category_id = assignNumberToString(category_name);
+		log(`category_name: ${category_name}, category_id: ${category_id}`);
+
+
+		var reply = generateOneHotArray(category_id, $custom_images_category.length);
+
 		var found_imgs = $(e).find("img");
+
+		for (var k = 0; k < found_imgs.length; k++) {
+			var this_img = found_imgs[k];
+
+			var this_img_tensor = tf.tidy(() => {
+				return tf.div(
+					tf.image.resizeBilinear(
+						tf.browser.fromPixels(this_img),
+						[_width_and_height, _width_and_height], true, false
+					), tf.scalar(255)
+				).arraySync();
+			});
+
+			log("this_img_tensor:", this_img_tensor);
+
+			_x.push(this_img_tensor);
+			_y.push(reply);
+		}
+
 	});
+
+	log("_x:", _x);
+	log("_y:", _y);
 
 	var loaded_data = [];
 
@@ -757,9 +834,7 @@ async function startCustomTraining () {
 	var _custom_categories = getCustomCategoryNames();
 
 	if(shouldCustomTrainingBeEnabled(_custom_categories)) {
-		alert(`Not yet implemented: ${_custom_categories.join(", ")}`);
-
-		return await _start_custom_training(optimizer_config);
+		return await _start_custom_training(default_optimizer_config);
 	} else {
 		console.error(`Custom training not enabled.`);
 	}
