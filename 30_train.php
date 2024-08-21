@@ -21,7 +21,9 @@
 
 		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 
-		<table style="margin-left: 200px;">
+		<button hidden="hidden" class="box" id="evaluation" onclick="show_auswertung(); matrix_texts()">Auswertung anzeigen</button>
+
+		<table id="custom_images_table" style="margin-left: 200px;">
 			<tr>
 				<td style="width: 330px;">
 					<div style="top: 50%; position: sticky;">

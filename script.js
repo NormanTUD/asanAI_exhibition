@@ -858,6 +858,8 @@ async function startCustomTraining () {
 	}
 
 	if(shouldCustomTrainingBeEnabled(_custom_categories)) {
+		$("#custom_images_table").hide();
+
 		return await _start_custom_training(default_optimizer_config);
 	} else {
 		console.error(`Custom training not enabled.`);
