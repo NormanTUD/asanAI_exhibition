@@ -22,6 +22,9 @@
 		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 
 		<button hidden="hidden" class="box" id="evaluation" onclick="show_auswertung(); matrix_texts()">Auswertung anzeigen</button>
+		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
+
+		<div style="display: none" id="fcnn_div"></div>
 
 		<div id="analysis"></div>
 
@@ -51,8 +54,8 @@
 
 		<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
-		<div id="progress-text"></div>
-		<progress id="progress" value="0" max="100"></progress>
+		<div hidden="hidden" id="progress-text"></div>
+		<progress hidden="hidden" id="progress" value="0" max="100"></progress>
 
 		<script>
 			$(document).ready(async function() {
