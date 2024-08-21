@@ -550,7 +550,6 @@ function addCustomCategory() {
 
 	// Define the new td content
 	var newCategoryContent = `
-	<td style="width: 50%;">
 	    <table>
 		<tr>
 		    <th>
@@ -569,7 +568,6 @@ function addCustomCategory() {
 		    </td>
 		</tr>
 	    </table>
-	</td>
 	`;
 
 	// Create a new td element
