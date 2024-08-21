@@ -299,6 +299,8 @@ async function _start_custom_training(optimizer_config) {
 	await asanai.dispose(loaded_data.y);
 
 	createAuswertungTable(local_categories);
+
+	$("#progress").hide();
 }
 
 
@@ -373,8 +375,10 @@ function try_yourself () {
 	asanai.start_camera();
 
 	$("#matrix_text").hide();
+	$("#analysis").hide();
 	$("#yourself").hide();
 	$("#explanation_after_training").show();
+	$("#fcnn_div").show();
 
 	var _l = asanai.get_labels().map(v => v.toLowerCase());
 
