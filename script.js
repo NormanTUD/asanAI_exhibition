@@ -206,6 +206,8 @@ async function _start_custom_training(optimizer_config) {
 		return;
 	}
 
+	$("#start_custom_training").hide();
+
 	var _width_and_height = 40;
 
 	var model_struct = [
