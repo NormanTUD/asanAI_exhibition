@@ -572,7 +572,6 @@ function addCustomCategory() {
 
 	// Create a new td element
 	var newTdElement = document.createElement('td');
-	newTdElement.style.width = "50%";
 	newTdElement.innerHTML = newCategoryContent;
 
 	// Insert the new td at the beginning of the row
