@@ -618,6 +618,24 @@ function get_cursor_or_none (cursorname) {
 	return cursorname;
 }
 
+function getCustomCategoryNames() {
+	// Array, um die Werte der Kategorie-Namen zu speichern
+	var categoryNames = [];
+
+	// Durch alle Elemente mit der Klasse .category_name iterieren
+	$('.category_name').each(function() {
+		// Den Wert des aktuellen Elements abrufen und zum Array hinzufügen
+		var value = $(this).val();
+		categoryNames.push(value);
+	});
+
+	// Das Array mit den Werten kann jetzt verwendet werden
+	return categoryNames;
+}
+
+
 function startCustomTraining () {
-	alert("Not yet implemented");
+	var _custom_categories = getCustomCategoryNames();
+
+	alert(`Not yet implemented: ${_custom_categories.join(", ")}`);
 }
