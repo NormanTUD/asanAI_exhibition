@@ -408,3 +408,8 @@ video {
 .thumbnail_container {
 	min-height: 50px;
 }
+
+.explanation_group {
+	top: 400px;
+	position: relative;
+}
