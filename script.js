@@ -92,12 +92,15 @@ $(document).ready(async function() {
 
 	document.body.style.cursor = get_cursor_or_none("default");
 
-
+	/*
 	if($("#start_custom_training").length) {
 		setInterval(function() {
 			enable_or_disable_training_if_needed();
 		}, 200);
 	}
+	*/
+
+	enable_or_disable_training_if_needed();
 });
 
 
@@ -130,6 +133,8 @@ function generateThumbnail(container_id) {
 	img.setAttribute('class', 'custom_image_element');
 
 	_container.append(img);
+
+	enable_or_disable_training_if_needed();
 }
 
 async function load_and_train_scheine_muenzen_schluessel() {
@@ -537,6 +542,8 @@ function delete_category (elem) {
 	} else {
 		log("Cannot delete last element")
 	}	
+
+	enable_or_disable_training_if_needed();
 }
 
 function uuidv4() {
@@ -586,6 +593,7 @@ function addCustomCategory() {
 	// Append the new table directly to the rowElement (which is the existing <td>)
 	rowElement.appendChild(newTableElement);
 
+	enable_or_disable_training_if_needed();
 }
 
 
