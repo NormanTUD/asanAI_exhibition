@@ -238,7 +238,6 @@ async function _start_custom_training(optimizer_config) {
 	$custom_images_category.each((i, e) => {
 		var category_name = $(e).find("input").val();
 		var category_id = assignNumberToString(category_name);
-		log(`category_name: ${category_name}, category_id: ${category_id}`);
 
 		var reply = generateOneHotArray(category_id, $custom_images_category.length);
 
@@ -257,8 +256,6 @@ async function _start_custom_training(optimizer_config) {
 					), tf.scalar(255)
 				).arraySync();
 			});
-
-			log("this_img_tensor:", this_img_tensor);
 
 			_x.push(this_img_tensor);
 			_y.push(reply);
@@ -280,9 +277,6 @@ async function _start_custom_training(optimizer_config) {
 		console.error("_x has a different length from _y!");
 		return;
 	}
-
-	log("_x:", _x);
-	log("_y:", _y);
 
 	var loaded_data = {
 		"x": tf.tensor(_x),
@@ -643,7 +637,7 @@ function matrix_texts(){
 	var $analysis = $("#analysis");
 
 	if($analysis.length) {
-		$analysis.html(_matrix_string)
+		$analysis.html(table_string)
 	} else {
 		console.error(`$("#analysis") was empty!`);
 	}
