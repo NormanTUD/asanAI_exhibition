@@ -21,7 +21,10 @@
 
 		<table style="margin-left: 200px;">
 			<tr>
-				<td style="width: 50%;"><video id="webcam_preview_video"></video></td>
+				<td style="width: 50%;">
+					<video id="webcam_preview_video"></video><br>
+					<button onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
+				</td>
 				<td style="width: 50%;" id="custom_images">
 					<table>
 						<tr>

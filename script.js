@@ -554,7 +554,7 @@ function addCustomCategory() {
 	    <table>
 		<tr>
 		    <th>
-			<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" value="${categoryName}" />
+			<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 80%; color: white; background-color: #003366" value="${categoryName}" />
 			<span onclick="delete_category(this)">&#10060;</span>
 		    </th>
 		</tr>
