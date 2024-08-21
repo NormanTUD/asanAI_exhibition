@@ -636,7 +636,7 @@ function getCustomCategoryNames() {
 	return categoryNames;
 }
 
-function shouldCustomTrainingBeEnabled() {
+function shouldCustomTrainingBeEnabled(_custom_categories) {
 	var total_custom_image_element = $(".custom_image_element");
 
 	if (total_custom_image_element.length < 1) {
@@ -653,6 +653,12 @@ function shouldCustomTrainingBeEnabled() {
 	if(!all_categories_have_at_least_one_image) {
 		return false;
 	}
+	
+	for (var i = 0; i < _custom_categories.length; i++) {
+		if(_custom_categories[i] == "") {
+			return false;
+		}
+	}
 
 	return true;
 }
@@ -660,7 +666,7 @@ function shouldCustomTrainingBeEnabled() {
 function startCustomTraining () {
 	var _custom_categories = getCustomCategoryNames();
 
-	if(shouldCustomTrainingBeEnabled()) {
+	if(shouldCustomTrainingBeEnabled(_custom_categories)) {
 		alert(`Not yet implemented: ${_custom_categories.join(", ")}`);
 	} else {
 		console.error(`Custom training not enabled.`);
