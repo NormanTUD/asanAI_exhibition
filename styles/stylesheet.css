@@ -37,6 +37,24 @@ p {
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.disabled_class {
+	cursor: not-allowed;
+	background-color: #b30003 !important;
+	width: 20vw;
+	color: black;
+	border: 1vh solid #b30003 !important;
+	border-radius: 2vh;
+	font-size: min(2vw, 2vh);
+}
+
+.disabled_class:hover {
+	background-color: white;
+	color: black !important;
+	border: 1vh solid #b30003 !important;
+	transition: 0.5s;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .reasonable_box {
 	background-color: #003366;
 	width: 20vw;

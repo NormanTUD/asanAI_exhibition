@@ -681,9 +681,11 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 
 function enable_or_disable_training_if_needed() {
 	if(shouldCustomTrainingBeEnabled(getCustomCategoryNames())) {
+		$("#start_custom_training").removeClass("disabled_class")
 		$("#start_custom_training").removeAttr("disabled")
 	} else {
 		$("#start_custom_training").prop("disabled", true);
+		$("#start_custom_training").addClass("disabled_class")
 	}
 } 
 
