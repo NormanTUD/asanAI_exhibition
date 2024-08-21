@@ -543,7 +543,7 @@ function addCustomCategory() {
 
 	// Count existing categories to generate the category name
 	var existingCategories = rowElement.children.length;
-	var categoryName = 'Category ' + (existingCategories + 1);
+	var categoryName = 'Kategorie ' + (existingCategories + 1);
 
 	// Generate a unique ID for the thumbnail container
 	var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
@@ -559,7 +559,7 @@ function addCustomCategory() {
 		</tr>
 		<tr>
 		    <td>
-			<button onclick="generateThumbnail('${thumbnailContainerId}')">Take screenshot</button>
+			<button onclick="generateThumbnail('${thumbnailContainerId}')">Bild aufnehmen</button>
 		    </td>
 		</tr>
 		<tr>

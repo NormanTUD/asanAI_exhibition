@@ -29,13 +29,13 @@
 					<table>
 						<tr>
 							<th style="background-color: #003366;">
-								<input class="category_name" onclick="show_keyboard(this)" placeholder="Category Name" style="width: 80%; color: white; background-color: #003366" value="Category 1" />
+								<input class="category_name" onclick="show_keyboard(this)" placeholder="Kategorie 1" style="width: 80%; color: white; background-color: #003366" value="Kategorie 1" />
 								<span onclick="delete_category(this)">&#10060;</span>
 							</th>
 						</tr>
 						<tr>
 							<td>
-								<button onclick="generateThumbnail('thumbnailContainer')">Take screenshot</button>
+								<button onclick="generateThumbnail('thumbnailContainer')">Bild aufnehmen</button>
 							</td>
 						</tr>
 						<tr>
