@@ -25,6 +25,18 @@ p {
 	display: flex;
 }
 
+.green_box {
+	color: black !important;
+	background-color: #2fff3d !important;
+	border: 1vh solid #2fff3d !important;
+}
+
+.green_box:hover {
+	color: black !important;
+	border: 1vh solid #00ff88 !important;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 .reasonable_box {
 	background-color: #003366;
 	width: 20vw;

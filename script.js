@@ -617,3 +617,7 @@ function get_cursor_or_none (cursorname) {
 
 	return cursorname;
 }
+
+function startCustomTraining () {
+	alert("Not yet implemented");
+}

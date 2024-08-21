@@ -29,6 +29,9 @@
 				</td>
 				<td style="width: max-content;" id="custom_images">
 				</td>
+				<td>
+					<button class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
+				</td>
 			</tr>
 		</table>
 
