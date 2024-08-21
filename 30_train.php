@@ -41,7 +41,9 @@
 			<div id="canvas_grid_visualization"></div>
 		</div>
 
-		<div id="plotly_history" style="display: none"></div>
+		<div style="display: none">
+			<div id="plotly_history" style="display: none"></div>
+		</div>
 
 		<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
