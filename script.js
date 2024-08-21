@@ -240,13 +240,14 @@ async function _start_custom_training(optimizer_config) {
 		var category_id = assignNumberToString(category_name);
 		log(`category_name: ${category_name}, category_id: ${category_id}`);
 
-
 		var reply = generateOneHotArray(category_id, $custom_images_category.length);
 
 		var found_imgs = $(e).find("img");
 
 		for (var k = 0; k < found_imgs.length; k++) {
 			var this_img = found_imgs[k];
+
+			$(this_img).data("real_category", category_name);
 
 			var this_img_tensor = tf.tidy(() => {
 				return tf.div(
@@ -265,10 +266,28 @@ async function _start_custom_training(optimizer_config) {
 
 	});
 
+	if(!_x.length) {
+		console.error("_x is empty");
+		return;
+	}
+
+	if(!_y.length) {
+		console.error("_y is empty");
+		return;
+	}
+
+	if(_x.length != _y.length) {
+		console.error("_x has a different length from _y!");
+		return;
+	}
+
 	log("_x:", _x);
 	log("_y:", _y);
 
-	var loaded_data = [];
+	var loaded_data = {
+		"x": tf.tensor(_x),
+		"y": tf.tensor(_y)
+	}
 
 	if(loaded_data) {
 		asanai.visualize_train();
@@ -278,11 +297,12 @@ async function _start_custom_training(optimizer_config) {
 			console.error("Training failed");
 		}
 
-		await asanai.dispose(loaded_data.x);
-		await asanai.dispose(loaded_data.y);
 	} else {
 		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
 	}
+
+	await asanai.dispose(loaded_data.x);
+	await asanai.dispose(loaded_data.y);
 
 	createAuswertungTable(local_categories);
 }

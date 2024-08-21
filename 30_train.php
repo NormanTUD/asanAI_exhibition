@@ -19,6 +19,8 @@
 
 		<div id="optimizer_div" style="display:none"></div>
 
+		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
+
 		<table style="margin-left: 200px;">
 			<tr>
 				<td style="width: 330px;">
@@ -35,6 +37,17 @@
 			</tr>
 		</table>
 
+		<div hidden="hidden" id="visualization">
+			<div id="canvas_grid_visualization"></div>
+		</div>
+
+		<div id="plotly_history" style="display: none"></div>
+
+		<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
+
+		<div id="progress-text"></div>
+		<progress id="progress" value="0" max="100"></progress>
+
 		<script>
 			$(document).ready(async function() {
 				if(asanai) {
@@ -48,4 +61,10 @@
 			});
 		</script>
 	</body>
+
+	<script>
+		$(document).ready(async function() {
+			asanai.set_image_div_name("custom_images");
+		});
+	</script>
 </html>
