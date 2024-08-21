@@ -28,7 +28,7 @@
 
 		<div hidden="hidden" id="explanation_after_training">
 			<div id="fcnn_div"></div>
-			<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
+			<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eines der Objekte,<br>auf die trainiert wurde,<br> in die Kamera:</p>
 			<div id="webcam_prediction"></div>
 				<p id="explanation">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
 				<p id="explanation">In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</p>
