@@ -89,6 +89,8 @@ $(document).ready(async function() {
 	$("#progress").attr("max", nr_epochs);
 
 	done_loading = true;
+
+	document.body.style.cursor = get_cursor_or_none("default");
 });
 
 
@@ -618,5 +620,3 @@ function get_cursor_or_none (cursorname) {
 
 	return cursorname;
 }
-
-document.body.style.cursor = get_cursor_or_none("default");
