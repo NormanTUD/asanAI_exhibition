@@ -570,12 +570,12 @@ function addCustomCategory() {
 	    </table>
 	`;
 
-	// Create a new td element
-	var newTdElement = document.createElement('td');
-	newTdElement.innerHTML = newCategoryContent;
+	// Create a new table element
+	var newTableElement = document.createElement('table');
+	newTableElement.innerHTML = newCategoryContent;
 
-	// Insert the new td at the beginning of the row
-	rowElement.insertBefore(newTdElement, rowElement.firstChild);
+	// Append the new table directly to the rowElement (which is the existing <td>)
+	rowElement.appendChild(newTableElement);
 }
 
 
