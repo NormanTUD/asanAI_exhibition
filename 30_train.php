@@ -41,9 +41,9 @@
 
 		<table id="custom_images_table" style="margin-left: 200px;">
 			<tr>
-				<td style="width: 330px;">
-					<div style="top: 50%; position: sticky;">
-						<button style="display: none;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
+				<td style="width: 330px; vertical-align: baseline;">
+					<div>
+						<button style="visiblity: hidden;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
 						<br>
 						<br>
 						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
