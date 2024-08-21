@@ -91,6 +91,13 @@ $(document).ready(async function() {
 	done_loading = true;
 
 	document.body.style.cursor = get_cursor_or_none("default");
+
+
+	if($("#start_custom_training").length) {
+		setInterval(function() {
+			enable_or_disable_training_if_needed();
+		}, 200);
+	}
 });
 
 
@@ -671,6 +678,14 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 
 	return true;
 }
+
+function enable_or_disable_training_if_needed() {
+	if(shouldCustomTrainingBeEnabled(getCustomCategoryNames())) {
+		$("#start_custom_training").removeAttr("disabled")
+	} else {
+		$("#start_custom_training").prop("disabled", true);
+	}
+} 
 
 function startCustomTraining () {
 	var _custom_categories = getCustomCategoryNames();

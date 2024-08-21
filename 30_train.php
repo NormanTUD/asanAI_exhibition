@@ -30,7 +30,7 @@
 				<td style="width: max-content;" id="custom_images">
 				</td>
 				<td>
-					<button class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
+					<button id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
 				</td>
 			</tr>
 		</table>
