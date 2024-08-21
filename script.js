@@ -637,6 +637,14 @@ function getCustomCategoryNames() {
 }
 
 function shouldCustomTrainingBeEnabled(_custom_categories) {
+	if(!_custom_categories) {
+		return false;
+	}
+
+	if(_custom_categories < 1) {
+		return false;
+	}
+
 	var total_custom_image_element = $(".custom_image_element");
 
 	if (total_custom_image_element.length < 1) {
@@ -654,6 +662,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 		return false;
 	}
 	
+
 	for (var i = 0; i < _custom_categories.length; i++) {
 		if(_custom_categories[i] == "") {
 			return false;
