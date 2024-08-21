@@ -733,13 +733,13 @@ function addCustomCategory() {
 		<table>
 			<tr>
 				<th style="background-color: #003366;">
-					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" value="${categoryName}" />
+					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" onkeyup="rename_category_labels()" onchange="rename_category_labels()" value="${categoryName}" />
 					<span onclick="delete_category(this)">&#10060;</span>
 				</th>
 			</tr>
 			<tr>
 				<td>
-					<button class="reasonable_box" onclick="generateThumbnail('${thumbnailContainerId}')">Bild aufnehmen</button>
+					<button class="reasonable_box" onclick="generateThumbnail('${thumbnailContainerId}')">Bild für <span class='category_name_shower'>$KATEGORIENAME</span> auf&shy;nehmen</button>
 				</td>
 			</tr>
 			<tr>
@@ -816,6 +816,14 @@ function getCustomCategoryNames() {
 	return categoryNames;
 }
 
+function rename_category_labels () {
+	$(".custom_images_category").each((i, e) => {
+		var name = $(e).find("input").val();
+
+		$(e).find(".category_name_shower").text(name);
+	});
+}
+
 function shouldCustomTrainingBeEnabled(_custom_categories) {
 	if(!_custom_categories) {
 		return false;
@@ -836,7 +844,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 		if(!$(e).find("img").length) {
 			all_categories_have_at_least_one_image = false;
 		}
-	})
+	});
 
 	if(!all_categories_have_at_least_one_image) {
 		return false;

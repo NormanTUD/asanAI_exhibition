@@ -88,6 +88,8 @@
 		$(document).ready(async function() {
 			asanai.set_image_div_name("custom_images");
 			asanai.set_image_url_tensor_div("custom_images");
+
+			rename_category_labels();
 		});
 	</script>
 </html>
