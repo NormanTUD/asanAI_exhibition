@@ -1,4 +1,4 @@
-*{
+* {
 	font-family: "Open Sans", sans-serif;
 	align-items: center;
 	text-align: center;
@@ -19,10 +19,6 @@
 p {
 	font-size: min(7vh, 7vw);
 	margin-top: 5vh;
-}
-
-body{
-	overflow: hidden;
 }
 
 .container {
