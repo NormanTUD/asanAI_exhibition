@@ -383,7 +383,7 @@ function try_yourself () {
 	var _l = asanai.get_labels().map(v => v.toLowerCase());
 
 	for (var k = 0; k < _l.length; k++) {
-		$("#matrix_text_" + md5(_l[k]).hide());
+		$("#matrix_text_" + md5(_l[k])).hide();
 	}
 }
 
