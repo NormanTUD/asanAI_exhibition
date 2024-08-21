@@ -853,6 +853,10 @@ function enable_or_disable_training_if_needed() {
 async function startCustomTraining () {
 	var _custom_categories = getCustomCategoryNames();
 
+	if(myKeyboard) {
+		myKeyboard.destroy();
+	}
+
 	if(shouldCustomTrainingBeEnabled(_custom_categories)) {
 		return await _start_custom_training(default_optimizer_config);
 	} else {
