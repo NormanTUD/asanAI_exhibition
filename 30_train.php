@@ -24,7 +24,7 @@
 				<td style="width: 330px;">
 					<div style="top: 50%; position: sticky;">
 						<video id="webcam_preview_video"></video><br>
-						<button onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
+						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
 					</div>
 				</td>
 				<td style="width: max-content;" id="custom_images">

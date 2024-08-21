@@ -559,7 +559,7 @@ function addCustomCategory() {
 			</tr>
 			<tr>
 				<td>
-					<button onclick="generateThumbnail('${thumbnailContainerId}')">Bild aufnehmen</button>
+					<button class="reasonable_box" onclick="generateThumbnail('${thumbnailContainerId}')">Bild aufnehmen</button>
 				</td>
 			</tr>
 			<tr>
