@@ -629,10 +629,8 @@ function matrix_texts(){
 			}
 		}
 
-		var _matrix_col_name = `#matrix_text_${md5(_first_key.toLowerCase())}`;
-
-		assert($(_matrix_col_name).length >= 1, `Could not find ${_matrix_col_name}`)
-
+		//var _matrix_col_name = `#matrix_text_${md5(_first_key.toLowerCase())}`;
+		//assert($(_matrix_col_name).length >= 1, `Could not find ${_matrix_col_name}`)
 		//$(_matrix_col_name).html(_matrix_string)
 		
 		table_string += `<td>${_matrix_string}</td>`;
