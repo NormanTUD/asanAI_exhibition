@@ -401,3 +401,7 @@ video {
 	margin-left: 200px;
 	margin-right: 200px;
 }
+
+.thumbnail_container {
+	min-height: 50px;
+}
