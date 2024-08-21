@@ -197,6 +197,8 @@ function generateOneHotArray(position, length) {
 //async function _start_custom_training(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 async function _start_custom_training(optimizer_config) {
 	$("#progress").show();
+	$("#progress-text").show();
+
 	stringToNumberMap = [];
 	currentNumber = 0;
 
@@ -304,6 +306,7 @@ async function _start_custom_training(optimizer_config) {
 	createAuswertungTable(local_categories);
 
 	$("#progress").hide();
+	$("#progress-text").hide();
 }
 
 
