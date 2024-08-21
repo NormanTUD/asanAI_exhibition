@@ -645,7 +645,7 @@ function matrix_texts(){
 	var $analysis = $("#analysis");
 
 	if($analysis.length) {
-		$analysis.html(table_string)
+		$analysis.html(table_string).show();
 	} else {
 		console.error(`$("#analysis") was empty!`);
 	}

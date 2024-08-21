@@ -37,7 +37,7 @@
 			</div>
 		</div>
 
-		<div id="analysis"></div>
+		<div id="analysis" style="display: none"></div>
 
 		<table id="custom_images_table" style="margin-left: 200px;">
 			<tr>
