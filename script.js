@@ -550,24 +550,24 @@ function addCustomCategory() {
 
 	// Define the new td content
 	var newCategoryContent = `
-	    <table>
-		<tr>
-		    <th>
-			<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 80%; color: white; background-color: #003366" value="${categoryName}" />
-			<span onclick="delete_category(this)">&#10060;</span>
-		    </th>
-		</tr>
-		<tr>
-		    <td>
-			<button onclick="generateThumbnail('${thumbnailContainerId}')">Bild aufnehmen</button>
-		    </td>
-		</tr>
-		<tr>
-		    <td>
-			<div id="${thumbnailContainerId}"></div>
-		    </td>
-		</tr>
-	    </table>
+		<table>
+			<tr>
+				<th style="background-color: #003366;">
+					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" value="${categoryName}" />
+					<span onclick="delete_category(this)">&#10060;</span>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="generateThumbnail('${thumbnailContainerId}')">Bild aufnehmen</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div id="${thumbnailContainerId}"></div>
+				</td>
+			</tr>
+		</table>
 	`;
 
 	// Create a new table element

@@ -21,15 +21,17 @@
 
 		<table style="margin-left: 200px;">
 			<tr>
-				<td style="width: 50%;">
-					<video id="webcam_preview_video"></video><br>
-					<button onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
+				<td style="width: 330px;">
+					<div style="top: 50%; position: sticky;">
+						<video id="webcam_preview_video"></video><br>
+						<button onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
+					</div>
 				</td>
-				<td style="width: 50%;" id="custom_images">
+				<td style="width: max-content;" id="custom_images">
 					<table>
 						<tr>
 							<th style="background-color: #003366;">
-								<input class="category_name" onclick="show_keyboard(this)" placeholder="Kategorie 1" style="width: 80%; color: white; background-color: #003366" value="Kategorie 1" />
+								<input class="category_name" onclick="show_keyboard(this)" placeholder="Kategorie 1" style="width: 90%; color: white; background-color: #0051a2;" value="Kategorie 1" />
 								<span onclick="delete_category(this)">&#10060;</span>
 							</th>
 						</tr>
