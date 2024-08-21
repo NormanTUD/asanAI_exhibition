@@ -28,25 +28,6 @@
 					</div>
 				</td>
 				<td style="width: max-content;" id="custom_images">
-					<table>
-						<tr>
-							<th style="background-color: #003366;">
-								<input class="category_name" onclick="show_keyboard(this)" placeholder="Kategorie 1" style="width: 90%; color: white; background-color: #0051a2;" value="Kategorie 1" />
-								<span onclick="delete_category(this)">&#10060;</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<button onclick="generateThumbnail('thumbnailContainer')">Bild aufnehmen</button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div id="thumbnailContainer">
-								</div>
-							</td>
-						</tr>
-					</table>
 				</td>
 			</tr>
 		</table>
@@ -55,6 +36,9 @@
 			$(document).ready(async function() {
 				if(asanai) {
 					asanai.tf_data_webcam($("#webcam_preview_video")[0])
+
+					addCustomCategory();
+					addCustomCategory();
 				} else {
 					log("asanai is undefined");
 				}
