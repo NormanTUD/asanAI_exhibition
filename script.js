@@ -120,6 +120,7 @@ function generateThumbnail(container_id) {
 
 	var img = document.createElement('img');
 	img.setAttribute('src', dataURL);
+	img.setAttribute('class', 'custom_image_element');
 
 	_container.append(img);
 }
@@ -564,7 +565,7 @@ function addCustomCategory() {
 			</tr>
 			<tr>
 				<td>
-					<div id="${thumbnailContainerId}"></div>
+					<div class="thumbnail_container" id="${thumbnailContainerId}"></div>
 				</td>
 			</tr>
 		</table>
@@ -573,9 +574,11 @@ function addCustomCategory() {
 	// Create a new table element
 	var newTableElement = document.createElement('table');
 	newTableElement.innerHTML = newCategoryContent;
+	newTableElement.setAttribute('class', 'custom_images_category');
 
 	// Append the new table directly to the rowElement (which is the existing <td>)
 	rowElement.appendChild(newTableElement);
+
 }
 
 
@@ -633,9 +636,33 @@ function getCustomCategoryNames() {
 	return categoryNames;
 }
 
+function shouldCustomTrainingBeEnabled() {
+	var total_custom_image_element = $(".custom_image_element");
+
+	if (total_custom_image_element.length < 1) {
+		return false;
+	}
+
+	var all_categories_have_at_least_one_image = true;
+	$(".custom_images_category").each((i, e) => {
+		if(!$(e).find("img").length) {
+			all_categories_have_at_least_one_image = false;
+		}
+	})
+
+	if(!all_categories_have_at_least_one_image) {
+		return false;
+	}
+
+	return true;
+}
 
 function startCustomTraining () {
 	var _custom_categories = getCustomCategoryNames();
 
-	alert(`Not yet implemented: ${_custom_categories.join(", ")}`);
+	if(shouldCustomTrainingBeEnabled()) {
+		alert(`Not yet implemented: ${_custom_categories.join(", ")}`);
+	} else {
+		console.error(`Custom training not enabled.`);
+	}
 }
