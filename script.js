@@ -460,7 +460,7 @@ let toggle_on = (name) => {
 	}
 }
 
-//Startseiten erklärungen toggle
+//Startseiten explanationen toggle
 function neural_network_explanation(){
 	$(".tab").hide();
 	$("#neural_network_explanation_tab").show();
