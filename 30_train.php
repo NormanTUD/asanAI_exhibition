@@ -23,6 +23,8 @@
 
 		<button hidden="hidden" class="box" id="evaluation" onclick="show_auswertung(); matrix_texts()">Auswertung anzeigen</button>
 
+		<div id="analysis"></div>
+
 		<table id="custom_images_table" style="margin-left: 200px;">
 			<tr>
 				<td style="width: 330px;">

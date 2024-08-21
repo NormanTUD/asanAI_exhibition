@@ -360,7 +360,7 @@ function createAuswertungTable(elements) {
 	// Erste Zeile erstellen
 	let firstRow = $("<tr></tr>");
 	elements.forEach(function(element) {
-		let td = $("<td></td>").addClass("auswertung_element").attr("id", "matrix_text_" + element);
+		let td = $("<td></td>").addClass("auswertung_element").attr("id", "matrix_text_" + md5(element));
 		firstRow.append(td);
 	});
 
@@ -385,7 +385,7 @@ function try_yourself () {
 	var _l = asanai.get_labels().map(v => v.toLowerCase());
 
 	for (var k = 0; k < _l.length; k++) {
-		$("#matrix_text_" + _l[k]).hide();
+		$("#matrix_text_" + md5(_l[k]).hide());
 	}
 }
 
@@ -407,7 +407,7 @@ function show_auswertung () {
 	var _l = asanai.get_labels().map(v => v.toLowerCase());
 
 	for (var k = 0; k < _l.length; k++) {
-		_elems_ids.push("matrix_text_" + _l[k]);
+		_elems_ids.push("matrix_text_" + md5(_l[k]));
 	}
 
 	var _elems_classes = [
@@ -588,6 +588,8 @@ function matrix_texts(){
 
 	$("#matrix_text").html(`Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <green>${percentage}%</green>.`);
 
+	var table_string = "";
+
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
 
@@ -629,13 +631,21 @@ function matrix_texts(){
 			}
 		}
 
-		var _matrix_col_name = `#matrix_text_${_first_key.toLowerCase()}`;
+		var _matrix_col_name = `#matrix_text_${md5(_first_key.toLowerCase())}`;
 
 		assert($(_matrix_col_name).length >= 1, `Could not find ${_matrix_col_name}`)
 
-		//log("_matrix_col_name:", _matrix_col_name, "_matrix_string:", _matrix_string);
+		//$(_matrix_col_name).html(_matrix_string)
+		
+		table_string += `<td>${_matrix_string}</td>`;
+	}
 
-		$(_matrix_col_name).html(_matrix_string)
+	var $analysis = $("#analysis");
+
+	if($analysis.length) {
+		$analysis.html(_matrix_string)
+	} else {
+		console.error(`$("#analysis") was empty!`);
 	}
 }
 
