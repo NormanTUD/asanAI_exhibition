@@ -156,6 +156,62 @@ async function load_and_train_fruits_example() {
 	return await _load_example("fruits", "first_example_images", 2, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
 }
 
+//async function _start_custom_training(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
+async function _start_custom_training(optimizer_config) {
+	var local_categories = getCustomCategoryNames();
+
+	if(!shouldCustomTrainingBeEnabled(local_categories)) {
+		console.error(`Custom training currently disabled`);
+		return;
+	}
+
+	var model_struct = [
+		{conv2d: {filters: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
+		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{maxPooling2d: {poolSize: [3, 3] }},
+		{flatten: {}},
+		{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: local_categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
+	];
+	
+	var _created_model = asanai.create_model_from_model_data(model_struct, optimizer_config);
+
+	asanai.set_model(_created_model);
+
+	asanai.set_labels(local_categories);
+
+	start_training_show_divs();
+
+	var exhib_data = [];
+
+	$(".custom_images_category").each((i, e) => {
+		var category_name = $(e).find("input").val();
+		var found_imgs = $(e).find("img");
+	});
+
+	var loaded_data = [];
+
+	if(loaded_data) {
+		asanai.visualize_train();
+
+		var history = await asanai.fit(loaded_data.x, loaded_data.y, {epochs: nr_epochs, batchSize: batch_size, shuffle: true}, {'div': 'plotly_history'}, {"onEpochEnd": update_progress_bar, "onTrainEnd": training_end});
+		if(!history) {
+			console.error("Training failed");
+		}
+
+		await asanai.dispose(loaded_data.x);
+		await asanai.dispose(loaded_data.y);
+	} else {
+		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
+	}
+
+	createAuswertungTable(local_categories);
+}
+
+
+
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 	var _created_model = asanai.create_model_from_model_data(model_struct, optimizer_config);
 
@@ -697,11 +753,13 @@ function enable_or_disable_training_if_needed() {
 	}
 } 
 
-function startCustomTraining () {
+async function startCustomTraining () {
 	var _custom_categories = getCustomCategoryNames();
 
 	if(shouldCustomTrainingBeEnabled(_custom_categories)) {
 		alert(`Not yet implemented: ${_custom_categories.join(", ")}`);
+
+		return await _start_custom_training(optimizer_config);
 	} else {
 		console.error(`Custom training not enabled.`);
 	}
