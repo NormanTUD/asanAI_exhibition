@@ -143,6 +143,8 @@ function generateThumbnail(container_id) {
 function delete_image (elem) {
 	$(elem).prev().remove();
 	$(elem).remove();
+
+	update_after_relevant_change();
 }
 
 async function load_and_train_scheine_muenzen_schluessel() {
