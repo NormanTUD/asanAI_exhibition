@@ -376,11 +376,17 @@ function createAuswertungTable(elements) {
 
 	// Zweite Zeile erstellen
 	let secondRow = $("<tr></tr>");
-	let colspanTd = $("<td></td>").addClass("auswertung_element").attr("id", "matrix_text").attr("colspan", elements.length);
+	let colspanTd = $("<td></td>").
+		addClass("auswertung_element").
+		attr("id", "matrix_text").
+		attr("colspan", elements.length)
+	;
+
 	secondRow.append(colspanTd);
 
 	// Füge beide Zeilen an den Anfang der Tabelle hinzu
-	$("#auswertung_element").append(firstRow).append(secondRow);
+	$("#auswertung_element").append(firstRow)
+	$("#auswertung_element").append(secondRow);
 }
 
 function try_yourself () {
