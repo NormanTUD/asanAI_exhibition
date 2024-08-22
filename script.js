@@ -658,9 +658,7 @@ function initialize_keyboard(elem) {
 	function onChange(input) {
 		elem.value = input;
 
-		enable_or_disable_training_if_needed();
-
-		rename_category_labels();
+		update_after_relevant_change();
 	}
 
 	function onKeyPress(button) {
@@ -678,9 +676,7 @@ function initialize_keyboard(elem) {
 
 		$(elem).focus();
 
-		enable_or_disable_training_if_needed();
-
-		rename_category_labels();
+		update_after_relevant_change();
 	}
 
 	myKeyboard = new keyboard({
@@ -726,9 +722,7 @@ function delete_category (elem) {
 		log("Cannot delete last element")
 	}	
 
-	enable_or_disable_training_if_needed();
-
-	rename_category_labels();
+	update_after_relevant_change();
 }
 
 function uuidv4() {
@@ -753,7 +747,7 @@ function addCustomCategory() {
 		<table>
 			<tr>
 				<th style="background-color: #003366;">
-					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" onkeyup="rename_category_labels()" onchange="rename_category_labels()" value="${categoryName}" />
+					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
 					<span onclick="delete_category(this)">&#10060;</span>
 				</th>
 			</tr>
@@ -778,9 +772,7 @@ function addCustomCategory() {
 	// Append the new table directly to the rowElement (which is the existing <td>)
 	rowElement.appendChild(newTableElement);
 
-	enable_or_disable_training_if_needed();
-
-	rename_category_labels();
+	update_after_relevant_change();
 }
 
 
@@ -838,7 +830,7 @@ function getCustomCategoryNames() {
 	return categoryNames;
 }
 
-function rename_category_labels () {
+function update_after_relevant_change () {
 	$(".custom_images_category").each((i, e) => {
 		var name = $(e).find("input").val();
 
@@ -850,6 +842,8 @@ function rename_category_labels () {
 
 		$(e).find(".category_name_shower").html(name);
 	});
+
+	enable_or_disable_training_if_needed();
 }
 
 function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
@@ -898,9 +892,14 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		ret = false;
 	}
 	
+	var shown_empty_warning = false;
 
 	for (var i = 0; i < _custom_categories.length; i++) {
 		if(_custom_categories[i] == "") {
+			if(!shown_empty_warning) {
+				errors.push("Mindestens einer der Kategoriennamen war leer");
+				shown_empty_warning = true;
+			}
 			ret = false;
 		}
 	}
