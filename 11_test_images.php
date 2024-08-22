@@ -53,8 +53,8 @@
 	</div>
 	<script>
 		$(document).ready(async function() {
-			asanai.set_image_div_name("second_example_images");
-			asanai.set_image_url_tensor_div("second_example_images");
+			asanai.set_image_div_name("first_example_images");
+			asanai.set_image_url_tensor_div("first_example_images");
 		});
 	</script>
 </body>
