@@ -907,7 +907,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 	if(errors.length > 0) {
 		var errors_string = "Folgende Probleme bestehen noch und müssen gelöst werden, bevor du trainieren kannst:<br>";
 		if(errors.length == 1) {
-			errors_string += `${errors[0]}\n`;
+			errors_string += `<br>${errors[0]}\n`;
 		} else {
 			errors_string += "<ul>";
 
