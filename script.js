@@ -317,8 +317,6 @@ async function _start_custom_training(optimizer_config) {
 	$("#progress-text").hide();
 }
 
-
-
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 	var _created_model = asanai.create_model_from_model_data(model_struct, optimizer_config);
 
@@ -384,9 +382,8 @@ function createAuswertungTable(elements) {
 
 	secondRow.append(colspanTd);
 
-	// Füge beide Zeilen an den Anfang der Tabelle hinzu
-	$("#auswertung_element").append(firstRow)
-	$("#auswertung_element").append(secondRow);
+	firstRow.appendTo("#auswertung_element");
+	secondRow.appendTo("#auswertung_element");
 }
 
 function try_yourself () {
