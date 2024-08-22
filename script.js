@@ -886,8 +886,8 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		ret = false;
 	}
 
-	if(_custom_categories.length < 1) {
-		errors.push(`Es gibt weniger als eine Kategorie`);
+	if(_custom_categories.length < 2) {
+		errors.push(`Es gibt weniger als zwei Kategorien`);
 		ret = false;
 	}
 
