@@ -868,8 +868,9 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 		ret = false;
 	}
 
-	if(_custom_categories < 1) {
-		errors.push("Es gibt weniger als eine Kategorie");
+	if(_custom_categories.length < 1) {
+		log(_custom_categories);
+		errors.push(`Es gibt weniger als eine Kategorie`);
 		ret = false;
 	}
 
@@ -901,16 +902,21 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 		}
 	}
 
-	if(errors.length) {
-		var errors_string = "<ul>";
+	if(errors.length > 0) {
+		var errors_string = "";
+		if(errors.length == 1) {
+			errors_string += `${errors[0]}\n`;
+		} else {
+			errors_string = "<ul>";
 
-		for (var i = 0; i < errors.length; i++) {
-			errors_string += `\t<li>${errors[i]}</li>\n`;
+			for (var i = 0; i < errors.length; i++) {
+				errors_string += `\t<li>${errors[i]}</li>\n`;
+			}
+
+			errors_string += "</ul>";
+
+			$("#show_errors").html(errors_string).show();
 		}
-
-		errors_string += "</ul>";
-
-		$("#show_errors").html(errors_string).show();
 	} else {
 		$("#show_errors").html("").hide();
 	}
@@ -932,13 +938,11 @@ function enable_or_disable_training_if_needed() {
 } 
 
 async function startCustomTraining () {
-	var _custom_categories = getCustomCategoryNames();
-
 	if(myKeyboard) {
 		myKeyboard.destroy();
 	}
 
-	if(shouldCustomTrainingBeEnabled(_custom_categories)) {
+	if(shouldCustomTrainingBeEnabled(getCustomCategoryNames())) {
 		$("#custom_images_table").hide();
 
 		return await _start_custom_training(default_optimizer_config);
