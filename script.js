@@ -135,7 +135,7 @@ function generateThumbnail(container_id) {
 	img.setAttribute('class', 'custom_image_element');
 
 	_container.append(img);
-	_container.append($("<a onclick='delete_image(this)'>❌</a>")[0]);
+	_container.append($("<a class='delete_image_x' onclick='delete_image(this)'>❌</a>")[0]);
 
 	enable_or_disable_training_if_needed();
 }

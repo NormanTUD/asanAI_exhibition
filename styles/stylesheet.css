@@ -415,3 +415,9 @@ video {
 .custom_images_category {
 	width: 100%;
 }
+
+.delete_image_x {
+	left: -21px;
+	position: relative;
+	top: -6px;
+}
