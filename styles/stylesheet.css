@@ -407,7 +407,7 @@ video {
 	min-height: 50px;
 }
 
-.explanation_group {
+#explanation_group {
 	bottom: 10%;
 	position: fixed;
 }
