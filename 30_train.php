@@ -44,9 +44,6 @@
 			<tr>
 				<td style="width: 330px; vertical-align: baseline;">
 					<div>
-						<button style="visiblity: hidden;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
-						<br>
-						<br>
 						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
 						<br>
 						<br>
@@ -54,6 +51,8 @@
 					</div>
 					<div id="show_errors" style="display: none">
 					</div>
+					<br>
+					<button style="visiblity: hidden;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
 				</td>
 				<td style="width: max-content; vertical-align: baseline;" id="custom_images">
 				</td>
