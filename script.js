@@ -668,6 +668,8 @@ function initialize_keyboard(elem) {
 			log("elem.value after:", elem.value);
 		} else if(button == "{deleteall}") {
 			elem.value = "";
+		} else if(button == "{closekeyboard}") {
+			myKeyboard.destroy();
 		}
 
 		$(elem).focus();
@@ -680,7 +682,7 @@ function initialize_keyboard(elem) {
 		layoutName: "default",
 		layout: {
 			default: [
-				"1 2 3 4 5 6 7 8 9 0",
+				"1 2 3 4 5 6 7 8 9 0 {closekeyboard}",
 				"q w e r t z u i o p ü",
 				"a s d f g h j k l ö ä",
 				"y x c v b n m",
@@ -689,6 +691,7 @@ function initialize_keyboard(elem) {
 		},
 		display: {
 			"{backspace}": "⌫",
+			"{closekeyboard}": "❌",
 			"{deleteall}": "🗑️"
 		}
 	});
