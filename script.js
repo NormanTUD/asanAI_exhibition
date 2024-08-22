@@ -652,12 +652,12 @@ function matrix_texts() {
 		table_string += `<td>${_matrix_string}</td>`;
 	}
 
-	var $analysis = $("#analysis");
+	var $analysis = $("#auswertung_element");
 
 	if($analysis.length) {
 		$analysis.html(table_string).show();
 	} else {
-		console.error(`$("#analysis") was empty!`);
+		console.error(`$("#auswertung_element") was empty!`);
 	}
 }
 

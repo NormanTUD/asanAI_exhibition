@@ -38,9 +38,6 @@
 			</div>
 		</div>
 
-		<div id="analysis" style="display: none">
-		</div>
-
 		<table id="auswertung_element">
 		</table>
 
