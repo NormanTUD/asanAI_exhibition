@@ -407,6 +407,8 @@ function start_training_show_divs() {
 }
 
 function show_auswertung () {
+	matrix_texts();
+
 	var _elems_ids = [
 		"auswertung",
 		"text_training",
@@ -545,7 +547,7 @@ var training_end = async function(){
 }
 
 //Confusion Matrix als Text
-function matrix_texts(){
+function matrix_texts() {
 	var c_m_d = asanai.confusion_matrix_data;
 
 	var _keys = asanai.get_labels();
