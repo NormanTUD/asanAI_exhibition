@@ -388,6 +388,7 @@ function try_yourself () {
 
 	asanai.start_camera();
 
+	$("#auswertung_element").hide();
 	$("#matrix_text").hide();
 	$("#analysis").hide();
 	$("#yourself").hide();
