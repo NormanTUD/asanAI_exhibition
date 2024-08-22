@@ -92,7 +92,7 @@
 			asanai.set_image_div_name("custom_images");
 			asanai.set_image_url_tensor_div("custom_images");
 
-			rename_category_labels();
+			update_after_relevant_change();
 		});
 	</script>
 </html>
