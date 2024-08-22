@@ -604,9 +604,11 @@ function matrix_texts() {
 
 	assert(typeof(percentage) == "number" && !Number.isNaN(percentage), `percentage is not a number but ${typeof(percentage)}, percentage: ${percentage}, correctly_predicted: ${correctly_predicted}, total_nr_images: ${total_nr_images}`);
 
-	$("#matrix_text").html(`Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <green>${percentage}%</green>.`);
+	var last_msg = `Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>Das entspricht <green>${percentage}%</green>.`;
 
-	var table_string = "";
+	//$("#matrix_text").html(last_msg);
+
+	var table_string = "<tr>";
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
@@ -655,6 +657,10 @@ function matrix_texts() {
 		
 		table_string += `<td>${_matrix_string}</td>`;
 	}
+
+	table_string += "</tr>"
+
+	table_string += `<tr><td colspan="${_keys.length}">${last_msg}</td></tr>`;
 
 	var $analysis = $("#auswertung_element");
 
