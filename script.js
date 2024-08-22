@@ -657,6 +657,8 @@ function initialize_keyboard(elem) {
 
 	function onChange(input) {
 		elem.value = input;
+
+		enable_or_disable_training_if_needed();
 	}
 
 	function onKeyPress(button) {
@@ -673,6 +675,8 @@ function initialize_keyboard(elem) {
 		}
 
 		$(elem).focus();
+
+		enable_or_disable_training_if_needed();
 	}
 
 	myKeyboard = new keyboard({
