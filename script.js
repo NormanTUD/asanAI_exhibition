@@ -662,8 +662,10 @@ function initialize_keyboard(elem) {
 	function onKeyPress(button) {
 		console.log("Button pressed", button);
 
-		if(button == "bksp") {
+		if(button == "{backspace}") {
+			log("elem.value before:", elem.value);
 			elem.value = elem.value.substring(0, elem.value.length - 1);
+			log("elem.value after:", elem.value);
 		}
 	}
 
@@ -677,8 +679,7 @@ function initialize_keyboard(elem) {
 				"1 2 3 4 5 6 7 8 9 0",
 				"q w e r t z u i o p ü",
 				"a s d f g h j k l ö ä",
-				"y x c v b n m",
-				"{space} {backspace}"
+				"y x c v b n m {space} {backspace}"
 			]
 		},
 		display: {
