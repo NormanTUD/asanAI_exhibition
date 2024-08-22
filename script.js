@@ -888,7 +888,9 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 	});
 
 	if(!all_categories_have_at_least_one_image) {
-		errors.push("Es gibt mindestens eine Kategorie ohne Bilder. Jede Kategorie muss mindestens ein Bild haben, damit du trainieren kannst.");
+		if(!total_custom_image_element.length < 1) {
+			errors.push("Es gibt mindestens eine Kategorie ohne Bilder. Jede Kategorie muss mindestens ein Bild haben, damit du trainieren kannst.");
+		}
 		ret = false;
 	}
 	
