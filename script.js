@@ -852,7 +852,13 @@ function rename_category_labels () {
 	});
 }
 
-function shouldCustomTrainingBeEnabled(_custom_categories) {
+function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
+	if(!_custom_categories || _custom_categories.length == 0 || !Array.isArray(_custom_categories)) {
+		_custom_categories = getCustomCategoryNames();
+	}
+
+	log("CUSTOM:", _custom_categories);
+
 	var errors = [];
 	var ret = true;
 
@@ -869,7 +875,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 	}
 
 	if(_custom_categories.length < 1) {
-		log(_custom_categories);
+		log("_custom_categories", _custom_categories, getCustomCategoryNames());
 		errors.push(`Es gibt weniger als eine Kategorie`);
 		ret = false;
 	}
