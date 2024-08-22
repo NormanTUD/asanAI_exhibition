@@ -859,20 +859,24 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 	var _custom_categories_has_duplicates = new Set(_custom_categories).size !== _custom_categories.length;
 
 	if(_custom_categories_has_duplicates) {
-		ret = false:
+		errors.push("Einige der Kategorien beinhalten die gleichen Namen. Jede Kategorie braucht einen eigenen Namen.");
+		ret = false;
 	}
 
 	if(!_custom_categories) {
+		errors.push("Die Liste der Kategorienamen ist leer");
 		ret = false;
 	}
 
 	if(_custom_categories < 1) {
+		errors.push("Es gibt weniger als eine Kategorie");
 		ret = false;
 	}
 
 	var total_custom_image_element = $(".custom_image_element");
 
 	if (total_custom_image_element.length < 1) {
+		errors.push("Bitte nehme für jede Kategorie mindestens ein Bild auf");
 		ret = false;
 	}
 
@@ -884,6 +888,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 	});
 
 	if(!all_categories_have_at_least_one_image) {
+		errors.push("Es gibt mindestens eine Kategorie ohne Bilder. Jede Kategorie muss mindestens ein Bild haben, damit du trainieren kannst.");
 		ret = false;
 	}
 	
