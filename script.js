@@ -893,8 +893,8 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 
 	var total_custom_image_element = $(".custom_image_element");
 
-	if (total_custom_image_element.length < 1) {
-		errors.push("Bitte nehme für jede Kategorie mindestens ein Bild auf");
+	if (total_custom_image_element.length < 5) {
+		errors.push("Bitte nehme für jede Kategorie mindestens 5 Bilder auf.");
 		ret = false;
 	}
 
