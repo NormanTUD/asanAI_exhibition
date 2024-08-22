@@ -135,8 +135,14 @@ function generateThumbnail(container_id) {
 	img.setAttribute('class', 'custom_image_element');
 
 	_container.append(img);
+	_container.append($("<a onclick='delete_image(this)'>❌</a>")[0]);
 
 	enable_or_disable_training_if_needed();
+}
+
+function delete_image (elem) {
+	$(elem).prev().remove();
+	$(elem).remove();
 }
 
 async function load_and_train_scheine_muenzen_schluessel() {
