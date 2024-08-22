@@ -659,6 +659,8 @@ function initialize_keyboard(elem) {
 		elem.value = input;
 
 		enable_or_disable_training_if_needed();
+
+		rename_category_labels();
 	}
 
 	function onKeyPress(button) {
@@ -677,6 +679,8 @@ function initialize_keyboard(elem) {
 		$(elem).focus();
 
 		enable_or_disable_training_if_needed();
+
+		rename_category_labels();
 	}
 
 	myKeyboard = new keyboard({
@@ -838,7 +842,13 @@ function rename_category_labels () {
 	$(".custom_images_category").each((i, e) => {
 		var name = $(e).find("input").val();
 
-		$(e).find(".category_name_shower").text(name);
+		if(!name) {
+			name = "<i>Leerer Name</i>";
+		} else {
+			name = `<i>${name}</i>`;
+		}
+
+		$(e).find(".category_name_shower").html(name);
 	});
 }
 
