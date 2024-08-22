@@ -408,6 +408,7 @@ video {
 }
 
 #explanation_group {
+	right: 20%;
 	bottom: 10%;
 	position: fixed;
 }
