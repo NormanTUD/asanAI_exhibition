@@ -904,13 +904,6 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		}
 	});
 
-	var all_categories_have_at_least_one_image = true;
-	$(".custom_images_category").each((i, e) => {
-		if(!$(e).find("img").length) {
-			all_categories_have_at_least_one_image = false;
-		}
-	});
-
 	var shown_empty_warning = false;
 
 	for (var i = 0; i < _custom_categories.length; i++) {
