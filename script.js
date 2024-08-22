@@ -361,13 +361,13 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 	createAuswertungTable(local_categories);
 }
 
-function createAuswertungTable(elements) {
+function createAuswertungTable(local_categories) {
 	// Entferne alle Inhalte der Tabelle
 	$("#auswertung_element").empty();
 
 	// Erste Zeile erstellen
 	let firstRow = $("<tr></tr>");
-	elements.forEach(function(element) {
+	local_categories.forEach(function(element) {
 		let td = $("<td></td>").addClass("auswertung_element").attr("id", "matrix_text_" + md5(element));
 		firstRow.append(td);
 	});
@@ -377,7 +377,7 @@ function createAuswertungTable(elements) {
 	let colspanTd = $("<td></td>").
 		addClass("auswertung_element").
 		attr("id", "matrix_text").
-		attr("colspan", elements.length)
+		attr("colspan", local_categories.length)
 	;
 
 	secondRow.append(colspanTd);
