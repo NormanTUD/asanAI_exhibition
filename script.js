@@ -666,7 +666,11 @@ function initialize_keyboard(elem) {
 			log("elem.value before:", elem.value);
 			elem.value = elem.value.substring(0, elem.value.length - 1);
 			log("elem.value after:", elem.value);
+		} else if(button == "{deleteall}") {
+			elem.value = "";
 		}
+
+		$(elem).focus();
 	}
 
 	myKeyboard = new keyboard({
@@ -679,11 +683,13 @@ function initialize_keyboard(elem) {
 				"1 2 3 4 5 6 7 8 9 0",
 				"q w e r t z u i o p ü",
 				"a s d f g h j k l ö ä",
-				"y x c v b n m {space} {backspace}"
+				"y x c v b n m",
+				"{deleteall} {space} {backspace}"
 			]
 		},
 		display: {
 			"{backspace}": "⌫",
+			"{deleteall}": "🗑️"
 		}
 	});
 }
@@ -710,6 +716,8 @@ function delete_category (elem) {
 	}	
 
 	enable_or_disable_training_if_needed();
+
+	rename_category_labels();
 }
 
 function uuidv4() {
@@ -760,6 +768,8 @@ function addCustomCategory() {
 	rowElement.appendChild(newTableElement);
 
 	enable_or_disable_training_if_needed();
+
+	rename_category_labels();
 }
 
 

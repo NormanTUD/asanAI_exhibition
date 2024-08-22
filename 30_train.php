@@ -53,7 +53,7 @@
 						<video id="webcam_preview_video"></video>
 					</div>
 				</td>
-				<td style="width: max-content;" id="custom_images">
+				<td style="width: max-content; vertical-align: baseline;" id="custom_images">
 				</td>
 			</tr>
 		</table>
