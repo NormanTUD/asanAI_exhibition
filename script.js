@@ -857,8 +857,6 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		_custom_categories = getCustomCategoryNames();
 	}
 
-	log("CUSTOM:", _custom_categories);
-
 	var errors = [];
 	var ret = true;
 
@@ -875,7 +873,6 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 	}
 
 	if(_custom_categories.length < 1) {
-		log("_custom_categories", _custom_categories, getCustomCategoryNames());
 		errors.push(`Es gibt weniger als eine Kategorie`);
 		ret = false;
 	}
@@ -921,8 +918,9 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 
 			errors_string += "</ul>";
 
-			$("#show_errors").html(errors_string).show();
 		}
+
+		$("#show_errors").html(errors_string).show();
 	} else {
 		$("#show_errors").html("").hide();
 	}
