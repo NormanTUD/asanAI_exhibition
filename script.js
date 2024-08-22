@@ -891,12 +891,17 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		ret = false;
 	}
 
-	var total_custom_image_element = $(".custom_image_element");
+	var required_nr_images_per_category = 5;
 
-	if (total_custom_image_element.length < 5) {
-		errors.push("Bitte nehme für jede Kategorie mindestens 5 Bilder auf.");
-		ret = false;
-	}
+	$(".custom_images_category").each((i, e) => {
+		var imgs_in_this_cat = $(e).find("img");
+		var cat_name = $(e).find("input").val();
+
+		if (imgs_in_this_cat.length < required_nr_images_per_category) {
+			errors.push(`Für die Kategorie ${cat_name} fehlen noch ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder.`);
+			ret = false;
+		}
+	});
 
 	var all_categories_have_at_least_one_image = true;
 	$(".custom_images_category").each((i, e) => {
@@ -904,6 +909,8 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 			all_categories_have_at_least_one_image = false;
 		}
 	});
+
+	var total_custom_image_element = $(".custom_image_element");
 
 	if(!all_categories_have_at_least_one_image) {
 		if(!total_custom_image_element.length < 1) {
@@ -923,6 +930,8 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 			ret = false;
 		}
 	}
+
+	log("errors:", errors);
 
 	if(errors.length > 0) {
 		var errors_string = "Folgende Probleme bestehen noch und müssen gelöst werden, bevor du trainieren kannst:<br>";
@@ -957,7 +966,7 @@ function enable_or_disable_training_if_needed() {
 		$("#start_custom_training").prop("disabled", true);
 		$("#start_custom_training").addClass("disabled_class")
 	}
-} 
+}
 
 async function startCustomTraining () {
 	if(myKeyboard) {
