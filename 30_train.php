@@ -38,7 +38,7 @@
 			</div>
 		</div>
 
-		<table id="auswertung_element">
+		<table id="auswertung_element" style="display: none">
 		</table>
 
 		<table id="custom_images_table" style="margin-left: 200px;">

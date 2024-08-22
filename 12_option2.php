@@ -28,7 +28,7 @@
 
 			<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
-			<table id="auswertung_element">
+			<table id="auswertung_element" style="display: none">
 			</table>
 
 			<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
