@@ -931,8 +931,6 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		}
 	}
 
-	log("errors:", errors);
-
 	if(errors.length > 0) {
 		var errors_string = "Folgende Probleme bestehen noch und müssen gelöst werden, bevor du trainieren kannst:<br>";
 		if(errors.length == 1) {
