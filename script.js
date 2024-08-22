@@ -927,7 +927,6 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		$("#show_errors").html("").hide();
 	}
 
-
 	return ret;
 }
 
