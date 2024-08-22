@@ -52,6 +52,8 @@
 						<br>
 						<video id="webcam_preview_video"></video>
 					</div>
+					<div id="show_errors" style="display: none">
+					</div>
 				</td>
 				<td style="width: max-content; vertical-align: baseline;" id="custom_images">
 				</td>

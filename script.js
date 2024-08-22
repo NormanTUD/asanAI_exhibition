@@ -853,18 +853,27 @@ function rename_category_labels () {
 }
 
 function shouldCustomTrainingBeEnabled(_custom_categories) {
+	var errors = [];
+	var ret = true;
+
+	var _custom_categories_has_duplicates = new Set(_custom_categories).size !== _custom_categories.length;
+
+	if(_custom_categories_has_duplicates) {
+		ret = false:
+	}
+
 	if(!_custom_categories) {
-		return false;
+		ret = false;
 	}
 
 	if(_custom_categories < 1) {
-		return false;
+		ret = false;
 	}
 
 	var total_custom_image_element = $(".custom_image_element");
 
 	if (total_custom_image_element.length < 1) {
-		return false;
+		ret = false;
 	}
 
 	var all_categories_have_at_least_one_image = true;
@@ -875,17 +884,32 @@ function shouldCustomTrainingBeEnabled(_custom_categories) {
 	});
 
 	if(!all_categories_have_at_least_one_image) {
-		return false;
+		ret = false;
 	}
 	
 
 	for (var i = 0; i < _custom_categories.length; i++) {
 		if(_custom_categories[i] == "") {
-			return false;
+			ret = false;
 		}
 	}
 
-	return true;
+	if(errors.length) {
+		var errors_string = "<ul>";
+
+		for (var i = 0; i < errors.length; i++) {
+			errors_string += `\t<li>${errors[i]}</li>\n`;
+		}
+
+		errors_string += "</ul>";
+
+		$("#show_errors").html(errors_string).show();
+	} else {
+		$("#show_errors").html("").hide();
+	}
+
+
+	return ret;
 }
 
 function enable_or_disable_training_if_needed() {
