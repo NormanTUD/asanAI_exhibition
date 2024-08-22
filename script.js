@@ -4,6 +4,7 @@
 // You can also build a GUI for this.
 
 var keyboard = null;
+var is_touch_device_cache = null;
 var myKeyboard = null;
 var done_loading = false;
 var stringToNumberMap = [];
