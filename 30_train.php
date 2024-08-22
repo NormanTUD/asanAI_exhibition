@@ -60,7 +60,18 @@
 		</table>
 
 		<div hidden="hidden" id="visualization">
+			<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 			<div id="canvas_grid_visualization"></div>
+			<div id="text_training">
+				<p class="smaller">Für Bilder jeder Kategorie werden die Test-Bilder geladen.</p>
+				<p class="smaller">Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.</p>
+				<p class="smaller">Kommt es zu einem falschen Ergebnis, wird es korrigiert.</p>
+				<p class="smaller">Mithilfe dieses Feedbacks wird der Weg angepasst bis das Netz zu einem richtigen Output gelangt.</p>
+				<p class="smaller">Je mehr Durchgänge es gibt, desto effektiver ist das Training.</p>
+				<p class="smaller">In diesem Beispiel sind es <span id="nr_epochs">0</span> Durchgänge.</p>
+			</div>
+			<div id="progress-text"></div>
+			<progress id="progress" value="0" max="100"></progress>
 		</div>
 
 		<div style="display: none">
