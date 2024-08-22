@@ -68,7 +68,7 @@ $(document).ready(async function() {
 		return;
 	}
 
-	//asanai.show_status_bar();
+	asanai.show_status_bar();
 
 	//asanai.disable_show_bars();
 
