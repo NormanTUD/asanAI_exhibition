@@ -408,8 +408,8 @@ video {
 }
 
 .explanation_group {
-	top: 400px;
-	position: relative;
+	bottom: 10%;
+	position: fixed;
 }
 
 .custom_images_category {
