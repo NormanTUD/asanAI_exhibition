@@ -62,7 +62,6 @@ p {
 	border: 1vh solid #003366;
 	border-radius: 2vh;
 	font-size: min(2vw, 2vh);
-	line-break: anywhere;
 }
 
 .reasonable_box:hover {
@@ -86,7 +85,6 @@ p {
 	position: absolute;
 	bottom: 0%;
 	font-size: min(3vw, 3vh);
-	line-break: anywhere;
 }
 
 .box:hover {

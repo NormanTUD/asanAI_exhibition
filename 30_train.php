@@ -47,7 +47,7 @@
 						<button style="visiblity: hidden;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
 						<br>
 						<br>
-						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kategorie hinzufügen</button>
+						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
 						<br>
 						<br>
 						<video id="webcam_preview_video"></video>
