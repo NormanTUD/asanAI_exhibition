@@ -159,6 +159,8 @@ $(document).ready(async function() {
 	*/
 
 	enable_or_disable_training_if_needed();
+
+	closeSpinnerFullScreen();
 });
 
 

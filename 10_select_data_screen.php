@@ -17,4 +17,7 @@
 			</ul>
 		</div>
 	</body>
+	<script>
+		showSpinnerFullScreen();
+	</script>
 </html>

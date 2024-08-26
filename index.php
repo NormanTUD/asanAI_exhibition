@@ -13,4 +13,7 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		showSpinnerFullScreen();
+	</script>
 </html>
