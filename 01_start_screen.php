@@ -5,7 +5,7 @@
 <div>
 	<div id="optimizer_div" style="display: none;"></div>
 	<div class="general">
-		<a href="10_select_data_screen.php"><button id="tryit" class="box">Probier es selbst!</button></a>
+		<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box">Probier es selbst!</button></a>
 		<div class="navbar">
 			<ul>
 				<li><a id="neural_network_explanation_link" class="icon" onclick="neural_network_explanation()">Neuronales Netz</a></li>

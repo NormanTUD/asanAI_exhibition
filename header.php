@@ -68,6 +68,7 @@
 		</script>
 
 		<script src="script.js"></script>
+		<script src="reload.js"></script>
 	</head>
 <body>
 	<div style="display: none" class="simple-keyboard"></div>
