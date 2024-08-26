@@ -215,7 +215,7 @@ async function load_and_train_scheine_muenzen_schluessel() {
 		{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 
-	return await _load_example("scheine_muenzen_schluessel", "second_example_images", 20, model_struct, default_optimizer_config, ["scheine", "muenzen", "schluessel"]);
+	return await _load_example("scheine_muenzen_schluessel", "second_example_images", 20, model_struct, default_optimizer_config, ["Scheine", "Münzen", "Schlüssel"]);
 }
 
 async function load_and_train_fruits_example() {
