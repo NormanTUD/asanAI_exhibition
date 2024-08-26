@@ -16,6 +16,59 @@ function assert(cond, msg) {
 	}
 }
 
+function closeSpinnerFullScreen() {
+	// Entfernen des Styles und des Overlay-Divs
+	var overlay = document.getElementById('spinner-overlay');
+	if (overlay) {
+		document.body.removeChild(overlay);
+	}
+
+	var style = document.querySelector('style');
+	if (style && style.textContent.includes('#spinner-overlay')) {
+		document.head.removeChild(style);
+	}
+}
+
+function showSpinnerFullScreen() {
+	closeSpinnerFullScreen();
+
+	// Erstellen des Styles für das Overlay und den Spinner
+	var style = document.createElement('style');
+	style.textContent = `
+	#spinner-overlay {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background: rgba(0, 0, 0, 0.5);
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    z-index: 2147483647; /* Höchster z-index-Wert */
+	}
+	.spinner {
+	    border: 16px solid #f3f3f3;
+	    border-top: 16px solid #3498db;
+	    border-radius: 50%;
+	    width: 120px;
+	    height: 120px;
+	    animation: spin 2s linear infinite;
+	}
+	@keyframes spin {
+	    0% { transform: rotate(0deg); }
+	    100% { transform: rotate(360deg); }
+	}
+    `;
+	document.head.appendChild(style);
+
+	// Erstellen des Overlay-Divs
+	var overlay = document.createElement('div');
+	overlay.id = 'spinner-overlay';
+	overlay.innerHTML = '<div class="spinner"></div>';
+	document.body.appendChild(overlay);
+}
+
 var log = console.log;
 
 var batch_size = 200;
