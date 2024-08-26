@@ -548,8 +548,9 @@ var update_progress_bar = async function () {
 
 //Ladebalken verschwindet / Button erscheint
 var training_end = async function(){
-	toggle(document.getElementById("auswertung_anzeigen"));
-	toggle(document.getElementById("progress"));
+	$("#auswertung_anzeigen").show();
+	$("#progress").hide();
+	$("#progress-text").hide();
 }
 
 //Confusion Matrix als Text
