@@ -55,7 +55,7 @@
 					<br>
 					<button style="visiblity: hidden;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
 				</td>
-				<td style="width: max-content; vertical-align: baseline;" id="custom_images">
+				<td style="width: 100%; vertical-align: baseline;" id="custom_images">
 				</td>
 			</tr>
 		</table>
