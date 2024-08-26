@@ -85,9 +85,14 @@
 						</div>
 					</td>
 					<td>
-						<video autoplay loop muted>
-							<source type="video/webm" src="media/images/fcnn_animation_new_3.mp4">
-						</video>
+						<div class="video-container">
+							<video id="video" autoplay loop muted>
+								<source type="video/webm" src="media/images/fcnn_animation_new_3.mp4">
+							</video>
+
+							<canvas id="canvas"></canvas>
+						</div>
+
 					</td>
 				</tr>
 			</table>
