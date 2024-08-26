@@ -35,7 +35,7 @@
 
 			<div hidden="hidden" id="explanation_after_training">
 				<div id="fcnn_div"></div>
-				<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte einen Schlüssel, Geldschein oder eine Münze<br> in die Kamera:</p>
+				<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte einen Schlüssel,<br>Geldschein oder<br>eine Münze<br>in die Kamera:</p>
 				<div id="webcam_prediction"></div>
 				<div id="explanation_group">
 					<p id="explanation">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
