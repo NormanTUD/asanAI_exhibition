@@ -69,6 +69,8 @@ $(document).ready(async function() {
 		return;
 	}
 
+	asanai.set_lang("de");
+
 	//asanai.show_status_bar();
 
 	//asanai.disable_show_bars();
