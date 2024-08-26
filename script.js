@@ -215,11 +215,11 @@ async function load_and_train_scheine_muenzen_schluessel() {
 		{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 
-	return await _load_example("scheine_muenzen_schluessel", "second_example_images", 2, model_struct, default_optimizer_config, ["scheine", "muenzen", "schluessel"]);
+	return await _load_example("scheine_muenzen_schluessel", "second_example_images", 20, model_struct, default_optimizer_config, ["scheine", "muenzen", "schluessel"]);
 }
 
 async function load_and_train_fruits_example() {
-	return await _load_example("fruits", "first_example_images", 2, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
+	return await _load_example("fruits", "first_example_images", 20, default_model_struct, default_optimizer_config, ["apfel", "banane", "orange"]);
 }
 
 function assignNumberToString(inputString) {
