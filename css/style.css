@@ -925,7 +925,6 @@ button {
 	pointer-events: none;
 	display: block ruby;
 	z-index: 999999;
-	position: absolute;
 	top: 80px;
 	left: 0px;
 }
