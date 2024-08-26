@@ -256,7 +256,7 @@ green {
 	display: none;
 }
 
-progress{
+progress {
 	width: 60vh;
 	height: 5vh;
 	position: absolute;
@@ -269,8 +269,8 @@ progress{
 }
 
 progress::-webkit-progress-value{
-	background:#003366;
-	inset:0 100% 0 0;
+	background: #003366;
+	inset: 0 110% 0 0;
 }
 
 progress::-webkit-progress-bar{
