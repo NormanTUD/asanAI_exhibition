@@ -5,11 +5,11 @@
 	<div>
 		<div class="general">
 			<button class="box" id="box-wide" onclick="load_and_train_fruits_example();">Test-Bilder laden und Training beginnen</button>
-			<div id="first_example_images"></div>
 			<div hidden="hidden" id="plotly">
 				<div id="plotly_history"></div>
 			</div>
 			<div hidden="hidden" id="visualization">
+				<div class="image_download_area" id="first_example_images"></div>
 				<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 				<div id="canvas_grid_visualization"></div>
 				<div id="text_training">

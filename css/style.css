@@ -1198,3 +1198,7 @@ hr {
 .take_image {
 	width: 100%;
 }
+
+.image_download_area {
+	height: 400px;
+}
