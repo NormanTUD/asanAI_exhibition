@@ -768,7 +768,7 @@ function addCustomCategory() {
 			<tr>
 				<th style="background-color: #003366;">
 					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
-					<span onclick="delete_category(this)">&#10060;</span>
+					<span class="delete_single_image_button" onclick="delete_category(this)">&#10060;</span>
 				</th>
 			</tr>
 			<tr>
@@ -887,8 +887,15 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 	}
 
 	if(_custom_categories.length < 2) {
-		errors.push(`Es gibt weniger als zwei Kategorien`);
+		errors.push(`Es muss mindestens 2 Kategorien sein.`);
+
 		ret = false;
+	}
+
+	if(_custom_categories.length <= 2) {
+		$(".delete_single_image_button").hide();
+	} else {
+		$(".delete_single_image_button").show();
 	}
 
 	var required_nr_images_per_category = 5;
@@ -898,7 +905,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		var cat_name = $(e).find("input").val();
 
 		if (imgs_in_this_cat.length < required_nr_images_per_category) {
-			errors.push(`Für die Kategorie ${cat_name} fehlen noch ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder.`);
+			errors.push(`Für die Kategorie <i>${cat_name}</i> fehlen noch ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder.`);
 			ret = false;
 		}
 	});

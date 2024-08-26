@@ -4,7 +4,7 @@
 		<title>asanAI exhibition</title>
 		<link rel="stylesheet" href="styles/stylesheet.css">
 		<link rel="stylesheet" href="simple-keyboard.css">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
 		<script src="simple-keyboard.js"></script>
 		<script src="md5.js"></script>
 <?php

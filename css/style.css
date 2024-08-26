@@ -175,7 +175,6 @@ body {
 }
 
 ul {
-	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
@@ -929,7 +928,6 @@ button {
 	position: absolute;
 	top: 80px;
 	left: 0px;
-	opacity: 0.5;
 }
 
 .own_image_upload_container {
