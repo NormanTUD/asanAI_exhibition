@@ -89,8 +89,6 @@
 							<video id="video" autoplay loop muted>
 								<source type="video/webm" src="media/images/fcnn_animation_new_3.mp4">
 							</video>
-
-							<canvas id="canvas"></canvas>
 						</div>
 
 					</td>
