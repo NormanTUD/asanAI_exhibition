@@ -21,7 +21,7 @@
 
 		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 
-		<button hidden="hidden" class="box" id="evaluation" onclick="show_auswertung();">Auswertung anzeigen</button>
+		<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
 		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
 
 		<div style="display: none" id="fcnn_div"></div>
