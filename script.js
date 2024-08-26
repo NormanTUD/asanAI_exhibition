@@ -922,7 +922,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		$(".delete_single_image_button").show();
 	}
 
-	var required_nr_images_per_category = 5;
+	var required_nr_images_per_category = 10;
 
 	$(".custom_images_category").each((i, e) => {
 		var imgs_in_this_cat = $(e).find("img");
