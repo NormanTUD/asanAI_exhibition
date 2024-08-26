@@ -418,7 +418,7 @@ function show_auswertung () {
 	var _elems_ids = [
 		"auswertung",
 		"text_training",
-		"evaluation",
+		"auswertung_anzeigen",
 		"visualization",
 		"matrix_text",
 		"yourself"
@@ -548,7 +548,7 @@ var update_progress_bar = async function () {
 
 //Ladebalken verschwindet / Button erscheint
 var training_end = async function(){
-	toggle(document.getElementById("evaluation"));
+	toggle(document.getElementById("auswertung_anzeigen"));
 	toggle(document.getElementById("progress"));
 }
 

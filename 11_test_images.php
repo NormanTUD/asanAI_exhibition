@@ -24,7 +24,7 @@
 				<progress id="progress" value="0" max="100"></progress>
 			</div>
 
-			<button hidden="hidden" class="box" id="evaluation" onclick="show_auswertung();">Auswertung anzeigen</button>
+			<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
 
 			<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
