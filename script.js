@@ -754,13 +754,35 @@ function uuidv4() {
 	);
 }
 
+function getNextAvailableCategory() {
+	var existingCategories = [];
+
+	$(".category_name").each(function(i, e) {
+		var value = $(e).val();
+
+		existingCategories.push(value);
+	});
+
+	existingCategories.sort();
+
+	var nextCategory = 1;
+	for (var i = 0; i < existingCategories.length; i++) {
+		if (existingCategories[i] === `Kategorie ${nextCategory}`) {
+			nextCategory++;
+		} else {
+			break;
+		}
+	}
+
+	return nextCategory;
+}
+
 function addCustomCategory() {
 	// Get the target row element by its ID
 	var rowElement = document.getElementById('custom_images');
 
 	// Count existing categories to generate the category name
-	var existingCategories = rowElement.children.length;
-	var categoryName = 'Kategorie ' + (existingCategories + 1);
+	var categoryName = 'Kategorie ' + getNextAvailableCategory();
 
 	// Generate a unique ID for the thumbnail container
 	var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
