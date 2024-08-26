@@ -266,7 +266,9 @@ async function _start_custom_training(optimizer_config) {
 				return tf.div(
 					tf.image.resizeBilinear(
 						tf.browser.fromPixels(this_img),
-						[_width_and_height, _width_and_height], true, false
+						[_width_and_height, _width_and_height],
+						true,
+						false
 					), tf.scalar(255)
 				).arraySync();
 			});
