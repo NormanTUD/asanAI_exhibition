@@ -2,6 +2,7 @@
 	$GLOBALS["dont_load_asanai"] = 1;
 	include("header.php");
 ?>
+		<div id="optimizer_div" style="display: none;"></div>
 		<div class="general">
 			</div>
 				<div class="start">
