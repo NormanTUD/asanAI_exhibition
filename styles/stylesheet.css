@@ -422,3 +422,7 @@ video {
 	position: relative;
 	top: -6px;
 }
+
+.take_image {
+	width: 100%;
+}

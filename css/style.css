@@ -1197,3 +1197,7 @@ hr {
 	top: 50px;
 	right: 50px;
 }
+
+.take_image {
+	width: 100%;
+}
