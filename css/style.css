@@ -1201,4 +1201,6 @@ hr {
 
 .image_download_area {
 	height: 400px;
+	margin-right: 200px;
+	margin-left: 200px;
 }
