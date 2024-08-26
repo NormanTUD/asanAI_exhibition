@@ -133,6 +133,7 @@ p {
 	position: absolute;
 	width: 100%;
 	height: 30%;
+	top: 20px;
 }
 
 #yourself {
