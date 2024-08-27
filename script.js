@@ -620,8 +620,6 @@ function matrix_texts() {
 			console.error("confusion_matrix_data empty");
 		} else if (!Object.keys(confusion_matrix_data).includes(_first_key)) {
 			console.error(`confusion_matrix_data does not contain ${_first_key}`, confusion_matrix_data);
-		} else if (!Object.keys(confusion_matrix_data[_first_key]).includes(_second_key)) {
-			console.error(`confusion_matrix_data["${_first_key}"] does not contain "${_second_key}"`, confusion_matrix_data[_first_key]);
 		} else if(confusion_matrix_data[_first_key][_first_key]) {
 			correctly_predicted += confusion_matrix_data[_first_key][_first_key];
 		}
