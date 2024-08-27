@@ -281,8 +281,8 @@ async function _start_custom_training(optimizer_config) {
 		{conv2d: {filters: 6, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [_width_and_height, _width_and_height, 3] }},
 		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{flatten: {}},
-		{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-		{dense: {units: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: local_categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 	
@@ -316,14 +316,18 @@ async function _start_custom_training(optimizer_config) {
 			$(this_img).data("real_category", category_name);
 
 			var this_img_tensor = tf.tidy(() => {
-				return tf.div(
+				var fromPixel = tf.browser.fromPixels(this_img);
+
+				var ___res = tf.div(
 					tf.image.resizeBilinear(
-						tf.browser.fromPixels(this_img),
+						fromPixel,
 						[_width_and_height, _width_and_height],
 						true,
 						false
-					), tf.scalar(255)
+					), tf.scalar(1)
 				).arraySync();
+
+				return ___res;
 			});
 
 			_x.push(this_img_tensor);
