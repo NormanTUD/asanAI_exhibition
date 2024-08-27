@@ -278,10 +278,11 @@ async function _start_custom_training(optimizer_config) {
 	var _width_and_height = 40;
 
 	var model_struct = [
-		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [_width_and_height, _width_and_height, 3] }},
-		{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{conv2d: {filters: 6, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [_width_and_height, _width_and_height, 3] }},
+		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{flatten: {}},
 		{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: local_categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 	
