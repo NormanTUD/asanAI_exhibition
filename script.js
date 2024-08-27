@@ -608,7 +608,7 @@ var training_end = async function(){
 
 //Confusion Matrix als Text
 function matrix_texts() {
-	var c_m_d = asanai.confusion_matrix_data;
+	var confusion_matrix_data = asanai.confusion_matrix_data;
 
 	var _keys = asanai.get_labels();
 	var correctly_predicted = 0;
@@ -616,8 +616,14 @@ function matrix_texts() {
 
 	for (var first_key_idx = 0; first_key_idx < _keys.length; first_key_idx++) {
 		var _first_key = _keys[first_key_idx];
-		if(c_m_d[_first_key][_first_key]) {
-			correctly_predicted += c_m_d[_first_key][_first_key];
+		if(!confusion_matrix_data) {
+			console.error("confusion_matrix_data empty");
+		} else if (!Object.keys(confusion_matrix_data).includes(_first_key)) {
+			console.error(`confusion_matrix_data does not contain ${_first_key}`, confusion_matrix_data);
+		} else if (!Object.keys(confusion_matrix_data[_first_key]).includes(_second_key)) {
+			console.error(`confusion_matrix_data["${_first_key}"] does not contain "${_second_key}"`, confusion_matrix_data[_first_key]);
+		} else if(confusion_matrix_data[_first_key][_first_key]) {
+			correctly_predicted += confusion_matrix_data[_first_key][_first_key];
 		}
 	}
 
@@ -632,8 +638,8 @@ function matrix_texts() {
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			if(c_m_d[_first_key][_second_key] !== undefined) {
-				this_cat_nr_imgs += c_m_d[_first_key][_second_key];
+			if(confusion_matrix_data[_first_key][_second_key] !== undefined) {
+				this_cat_nr_imgs += confusion_matrix_data[_first_key][_second_key];
 			}
 		}
 
@@ -648,7 +654,7 @@ function matrix_texts() {
 		num_categories_went_through++;
 	}
 
-	//log("c_m_d:", c_m_d);
+	//log("confusion_matrix_data:", confusion_matrix_data);
 	//log("nr_correct_imgs_per_cat:", nr_correct_imgs_per_cat);
 
 	assert(num_categories_went_through == asanai.get_labels().length, "Went through a different number of categories (${num_categories_went_through}) than asanai.get_labels().length ({asanai.get_labels().length})")
@@ -671,7 +677,7 @@ function matrix_texts() {
 
 		var this_cat_nr_imgs = nr_correct_imgs_per_cat[_first_key];
 
-		var nr_correct_category = c_m_d[_first_key][_first_key];
+		var nr_correct_category = confusion_matrix_data[_first_key][_first_key];
 
 		if(nr_correct_category === undefined) {
 			nr_correct_category = 0;
@@ -689,7 +695,7 @@ function matrix_texts() {
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
-			var _nr = c_m_d[_first_key][_second_key]
+			var _nr = confusion_matrix_data[_first_key][_second_key]
 			var _second_key_uppercase = _second_key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 			if(_nr === undefined) {
