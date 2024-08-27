@@ -419,3 +419,7 @@ video {
 .take_image {
 	width: 100%;
 }
+
+#custom_images_table {
+	margin-bottom: 300px;
+}
