@@ -828,12 +828,11 @@ function getNextAvailableCategory() {
 	existingCategories.sort();
 
 	var nextCategory = 1;
-	for (var i = 0; i < existingCategories.length; i++) {
-		if (existingCategories[i] === `Kategorie ${nextCategory}`) {
-			nextCategory++;
-		} else {
-			break;
-		}
+	var category_name = `Kategorie ${nextCategory}`;
+
+	while (existingCategories.includes(category_name)) {
+		nextCategory++;
+		category_name = `Kategorie ${nextCategory}`;
 	}
 
 	return nextCategory;
