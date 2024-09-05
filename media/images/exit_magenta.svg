@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22"
+   height="36"
+   viewBox="0 0 22 36"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="exit_blue_magenta.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="23.75"
+     inkscape:cx="11.010526"
+     inkscape:cy="18"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M21.7212 31.5H17.0557L10.7666 21.2632L4.44336 31.5H0.0512695L8.35693 18.5459L0.615234 6.51465H5.14404L10.9546 15.9824L16.731 6.51465H21.123L13.3472 18.6655L21.7212 31.5Z"
+     fill="white"
+     id="path1"
+     style="fill:#bc147e;fill-opacity:1" />
+</svg>

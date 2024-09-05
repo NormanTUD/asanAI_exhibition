@@ -4,7 +4,17 @@
 ?>
 	<div>
 		<div class="general">
-			<button class="box" id="box-wide" onclick="load_and_train_fruits_example();">Test-Bilder laden und Training beginnen</button>
+		<div class="asanai_logo">asanAI</div>
+		<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
+			<div class="language_en"></div>
+		</div>
+		<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
+			<div class="language_de"></div>
+		</div>
+		<div class="button shadow b_topRight2" onclick="closeInfopanel()">
+			<a class="close" href="01_start_screen.php"></a>
+		</div>
+			<button class="box inverted" id="box-wide" onclick="load_and_train_fruits_example();">Test-Bilder laden und Training beginnen</button>
 			<div hidden="hidden" id="plotly">
 				<div id="plotly_history"></div>
 			</div>
@@ -24,7 +34,7 @@
 				<progress id="progress" value="0" max="100"></progress>
 			</div>
 
-			<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
+			<button hidden="hidden" class="box inverted" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
 
 			<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
@@ -35,20 +45,15 @@
 
 			<div hidden="hidden" id="explanation_after_training">
 				<div id="fcnn_div"></div>
-				<p id="cam_text" style="font-size: 5vh; text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eine Frucht <br> in die Kamera:</p>
+				<p id="cam_text" class="info-box">Halte eine Frucht <br> in die Kamera:</p>
 				<div id="webcam_prediction"></div>
-				<div id="explanation_group">
-					<p id="explanation">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
-					<p id="explanation">In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</p>
-					<p id="explanation">In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.</p>
-					<p id="explanation">Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
-				</div>
-			<div class="navbar">
-				<ul>
-					<li><a class="icon" href="01_start_screen.php"><img src="media/images/Home_icon.svg"></a></li>
-					<li><a class="icon" onclick="history.back()"><img src="media/images/Back_icon.svg"></a></li>
-				</ul>
-			</div>
+				
+				<p id="explanation_input" class="info-box">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
+				<div id="line_exp_input" class="connectionLine"></div>
+				<p id="explanation_filter" class="info-box">In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</p>
+				<p id="explanation_kernel" class="info-box">In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.</p>
+				<p id="explanation_classification" class="info-box">Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
+				
 			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
 	</div>

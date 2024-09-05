@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 14.89 16.19"
+   version="1.1"
+   sodipodi:docname="play.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="38.482202"
+     inkscape:cx="7.4450002"
+     inkscape:cy="8.0946511"
+     inkscape:window-width="2560"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1 {
+        fill: #171717;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path
+     class="cls-1"
+     d="M3.3,16.19c-.57,0-1.13-.15-1.65-.45-1.04-.6-1.65-1.66-1.65-2.86V3.31C0,2.12.62,1.05,1.65.45,2.69-.15,3.92-.15,4.95.45l8.29,4.78c1.03.6,1.65,1.67,1.65,2.86s-.62,2.26-1.65,2.86l-8.29,4.78c-.52.31-1.08.46-1.65.46ZM3.3,1.51c-.31,0-.62.08-.9.24-.56.33-.9.91-.9,1.56v9.57c0,.65.34,1.23.9,1.56.56.32,1.24.33,1.8,0l8.29-4.78c.56-.33.9-.91.9-1.56s-.34-1.23-.9-1.56L4.2,1.76c-.28-.16-.59-.25-.9-.25Z"
+     id="path1"
+     style="fill:#ffffff;fill-opacity:1" />
+</svg>

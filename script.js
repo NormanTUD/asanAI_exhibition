@@ -583,19 +583,13 @@ function training_explanation(){
 function highlight(name) {
 	var tab = $("#" + name)[0];
 
-	if (tab.style.backgroundColor !== "#003366"){
-		tab.style.backgroundColor = "#003366";
-		tab.style.color = "white";
-	}
+	tab.classList.add("navbarSelected");
 }
 
 function un_highlight(name) {
 	var tab = $("#" + name)[0];
 
-	if (tab.style.backgroundColor !== "white"){
-		tab.style.backgroundColor = "white";
-		tab.style.color = "black";
-	}
+	tab.classList.remove("navbarSelected");
 }
 
 //Ladebalken

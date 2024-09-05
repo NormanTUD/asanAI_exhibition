@@ -44,11 +44,14 @@
 					<p id="explanation">Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
 				</div>
 			</div>
-			<div class="navbar">
-				<ul>
-					<li><a class="icon" href="01_start_screen.php"><img src="media/images/Home_icon.svg"></a></li>
-					<li><a class="icon" onclick="history.back()"><img src="media/images/Back_icon.svg"></a></li>
-				</ul>
+			<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
+			<div class="language_en"></div>
+			</div>
+			<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
+				<div class="language_de"></div>
+			</div>
+			<div class="button shadow b_topRight2" onclick="closeInfopanel()">
+				<a class="close" href="01_start_screen.php"></a>
 			</div>
 			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
