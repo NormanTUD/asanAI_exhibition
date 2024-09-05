@@ -317,10 +317,10 @@ progress::-webkit-progress-bar{
 
 .video-container{
 	position: absolute;
-    right: -60px;
-    top: 25px;
-    width: 1098px;
-    height: 565px;
+    right: -56px;
+    top: 23px;
+    width: 1108px;
+    height: 581px;
 }
 
 .start{
