@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "Open Sans semibold";
-	src: url('media/fonts/OpenSans-SemiBold.ttf') format('truetype');
+	src: url(../media/fonts/OpenSans-SemiBold.ttf) format('truetype');
   }
 /*
   @font-face {
 	font-family: "Open Sans";
-	src: url('media/fonts/OpenSans-Regular.ttf') format('truetype');
+	src: url(../media/fonts/OpenSans-Regular.ttf) format('truetype');
   }
 */
   :root {
@@ -485,7 +485,7 @@ video {
      }
 
   .b_info{
-    background:url(media/images/info.svg);
+    background:url(../media/images/info.svg);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     width: 100%;
@@ -495,7 +495,7 @@ video {
  }
 
  .language_en{
-  background:url(media/images/Language-EN_white.svg);
+  background:url(../media/images/Language-EN_white.svg);
   background-repeat: no-repeat;
   background-size: 20px 20px;
   width: 100%;
@@ -505,7 +505,7 @@ video {
  }
 
  .language_de{
-  background:url(media/images/Language-DE_white.svg);
+  background:url(../media/images/Language-DE_white.svg);
   background-repeat: no-repeat;
   background-size: 20px 20px;
   width: 100%;
@@ -516,7 +516,7 @@ video {
 
  .close{
   float: right;
-  background:url("media/images/exit.svg");
+  background:url(../media/images/exit.svg);
   background-repeat: no-repeat;
   background-size: 20px 20px;
   width: 100%;
