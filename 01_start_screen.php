@@ -5,7 +5,7 @@
 		<div>
 			<div id="optimizer_div" style="display: none;"></div>
 			<div class="general">
-				<div class="asanai_logo">asanAI</div>
+				<div class="asanai_logo"><img src="media/images/logo_small_dark.png" /></div>
 				<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
 					<div class="language_en"></div>
 				</div>
