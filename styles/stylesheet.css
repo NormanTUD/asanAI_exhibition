@@ -1,19 +1,14 @@
 @font-face {
 	font-family: "Open Sans semibold";
 	src: url(../media/fonts/OpenSans-SemiBold.ttf) format('truetype');
-  }
-/*
-  @font-face {
-	font-family: "Open Sans";
-	src: url(../media/fonts/OpenSans-Regular.ttf) format('truetype');
-  }
-*/
-  :root {
+}
+
+:root {
 	--background-color: black;
 	--text-color: white;
 	--text-size: 20.36px;
 	--heading-size:29.1px;
-  }
+}
 
 
 * {
@@ -141,9 +136,9 @@ p {
 
 #auswertung_anzeigen{
 	width: 500px;
-    position: absolute;
-    left: 711px;
-    top: 691px;
+	position: absolute;
+	left: 711px;
+	top: 691px;
 }
 
 #test_images{
@@ -162,9 +157,9 @@ p {
 
 #yourself {
 	width: 500px;
-    position: absolute;
-    left: 711px;
-    top: 691px;
+	position: absolute;
+	left: 711px;
+	top: 691px;
 }
 
 .matrix_text{
@@ -403,9 +398,9 @@ video {
 
 .tab {
 	position: absolute;
-    left: 66px;
-    top: 288px;
-    width: 1444px;
+	left: 66px;
+	top: 288px;
+	width: 1444px;
 }
 
 .halftext {
@@ -415,6 +410,7 @@ video {
 .simple-keyboard {
 	position: fixed;
 	bottom: 0px;
+	z-index: 9;
 }
 
 #analysis {
@@ -455,119 +451,119 @@ video {
 
 
 .button{
-    width:33px;
-    height:33px;
-    /*background:#BC147E;*/
-    background:#BC147E;
-    border-radius: 9.5px;
-    position: absolute;
-   }
-  
-   .invertedBg{
-    background:var(--r-heading-color);
-   }
-  
-   .b_topRight{
-    top: 24px;
-    right: 18px;
-    z-index:3;
-   }
+	width:33px;
+	height:33px;
+	/*background:#BC147E;*/
+	background:#BC147E;
+	border-radius: 9.5px;
+	position: absolute;
+}
 
-   .b_topRight2{
-    top: 24px;
-    right: 64px;
-   }
+.invertedBg{
+	background:var(--r-heading-color);
+}
 
-  
-   .b_topLeft{
-      top: 24px;
-      left: 18px;
-     }
+.b_topRight{
+	top: 24px;
+	right: 18px;
+	z-index:3;
+}
 
-  .b_info{
-    background:url(../media/images/info.svg);
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    background-position: center;
- }
+.b_topRight2{
+	top: 24px;
+	right: 64px;
+}
 
- .language_en{
-  background:url(../media/images/Language-EN_white.svg);
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  background-position: center;
- }
 
- .language_de{
-  background:url(../media/images/Language-DE_white.svg);
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  background-position: center;
- }
+.b_topLeft{
+	top: 24px;
+	left: 18px;
+}
 
- .close{
-  float: right;
-  background:url(../media/images/exit.svg);
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  background-position: center;
- 
- }
+.b_info{
+	background:url(../media/images/info.svg);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background-position: center;
+}
 
- .info-box{
+.language_en{
+	background:url(../media/images/Language-EN_white.svg);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background-position: center;
+}
+
+.language_de{
+	background:url(../media/images/Language-DE_white.svg);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background-position: center;
+}
+
+.close{
+	float: right;
+	background:url(../media/images/exit.svg);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background-position: center;
+
+}
+
+.info-box{
 	position: absolute;
 	width: 220px;
 	font-size: var(--text-size);
- }
+}
 
- #cam_text{
+#cam_text{
 	left: 100px;
 	top:263px;
- }
+}
 
- #explanation_input{
+#explanation_input{
 	left:170px;
 	top: 811px;
- }
+}
 
- #explanation_filter{
+#explanation_filter{
 	left: 461px;
-    top: 811px;
- }
+	top: 811px;
+}
 
- #explanation_kernel{
+#explanation_kernel{
 	right:674px;
 	top: 878px;
- }
+}
 
- #explanation_classification{
+#explanation_classification{
 	right:66px;
 	top: 811px;
- }
+}
 
- .connectionLine{
+.connectionLine{
 	position: absolute;
 	border: 1px solid #BC147E;
 	border-top: none;
 	top: 659px;
-    height: 250px;
- }
+	height: 250px;
+}
 
- #line_exp_input{
+#line_exp_input{
 	left: 399px;
 	width: 28px;
 	border-left: none;
-	
- }
+
+}
