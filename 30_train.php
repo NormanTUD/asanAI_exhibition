@@ -9,7 +9,7 @@
 				</div>
 			</div>
 		</div>
-
+		<div class="button-header">
 		<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
 			<div class="language_en"></div>
 			</div>
@@ -19,13 +19,14 @@
 			<div class="button shadow b_topRight2" onclick="closeInfopanel()">
 				<a class="close" href="01_start_screen.php"></a>
 			</div>
+		</div>
 
 		<div id="optimizer_div" style="display:none"></div>
 
 		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 
 		<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
-		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
+		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Ausprobieren</button>
 
 		<div style="display: none" id="fcnn_div"></div>
 
@@ -44,11 +45,27 @@
 		<table id="auswertung_element" style="display: none">
 		</table>
 
-		<table id="custom_images_table" style="margin-left: 200px;">
+		<div id="custom_images_table">
+			<div id="custom_images_ui">
+			<video id="webcam_preview_video"></video>
+				<button id="custom_images_cat" class="box inverted" onclick="addCustomCategory()">Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
+						
+						<div id="show_errors" style="display: none">
+					</div>
+					<br>
+					<button style="visiblity: hidden;" id="start_custom_training" class="box" onclick="startCustomTraining()">Training starten</button>
+			</div>
+			<div id="custom_images_gallery">
+				<div style="width: 100%; vertical-align: baseline;" id="custom_images">
+				</div>
+			</div>
+		</div>
+
+		<!--table id="custom_images_table" style="margin-left: 200px;">
 			<tr>
 				<td style="width: 330px; vertical-align: baseline;">
 					<div>
-						<button class="reasonable_box" onclick="addCustomCategory()">Neue Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
+						<button class="reasonable_box" onclick="addCustomCategory()">Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
 						<br>
 						<br>
 						<video id="webcam_preview_video"></video>
@@ -61,7 +78,7 @@
 				<td style="width: 100%; vertical-align: baseline;" id="custom_images">
 				</td>
 			</tr>
-		</table>
+		</table-->
 
 		<div hidden="hidden" id="visualization">
 			<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>

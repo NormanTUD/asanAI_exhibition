@@ -4,7 +4,7 @@
 ?>
 		<div id="optimizer_div" style="display: none;"></div>
 		<div class="general">
-		<div class="asanai_logo"><img src="media/images/logo_small_dark.png" /></div>
+		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 			<h2 style="margin: 200px;">Wähle einen existierenden Datensatz oder erstelle deinen Eigenen</h2>
 			<div class="container">
 				<button id="box1" class="box inverted" onclick="location.href='11_test_images.php'">Obst</button>

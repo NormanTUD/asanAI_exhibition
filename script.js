@@ -796,7 +796,7 @@ function show_keyboard (elem) {
 
 function delete_category (elem) {
 	if($(".category_name").length > 1) {
-		$(elem).parent().parent().parent().parent().remove()
+		$(elem).parent().parent().remove()
 	} else {
 		log("Cannot delete last element")
 	}	
@@ -836,32 +836,22 @@ function addCustomCategory() {
 	// Get the target row element by its ID
 	var rowElement = document.getElementById('custom_images');
 
+	let catN = getNextAvailableCategory();
 	// Count existing categories to generate the category name
-	var categoryName = 'Kategorie ' + getNextAvailableCategory();
+	var categoryName = 'Kategorie ' + catN;
 
 	// Generate a unique ID for the thumbnail container
 	var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
 
 	// Define the new td content
 	var newCategoryContent = `
-		<table>
-			<tr>
-				<th style="background-color: #003366;">
-					<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" style="width: 90%; color: white; background-color: #0051a2;" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
-					<span class="delete_single_image_button" onclick="delete_category(this)">&#10060;</span>
-				</th>
-			</tr>
-			<tr>
-				<td>
-					<button class="take_image reasonable_box" onclick="generateThumbnail('${thumbnailContainerId}')">📷 Bild für <span class='category_name_shower'>$KATEGORIENAME</span> auf&shy;nehmen</button>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<div class="thumbnail_container" id="${thumbnailContainerId}"></div>
-				</td>
-			</tr>
-		</table>
+		<div class="class_ui">
+		<button class="take_image box" onclick="generateThumbnail('${thumbnailContainerId}')"> </button>
+		<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
+		<p class="custom_img_error" id="${'cat'+catN}"></p>
+		<button class="delete_single_image_button box" onclick="delete_category(this)"></button>
+		</div>
+		<div class="thumbnail_container" id="${thumbnailContainerId}"></div>
 	`;
 
 	// Create a new table element
@@ -985,8 +975,17 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		var cat_name = $(e).find("input").val();
 
 		if (imgs_in_this_cat.length < required_nr_images_per_category) {
-			errors.push(`Für die Kategorie <i>${cat_name}</i> fehlen noch ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder.`);
+			//errors.push(`Für die Kategorie <i>${cat_name}</i> fehlen noch ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder.`);
+			let iMissing = required_nr_images_per_category - imgs_in_this_cat.length;
+			if(iMissing>1){
+				$("#cat" + (i+1)).html(`noch  ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder`).show();
+			}else{
+				$("#cat" + (i+1)).html(`noch  ${required_nr_images_per_category - imgs_in_this_cat.length} Bild`).show();
+			}
+			
 			ret = false;
+		}else{
+			$("#cat" + (i+1)).html("").hide();
 		}
 	});
 

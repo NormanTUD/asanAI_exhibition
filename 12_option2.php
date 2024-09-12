@@ -31,7 +31,7 @@
 			<table id="auswertung_element" style="display: none">
 			</table>
 
-			<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
+			<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Ausprobieren</button>
 
 			<div hidden="hidden" id="explanation_after_training">
 				<div id="fcnn_div"></div>

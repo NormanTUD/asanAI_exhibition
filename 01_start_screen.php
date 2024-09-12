@@ -5,14 +5,14 @@
 		<div>
 			<div id="optimizer_div" style="display: none;"></div>
 			<div class="general">
-				<div class="asanai_logo"><img src="media/images/logo_small_dark.png" /></div>
+				<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 				<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
 					<div class="language_en"></div>
 				</div>
 				<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
 					<div class="language_de"></div>
 				</div>
-				<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box">Probier es selbst!</button></a>
+				<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box">Ausprobieren</button></a>
 				<div class="navbar">
 					<ul>
 						<li><a id="neural_network_explanation_link" class="icon" onclick="neural_network_explanation()">Neuronales Netz</a></li>

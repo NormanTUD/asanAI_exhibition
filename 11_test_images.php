@@ -4,7 +4,7 @@
 ?>
 	<div>
 		<div class="general">
-		<div class="asanai_logo"><img src="media/images/logo_small_dark.png" /></div>
+		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 		<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
 			<div class="language_en"></div>
 		</div>
@@ -41,7 +41,7 @@
 			<table id="auswertung_element" style="display: none">
 			</table>
 
-			<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Probier es aus</button>
+			<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Ausprobieren</button>
 
 			<div hidden="hidden" id="explanation_after_training">
 				<div id="fcnn_div"></div>
