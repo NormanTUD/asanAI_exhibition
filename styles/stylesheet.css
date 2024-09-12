@@ -470,9 +470,14 @@ video {
 }
 
 .delete_image_x {
-	left: -21px;
-	position: relative;
-	top: -6px;
+	left: -41px;
+    position: relative;
+    top: 52px;
+    width: 1px;
+    height: 1px;
+    background: url(../media/images/trash-Button.svg);
+    background-size: contain;
+    transform: scale(30);
 }
 
 
@@ -507,7 +512,7 @@ video {
 	width: 64px !important;
 	height: 64px;
 	position: relative;
-	background:url(../media/images/exit.svg);
+	background:url(../media/images/trash-Button.svg);
 	background-repeat: no-repeat;
 	background-size: 40px 40px;
 	background-position: center;
