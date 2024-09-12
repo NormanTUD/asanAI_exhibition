@@ -56,7 +56,7 @@
 					<button style="visiblity: hidden;" id="start_custom_training" class="box" onclick="startCustomTraining()">Training starten</button>
 			</div>
 			<div id="custom_images_gallery">
-				<div style="width: 100%; vertical-align: baseline;" id="custom_images">
+				<div style="width: 95%; vertical-align: baseline;" id="custom_images">
 				</div>
 			</div>
 		</div>

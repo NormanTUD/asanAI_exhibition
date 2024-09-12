@@ -679,3 +679,7 @@ video {
 	border-left: none;
 
 }
+
+#webcam_preview_video{
+	border-radius: 14px;
+}
