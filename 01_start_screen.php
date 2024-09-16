@@ -9,7 +9,7 @@
 				<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
 					<div class="language_en"></div>
 				</div>
-				<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
+				<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
 					<div class="language_de"></div>
 				</div>
 				<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box"><span class="TRANSLATEME_try_it"></span></button></a>

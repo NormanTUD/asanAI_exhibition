@@ -4,11 +4,12 @@ function err (...args) {
 	console.error(args);
 }
 
+
 var _default_language = "de";
 
 // Get the language from the cookie or use the default language
 var lang_cookie_name = "language_cookie";
-var lang = get_lang_cookie();
+var lang = "de";
 
 var urlParams = new URLSearchParams(window.location.search);
 
@@ -22,34 +23,15 @@ async function set_lang(la) {
 	}
 }
 
-// Function to retrieve a cookie value
-function get_lang_cookie() {
-	const cookies = document.cookie.split(";");
-	for (var i = 0; i < cookies.length; i++) {
-		const cookie = cookies[i].trim();
-		if (cookie.startsWith(lang_cookie_name + "=")) {
-			var cookieValue = cookie.substring(lang_cookie_name.length + 1);
-			if(Object.keys(language).includes(cookieValue)) {
-				return cookieValue;
-			} else {
-				err(`Invalid language cookie value: ${cookieValue} not in language. Valid keys: ${Object.keys(language).join(", ")}`);
-				set_lang_cookie(_default_language);
-			}
-		}
-	}
-	return _default_language;
-}
-
-// Function to set a cookie value
-function set_lang_cookie(value, days) {
-	const expirationDate = new Date();
-	expirationDate.setDate(expirationDate.getDate() + days);
-	const cookieValue = encodeURIComponent(value) + "; expires=" + expirationDate.toUTCString() + "; path=/";
-	if(Object.keys(language).includes(value)) {
-		document.cookie = lang_cookie_name + "=" + cookieValue;
+function switch_language () {
+	var new_lang = "";
+	if(lang == "de") {
+		new_lang = "en";
 	} else {
-		err(`Invalid language cookie value: ${value} not in language. Valid keys: ${Object.keys(language).join(", ")}`);
+		new_lang = "de";
 	}
+
+	set_lang(new_lang);
 }
 
 // Function to update the translation of elements
@@ -102,7 +84,6 @@ async function update_lang(la) {
 	if(Object.keys(language).includes(la)) {
 		lang = la;
 		await update_translations();
-		set_lang_cookie(lang, 99999);
 	} else {
 		err(`Language unknown: ${la}`);
 	}
