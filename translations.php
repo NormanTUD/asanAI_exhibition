@@ -116,6 +116,9 @@
 			'the_training_for' => "The Training for",
 			'images_of_category' => 'images of category',
 			"was_detected_as_category" => "was detected as category",
+			"resulted_in" => "resulted in",
+			"this_means" => "This means, ",
+			"were_detected_correctly" => "were detected correctly"
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -233,6 +236,9 @@
 			'the_training_for' => "Das Training für",
 			'images_of_category' => 'Bilder der Kategorie',
 			"was_detected_as_category" => "wurden als Kategorie",
+			"resulted_in" => "hat ergeben",
+			"this_means" => "Das bedeutet, ",
+			"were_detected_correctly" => "wurden richtig erkannt"
 		)
 	);
 
