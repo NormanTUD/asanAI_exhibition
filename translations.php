@@ -119,7 +119,8 @@
 			"resulted_in" => "resulted in",
 			"this_means" => "This means, ",
 			"were_detected_correctly" => "were detected correctly",
-			"of" => "of"
+			"of" => "of",
+			"were_detected_properly" => "were detected properly"
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -240,7 +241,8 @@
 			"resulted_in" => "hat ergeben",
 			"this_means" => "Das bedeutet, ",
 			"were_detected_correctly" => "wurden richtig erkannt",
-			"of" => "von"
+			"of" => "von",
+			"were_detected_properly" => "wurden richtig erkannt"
 		)
 	);
 
