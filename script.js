@@ -706,7 +706,7 @@ function matrix_texts() {
 			}
 
 			if(_first_key != _second_key) {
-				var new_line = `${nr_string} ${trm("images_of_category")} <b>${_first_key_uppercase}</b> ${trm("was_detected_as_category")} <b>${_second_key_uppercase}</b> erkannt.<br>\n`;
+				var new_line = `${nr_string} ${trm("images_of_category")} <b>${_first_key_uppercase}</b> ${trm("was_detected_as_category")} <b>${_second_key_uppercase}</b> ${trm("erkannt_german_only")}.<br>\n`;
 				_matrix_string += new_line;
 			}
 		}
