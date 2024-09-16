@@ -94,7 +94,24 @@
 
 			"still" => "still",
 
-			'category' => 'Category'
+			'category' => 'Category',
+
+			'total_predictions' => 'A total of',
+			'correctly_predicted' => 'correctly predicted',
+			'of' => 'of',
+			'total_images' => 'images',
+			'images_recognized' => 'images were recognized.',
+			'corresponds_to' => 'This corresponds to',
+			'percentage' => 'percentage',
+			'training_for' => 'Training for',
+			'result' => 'result',
+			'color_got' => 'color obtained',
+			'total_images_in_category' => 'total images in the category',
+			'images_from_category' => 'images from category',
+			'correctly_recognized' => 'were correctly recognized',
+			'number_of_images' => 'number of images',
+			'images_of_category' => 'images of the category',
+			'recognized_as_category' => 'recognized as category'
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -190,7 +207,24 @@
 
 			"still" => "noch",
 
-			'category' => 'Kategorie'
+			'category' => 'Kategorie',
+
+			'total_predictions' => 'Es wurden insgesamt',
+			'correctly_predicted' => 'von Bildern richtig erkannt',
+			'of' => 'von',
+			'total_images' => 'Bilder',
+			'images_recognized' => 'Bilder richtig erkannt.',
+			'corresponds_to' => 'Das entspricht',
+			'percentage' => 'Prozent',
+			'training_for' => 'Das Training für',
+			'result' => 'hat ergeben',
+			'color_got' => 'erhaltene Farbe',
+			'total_images_in_category' => 'von Bildern aus der Kategorie',
+			'images_from_category' => 'Bilder aus der Kategorie',
+			'correctly_recognized' => 'wurden richtig erkannt',
+			'number_of_images' => 'Anzahl der Bilder',
+			'images_of_category' => 'Bilder der Kategorie',
+			'recognized_as_category' => 'wurden als Kategorie'
 		)
 	);
 
