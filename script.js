@@ -689,7 +689,7 @@ function matrix_texts() {
 		var _first_key_uppercase = _first_key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 
-		var _matrix_string = `${trm("the_training_for")} <b>${_first_key_uppercase}</b> ${trm("resulted_in")}: <br>${color_got} von <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key_uppercase}</b> wurden richtig erkannt.<br>\n`;
+		var _matrix_string = `${trm("the_training_for")} <b>${_first_key_uppercase}</b> ${trm("resulted_in")}: <br>${color_got} ${trm("of")} <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key_uppercase}</b> wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];

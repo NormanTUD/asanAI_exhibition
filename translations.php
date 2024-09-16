@@ -118,7 +118,8 @@
 			"was_detected_as_category" => "was detected as category",
 			"resulted_in" => "resulted in",
 			"this_means" => "This means, ",
-			"were_detected_correctly" => "were detected correctly"
+			"were_detected_correctly" => "were detected correctly",
+			"of" => "of"
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -238,7 +239,8 @@
 			"was_detected_as_category" => "wurden als Kategorie",
 			"resulted_in" => "hat ergeben",
 			"this_means" => "Das bedeutet, ",
-			"were_detected_correctly" => "wurden richtig erkannt"
+			"were_detected_correctly" => "wurden richtig erkannt",
+			"of" => "von"
 		)
 	);
 
