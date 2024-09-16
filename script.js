@@ -9,7 +9,6 @@ var myKeyboard = null;
 var done_loading = false;
 var stringToNumberMap = [];
 var currentNumber = 0;
-var required_nr_images_per_category = 10;
 
 function assert(cond, msg) {
 	if(!cond) {
@@ -939,6 +938,8 @@ function update_after_relevant_change () {
 }
 
 function count_custom_image_categories () {
+	var required_nr_images_per_category = 10;
+
 	$(".custom_images_category").each((i, e) => {
 		var imgs_in_this_cat = $(e).find("img");
 		var cat_name = $(e).find("input").val();
@@ -946,12 +947,14 @@ function count_custom_image_categories () {
 		if (imgs_in_this_cat.length < required_nr_images_per_category) {
 			let iMissing = required_nr_images_per_category - imgs_in_this_cat.length;
 			if(iMissing > 1){
-				$("#cat" + (i+1)).html(`${language[lang]["still"]} ${required_nr_images_per_category - imgs_in_this_cat.length} ${language[lang]["images_required"]}`).show();
+				$("#cat" + (i+1)).html(`<span class="TRANSLATEME_still"></span> ${required_nr_images_per_category - imgs_in_this_cat.length} <span class="TRANSLATEME_images_required"></span>`).show();
 			} else {
-				$("#cat" + (i+1)).html(`${language[lang]["still"]} ${required_nr_images_per_category - imgs_in_this_cat.length} ${language[lang]["image_required"]}`).show();
+				$("#cat" + (i+1)).html(`<span class="TRANSLATEME_still"></span> ${required_nr_images_per_category - imgs_in_this_cat.length} <span class="TRANSLATEME_image_required"></span>`).show();
 			}
 			
 			ret = false;
+
+			update_translations();
 		} else {
 			$("#cat" + (i+1)).html("").hide();
 		}
