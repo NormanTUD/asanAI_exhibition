@@ -84,7 +84,10 @@
 			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Based on the extracted features, the image is eventually classified.',
 
 			'show_results' => 'Show Results',
-			'try_it_yourself' => 'Try it Yourself'
+			'try_it_yourself' => 'Try it Yourself',
+
+			'add_category' => 'Add Category',
+			'start_training' => 'Start Training'
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -170,7 +173,10 @@
 			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.',
 
 			'show_results' => 'Auswertung anzeigen',
-			'try_it_yourself' => 'Ausprobieren'
+			'try_it_yourself' => 'Ausprobieren',
+
+			'add_category' => 'Kategorie hinzufügen',
+			'start_training' => 'Training starten'
 		)
 	);
 

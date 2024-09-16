@@ -70,12 +70,15 @@
 		<div id="custom_images_table">
 			<div id="custom_images_ui">
 			<video id="webcam_preview_video"></video>
-				<button id="custom_images_cat" class="box inverted" onclick="addCustomCategory()">Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
-						
-						<div id="show_errors" style="display: none">
+					<button id="custom_images_cat" class="box inverted" onclick="addCustomCategory()">
+						<span class="TRANSLATEME_add_category"></span>
+					</button>
+					<div id="show_errors" style="display: none">
 					</div>
 					<br>
-					<button style="visiblity: hidden;" id="start_custom_training" class="box" onclick="startCustomTraining()">Training starten</button>
+					<button style="visibility: hidden;" id="start_custom_training" class="box" onclick="startCustomTraining()">
+						<span class="TRANSLATEME_start_training"></span>
+					</button>
 			</div>
 			<div id="custom_images_gallery">
 				<div style="width: 95%; vertical-align: baseline;" id="custom_images">
@@ -168,5 +171,7 @@
 
 			update_after_relevant_change();
 		});
+
+		update_translations();
 	</script>
 </html>
