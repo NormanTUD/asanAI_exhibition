@@ -52,7 +52,7 @@ async function update_translations(force=0) {
 
 		const translation = language[lang][translationKey];
 
-		if (translation) {
+		if (typeof(translation) == "string") {
 			if($(element).attr("data-lang") != lang || force) {
 				element.innerHTML = translation;
 
