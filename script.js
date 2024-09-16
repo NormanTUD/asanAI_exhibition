@@ -848,7 +848,7 @@ function addCustomCategory() {
 	var newCategoryContent = `
 		<div class="class_ui">
 		<button class="take_image box" onclick="generateThumbnail('${thumbnailContainerId}')"> </button>
-		<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
+		&#9998;<input class="category_name" onclick="show_keyboard(this)" placeholder="${categoryName}" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
 		<p class="custom_img_error" id="${'cat'+catN}"></p>
 		<button class="delete_single_image_button box" onclick="delete_category(this)"></button>
 		</div>
