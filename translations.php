@@ -111,7 +111,11 @@
 			'correctly_recognized' => 'were correctly recognized',
 			'number_of_images' => 'number of images',
 			'images_of_category' => 'images of the category',
-			'recognized_as_category' => 'recognized as category'
+			'recognized_as_category' => 'recognized as category',
+
+			'the_training_for' => "The Training for",
+			'images_of_category' => 'images of category',
+			"was_detected_as_category" => "was detected as category",
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -224,7 +228,11 @@
 			'correctly_recognized' => 'wurden richtig erkannt',
 			'number_of_images' => 'Anzahl der Bilder',
 			'images_of_category' => 'Bilder der Kategorie',
-			'recognized_as_category' => 'wurden als Kategorie'
+			'recognized_as_category' => 'wurden als Kategorie',
+
+			'the_training_for' => "Das Training für",
+			'images_of_category' => 'Bilder der Kategorie',
+			"was_detected_as_category" => "wurden als Kategorie",
 		)
 	);
 

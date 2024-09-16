@@ -689,7 +689,7 @@ function matrix_texts() {
 		var _first_key_uppercase = _first_key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 
-		var _matrix_string = `Das Training für <b>${_first_key_uppercase}</b> hat ergeben: <br>${color_got} von <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key_uppercase}</b> wurden richtig erkannt.<br>\n`;
+		var _matrix_string = `${trm("the_training_for")} <b>${_first_key_uppercase}</b> hat ergeben: <br>${color_got} von <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key_uppercase}</b> wurden richtig erkannt.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
@@ -706,7 +706,7 @@ function matrix_texts() {
 			}
 
 			if(_first_key != _second_key) {
-				var new_line = `${nr_string} Bilder der Kategorie <b>${_first_key_uppercase}</b> wurden als Kategorie <b>${_second_key_uppercase}</b> erkannt.<br>\n`;
+				var new_line = `${nr_string} ${trm("images_of_category")} <b>${_first_key_uppercase}</b> ${trm("was_detected_as_category")} <b>${_second_key_uppercase}</b> erkannt.<br>\n`;
 				_matrix_string += new_line;
 			}
 		}
@@ -726,6 +726,8 @@ function matrix_texts() {
 
 	if($analysis.length) {
 		$analysis.html(table_string).show();
+
+		update_translations();
 	} else {
 		console.error(`$("#auswertung_element") was empty!`);
 	}
