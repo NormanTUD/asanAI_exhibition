@@ -65,8 +65,23 @@
                         'the_input_image_is_converted_into_a_matrix_with' => 'The input image is converted into a matrix with',
                         'pixels_representing_height_and_width_and_color_channels_red_green_blue' => 'pixels, representing height and width and color channels red, green, and blue.',
                         'various_features_such_as_edges_are_filtered_from_the_image_in_the_layers' => 'Various features, such as edges, are filtered from the image in the layers.',
-                        'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In each layer, the image is sampled section by section using kernels.',
-                        'based_on_extracted_features_the_image_is_classified' => 'Based on extracted features, the image is classified.'
+			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In each layer, the image is sampled section by section using kernels.',
+			'based_on_extracted_features_the_image_is_classified' => 'Based on extracted features, the image is classified.',
+
+			'for_images_of_each_category_test_images_are_loaded' => 'For images of each category, test images are loaded.',
+			'the_neural_network_selects_a_random_path_through_the_network_for_each_image' => 'The neural network selects a random path through the network for each image.',
+			'if_a_wrong_result_occurs_it_is_corrected' => 'If a wrong result occurs, it is corrected.',
+			'with_the_help_of_this_feedback_the_path_is_adjusted_until_the_network_reaches_a_correct_output' => 'With the help of this feedback, the path is adjusted until the network reaches a correct output.',
+			'the_more_iterations_there_are_the_more_effective_the_training' => 'The more iterations there are, the more effective the training.',
+			'in_this_example_there_are' => 'In this example, there are',
+			'iterations' => 'iterations.',
+
+			'hold_one_of_the_trained_objects' => 'Hold one of the objects, on which the model was trained, in front of the camera:',
+			'the_input_image_is_converted_into_a' => 'The input image is converted into a',
+			'pixel_matrix_representing_height_width_and_rgb_channels' => '-pixel matrix, representing the height, width, and the RGB color channels.',
+			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In the layers, various features such as edges are filtered from the image.',
+			'in_each_layer_the_image_is_scanned_by_kernels_section_by_section' => 'In each layer, the image is scanned by kernels, section by section.',
+			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Based on the extracted features, the image is eventually classified.'
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -134,8 +149,23 @@
                         'pixels_representing_height_and_width_and_color_channels_red_green_blue' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
                         'various_features_such_as_edges_are_filtered_from_the_image_in_the_layers' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
                         'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.',
-                        'based_on_extracted_features_the_image_is_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.'
-                )
+			'based_on_extracted_features_the_image_is_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.',
+
+			'for_images_of_each_category_test_images_are_loaded' => 'Für Bilder jeder Kategorie werden die Test-Bilder geladen.',
+			'the_neural_network_selects_a_random_path_through_the_network_for_each_image' => 'Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.',
+			'if_a_wrong_result_occurs_it_is_corrected' => 'Kommt es zu einem falschen Ergebnis, wird es korrigiert.',
+			'with_the_help_of_this_feedback_the_path_is_adjusted_until_the_network_reaches_a_correct_output' => 'Mithilfe dieses Feedbacks wird der Weg angepasst, bis das Netz zu einem richtigen Output gelangt.',
+			'the_more_iterations_there_are_the_more_effective_the_training' => 'Je mehr Durchgänge es gibt, desto effektiver ist das Training.',
+			'in_this_example_there_are' => 'In diesem Beispiel sind es',
+			'iterations' => 'Durchgänge.',
+
+			'hold_one_of_the_trained_objects' => 'Halte eines der Objekte, auf die trainiert wurde, in die Kamera:',
+			'the_input_image_is_converted_into_a' => 'Das Input-Bild wird zu einer',
+			'pixel_matrix_representing_height_width_and_rgb_channels' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
+			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
+			'in_each_layer_the_image_is_scanned_by_kernels_section_by_section' => 'In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.',
+			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.'
+		)
 	);
 
 

@@ -10,10 +10,8 @@
 			</div>
 		</div>
 		<div class="button-header">
-		<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
-			<div class="language_en"></div>
-			</div>
-			<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
+		<div class="button shadow b_topRight" id="b_en">
+			<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
 				<div class="language_de"></div>
 			</div>
 			<div class="button shadow b_topRight2" onclick="closeInfopanel()">
@@ -32,14 +30,31 @@
 
 		<div hidden="hidden" id="explanation_after_training">
 			<div id="fcnn_div"></div>
-			<p id="cam_text" style="font-size: min(3vh, 3vw); text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">Halte eines der Objekte,<br>auf die trainiert wurde,<br> in die Kamera:</p>
+			<p id="cam_text" style="font-size: min(3vh, 3vw); text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">
+				<span class="TRANSLATEME_hold_one_of_the_trained_objects"></span>
+			</p>
+
 			<div id="webcam_prediction"></div>
-			<div id="explanation_group">
-				<p id="explanation">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
-				<p id="explanation">In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</p>
-				<p id="explanation">In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.</p>
-				<p id="explanation">Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
+				<div id="explanation_group">
+				<p id="explanation">
+					<span class="TRANSLATEME_the_input_image_is_converted_into_a"></span>
+					<span><?php print "${width_and_height}x${width_and_height}"; ?></span>
+					<span class="TRANSLATEME_pixel_matrix_representing_height_width_and_rgb_channels"></span>
+				</p>
+
+				<p id="explanation">
+					<span class="TRANSLATEME_in_the_layers_various_features_such_as_edges_are_filtered_from_the_image"></span>
+				</p>
+
+				<p id="explanation">
+					<span class="TRANSLATEME_in_each_layer_the_image_is_scanned_by_kernels_section_by_section"></span>
+				</p>
+
+				<p id="explanation">
+					<span class="TRANSLATEME_based_on_the_extracted_features_the_image_is_eventually_classified"></span>
+				</p>
 			</div>
+
 		</div>
 
 		<table id="auswertung_element" style="display: none">
@@ -84,12 +99,31 @@
 			<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 			<div id="canvas_grid_visualization"></div>
 			<div id="text_training">
-				<p class="smaller">Für Bilder jeder Kategorie werden die Test-Bilder geladen.</p>
-				<p class="smaller">Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.</p>
-				<p class="smaller">Kommt es zu einem falschen Ergebnis, wird es korrigiert.</p>
-				<p class="smaller">Mithilfe dieses Feedbacks wird der Weg angepasst bis das Netz zu einem richtigen Output gelangt.</p>
-				<p class="smaller">Je mehr Durchgänge es gibt, desto effektiver ist das Training.</p>
-				<p class="smaller">In diesem Beispiel sind es <span id="nr_epochs">0</span> Durchgänge.</p>
+				<p class="smaller">
+					<span class="TRANSLATEME_for_images_of_each_category_test_images_are_loaded"></span>
+				</p>
+
+				<p class="smaller">
+					<span class="TRANSLATEME_the_neural_network_selects_a_random_path_through_the_network_for_each_image"></span>
+				</p>
+
+				<p class="smaller">
+					<span class="TRANSLATEME_if_a_wrong_result_occurs_it_is_corrected"></span>
+				</p>
+
+				<p class="smaller">
+					<span class="TRANSLATEME_with_the_help_of_this_feedback_the_path_is_adjusted_until_the_network_reaches_a_correct_output"></span>
+				</p>
+
+				<p class="smaller">
+					<span class="TRANSLATEME_the_more_iterations_there_are_the_more_effective_the_training"></span>
+				</p>
+
+				<p class="smaller">
+					<span class="TRANSLATEME_in_this_example_there_are"></span> 
+					<span id="nr_epochs"></span> 
+					<span class="TRANSLATEME_iterations"></span>
+				</p>
 			</div>
 			<div id="progress-text"></div>
 			<progress id="progress" value="0" max="100"></progress>
