@@ -27,6 +27,21 @@
 			'fruit' => 'Fruit',
 			'everyday_objects' => 'Everyday objects',
 			'own_dataset' => 'Own dataset',
+
+			'load_test_images_and_start_training' => 'Load test images and start training',
+			'categorized_test_images_are_loaded_for_each_fruit' => 'Categorized test images are loaded for each fruit.',
+			'the_neural_network_selects_a_random_path_through_the_network_for_each_image' => 'The neural network selects a random path through the network for each image.',
+			'if_a_wrong_result_occurs_it_is_corrected' => 'If a wrong result occurs, it is corrected.',
+			'using_this_feedback_the_path_is_adjusted_until_the_network_arrives_at_the_correct_output' => 'Using this feedback, the path is adjusted until the network arrives at the correct output.',
+			'the_more_passes_the_more_effective_the_training' => 'The more passes, the more effective the training.',
+			'in_this_example_there_are' => 'In this example, there are',
+			'passes' => 'passes',
+			'hold_a_fruit_in_front_of_the_camera' => 'Hold a fruit in front of the camera:',
+			'the_input_image_is_converted_into_a_matrix_with' => 'The input image is converted into a matrix with',
+			'pixels_representing_the_height_and_width_with_color_channels_red_green_and_blue' => 'pixels, representing the height and width with color channels red, green, and blue.',
+			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In the layers, various features such as edges are filtered from the image.',
+			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In each layer, the image is sampled section by section using kernels.',
+			'based_on_the_extracted_features_the_image_is_finally_classified' => 'Based on the extracted features, the image is finally classified.'
 		),
 		'de' => array(
 			'optimizer' => 'Optimierer',
@@ -55,6 +70,21 @@
 			'fruit' => 'Obst',
 			'everyday_objects' => 'Alltagsgegenstände',
 			'own_dataset' => 'Eigener Datensatz',
+
+			'load_test_images_and_start_training' => 'Test-Bilder laden und Training beginnen',
+			'categorized_test_images_are_loaded_for_each_fruit' => 'Für jedes Obst werden kategorisierte Test-Bilder geladen.',
+			'the_neural_network_selects_a_random_path_through_the_network_for_each_image' => 'Das Neuronale Netz wählt für jedes Bild einen zufälligen Weg durch das Netzwerk.',
+			'if_a_wrong_result_occurs_it_is_corrected' => 'Kommt es zu einem falschen Ergebnis, wird es korrigiert.',
+			'using_this_feedback_the_path_is_adjusted_until_the_network_arrives_at_the_correct_output' => 'Mithilfe dieses Feedbacks wird der Weg angepasst, bis das Netz zu einem richtigen Output gelangt.',
+			'the_more_passes_the_more_effective_the_training' => 'Je mehr Durchgänge es gibt, desto effektiver ist das Training.',
+			'in_this_example_there_are' => 'In diesem Beispiel sind es',
+			'passes' => 'Durchgänge',
+			'hold_a_fruit_in_front_of_the_camera' => 'Halte eine Frucht in die Kamera:',
+			'the_input_image_is_converted_into_a_matrix_with' => 'Das Input-Bild wird zu einer',
+			'pixels_representing_the_height_and_width_with_color_channels_red_green_and_blue' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
+			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
+			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.',
+			'based_on_the_extracted_features_the_image_is_finally_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.'
 		)
 	);
 
