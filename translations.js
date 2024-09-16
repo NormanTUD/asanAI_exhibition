@@ -9,7 +9,7 @@ var _default_language = "de";
 
 // Get the language from the cookie or use the default language
 var lang_cookie_name = "language_cookie";
-var lang = "de";
+var lang = _default_language;
 
 var urlParams = new URLSearchParams(window.location.search);
 
