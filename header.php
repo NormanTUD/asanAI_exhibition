@@ -19,6 +19,7 @@
 <?php
 		}
 ?>
+		<script src="translations.js"></script>
 		<meta charset="UTF-8">
 <?php
 		if(gethostname() == "thinkpad44020211128") {
