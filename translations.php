@@ -92,7 +92,9 @@
 			"images_required" => "Images required",
 			"image_required" => "Image required",
 
-			"still" => "still"
+			"still" => "still",
+
+			'category' => 'Category'
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -186,7 +188,9 @@
 			"images_required" => "Bilder nötig",
 			"image_required" => "Bild nötig",
 
-			"still" => "noch"
+			"still" => "noch",
+
+			'category' => 'Kategorie'
 		)
 	);
 

@@ -839,7 +839,7 @@ function addCustomCategory() {
 
 	let catN = getNextAvailableCategory();
 	// Count existing categories to generate the category name
-	var categoryName = 'Kategorie ' + catN;
+	var categoryName = language[lang]["category"] + ' ' + catN;
 
 	// Generate a unique ID for the thumbnail container
 	var thumbnailContainerId = 'thumbnailContainer_' + uuidv4();
