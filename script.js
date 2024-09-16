@@ -114,6 +114,8 @@ $(document).ready(async function() {
 			// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
 			// `var asanai`.
 		});
+
+		asanai.set_dark_mode();
 	} catch (e) {
 		console.error(e);
 
