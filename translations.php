@@ -121,7 +121,9 @@
 			"were_detected_correctly" => "were detected correctly",
 			"of" => "of",
 			"were_detected_properly" => "were detected properly",
-			"erkannt_german_only" => ""
+			"erkannt_german_only" => "",
+			"images_recognized_properly" => "images recognized correctly",
+			"images_from_category" => "images from the category"
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -244,7 +246,9 @@
 			"were_detected_correctly" => "wurden richtig erkannt",
 			"of" => "von",
 			"were_detected_properly" => "wurden richtig erkannt",
-			"erkannt_german_only" => "erkannt"
+			"erkannt_german_only" => "erkannt",
+			"images_recognized_properly" => "Bildern richtig erkannt",
+			"images_from_category" => "Bildern aus der Kategorie"
 		)
 	);
 

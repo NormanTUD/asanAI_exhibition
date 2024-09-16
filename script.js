@@ -664,7 +664,7 @@ function matrix_texts() {
 
 	assert(typeof(percentage) == "number" && !Number.isNaN(percentage), `percentage is not a number but ${typeof(percentage)}, percentage: ${percentage}, correctly_predicted: ${correctly_predicted}, total_nr_images: ${total_nr_images}`);
 
-	var last_msg = `Es wurden insgesamt <green>${correctly_predicted}</green> von ${total_nr_images} Bildern richtig erkannt. <br>${trm("this_means")}<green>${percentage}%</green> ${trm("were_detected_correctly")}.`;
+	var last_msg = `Es wurden insgesamt <green>${correctly_predicted}</green> ${trm("of")} ${total_nr_images} ${trm("images_recognized_properly")}. <br>${trm("this_means")}<green>${percentage}%</green> ${trm("were_detected_correctly")}.`;
 
 	//$("#matrix_text").html(last_msg);
 
@@ -689,7 +689,7 @@ function matrix_texts() {
 		var _first_key_uppercase = _first_key.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
 
-		var _matrix_string = `${trm("the_training_for")} <b>${_first_key_uppercase}</b> ${trm("resulted_in")}: <br>${color_got} ${trm("of")} <green>${this_cat_nr_imgs}</green> Bildern aus der Kategorie <b>${_first_key_uppercase}</b> ${trm("were_detected_properly")}.<br>\n`;
+		var _matrix_string = `${trm("the_training_for")} <b>${_first_key_uppercase}</b> ${trm("resulted_in")}: <br>${color_got} ${trm("of")} <green>${this_cat_nr_imgs}</green> ${trm("images_from_category")} <b>${_first_key_uppercase}</b> ${trm("were_detected_properly")}.<br>\n`;
 
 		for (var second_key_idx = 0; second_key_idx < _keys.length; second_key_idx++) {
 			var _second_key = _keys[second_key_idx];
