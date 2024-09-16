@@ -70,7 +70,7 @@
 		<div id="custom_images_table">
 			<div id="custom_images_ui">
 			<video id="webcam_preview_video"></video>
-					<button id="custom_images_cat" class="box inverted" onclick="addCustomCategory()">
+					<button id="custom_images_cat" class="box" onclick="addCustomCategory()">
 						<span class="TRANSLATEME_add_category"></span>
 					</button>
 					<div id="show_errors" style="display: none">

@@ -12,7 +12,7 @@
 			<a class="close" href="01_start_screen.php"></a>
 		</div>
 
-		<button class="box inverted" id="box-wide" onclick="load_and_train_fruits_example();">
+		<button class="box" id="box-wide" onclick="load_and_train_fruits_example();">
 			<span class="TRANSLATEME_load_test_images_and_start_training"></span>
 		</button>
 		<div hidden="hidden" id="plotly">
@@ -34,7 +34,7 @@
 			<progress id="progress" value="0" max="100"></progress>
 		</div>
 
-		<button hidden="hidden" class="box inverted" id="auswertung_anzeigen" onclick="show_auswertung();">
+		<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
 			<span class="TRANSLATEME_show_evaluation"></span>
 		</button>
 
