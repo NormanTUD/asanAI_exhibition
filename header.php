@@ -19,7 +19,6 @@
 <?php
 		}
 ?>
-		<script src="translations.js"></script>
 		<meta charset="UTF-8">
 <?php
 		if(gethostname() == "thinkpad44020211128") {
@@ -70,6 +69,10 @@
 
 		<script src="script.js"></script>
 		<script src="reload.js"></script>
+		<script>
+			var language = <?php include("translations.php"); ?>;
+		</script>
+		<script src="translations.js"></script>
 	</head>
 <body>
 	<div style="display: none" class="simple-keyboard"></div>

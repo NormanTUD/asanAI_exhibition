@@ -12,10 +12,10 @@
 				<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
 					<div class="language_de"></div>
 				</div>
-				<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box">Ausprobieren</button></a>
+				<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box"><span class="TRANSLATEME_try_it"></span></button></a>
 				<div class="navbar">
 					<ul>
-						<li><a id="neural_network_explanation_link" class="icon" onclick="neural_network_explanation()">Neuronales Netz</a></li>
+						<li><a id="neural_network_explanation_link" class="icon" onclick="neural_network_explanation()"><span class="TRANSLATEME_neural_network"></span></a></li>
 						<li><a id="layer_explanation_link" class="icon" onclick="layer_explanation()">Layer</a></li>
 						<li><a id="forward_propagation_link" class="icon" onclick="forward_propagation_explanation()">Forward Propagation</a></li>
 						<li><a id="training_link" class="icon" onclick="training_explanation()">Training</a></li>
@@ -24,10 +24,10 @@
 
 				<div style="display: none" class="tab" id="neural_network_explanation_tab">
 					<div class="halftext">
-						<p>Ein Neuronales Netz ist ein Algorithmus, der die Funktionsweise des menschlichen Gehirns nachahmt.</p>
-						<p>Damit lassen sich komplexe Aufgaben aus der Informatik, Wirtschaft, Mathematik etc. lösen.</p>
-						<p>Ein Neuronales Netz wird trainiert.</p>
-						<p>Dieses Modell des Machine Learning ist auch die Grundlage für Künstliche Intelligenzen.</p>
+						<p><span class="TRANSLATEME_a_neural_network_is_an_algorithm_that_mimics_the_functionality_of_the_human_brain"></span></p>
+						<p><span class="TRANSLATEME_it_can_solve_complex_tasks_in_computer_science_economics_mathematics_etc"></span></p>
+						<p><span class="TRANSLATEME_a_neural_network_is_trained"></span></p>
+						<p><span class="TRANSLATEME_this_model_of_machine_learning_is_also_the_basis_for_artificial_intelligences"></span></p>
 					</div>
 
 					<div class="pic">
@@ -37,10 +37,11 @@
 
 				<div style="display: none" class="tab" id="layer_explanation_tab">
 					<div class="halftext">
-						<p>Wie das menschliche Gehirn, besteht auch ein Neuronales Netzwerk aus (künstlichen) Neuronen.</p>
-						<p>Die Neuronen liegen in verschiedenen Layern. Dem Input-Layer werden die initialen Daten, wie z.B. Bilder, übergeben.</p>
-						<p>Danach folgen mehrere versteckte Layer, in denen die Kanten zwischen den Knoten gewichtet werden.</p>
-						<p>Der Output-Layer gibt die Bild-Kategorie aus, welches aufgrund der Input-Daten berechnet wurde.</p>
+						<p><span class="TRANSLATEME_like_the_human_brain_a_neural_network_also_consists_of_artificial_neurons"></span></p>
+						<p><span class="TRANSLATEME_the_neurons_are_arranged_in_different_layers_the_input_layer_receives_the_initial_data_such_as_images"></span></p>
+						<p><span class="TRANSLATEME_afterwards_several_hidden_layers_follow_where_the_edges_between_the_nodes_are_weighted"></span></p>
+						<p><span class="TRANSLATEME_the_output_layer_provides_the_image_category_calculated_based_on_the_input_data"></span></p>
+
 					</div>
 					<div class="pic">
 						<img class="largeimg" src="media/images/2layer_bildneuneu.svg">
@@ -49,9 +50,9 @@
 
 				<div style="display: none"  class="tab" id="forward_propagation_explanation_tab">
 					<div class="halftext">
-						<p>Die Neuronen nehmen Informationen auf, modifizieren sie und geben sie an das nächste Neuron weiter.</p>
-						<p>Die verschieden gewichteten Kanten die zu einem Neuron führen, bestimmen den Wert des nächsten Neurons.</p>
-						<p>Eine Aktivierungsfunktion entscheidet, ob bzw. mit welchem Wert Informationen an das nächste Neuron weitergegeben werden. </p>
+						<p><span class="TRANSLATEME_the_neurons_receive_modify_and_pass_on_information_to_the_next_neuron"></span></p>
+						<p><span class="TRANSLATEME_the_variously_weighted_edges_leading_to_a_neuron_determine_the_value_of_the_next_neuron"></span></p>
+						<p><span class="TRANSLATEME_an_activation_function_decides_whether_and_with_what_value_information_is_passed_on_to_the_next_neuron"></span></p>
 					</div>
 					<div class="pic" id="bild3">
 						<img class="largeimg" src="media/images/3aktivierungsfunktionneuneu.svg">
@@ -60,9 +61,9 @@
 
 				<div style="display: none" class="tab" id="training_explanation_tab">
 					<div class="halftext">
-						<p>Das Netzwerk wird anhand eines klassifizierten Datensatzes trainiert.</p>
-						<p>Es lernt durch Feedback, ob der vermutete Output richtig oder falsch ist.</p>
-						<p>Die Werte im Input-Layer sind zu Beginn zufällig gewählt und werden mit jedem Durchgang durch das Neuronale Netzwerk angepasst, bis im Output-Layer das richtige Ergebnis ausgegeben wird.</p>
+						<p><span class="TRANSLATEME_the_network_is_trained_on_a_classified_dataset"></span></p>
+						<p><span class="TRANSLATEME_it_learns_through_feedback_whether_the_predicted_output_is_right_or_wrong"></span></p>
+						<p><span class="TRANSLATEME_the_values_in_the_input_layer_are_randomly_chosen_at_first_and_adjusted_with_each_pass_through_the_neural_network_until_the_correct_result_is_output_in_the_output_layer"></span></p>
 					</div>
 					<div class="video-container">
 						<video id="video" autoplay loop muted>
@@ -75,6 +76,8 @@
 		<script>
 			neural_network_explanation();
 			showSpinnerFullScreen();
+
+			update_translations();
 		</script>
 	</body>
 </html>

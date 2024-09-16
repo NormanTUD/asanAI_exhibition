@@ -108,7 +108,6 @@ $(document).ready(async function() {
 		asanai = new asanAI({
 			model_data: default_model_struct,					// The default model structure that should be loaded
 			optimizer_config: default_optimizer_config,			// The config for the optimizer (which trains the model)
-			translations_file: "translations.json",		// A file containing translations, i. e. in german and english in this casesanai
 			optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
 			asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
 			// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
@@ -124,7 +123,7 @@ $(document).ready(async function() {
 		return;
 	}
 
-	asanai.set_lang("de");
+	//asanai.set_lang("de");
 
 	//asanai.show_status_bar();
 
