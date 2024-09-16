@@ -1057,3 +1057,7 @@ async function startCustomTraining () {
 		console.error(`Custom training not enabled.`);
 	}
 }
+
+function closeInfopanel () {
+	console.info(`closeInfopanel not yet implemented.`);
+}
