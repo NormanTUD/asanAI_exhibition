@@ -41,7 +41,15 @@
 			'pixels_representing_the_height_and_width_with_color_channels_red_green_and_blue' => 'pixels, representing the height and width with color channels red, green, and blue.',
 			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In the layers, various features such as edges are filtered from the image.',
 			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In each layer, the image is sampled section by section using kernels.',
-			'based_on_the_extracted_features_the_image_is_finally_classified' => 'Based on the extracted features, the image is finally classified.'
+			'based_on_the_extracted_features_the_image_is_finally_classified' => 'Based on the extracted features, the image is finally classified.',
+
+			'show_evaluation' => 'Show evaluation',
+			'try_yourself' => 'Try yourself',
+			'the_input_image_is_converted_into_a_matrix_with' => 'The input image is converted into a matrix with',
+			'pixels_representing_height_and_width_and_color_channels_red_green_blue' => 'pixels, representing height and width and color channels red, green, and blue.',
+			'various_features_such_as_edges_are_filtered_from_the_image_in_the_layers' => 'Various features, such as edges, are filtered from the image in the layers.',
+			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In each layer, the image is sampled section by section using kernels.',
+			'based_on_extracted_features_the_image_is_classified' => 'Based on extracted features, the image is classified.'
 		),
 		'de' => array(
 			'optimizer' => 'Optimierer',
@@ -84,7 +92,15 @@
 			'pixels_representing_the_height_and_width_with_color_channels_red_green_and_blue' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
 			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
 			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.',
-			'based_on_the_extracted_features_the_image_is_finally_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.'
+			'based_on_the_extracted_features_the_image_is_finally_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.',
+
+			'show_evaluation' => 'Auswertung anzeigen',
+			'try_yourself' => 'Ausprobieren',
+			'the_input_image_is_converted_into_a_matrix_with' => 'Das Input-Bild wird zu einer',
+			'pixels_representing_height_and_width_and_color_channels_red_green_blue' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
+			'various_features_such_as_edges_are_filtered_from_the_image_in_the_layers' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
+			'in_each_layer_the_image_is_sampled_section_by_section_using_kernels' => 'In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.',
+			'based_on_extracted_features_the_image_is_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.'
 		)
 	);
 

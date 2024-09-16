@@ -34,26 +34,41 @@
 			<progress id="progress" value="0" max="100"></progress>
 		</div>
 
-		<button hidden="hidden" class="box inverted" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
+		<button hidden="hidden" class="box inverted" id="auswertung_anzeigen" onclick="show_auswertung();">
+			<span class="TRANSLATEME_show_evaluation"></span>
+		</button>
 
 		<div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
 		<table id="auswertung_element" style="display: none">
 		</table>
 
-		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Ausprobieren</button>
+		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself();">
+			<span class="TRANSLATEME_try_yourself"></span>
+		</button>
 
 		<div hidden="hidden" id="explanation_after_training">
 			<div id="fcnn_div"></div>
 			<p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_a_fruit_in_front_of_the_camera"></span><br></p>
 			<div id="webcam_prediction"></div>
 			
-			<p id="explanation_input" class="info-box">Das Input-Bild wird zu einer <?php print "${width_and_height}x${width_and_height}"; ?>-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.</p>
+			<p id="explanation_input" class="info-box">
+				<span class="TRANSLATEME_the_input_image_is_converted_into_a_matrix_with"></span>
+				<?php print "${width_and_height}x${width_and_height}"; ?>
+				<span class="TRANSLATEME_pixels_representing_height_and_width_and_color_channels_red_green_blue"></span>
+			</p>
 			<div id="line_exp_input" class="connectionLine"></div>
-			<p id="explanation_filter" class="info-box">In den Layern werden verschieden Merkmale wie z.B. Kanten aus dem Bild gefiltert.</p>
-			<p id="explanation_kernel" class="info-box">In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.</p>
-			<p id="explanation_classification" class="info-box">Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden. </p>
-			
+			<p id="explanation_filter" class="info-box">
+				<span class="TRANSLATEME_various_features_such_as_edges_are_filtered_from_the_image_in_the_layers"></span>
+			</p>
+
+			<p id="explanation_kernel" class="info-box">
+				<span class="TRANSLATEME_in_each_layer_the_image_is_sampled_section_by_section_using_kernels"></span>
+			</p>
+
+			<p id="explanation_classification" class="info-box">
+				<span class="TRANSLATEME_based_on_extracted_features_the_image_is_classified"></span>
+			</p>
 			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
 	</div>
