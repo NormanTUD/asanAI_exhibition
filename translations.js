@@ -15,9 +15,14 @@ var urlParams = new URLSearchParams(window.location.search);
 
 // Function to set the language and update translations
 async function set_lang(la) {
+	var old_lang = lang;
 	if(Object.keys(language).includes(la)) {
 		lang = la;
 		await update_translations();
+
+		if(old_lang && la) {
+			$($("#b_de").children(0)[0]).removeClass(`language_${old_lang}`).addClass(`language_${la}`);
+		}
 	} else {
 		err(`Language unknown: ${la}`);
 	}
