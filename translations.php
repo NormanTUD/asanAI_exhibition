@@ -87,7 +87,12 @@
 			'try_it_yourself' => 'Try it Yourself',
 
 			'add_category' => 'Add Category',
-			'start_training' => 'Start Training'
+			'start_training' => 'Start Training',
+
+			"images_required" => "Images required",
+			"image_required" => "Image required",
+
+			"still" => "still"
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -176,7 +181,12 @@
 			'try_it_yourself' => 'Ausprobieren',
 
 			'add_category' => 'Kategorie hinzufügen',
-			'start_training' => 'Training starten'
+			'start_training' => 'Training starten',
+
+			"images_required" => "Bilder nötig",
+			"image_required" => "Bild nötig",
+
+			"still" => "noch"
 		)
 	);
 

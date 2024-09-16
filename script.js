@@ -9,6 +9,7 @@ var myKeyboard = null;
 var done_loading = false;
 var stringToNumberMap = [];
 var currentNumber = 0;
+var required_nr_images_per_category = 10;
 
 function assert(cond, msg) {
 	if(!cond) {
@@ -937,6 +938,26 @@ function update_after_relevant_change () {
 	enable_or_disable_training_if_needed();
 }
 
+function count_custom_image_categories () {
+	$(".custom_images_category").each((i, e) => {
+		var imgs_in_this_cat = $(e).find("img");
+		var cat_name = $(e).find("input").val();
+
+		if (imgs_in_this_cat.length < required_nr_images_per_category) {
+			let iMissing = required_nr_images_per_category - imgs_in_this_cat.length;
+			if(iMissing > 1){
+				$("#cat" + (i+1)).html(`${language[lang]["still"]} ${required_nr_images_per_category - imgs_in_this_cat.length} ${language[lang]["images_required"]}`).show();
+			} else {
+				$("#cat" + (i+1)).html(`${language[lang]["still"]} ${required_nr_images_per_category - imgs_in_this_cat.length} ${language[lang]["image_required"]}`).show();
+			}
+			
+			ret = false;
+		} else {
+			$("#cat" + (i+1)).html("").hide();
+		}
+	});
+}
+
 function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 	if(!_custom_categories || _custom_categories.length == 0 || !Array.isArray(_custom_categories)) {
 		_custom_categories = getCustomCategoryNames();
@@ -969,26 +990,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		$(".delete_single_image_button").show();
 	}
 
-	var required_nr_images_per_category = 10;
-
-	$(".custom_images_category").each((i, e) => {
-		var imgs_in_this_cat = $(e).find("img");
-		var cat_name = $(e).find("input").val();
-
-		if (imgs_in_this_cat.length < required_nr_images_per_category) {
-			//errors.push(`Für die Kategorie <i>${cat_name}</i> fehlen noch ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder.`);
-			let iMissing = required_nr_images_per_category - imgs_in_this_cat.length;
-			if(iMissing>1){
-				$("#cat" + (i+1)).html(`noch  ${required_nr_images_per_category - imgs_in_this_cat.length} Bilder`).show();
-			}else{
-				$("#cat" + (i+1)).html(`noch  ${required_nr_images_per_category - imgs_in_this_cat.length} Bild`).show();
-			}
-			
-			ret = false;
-		}else{
-			$("#cat" + (i+1)).html("").hide();
-		}
-	});
+	count_custom_image_categories();
 
 	var shown_empty_warning = false;
 
