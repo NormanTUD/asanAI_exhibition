@@ -1,6 +1,7 @@
 <?php
 	$GLOBALS['translations'] = array(
 		'en' => array(
+			'optimizer' => 'Optimizer',
 			'a_neural_network_is_an_algorithm_that_mimics_the_functionality_of_the_human_brain' => 'A Neural Network is an algorithm that mimics the functionality of the human brain.',
 			'it_can_solve_complex_tasks_in_computer_science_economics_mathematics_etc' => 'It can solve complex tasks in computer science, economics, mathematics, etc.',
 			'a_neural_network_is_trained' => 'A Neural Network is trained.',
@@ -23,6 +24,7 @@
 			"neural_network" => "Neuronales Netz"
 		),
 		'de' => array(
+			'optimizer' => 'Optimierer',
 			'a_neural_network_is_an_algorithm_that_mimics_the_functionality_of_the_human_brain' => 'Ein Neuronales Netz ist ein Algorithmus, der die Funktionsweise des menschlichen Gehirns nachahmt.',
 			'it_can_solve_complex_tasks_in_computer_science_economics_mathematics_etc' => 'Damit lassen sich komplexe Aufgaben aus der Informatik, Wirtschaft, Mathematik etc. lösen.',
 			'a_neural_network_is_trained' => 'Ein Neuronales Netz wird trainiert.',
