@@ -937,7 +937,7 @@ function update_after_relevant_change () {
 	enable_or_disable_training_if_needed();
 }
 
-function count_custom_image_categories () {
+function count_custom_image_categories (ret) {
 	var required_nr_images_per_category = 10;
 
 	$(".custom_images_category").each((i, e) => {
@@ -959,6 +959,8 @@ function count_custom_image_categories () {
 			$("#cat" + (i+1)).html("").hide();
 		}
 	});
+
+	return ret;
 }
 
 function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
@@ -993,7 +995,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		$(".delete_single_image_button").show();
 	}
 
-	count_custom_image_categories();
+	ret = count_custom_image_categories(ret);
 
 	var shown_empty_warning = false;
 
