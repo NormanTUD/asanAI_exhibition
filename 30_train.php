@@ -10,12 +10,13 @@
 			</div>
 		</div>
 		<div class="button-header">
-		<div class="button shadow b_topRight" id="b_en">
-			<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
-				<div class="language_de"></div>
-			</div>
-			<div class="button shadow b_topRight2" onclick="closeInfopanel()">
-				<a class="close" href="01_start_screen.php"></a>
+			<div class="button shadow b_topRight" id="b_en">
+				<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
+					<div class="language_de"></div>
+				</div>
+				<div class="button shadow b_topRight2" onclick="closeInfopanel()">
+					<a class="close" href="01_start_screen.php"></a>
+				</div>
 			</div>
 		</div>
 
@@ -23,8 +24,14 @@
 
 		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 
-		<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">Auswertung anzeigen</button>
-		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">Ausprobieren</button>
+		<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
+			<span class="TRANSLATEME_show_results"></span>
+		</button>
+
+		<button hidden="hidden" class="box" id="yourself" onclick="try_yourself()">
+			<span class="TRANSLATEME_try_it_yourself"></span>
+		</button>
+
 
 		<div style="display: none" id="fcnn_div"></div>
 

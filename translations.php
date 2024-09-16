@@ -81,7 +81,10 @@
 			'pixel_matrix_representing_height_width_and_rgb_channels' => '-pixel matrix, representing the height, width, and the RGB color channels.',
 			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In the layers, various features such as edges are filtered from the image.',
 			'in_each_layer_the_image_is_scanned_by_kernels_section_by_section' => 'In each layer, the image is scanned by kernels, section by section.',
-			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Based on the extracted features, the image is eventually classified.'
+			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Based on the extracted features, the image is eventually classified.',
+
+			'show_results' => 'Show Results',
+			'try_it_yourself' => 'Try it Yourself'
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -164,7 +167,10 @@
 			'pixel_matrix_representing_height_width_and_rgb_channels' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
 			'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
 			'in_each_layer_the_image_is_scanned_by_kernels_section_by_section' => 'In jeder Schicht wird das Bild abschnittsweise über Kernels abgetastet.',
-			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.'
+			'based_on_the_extracted_features_the_image_is_eventually_classified' => 'Anhand der extrahierten Merkmale kann das Bild letztendlich klassifiziert werden.',
+
+			'show_results' => 'Auswertung anzeigen',
+			'try_it_yourself' => 'Ausprobieren'
 		)
 	);
 
