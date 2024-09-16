@@ -5,10 +5,7 @@
 	<div>
 		<div class="general">
 		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
-		<div class="button shadow b_topRight" id="b_en" onclick="switchLanguage('en')">
-			<div class="language_en"></div>
-		</div>
-		<div class="button shadow b_topRight hidden" id="b_de" onclick="switchLanguage('de')">
+		<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
 			<div class="language_de"></div>
 		</div>
 		<div class="button shadow b_topRight2" onclick="closeInfopanel()">
