@@ -133,13 +133,6 @@ $(document).ready(async function() {
 
 	asanai.set_labels(__categories);
 
-
-	if($("#fcnn_div").length) {
-		asanai.set_fcnn_height(400);
-		asanai.set_fcnn_width(800);
-		asanai.draw_fcnn("fcnn_div", 32, true);
-	}
-
 	asanai.enable_fcnn_internals();
 
 	asanai.set_validation_split(0);
@@ -503,6 +496,14 @@ function show_auswertung () {
 
 	for (var i = 0; i < _elems_classes.length; i++) {
 		$("." + _elems_classes[i]).toggle();
+	}
+
+	if($("#fcnn_div").length) {
+		asanai.set_fcnn_height(400);
+		asanai.set_fcnn_width(800);
+		asanai.draw_fcnn("fcnn_div", 32, true);
+	} else {
+		log("Could not find #fcnn_div");
 	}
 }
 
