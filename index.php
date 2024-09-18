@@ -20,6 +20,7 @@
 					success: function(response) {
 						// Replace content in the main div
 						$('#main').html(response);
+						$("#nr_epochs").html(nr_epochs);
 						update_translations();
 					},
 					error: function(xhr, status, error) {
