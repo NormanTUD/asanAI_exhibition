@@ -12,6 +12,7 @@
 		// Function to load page with AJAX using GET method and appending query params
 		function load_page_with_params(url) {
 			if(url != "index.php") {
+				$(".button-header").show();
 				log("Loading url " + url);
 				// Perform the AJAX request
 				$.ajax({
@@ -22,6 +23,17 @@
 						$('#main').html(response);
 						$("#nr_epochs").html(nr_epochs);
 						update_translations();
+
+						if(
+							url.startsWith("01_start_screen") ||
+							url.startsWith("11_test_images") ||
+							url.startsWith("12_option2") ||
+							url.startsWith("30_train")
+						) {
+							$("#close_button").hide();
+						} else {
+							$("#close_button").show();
+						}
 					},
 					error: function(xhr, status, error) {
 						// Log error to console

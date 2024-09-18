@@ -75,8 +75,8 @@
 		<script src="translations.js"></script>
 	</head>
 <body>
-	<div class="button-header">
-		<div class="button shadow b_topRight2">
+	<div class="button-header" style="display: none">
+		<div id="close_button" class="button shadow b_topRight2 hidden">
 			<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
 		</div>
 		<div class="button shadow b_topRight" id="b_de" onclick="switch_language()">

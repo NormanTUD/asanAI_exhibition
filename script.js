@@ -602,6 +602,7 @@ var update_progress_bar = async function () {
 //Ladebalken verschwindet / Button erscheint
 var training_end = async function(){
 	$("#auswertung_anzeigen").show();
+	$("#close_button").show();
 	$("#progress").hide();
 	$("#progress-text").hide();
 }
