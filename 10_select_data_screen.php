@@ -17,7 +17,7 @@
 			<div class="language_de"></div>
 		</div>
 		<div class="button shadow b_topRight2" onclick="closeInfopanel()">
-			<a class="close" href="01_start_screen.php"></a>
+			<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
 		</div>
 	</body>
 	<script>
