@@ -982,17 +982,17 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 	var _custom_categories_has_duplicates = new Set(_custom_categories).size !== _custom_categories.length;
 
 	if(_custom_categories_has_duplicates) {
-		errors.push("Einige der Kategorien beinhalten die gleichen Namen. Jede Kategorie braucht einen eigenen Namen.");
+		errors.push(trm("some_category_names_are_equal"));
 		ret = false;
 	}
 
 	if(!_custom_categories) {
-		errors.push("Die Liste der Kategorienamen ist leer");
+		errors.push(trm("list_of_category_names_was_empty"));
 		ret = false;
 	}
 
 	if(_custom_categories.length < 2) {
-		errors.push(`Es muss mindestens 2 Kategorien sein.`);
+		errors.push(`${trm('there_have_to_be_at_least_two_categories')}.`);
 
 		ret = false;
 	}
@@ -1018,7 +1018,7 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 	}
 
 	if(errors.length > 0) {
-		var errors_string = "Folgende Probleme bestehen noch und müssen gelöst werden, bevor du trainieren kannst:<br>";
+		var errors_string = `${trm('the_following_problems_must_be_solved_before_training')}:<br>`;
 		if(errors.length == 1) {
 			errors_string += `<br>${errors[0]}\n`;
 		} else {
@@ -1033,6 +1033,8 @@ function shouldCustomTrainingBeEnabled(_custom_categories=[]) {
 		}
 
 		$("#show_errors").html(errors_string).show();
+
+		update_translations();
 	} else {
 		$("#show_errors").html("").hide();
 	}

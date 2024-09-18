@@ -123,7 +123,12 @@
 			"were_detected_properly" => "were detected properly",
 			"erkannt_german_only" => "",
 			"images_recognized_properly" => "images recognized correctly",
-			"images_from_category" => "images from the category"
+			"images_from_category" => "images from the category",
+
+			"the_following_problems_must_be_solved_before_training" => "The following issues need to be solved before training",
+			"there_have_to_be_at_least_two_categories" => "There have to be at least 2 categories",
+			"some_category_names_are_equal" => "Some of the category names are equal. Each category needs a unique name.",
+			"list_of_category_names_was_empty" => "The list of category names was empty"
                 ),
                 'de' => array(
                         'optimizer' => 'Optimierer',
@@ -248,7 +253,12 @@
 			"were_detected_properly" => "wurden richtig erkannt",
 			"erkannt_german_only" => "erkannt",
 			"images_recognized_properly" => "Bildern richtig erkannt",
-			"images_from_category" => "Bildern aus der Kategorie"
+			"images_from_category" => "Bildern aus der Kategorie",
+
+			"the_following_problems_must_be_solved_before_training" => "Folgende Probleme bestehen noch und müssen gelöst werden, bevor du trainieren kannst",
+			"there_have_to_be_at_least_two_categories" => "Es muss mindestens 2 Kategorien sein",
+			"some_category_names_are_equal" => "Einige der Kategorien haben die gleichen Namen. Jede Kategorie braucht einen eigenen Namen.",
+			"list_of_category_names_was_empty" => "Die Liste der Kategorienamen ist leer"
 		)
 	);
 
