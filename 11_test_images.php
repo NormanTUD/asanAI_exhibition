@@ -1,7 +1,3 @@
-<?php
-	$GLOBALS["use_navigation"] = 1;
-	include("header.php");
-?>
 	<div>
 		<div class="general">
 		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
@@ -73,8 +69,6 @@
 		</div>
 	</div>
 	<script>
-		showSpinnerFullScreen();
-
 		$(document).ready(async function() {
 			asanai.set_image_div_name("first_example_images");
 			asanai.set_image_url_tensor_div("first_example_images");

@@ -1,7 +1,3 @@
-<?php
-	$GLOBALS["dont_load_asanai"] = 1;
-	include("header.php");
-?>
 		<div>
 			<div id="optimizer_div" style="display: none;"></div>
 			<div class="general">
@@ -12,7 +8,7 @@
 				<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
 					<div class="language_de"></div>
 				</div>
-				<a href="10_select_data_screen.php"><button draggable="false" id="tryit" class="box"><span class="TRANSLATEME_try_it"></span></button></a>
+				<span onclick="load_page_with_params('10_select_data_screen.php')"><button draggable="false" id="tryit" class="box"><span class="TRANSLATEME_try_it"></span></button></span>
 				<div class="navbar">
 					<ul>
 						<li><a id="neural_network_explanation_link" class="icon" onclick="neural_network_explanation()"><span class="TRANSLATEME_neural_network"></span></a></li>
@@ -75,7 +71,6 @@
 		</div>
 		<script>
 			neural_network_explanation();
-			showSpinnerFullScreen();
 
 			update_translations();
 		</script>

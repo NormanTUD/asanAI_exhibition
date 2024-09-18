@@ -1,7 +1,3 @@
-<?php
-	$GLOBALS["use_navigation"] = 1;
-	include("header.php");
-?>
 	<div>
 		<div class="general">
 			<button class="box" id="box-wide" onclick="load_and_train_scheine_muenzen_schluessel();">
@@ -97,8 +93,6 @@
 		</div>
 	</div>
 	<script>
-		showSpinnerFullScreen();
-
 		$(document).ready(async function() {
 			asanai.set_image_div_name("second_example_images");
 			asanai.set_image_url_tensor_div("second_example_images");

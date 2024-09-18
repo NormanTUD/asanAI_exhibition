@@ -1,7 +1,3 @@
-<?php
-	$GLOBALS["use_navigation"] = 1;
-	include("header.php");
-?>
 		<div class="general">
 			<div style="clear: both;"></div>
 				<div class="flex_box">
@@ -15,7 +11,7 @@
 					<div class="language_de"></div>
 				</div>
 				<div class="button shadow b_topRight2" onclick="closeInfopanel()">
-					<a class="close" href="01_start_screen.php"></a>
+					<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
 				</div>
 			</div>
 		</div>
@@ -158,20 +154,14 @@
 				} else {
 					log("asanai is undefined");
 				}
+
+				asanai.set_image_div_name("custom_images");
+				asanai.set_image_url_tensor_div("custom_images");
+
+				update_after_relevant_change();
 			});
+
+			update_translations();
 		</script>
 	</body>
-
-	<script>
-		showSpinnerFullScreen();
-
-		$(document).ready(async function() {
-			asanai.set_image_div_name("custom_images");
-			asanai.set_image_url_tensor_div("custom_images");
-
-			update_after_relevant_change();
-		});
-
-		update_translations();
-	</script>
 </html>

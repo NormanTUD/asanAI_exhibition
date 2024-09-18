@@ -22,22 +22,22 @@
 }
 
 html::-webkit-scrollbar-track{
-  border-radius: 5px;
-  background-color: #60605C;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #60605C;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
 
 html::-webkit-scrollbar
 {
-  width: 8px;
-  background-color: #F5F5F5;
+	width: 8px;
+	background-color: #F5F5F5;
 }
 
 html::-webkit-scrollbar-thumb
 {
-  border-radius: 10px;
-  background-color: #BC147E;
+	border-radius: 10px;
+	background-color: #BC147E;
 }
 
 body {
@@ -452,17 +452,17 @@ video {
 	height: auto; /* Maintains aspect ratio */
 	width: 18.5%;
 	border-radius: 14px;
-  }
+}
 
 .custom_images_category {
 	width: 100%;
-    border: 1px dashed #ffffff;
-    border-radius: 14px;
-    margin-bottom: 5px;
+	border: 1px dashed #ffffff;
+	border-radius: 14px;
+	margin-bottom: 5px;
 }
 .class_ui{
 	display: flex;
-  justify-content: flex-start; 
+	justify-content: flex-start; 
 }
 
 .custom_img_error{
@@ -471,13 +471,13 @@ video {
 
 .delete_image_x {
 	left: -41px;
-    position: relative;
-    top: 52px;
-    width: 1px;
-    height: 1px;
-    background: url(../media/images/trash-Button.svg);
-    background-size: contain;
-    transform: scale(30);
+	position: relative;
+	top: 52px;
+	width: 1px;
+	height: 1px;
+	background: url(../media/images/trash-Button.svg);
+	background-size: contain;
+	transform: scale(30);
 }
 
 
@@ -488,24 +488,24 @@ video {
 
 #custom_images_ui{
 	width: 30%;
-    position: fixed;
+	position: fixed;
 	padding-left: 66px;
 
 }
 #custom_images_gallery{
 	width: 70%;
-    float: right;
+	float: right;
 	padding-right: 8px;
 }
 #custom_images_cat{
 	position: fixed;
-    left: 66px;
-    bottom: 180px;
+	left: 66px;
+	bottom: 180px;
 }
 #start_custom_training{
 	position: fixed;
-    left: 66px;
-    bottom: 85px;
+	left: 66px;
+	bottom: 85px;
 }
 
 .delete_single_image_button{
@@ -530,9 +530,9 @@ video {
 
 .category_name{
 	width: 75%;
-    color: white;
-    background-color: #000000;
-    font-size: var(--text-size);
+	color: white;
+	background-color: #000000;
+	font-size: var(--text-size);
 }
 
 .asanai_logo {
@@ -682,4 +682,28 @@ video {
 
 #webcam_preview_video{
 	border-radius: 14px;
+}
+
+.spinner {
+	border: 8px solid #f3f3f3;
+	border-top: 8px solid #3498db;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 1s linear infinite;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Hidden class */
+.hidden {
+	display: none;
+}
+
+/* Spinner animation */
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
