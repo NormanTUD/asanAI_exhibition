@@ -76,10 +76,10 @@
 	</head>
 <body>
 	<div class="button-header">
-		<div class="button shadow b_topRight2" onclick="closeInfopanel()">
+		<div class="button shadow b_topRight2">
 			<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
 		</div>
-		<div class="button shadow b_topRight" id="b_en" onclick="switch_language()">
+		<div class="button shadow b_topRight" id="b_de" onclick="switch_language()">
 			<div class="language_de"></div>
 		</div>
 	</div>
