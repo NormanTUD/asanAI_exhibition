@@ -379,6 +379,8 @@ async function _start_custom_training(optimizer_config) {
 }
 
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
+	$("#close_button").hide();
+
 	var _created_model = asanai.create_model_from_model_data(model_struct, optimizer_config);
 
 	asanai.set_model(_created_model);
@@ -420,6 +422,8 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 	}
 
 	createAuswertungTable(local_categories);
+
+	$("#close_button").show();
 }
 
 function createAuswertungTable(local_categories) {

@@ -25,10 +25,7 @@
 						update_translations();
 
 						if(
-							url.startsWith("01_start_screen") ||
-							url.startsWith("11_test_images") ||
-							url.startsWith("12_option2") ||
-							url.startsWith("30_train")
+							url.startsWith("01_start_screen")
 						) {
 							$("#close_button").hide();
 						} else {
