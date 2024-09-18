@@ -13,12 +13,6 @@
 				<span class="TRANSLATEME_own_dataset"></span>
 			</button>
 		</div>
-		<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
-			<div class="language_de"></div>
-		</div>
-		<div class="button shadow b_topRight2" onclick="closeInfopanel()">
-			<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
-		</div>
 	</body>
 	<script>
 		update_translations();

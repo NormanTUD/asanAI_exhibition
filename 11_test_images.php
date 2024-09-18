@@ -1,12 +1,6 @@
 	<div>
 		<div class="general">
 		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
-		<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
-			<div class="language_de"></div>
-		</div>
-		<div class="button shadow b_topRight2" onclick="closeInfopanel()">
-			<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
-		</div>
 
 		<button class="box" id="box-wide" onclick="load_and_train_fruits_example();">
 			<span class="TRANSLATEME_load_test_images_and_start_training"></span>

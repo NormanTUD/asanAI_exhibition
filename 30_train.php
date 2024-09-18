@@ -5,15 +5,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="button-header">
-			<div class="button shadow b_topRight" id="b_en">
-				<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
-					<div class="language_de"></div>
-				</div>
-				<div class="button shadow b_topRight2" onclick="closeInfopanel()">
-					<span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
-				</div>
-			</div>
 		</div>
 
 		<div id="optimizer_div" style="display:none"></div>
