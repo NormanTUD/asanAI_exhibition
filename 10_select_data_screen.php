@@ -2,7 +2,7 @@
 		<div class="general">
 		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 		<h2 style="margin: 200px;"><span class="TRANSLATEME_choose_an_existing_dataset_or_create_your_own"></span></h2>
-		<div class="container">
+		<div class="container_center">
 			<button id="box1" class="box" onclick="load_page_with_params('11_test_images.php')">
 				<span class="TRANSLATEME_fruit"></span>
 			</button>

@@ -117,7 +117,6 @@ p {
 	font-size: 1.6vh;
 	color: var(--text-color);
 	border-radius: 14px;
-	position: absolute;
 	bottom: 0%;
 	text-align: center;
 }
@@ -128,21 +127,6 @@ p {
 }
 
 
-
-#box1 {
-	left: 277px;
-	bottom: 290px;
-}
-
-#box2 {
-	left: 806px;
-	bottom: 290px;
-}
-
-#box3 {
-	left: 1331px;
-	bottom: 290px;
-}
 
 #box-wide {
 	width: 50%;
@@ -707,3 +691,20 @@ video {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
 }
+
+.container_center {
+	display: flex;
+	justify-content: center; /* Zentriert die Boxen horizontal */
+	align-items: center;     /* Zentriert die Boxen vertikal */
+	gap: 120px;               /* Abstand zwischen den Boxen */
+}
+
+#box1, #box2, #box3 {
+	flex: 1;                /* Jede Box nimmt gleichmäßig verfügbaren Platz ein */
+	min-width: 100px;       /* Minimale Breite der Boxen */
+	max-width: 300px;       /* Maximale Breite der Boxen */
+	padding: 20px;          /* Abstand innerhalb der Boxen */
+	border: 1px solid #000; /* Optional: Rahmen zur Sichtbarkeit */
+	box-sizing: border-box; /* Verhindert, dass Padding die Gesamtbreite beeinflusst */
+}
+
