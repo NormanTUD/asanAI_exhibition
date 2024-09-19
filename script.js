@@ -418,12 +418,10 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 
 	$("#close_button").show();
 
-	/*
 	$("#progress").hide();
 	$("#progress-text").hide();
 	$("#text_training").hide();
 	$("#canvas_grid_visualization").hide();
-	*/
 }
 
 function createAuswertungTable(local_categories) {

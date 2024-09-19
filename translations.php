@@ -128,8 +128,11 @@
 			"the_following_problems_must_be_solved_before_training" => "The following issues need to be solved before training",
 			"there_have_to_be_at_least_two_categories" => "There have to be at least 2 categories",
 			"some_category_names_are_equal" => "Some of the category names are equal. Each category needs a unique name.",
-			"list_of_category_names_was_empty" => "The list of category names was empty"
+			"list_of_category_names_was_empty" => "The list of category names was empty",
+
+			"the_higher_up_the_images_the_more_sure_the_network_is" => "The higher up the images are in the category, the more sure the network is in the classification."
                 ),
+
                 'de' => array(
                         'optimizer' => 'Optimierer',
                         'a_neural_network_is_an_algorithm_that_mimics_the_functionality_of_the_human_brain' => 'Ein Neuronales Netz ist ein Algorithmus, der die Funktionsweise des menschlichen Gehirns nachahmt.',
@@ -258,7 +261,9 @@
 			"the_following_problems_must_be_solved_before_training" => "Folgende Probleme bestehen noch und müssen gelöst werden, bevor du trainieren kannst",
 			"there_have_to_be_at_least_two_categories" => "Es muss mindestens 2 Kategorien sein",
 			"some_category_names_are_equal" => "Einige der Kategorien haben die gleichen Namen. Jede Kategorie braucht einen eigenen Namen.",
-			"list_of_category_names_was_empty" => "Die Liste der Kategorienamen ist leer"
+			"list_of_category_names_was_empty" => "Die Liste der Kategorienamen ist leer",
+
+			"the_higher_up_the_images_the_more_sure_the_network_is" => "Umso weiter oben die Bilder sind, desto sicherer ist sich das Netzwerk, dass sie in der entsrechenen Kategorie sind."
 		)
 	);
 

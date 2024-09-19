@@ -139,8 +139,10 @@ p {
 
 #auswertung_anzeigen {
 	width: 500px;
-	top: 50%;
-	position: absolute;
+	position: absolute; /* Setzt das Element in Bezug auf den nächsten positionierten Vorfahren */
+	top: 50%; /* Zentriert das Element vertikal */
+	left: 50%; /* Zentriert das Element horizontal */
+	transform: translate(-50%, -50%); /* Verschiebt das Element um die Hälfte seiner Breite und Höhe */
 }
 
 #test_images {
@@ -700,4 +702,5 @@ video {
 .main_content {
 	top: 100px;
 	position: relative;
+	height: 80vh;
 }
