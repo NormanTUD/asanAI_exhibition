@@ -263,7 +263,7 @@
 			"some_category_names_are_equal" => "Einige der Kategorien haben die gleichen Namen. Jede Kategorie braucht einen eigenen Namen.",
 			"list_of_category_names_was_empty" => "Die Liste der Kategorienamen ist leer",
 
-			"the_higher_up_the_images_the_more_sure_the_network_is" => "Umso weiter oben die Bilder sind, desto sicherer ist sich das Netzwerk, dass sie in der entsrechenen Kategorie sind."
+			"the_higher_up_the_images_the_more_sure_the_network_is" => "Umso weiter oben die Bilder sind, desto sicherer ist sich das Netzwerk, dass sie in der entsprechenen Kategorie sind."
 		)
 	);
 
