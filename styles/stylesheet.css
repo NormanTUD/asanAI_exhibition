@@ -698,3 +698,8 @@ video {
 	border: 1px solid #000; /* Optional: Rahmen zur Sichtbarkeit */
 	box-sizing: border-box; /* Verhindert, dass Padding die Gesamtbreite beeinflusst */
 }
+
+.main_content {
+	top: 100px;
+	position: relative;
+}
