@@ -1,4 +1,4 @@
-	<div>
+	<div class="main_content">
 		<div class="general">
 			<button class="box" id="box-wide" onclick="load_and_train_scheine_muenzen_schluessel();">
 				<span class="TRANSLATEME_load_test_images_and_start_training"></span>
@@ -12,7 +12,7 @@
 				<div class="image_download_area" id="second_example_images"></div>
 				<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 				<div id="canvas_grid_visualization"></div>
-				<div id="text_training">
+				<div id="text_training" style="display: none">
 					<p class="smaller">
 						<span class="TRANSLATEME_for_each_category_categorized_test_images_are_loaded"></span>
 					</p>
@@ -39,8 +39,8 @@
 						<span class="TRANSLATEME_iterations"></span>
 					</p>
 				</div>
-				<div id="progress-text"></div>
-				<progress id="progress" value="0" max="100"></progress>
+				<div style="display: none" id="progress-text"></div>
+				<progress style="display: none" id="progress" value="0" max="100"></progress>
 			</div>
 
 			<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">

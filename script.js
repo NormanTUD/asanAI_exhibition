@@ -254,9 +254,6 @@ function generateOneHotArray(position, length) {
 
 //async function _start_custom_training(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 async function _start_custom_training(optimizer_config) {
-	$("#progress").show();
-	$("#progress-text").show();
-
 	stringToNumberMap = [];
 	currentNumber = 0;
 
@@ -366,9 +363,6 @@ async function _start_custom_training(optimizer_config) {
 	await asanai.dispose(loaded_data.y);
 
 	createAuswertungTable(local_categories);
-
-	$("#progress").hide();
-	$("#progress-text").hide();
 }
 
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
@@ -398,6 +392,12 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 
 	var loaded_data = await asanai.load_image_urls_to_div_and_tensor(to_div_name, exhib_data);
 
+	$("#progress").show();
+	$("#progress-text").show();
+	$("#text_training").show();
+	$("#visualization").show();
+	$("#canvas_grid_visualization").show();
+
 	$("#" + to_div_name).hide();
 
 	if(loaded_data) {
@@ -417,6 +417,13 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 	createAuswertungTable(local_categories);
 
 	$("#close_button").show();
+
+	/*
+	$("#progress").hide();
+	$("#progress-text").hide();
+	$("#text_training").hide();
+	$("#canvas_grid_visualization").hide();
+	*/
 }
 
 function createAuswertungTable(local_categories) {
@@ -465,7 +472,6 @@ function try_yourself () {
 
 function start_training_show_divs() {
 	$("#box-wide").toggle();
-	$("#visualization").toggle();
 }
 
 function show_auswertung () {

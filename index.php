@@ -10,6 +10,8 @@
 
         <script>
 		// Function to load page with AJAX using GET method and appending query params
+		var current_url = null;
+
 		function load_page_with_params(url) {
 			if(url != "index.php") {
 				$(".button-header").show();
@@ -31,6 +33,8 @@
 						} else {
 							$("#close_button").show();
 						}
+
+						current_url = url;
 					},
 					error: function(xhr, status, error) {
 						// Log error to console
@@ -44,6 +48,18 @@
 				console.log("Will not recursively load index.php");
 			}
 		}
+
 		load_page_with_params("start.php");
+
+		$(document).ready(async function() {
+			$(document).on('click', function(event) {
+				// Check if the current URL is 'start.php'
+				if (current_url && current_url.endsWith('start.php')) {
+					load_page_with_params('01_start_screen.php');
+					// Prevent the default action of the click (optional)
+					event.preventDefault();
+				}
+			});
+		});
         </script>
 </html>

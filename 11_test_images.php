@@ -1,4 +1,4 @@
-	<div>
+	<div class="main_content">
 		<div class="general">
 		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 
@@ -12,7 +12,7 @@
 			<div class="image_download_area" id="first_example_images"></div>
 			<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 			<div id="canvas_grid_visualization"></div>
-			<div id="text_training">
+			<div id="text_training" style="display: none">
 				<p class="smaller"><span class="TRANSLATEME_categorized_test_images_are_loaded_for_each_fruit"></span></p>
 				<p class="smaller"><span class="TRANSLATEME_the_neural_network_selects_a_random_path_through_the_network_for_each_image"></span></p>
 				<p class="smaller"><span class="TRANSLATEME_if_a_wrong_result_occurs_it_is_corrected"></span></p>
@@ -20,8 +20,8 @@
 				<p class="smaller"><span class="TRANSLATEME_the_more_passes_the_more_effective_the_training"></span></p>
 				<p class="smaller"><span class="TRANSLATEME_in_this_example_there_are"></span> <span id="nr_epochs">0</span> <span class="TRANSLATEME_passes"></span></p>
 			</div>
-			<div id="progress-text"></div>
-			<progress id="progress" value="0" max="100"></progress>
+			<div style="display: none" id="progress-text"></div>
+			<progress style="display: none" id="progress" value="0" max="100"></progress>
 		</div>
 
 		<button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
@@ -61,14 +61,12 @@
 			</p>
 			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
-	</div>
-	<script>
-		$(document).ready(async function() {
-			asanai.set_image_div_name("first_example_images");
-			asanai.set_image_url_tensor_div("first_example_images");
-		});
+		<script>
+			$(document).ready(async function() {
+				asanai.set_image_div_name("first_example_images");
+				asanai.set_image_url_tensor_div("first_example_images");
+			});
 
-		update_translations();
-	</script>
-</body>
-</html>
+			update_translations();
+		</script>
+	</div>
