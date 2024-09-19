@@ -9,6 +9,7 @@ var myKeyboard = null;
 var done_loading = false;
 var stringToNumberMap = [];
 var currentNumber = 0;
+var is_training = false;
 
 function assert(cond, msg) {
 	if(!cond) {
@@ -366,6 +367,7 @@ async function _start_custom_training(optimizer_config) {
 }
 
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
+	is_training = true;
 	$("#close_button").hide();
 
 	var _created_model = asanai.create_model_from_model_data(model_struct, optimizer_config);
@@ -422,6 +424,7 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 	$("#progress-text").hide();
 	$("#text_training").hide();
 	$("#canvas_grid_visualization").hide();
+	is_training = false;
 }
 
 function createAuswertungTable(local_categories) {

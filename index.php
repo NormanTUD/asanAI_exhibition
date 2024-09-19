@@ -11,6 +11,16 @@
 		var current_url = null;
 
 		function load_page_with_params(url) {
+			if(current_url && current_url == url) {
+				console.log("Not reloading same page");
+				return;
+			}
+
+			if(is_training) {
+				console.log(`Not switching because currently, I am training.`);
+				return;
+			}
+
 			if(url != "index.php") {
 				$(".button-header").show();
 				log("Loading url " + url);
