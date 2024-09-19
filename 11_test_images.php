@@ -1,6 +1,5 @@
 	<div class="main_content">
 		<div class="general">
-		<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 
 		<button class="box" id="box-wide" onclick="load_and_train_fruits_example();">
 			<span class="TRANSLATEME_load_test_images_and_start_training"></span>

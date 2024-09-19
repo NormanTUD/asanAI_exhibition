@@ -1,7 +1,6 @@
 		<div>
 			<div id="optimizer_div" style="display: none;"></div>
 			<div class="general">
-				<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
 				<span onclick="load_page_with_params('10_select_data_screen.php')"><button draggable="false" id="tryit" class="box"><span class="TRANSLATEME_try_it"></span></button></span>
 				<div class="navbar">
 					<ul>
