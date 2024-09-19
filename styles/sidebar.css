@@ -1,80 +1,63 @@
-
 .navbar{
-    position: absolute;
-    top: 127px;
-    
+	position: absolute;
+	top: 127px;
+
 }
 
 .navbar ul{
-    list-style: none;
+	list-style: none;
 
-    display: flex;
-    padding: 4px;
-    background-color: #4D4B4B;
-    border-radius: 16px;
+	display: flex;
+	padding: 4px;
+	background-color: #4D4B4B;
+	border-radius: 16px;
 }
 
 .navbar ul li{
-    cursor: pointer;
-    float: left;
+	cursor: pointer;
+	float: left;
 }
 
 .navbar ul li a{
-    display: block;
-    font-size: 3vh;
-    background-color: #000;
-    color: #FFF;
-    height: 48px;
-    width: 250px;
-    border-radius: 14px;
-    text-align: center;
-    margin-left: 4px;
-    margin-right: 4px;
-    padding-top: 16px;
-    font-family :"Open Sans semibold";
-	font-size: var(--text-size);
+	display: block;
+	font-size: 3vh;
+	background-color: #000;
+	color: #FFF;
+	height: 48px;
+	width: 250px;
+	border-radius: 14px;
+	text-align: center;
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-top: 16px;
+	font-family :"Open Sans semibold";
+	font-size: 1.6vh;
 }
 
 .navbarSelected{
-    display: inline-flex;
-    font-size: 3vh;
-    background-color: #B4B4B4 !important;
-    border: 5px solid #BC147E !important;
-    color: black !important;
+	display: inline-flex;
+	font-size: 3vh;
+	background-color: #B4B4B4 !important;
+	border: 5px solid #BC147E !important;
+	color: black !important;
 }
 
 .text{
-    position: absolute;
-    top: 45%;
-    left: 23%;
-    width: 35%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-.icon{
-
-}
-
-#icon1{
-
-}
-
-#icon4{
-
-}
-
-#icon1{
-
+	position: absolute;
+	top: 45%;
+	left: 23%;
+	width: 35%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 #bild4{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    left: 69vw;
-    top: 51.8vh;
-    width: 87.5vh;
-    object-fit: cover;
-    object-position: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	left: 69vw;
+	top: 51.8vh;
+	width: 87.5vh;
+	object-fit: cover;
+	object-position: 50%;
 }
