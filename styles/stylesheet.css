@@ -276,8 +276,6 @@ green {
 
 progress {
 	width: 500px;
-	height: 47px;
-	position: absolute;
 	appearance: none;
 }
 
