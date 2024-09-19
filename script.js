@@ -9,6 +9,7 @@ var myKeyboard = null;
 var done_loading = false;
 var stringToNumberMap = [];
 var currentNumber = 0;
+var required_nr_images_per_category = 10;
 var is_training = false;
 
 function assert(cond, msg) {
@@ -255,6 +256,12 @@ function generateOneHotArray(position, length) {
 
 //async function _start_custom_training(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
 async function _start_custom_training(optimizer_config) {
+	$("#progress").show();
+	$("#progress-text").show();
+	$("#text_training").show();
+	$("#visualization").show();
+	$("#canvas_grid_visualization").show();
+
 	stringToNumberMap = [];
 	currentNumber = 0;
 
@@ -364,6 +371,14 @@ async function _start_custom_training(optimizer_config) {
 	await asanai.dispose(loaded_data.y);
 
 	createAuswertungTable(local_categories);
+
+	$("#visualization").hide();
+
+	$("#progress").hide();
+	$("#progress-text").hide();
+	$("#text_training").hide();
+	$("#visualization").hide();
+	$("#canvas_grid_visualization").hide();
 }
 
 async function _load_example(example_name, to_div_name, max_nr, model_struct, optimizer_config, local_categories) {
@@ -953,8 +968,6 @@ function update_after_relevant_change () {
 }
 
 function count_custom_image_categories (ret) {
-	var required_nr_images_per_category = 10;
-
 	$(".custom_images_category").each((i, e) => {
 		var imgs_in_this_cat = $(e).find("img");
 		var cat_name = $(e).find("input").val();

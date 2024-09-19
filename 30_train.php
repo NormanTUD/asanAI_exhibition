@@ -73,7 +73,7 @@
 		<div hidden="hidden" id="visualization">
 			<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 			<div id="canvas_grid_visualization"></div>
-			<div id="text_training">
+			<div id="text_training" style="display: none">
 				<p class="smaller">
 					<span class="TRANSLATEME_for_images_of_each_category_test_images_are_loaded"></span>
 				</p>
@@ -102,8 +102,8 @@
 					<span class="TRANSLATEME_iterations">.</span>
 				</p>
 			</div>
-			<div id="progress-text"></div>
-			<progress id="progress" value="0" max="100"></progress>
+			<div id="progress-text" style="display: none"></div>
+			<progress id="progress" value="0" max="100" style="display: none"></progress>
 		</div>
 
 		<div style="display: none">

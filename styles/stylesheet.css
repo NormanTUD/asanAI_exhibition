@@ -441,6 +441,7 @@ video {
 }
 
 .custom_img_error{
+	width: 200px;
 	margin: 0;
 }
 
@@ -656,6 +657,7 @@ video {
 }
 
 #webcam_preview_video{
+	width: 25vw;
 	border-radius: 14px;
 }
 
