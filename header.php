@@ -85,3 +85,4 @@
 	</div>
 	<div style="display: none" class="simple-keyboard"></div>
 	<div class="asanai_logo"><img class="asanai_img" src="media/images/logo_small_dark.png" /></div>
+	<div id="optimizer_div" style="display:none"></div>

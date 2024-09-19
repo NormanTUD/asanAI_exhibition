@@ -2,8 +2,6 @@
 	$GLOBALS["dont_load_asanai"] = 1;
 	include("header.php");
 ?>
-	<div id="optimizer_div" style="display:none"></div>
-
         <div id="main">
             <!-- Content will be loaded here via AJAX -->
         </div>
@@ -62,4 +60,5 @@
 			});
 		});
         </script>
+	</body>
 </html>

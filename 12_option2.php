@@ -88,7 +88,6 @@
 			<div class="button shadow b_topRight hidden" id="b_de" onclick="switch_language()">
 				<div class="language_de"></div>
 			</div>
-			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
 	</div>
 	<script>
@@ -99,5 +98,3 @@
 
 		update_translations();
 	</script>
-</body>
-</html>

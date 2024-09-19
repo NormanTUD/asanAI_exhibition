@@ -1,3 +1,4 @@
+	<div class="main_content">
 		<div class="general">
 			<div style="clear: both;"></div>
 				<div class="flex_box">
@@ -5,9 +6,6 @@
 				</div>
 			</div>
 		</div>
-		</div>
-
-		<div id="optimizer_div" style="display:none"></div>
 
 		<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
 
@@ -156,5 +154,4 @@
 
 			update_translations();
 		</script>
-	</body>
-</html>
+	</div>

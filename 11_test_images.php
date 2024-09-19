@@ -59,7 +59,6 @@
 			<p id="explanation_classification" class="info-box">
 				<span class="TRANSLATEME_based_on_extracted_features_the_image_is_classified"></span>
 			</p>
-			<div id="optimizer_div" hidden="hidden"></div>
 		</div>
 		<script>
 			$(document).ready(async function() {

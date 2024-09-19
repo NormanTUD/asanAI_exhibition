@@ -1,4 +1,3 @@
-		<div id="optimizer_div" style="display: none;"></div>
 		<div class="general">
 			</div>
 				<div class="start">
@@ -8,5 +7,3 @@
 				</div>
 			</div>
 		</div>
-	</body>
-</html>
