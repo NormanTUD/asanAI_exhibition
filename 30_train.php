@@ -1,9 +1,8 @@
 	<div class="main_content">
 		<div class="general">
 			<div style="clear: both;"></div>
-				<div class="flex_box">
-					<div id="webcam_prediction"></div>
-				</div>
+			<div class="flex_box">
+				<div id="webcam_prediction"></div>
 			</div>
 		</div>
 
@@ -70,25 +69,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!--table id="custom_images_table" style="margin-left: 200px;">
-			<tr>
-				<td style="width: 330px; vertical-align: baseline;">
-					<div>
-						<button class="reasonable_box" onclick="addCustomCategory()">Kate&shy;go&shy;rie hin&shy;zu&shy;fü&shy;gen</button>
-						<br>
-						<br>
-						<video id="webcam_preview_video"></video>
-					</div>
-					<div id="show_errors" style="display: none">
-					</div>
-					<br>
-					<button style="visiblity: hidden;" id="start_custom_training" class="reasonable_box green_box" onclick="startCustomTraining()">Training starten</button>
-				</td>
-				<td style="width: 100%; vertical-align: baseline;" id="custom_images">
-				</td>
-			</tr>
-		</table-->
 
 		<div hidden="hidden" id="visualization">
 			<input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
