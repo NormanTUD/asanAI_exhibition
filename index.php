@@ -30,7 +30,7 @@
 					type: 'GET',
 					success: function(response) {
 						// Replace content in the main div
-						$('#main').html(response);
+						$('#main').html(response).css("top", 0).css("position", "inherit");
 						$("#nr_epochs").html(nr_epochs);
 						update_translations();
 
@@ -46,7 +46,7 @@
 					},
 					error: function(xhr, status, error) {
 						// Log error to console
-						$('#main').html("There was an error load the requested page");
+						$('#main').html("There was an error load the requested page").css("top", 100).css("position", "absolute").show()
 						update_translations();
 						console.error('AJAX Error:', status, error);
 						console.trace();
