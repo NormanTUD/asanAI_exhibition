@@ -130,7 +130,7 @@
 			"some_category_names_are_equal" => "Some of the category names are equal. Each category needs a unique name.",
 			"list_of_category_names_was_empty" => "The list of category names was empty",
 
-			"the_higher_up_the_images_the_more_sure_the_network_is" => "The higher up the images are in the category, the more sure the network is in the classification."
+			"the_higher_up_the_images_the_more_sure_the_network_is" => "The higher up the images are in the category, the surer the network is in the classification."
                 ),
 
                 'de' => array(
