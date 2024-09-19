@@ -44,7 +44,7 @@
 			
 			<p id="explanation_input" class="info-box">
 				<span class="TRANSLATEME_the_input_image_is_converted_into_a_matrix_with"></span>
-				<?php print "${width_and_height}x${width_and_height}"; ?>
+				<?php print "{$width_and_height}x{$width_and_height}"; ?>
 				<span class="TRANSLATEME_pixels_representing_height_and_width_and_color_channels_red_green_blue"></span>
 			</p>
 			<div id="line_exp_input" class="connectionLine"></div>
