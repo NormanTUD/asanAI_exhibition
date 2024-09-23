@@ -521,8 +521,8 @@ function show_auswertung () {
 	}
 
 	if($("#fcnn_div").length) {
-		asanai.set_fcnn_height(Math.min(1200, Math.max(400, 0.7*window.innerHeight)));
-		asanai.set_fcnn_width(Math.min(2400, Math.max(800,  0.7*window.innerWidth)));
+		asanai.set_fcnn_height(600);
+		asanai.set_fcnn_width(1000);
 		asanai.draw_fcnn("fcnn_div", 32, true);
 	} else {
 		log("Could not find #fcnn_div");
