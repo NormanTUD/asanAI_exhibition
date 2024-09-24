@@ -609,13 +609,13 @@ function training_explanation(){
 
 //Startseite "Tab" highlight
 function highlight(name) {
-	var tab = $("#" + name)[0];
+	var tab = $("#" + name)[0].children[0];
 
 	tab.classList.add("navbarSelected");
 }
 
 function un_highlight(name) {
-	var tab = $("#" + name)[0];
+	var tab = $("#" + name)[0].children[0];
 
 	tab.classList.remove("navbarSelected");
 }

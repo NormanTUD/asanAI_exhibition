@@ -3,6 +3,11 @@
 	src: url(../media/fonts/OpenSans-SemiBold.ttf) format('truetype');
 }
 
+@font-face {
+	font-family: "Open Sans regular";
+	src: url(../media/fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
 :root {
 	--background-color: black;
 	--text-color: white;
@@ -12,7 +17,7 @@
 
 
 * {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Open Sans regular", sans-serif;
 	align-items: center;
 	text-align: left;
 	border: none;
@@ -50,11 +55,11 @@ body {
 }
 
 .text {
-	font-size: 1.6vh;
+	font-size: var(--text-size);
 }
 
 p {
-	font-size: 1.6vh;
+	font-size: var(--text-size);
 	margin-top: 5vh;
 }
 
@@ -113,7 +118,7 @@ p {
 	background-color: #BC147E;
 	width: 307px;
 	height: 64px;
-	font-family :"Open Sans semibold";
+	font-family :"Open Sans semibold" !important;
 	font-size: 1.6vh;
 	color: var(--text-color);
 	border-radius: 14px;
@@ -210,12 +215,17 @@ green {
 }
 
 #tryit {
-	font-size: 1.6vw;
+	font-size: var(--text-size);
+	
 	width: 307px;;
 	position: absolute;
 	left: 66px;
 	margin: 0;
 	bottom: 66px;
+}
+
+.TRANSLATEME_try_it{
+	font-family: "Open Sans semibold";
 }
 
 .rectangle {
@@ -393,11 +403,11 @@ video {
 	position: absolute;
 	left: 66px;
 	top: 288px;
-	width: 1444px;
+	width: 1490px;
 }
 
 .halftext {
-	width: 307px;
+	width: 330px;
 }
 
 .simple-keyboard {

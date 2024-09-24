@@ -4,9 +4,9 @@
 				<div class="navbar">
 					<ul>
 						<li><a id="neural_network_explanation_link" class="icon" onclick="neural_network_explanation()"><span class="TRANSLATEME_neural_network"></span></a></li>
-						<li><a id="layer_explanation_link" class="icon" onclick="layer_explanation()">Layer</a></li>
-						<li><a id="forward_propagation_link" class="icon" onclick="forward_propagation_explanation()">Forward Propagation</a></li>
-						<li><a id="training_link" class="icon" onclick="training_explanation()">Training</a></li>
+						<li><a id="layer_explanation_link" class="icon" onclick="layer_explanation()"><span>Layer</span></a></li>
+						<li><a id="forward_propagation_link" class="icon" onclick="forward_propagation_explanation()"><span>Forward Propagation</span></a></li>
+						<li><a id="training_link" class="icon" onclick="training_explanation()"><span>Training</span></a></li>
 					</ul>
 				</div>
 

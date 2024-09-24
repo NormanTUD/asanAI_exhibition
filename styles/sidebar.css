@@ -18,7 +18,7 @@
 	float: left;
 }
 
-.navbar ul li a{
+.navbar ul li a span{
 	display: block;
 	font-size: 3vh;
 	background-color: #000;
@@ -36,7 +36,7 @@
 
 .navbarSelected{
 	display: inline-flex;
-	font-size: 3vh;
+	
 	background-color: #B4B4B4 !important;
 	border: 5px solid #BC147E !important;
 	color: black !important;
