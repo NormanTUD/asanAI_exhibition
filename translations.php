@@ -21,7 +21,7 @@
                         'the_values_in_the_input_layer_are_randomly_chosen_at_first_and_adjusted_with_each_pass_through_the_neural_network_until_the_correct_result_is_output_in_the_output_layer' => 'The values in the input layer are randomly chosen at first and adjusted with each pass through the neural network until the correct result is output in the output layer.',
                         'learning_rate' => 'Learning Rate',
                         'try_it' => "Try it",
-                        "neural_network" => "Neuronales Netz",
+                        "neural_network" => "Neural Network",
 
                         'choose_an_existing_dataset_or_create_your_own' => 'Choose an existing dataset or create your own',
                         'fruit' => 'Fruit',
@@ -154,7 +154,7 @@
                         'the_values_in_the_input_layer_are_randomly_chosen_at_first_and_adjusted_with_each_pass_through_the_neural_network_until_the_correct_result_is_output_in_the_output_layer' => 'Die Werte im Input-Layer sind zu Beginn zufällig gewählt und werden mit jedem Durchgang durch das Neuronale Netzwerk angepasst, bis im Output-Layer das richtige Ergebnis ausgegeben wird.',
                         'learning_rate' => 'Lernrate',
                         'try_it' => "Ausprobieren",
-                        "neural_network" => "Neural Network",
+                        "neural_network" => "Neuronales Netz",
 
                         'choose_an_existing_dataset_or_create_your_own' => 'Wähle einen existierenden Datensatz oder erstelle deinen Eigenen',
                         'fruit' => 'Obst',

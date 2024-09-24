@@ -80,7 +80,7 @@ if (isset($_GET['width_and_height']) && is_numeric($_GET['width_and_height']) &&
             <span class="close" onclick="load_page_with_params('01_start_screen.php')"></span>
         </div>
         <div class="button shadow b_topRight" id="b_de" onclick="switch_language()">
-            <div class="language_de"></div>
+            <div class="language_en"></div>
         </div>
     </div>
     <div style="display: none" class="simple-keyboard"></div>

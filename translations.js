@@ -21,7 +21,8 @@ async function set_lang(la) {
 		await update_translations();
 
 		if(old_lang && la) {
-			$($("#b_de").children(0)[0]).removeClass(`language_${old_lang}`).addClass(`language_${la}`);
+			//$($("#b_de").children(0)[0]).removeClass(`language_${old_lang}`).addClass(`language_${la}`);
+			$($("#b_de").children(0)[0]).removeClass(`language_${la}`).addClass(`language_${old_lang}`);
 		}
 	} else {
 		err(`Language unknown: ${la}`);
