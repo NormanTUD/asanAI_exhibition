@@ -1,10 +1,7 @@
-// Zeit in Millisekunden (5 Minuten)
-const INACTIVITY_TIME = 5 * 60 * 1000;
+const INACTIVITY_TIME = 5 * 60 * 1000; // 5 minutes
 
-// Timeout-Variable
 let inactivitysTimeout;
 
-// Funktion zum Neustarten des Timers
 function resetTimer() {
 	// Timeout zurücksetzen
 	clearTimeout(inactivitysTimeout);
@@ -18,12 +15,9 @@ function resetTimer() {
 	}, INACTIVITY_TIME);
 }
 
-// Event-Listener für Mausbewegungen und Tastatureingaben
 window.onload = function() {
-	// Timer beim Laden der Seite starten
 	resetTimer();
 
-	// Event-Listener hinzufügen, um inactivitys-Timer zurückzusetzen
 	document.addEventListener('mousemove', resetTimer);
 	document.addEventListener('keydown', resetTimer);
 	document.addEventListener('scroll', resetTimer);
