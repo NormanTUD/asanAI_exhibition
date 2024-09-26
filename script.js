@@ -562,7 +562,6 @@ let toggle_on = (name) => {
 	}
 }
 
-//Startseiten explanationen toggle
 function neural_network_explanation(){
 	$(".tab").hide();
 	$("#neural_network_explanation_tab").show();
