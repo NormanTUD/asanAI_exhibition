@@ -41,6 +41,7 @@
             <div id="fcnn_div"></div>
             <p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_a_fruit_in_front_of_the_camera"></span><br></p>
             <div id="webcam_prediction"></div>
+            <div id="webcam_prediction_results"></div>
             
             <p id="explanation_input" class="info-box">
                 <span class="TRANSLATEME_the_input_image_is_converted_into_a_matrix_with"></span>

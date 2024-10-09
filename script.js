@@ -468,9 +468,9 @@ function createAuswertungTable(local_categories) {
 }
 
 function try_yourself () {
-	asanai.show_and_predict_webcam_in_div("webcam_prediction");
+	asanai.show_and_predict_webcam_in_div("webcam_prediction", "webcam_prediction_results");
 
-	asanai.start_camera();
+	asanai.start_camera(null, "webcam_prediction_results");
 
 	$("#auswertung_element").hide();
 	$("#matrix_text").hide();
