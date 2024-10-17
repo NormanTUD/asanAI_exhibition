@@ -454,7 +454,7 @@ video {
 .thumbnail_container img {
 	max-width: 100%; /* Ensures images don't exceed their container */
 	height: auto; /* Maintains aspect ratio */
-	width: 18.5%;
+	width: 18.4%;
 	border-radius: 14px;
 }
 
