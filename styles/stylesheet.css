@@ -228,6 +228,9 @@ green {
 	font-family: "Open Sans semibold";
 }
 
+.font_bold{
+	font-family: "Open Sans semibold";
+}
 .rectangle {
 	width: 85vw;
 	height: 70vh;
@@ -361,12 +364,14 @@ video {
 }
 
 #text_training {
-	font-family: "Open Sans", sans-serif;
-	font-size: 1.6vh !important;
-	width: 624px;
+	font-family: "Open Sans regular", sans-serif;
+	font-size: var(--text-size);
+	width: 850px;
+	margin-top: 50px;
 }
 
 #progress-text {
+	margin-top: 64px;
 	color: white;
 	font-family: "Open Sans semibold";
 }
@@ -396,7 +401,14 @@ video {
 
 #auswertung_element {
 	margin: 200px;
-	font-size: 1.6vh;
+	margin-bottom: 22px;
+	font-size: var(--text-size);
+}
+
+#auswertung_element td{
+	padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1.4;
 }
 
 .tab {

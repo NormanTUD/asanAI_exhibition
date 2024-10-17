@@ -2,7 +2,7 @@
         <div class="general">
 
         <button class="box" id="box-wide" onclick="load_and_train_fruits_example();">
-            <span class="TRANSLATEME_load_test_images_and_start_training"></span>
+            <span class="TRANSLATEME_load_test_images_and_start_training font_bold"></span>
         </button>
         <div hidden="hidden" id="plotly">
             <div id="plotly_history"></div>
@@ -25,13 +25,14 @@
         </div>
 
         <button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
-            <span class="TRANSLATEME_show_evaluation"></span>
+            <span class="TRANSLATEME_show_evaluation font_bold"></span>
         </button>
 
         <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
         <table id="auswertung_element" style="display: none">
         </table>
+        <div id="success_rate"></div>
 
         <button hidden="hidden" class="box" id="yourself" onclick="try_yourself();">
             <span class="TRANSLATEME_try_yourself"></span>

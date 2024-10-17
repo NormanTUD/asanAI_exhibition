@@ -747,17 +747,22 @@ function matrix_texts() {
 
 	table_string += "</tr>"
 
-	table_string += `<tr><td colspan="${_keys.length}">${last_msg}</td></tr>`;
+	//table_string += `<tr><td colspan="${_keys.length}">${last_msg}</td></tr>`;
 
 	var $analysis = $("#auswertung_element");
 
 	if($analysis.length) {
 		$analysis.html(table_string).show();
+		document.getElementById("success_rate").innerHTML = `<p>${last_msg}</p>`;
 
 		update_translations();
 	} else {
 		console.error(`$("#auswertung_element") was empty!`);
 	}
+
+	
+
+	
 }
 
 function initialize_keyboard(elem) {

@@ -46,7 +46,7 @@
             </div>
 
             <button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
-                <span class="TRANSLATEME_show_evaluation"></span>
+                <span class="TRANSLATEME_show_evaluation font_bold"></span>
             </button>
 
             <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>

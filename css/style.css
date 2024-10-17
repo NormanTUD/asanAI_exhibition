@@ -924,8 +924,7 @@ button {
 	pointer-events: none;
 	display: block ruby;
 	z-index: 999999;
-	top: 80px;
-	left: 0px;
+	margin-top: 36px;
 }
 
 .own_image_upload_container {
