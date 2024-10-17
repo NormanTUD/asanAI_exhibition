@@ -281,8 +281,16 @@ green {
 #webcam_prediction {
 	position: absolute;
 	left: 66px;
-	top: 382px;
+	top: 315px;
 	width: 316px;
+}
+
+#webcam_prediction_results {
+	position: absolute;
+    right: 59px;
+    width: 257px;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 #show_internals_slider {
@@ -639,7 +647,7 @@ video {
 
 #cam_text {
 	left: 100px;
-	top:263px;
+	top:200px;
 }
 
 #explanation_input {

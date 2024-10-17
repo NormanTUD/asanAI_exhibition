@@ -50,6 +50,7 @@
 
         <table id="auswertung_element" style="display: none">
         </table>
+        <div id="success_rate" style="display: none"></div>
 
         <div id="custom_images_table">
             <div id="custom_images_ui">

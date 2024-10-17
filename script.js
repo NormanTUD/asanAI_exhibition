@@ -473,6 +473,7 @@ function try_yourself () {
 	asanai.start_camera(null, "webcam_prediction_results");
 
 	$("#auswertung_element").hide();
+	$("#success_rate").hide();
 	$("#matrix_text").hide();
 	$("#analysis").hide();
 	$("#yourself").hide();
@@ -521,8 +522,8 @@ function show_auswertung () {
 	}
 
 	if($("#fcnn_div").length) {
-		asanai.set_fcnn_height(600);
-		asanai.set_fcnn_width(1000);
+		asanai.set_fcnn_height(650);
+		asanai.set_fcnn_width(1650);
 		asanai.draw_fcnn("fcnn_div", 32, true);
 	} else {
 		log("Could not find #fcnn_div");

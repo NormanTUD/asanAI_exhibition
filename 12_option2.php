@@ -3,11 +3,9 @@
             <button class="box" id="box-wide" onclick="load_and_train_scheine_muenzen_schluessel();">
                 <span class="TRANSLATEME_load_test_images_and_start_training"></span>
             </button>
-
             <div hidden="hidden" id="plotly">
                 <div id="plotly_history"></div>
             </div>
-
             <div hidden="hidden" id="visualization">
                 <div class="image_download_area" id="second_example_images"></div>
                 <input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
@@ -53,6 +51,7 @@
 
             <table id="auswertung_element" style="display: none">
             </table>
+            <div id="success_rate"></div>
 
             <button hidden="hidden" class="box" id="yourself" onclick="try_yourself();">
                 <span class="TRANSLATEME_try_yourself"></span>
