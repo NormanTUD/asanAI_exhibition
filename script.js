@@ -139,6 +139,8 @@ $(document).ready(async function() {
 
 	asanai.set_validation_split(0);
 
+	asanai.set_rescale_factor(3);
+
 	$("#nr_epochs").html(nr_epochs);
 	$("#progress").attr("max", nr_epochs);
 
