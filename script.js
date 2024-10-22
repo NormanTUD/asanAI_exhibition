@@ -139,8 +139,8 @@ $(document).ready(async function() {
 
 	asanai.set_validation_split(0);
 
-	asanai.set_rescale_factor(7);
-	asanai.set_layer_spacing_add(47);
+	asanai.set_rescale_factor(3);
+	asanai.set_layer_spacing_add(60);
 
 	$("#nr_epochs").html(nr_epochs);
 	$("#progress").attr("max", nr_epochs);
