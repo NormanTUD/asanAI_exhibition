@@ -815,7 +815,7 @@ function initialize_keyboard(elem) {
 	}
 
 	// Initialize SimpleKeyboard
-	let myKeyboard = new keyboard({
+	myKeyboard = new keyboard({
 		onKeyPress: button => {
 			// Prevent propagation to avoid loops
 			event.stopImmediatePropagation();
