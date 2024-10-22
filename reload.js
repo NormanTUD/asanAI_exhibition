@@ -6,8 +6,14 @@ function resetTimer() {
 	clearTimeout(inactivitysTimeout);
 
 	inactivitysTimeout = setTimeout(() => {
-		let aktuelleUrl = window.location.href;
+		const searchParams = new URLSearchParams(window.location.search);
+
 		let indexUrl = 'index.php';
+		
+		if (searchParams.has('quick')) {
+			indexUrl = 'index.php?quick=1';
+		}
+
 
 		window.location.href = indexUrl;
 	}, INACTIVITY_TIME);
