@@ -139,8 +139,8 @@ $(document).ready(async function() {
 
 	asanai.set_validation_split(0);
 
-	asanai.set_rescale_factor(3);
-	asanai.set_layer_spacing_add(30);
+	asanai.set_rescale_factor(7);
+	asanai.set_layer_spacing_add(47);
 
 	$("#nr_epochs").html(nr_epochs);
 	$("#progress").attr("max", nr_epochs);
@@ -526,7 +526,7 @@ function show_auswertung () {
 
 	if($("#fcnn_div").length) {
 		asanai.set_fcnn_height(650);
-		asanai.set_fcnn_width(1650);
+		asanai.set_fcnn_width(1500);
 		asanai.draw_fcnn("fcnn_div", 32, true);
 	} else {
 		log("Could not find #fcnn_div");
