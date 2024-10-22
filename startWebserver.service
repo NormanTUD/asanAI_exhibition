@@ -1,0 +1,10 @@
+[Unit]
+Description=Start Webserver
+
+[Service]
+WorkingDirectory=/home/exhibition/asanai_exhibition
+ExecStart=/bin/bash startWebserver.sh
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
