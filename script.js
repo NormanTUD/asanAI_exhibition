@@ -800,6 +800,8 @@ function initialize_keyboard(elem) {
 				elem.value = "";
 			} else if (button === "{closekeyboard}") {
 				myKeyboard.destroy();
+			} else if (button === "{space}") {
+				elem.value = elem.value + " ";
 			} else {
 				elem.value = elem.value + button;
 			}
@@ -835,7 +837,8 @@ function initialize_keyboard(elem) {
 		display: {
 			"{backspace}": "⌫",
 			"{closekeyboard}": "❌",
-			"{deleteall}": "🗑"
+			"{deleteall}": "🗑",
+			"{space}": "⎵"
 		},
 		holdInteractionTimeout: null // Ensure hold timeout is disabled
 	});
