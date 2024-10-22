@@ -763,44 +763,65 @@ function matrix_texts() {
 	} else {
 		console.error(`$("#auswertung_element") was empty!`);
 	}
+}
 
-	
+function getStackTrace () {
+	var stack;
 
-	
+	try {
+		throw new Error('');
+	}
+	catch (error) {
+		stack = error.stack || '';
+	}
+
+	stack = stack.split('\n').map(function (line) { return line.trim(); });
+	return stack.join("\n");
 }
 
 function initialize_keyboard(elem) {
-	keyboard = window.SimpleKeyboard.default;
+	let keyboard = window.SimpleKeyboard.default;
 
-
-	function onChange(input) {
-		elem.value = input;
-
-		update_after_relevant_change();
-	}
+	// Debounce Variable to Prevent Repeated Calls
+	let debounceTimeout = null;
 
 	function onKeyPress(button) {
-		console.log("Button pressed", button);
-
-		if(button == "{backspace}") {
-			log("elem.value before:", elem.value);
-			elem.value = elem.value.substring(0, elem.value.length - 1);
-			log("elem.value after:", elem.value);
-		} else if(button == "{deleteall}") {
-			elem.value = "";
-		} else if(button == "{closekeyboard}") {
-			myKeyboard.destroy();
+		// Clear any existing timeout
+		if (debounceTimeout) {
+			clearTimeout(debounceTimeout);
 		}
 
-		$(elem).focus();
+		// Set a new timeout to handle key press
+		debounceTimeout = setTimeout(() => {
+			// Handle key press actions
+			if (button === "{backspace}") {
+				elem.value = elem.value.substring(0, elem.value.length - 1);
+			} else if (button === "{deleteall}") {
+				elem.value = "";
+			} else if (button === "{closekeyboard}") {
+				myKeyboard.destroy();
+			} else {
+				elem.value = elem.value + button;
+			}
 
-		update_after_relevant_change();
+			// Focus the input element
+			$(elem).focus();
+
+			// Update the page for any relevant changes
+			update_after_relevant_change();
+		}, 100); // Adjust debounce timeout as needed
 	}
 
-	myKeyboard = new keyboard({
-		onChange: input => onChange(input),
-		onKeyPress: button => onKeyPress(button),
-		mergeDisplay: true,
+	// Initialize SimpleKeyboard
+	let myKeyboard = new keyboard({
+		onKeyPress: button => {
+			// Prevent propagation to avoid loops
+			event.stopImmediatePropagation();
+			event.preventDefault();
+
+			// Call onKeyPress
+			onKeyPress(button);
+		},
 		layoutName: "default",
 		layout: {
 			default: [
@@ -814,8 +835,9 @@ function initialize_keyboard(elem) {
 		display: {
 			"{backspace}": "⌫",
 			"{closekeyboard}": "❌",
-			"{deleteall}": "🗑️"
-		}
+			"{deleteall}": "🗑"
+		},
+		holdInteractionTimeout: null // Ensure hold timeout is disabled
 	});
 }
 
