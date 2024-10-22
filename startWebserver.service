@@ -2,7 +2,7 @@
 Description=Start Webserver
 
 [Service]
-WorkingDirectory=/home/exhibition/asanai_exhibition
+WorkingDirectory=/home/exhibition/asanAI_exhibition
 ExecStart=/bin/bash startWebserver.sh
 KillMode=process
 
