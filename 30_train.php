@@ -21,31 +21,30 @@
 
         <div hidden="hidden" id="explanation_after_training">
             <div id="fcnn_div"></div>
-            <p id="cam_text" style="font-size: min(3vh, 3vw); text-align: left; position: absolute; left: 13vw; top: 3vh; line-height: 100%">
-                <span class="TRANSLATEME_hold_one_of_the_trained_objects"></span>
-            </p>
-
+            <p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_a_fruit_in_front_of_the_camera"></span><br></p>
             <div id="webcam_prediction"></div>
-                <div id="explanation_group">
-                <p id="explanation">
-                    <span class="TRANSLATEME_the_input_image_is_converted_into_a"></span>
-                    <span><?php print "${width_and_height}x${width_and_height}"; ?></span>
-                    <span class="TRANSLATEME_pixel_matrix_representing_height_width_and_rgb_channels"></span>
-                </p>
+            <div id="webcam_prediction_results"></div>
+            
+            <p id="explanation_input" class="info-box">
+                <span class="TRANSLATEME_the_input_image_is_converted_into_a_matrix_with"></span>
+                <?php print "{$width_and_height}x{$width_and_height}"; ?>
+                <span class="TRANSLATEME_pixels_representing_height_and_width_and_color_channels_red_green_blue"></span>
+            </p>
+            <div id="line_exp_input" class="connectionLine"></div>
+            <p id="explanation_filter" class="info-box">
+                <span class="TRANSLATEME_various_features_such_as_edges_are_filtered_from_the_image_in_the_layers"></span>
+            </p>
+            <div id="line_exp_filter" class="connectionLine"></div>
 
-                <p id="explanation">
-                    <span class="TRANSLATEME_in_the_layers_various_features_such_as_edges_are_filtered_from_the_image"></span>
-                </p>
+            <p id="explanation_kernel" class="info-box">
+                <span class="TRANSLATEME_in_each_layer_the_image_is_sampled_section_by_section_using_kernels"></span>
+            </p>
+            <div id="line_exp_kernel" class="connectionLine"></div>
 
-                <p id="explanation">
-                    <span class="TRANSLATEME_in_each_layer_the_image_is_scanned_by_kernels_section_by_section"></span>
-                </p>
-
-                <p id="explanation">
-                    <span class="TRANSLATEME_based_on_the_extracted_features_the_image_is_eventually_classified"></span>
-                </p>
-            </div>
-
+            <p id="explanation_classification" class="info-box">
+                <span class="TRANSLATEME_based_on_extracted_features_the_image_is_classified"></span>
+            </p>
+            <div id="line_exp_classification" class="connectionLine"></div>
         </div>
 
         <table id="auswertung_element" style="display: none">
