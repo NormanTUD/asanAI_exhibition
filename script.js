@@ -118,6 +118,8 @@ $(document).ready(async function() {
 		});
 
 		asanai.set_dark_mode();
+
+		asanai.set_lang("de");
 	} catch (e) {
 		console.error(e);
 

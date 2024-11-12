@@ -28,6 +28,8 @@ async function set_lang(la) {
 
 		if(asanai) {
 			asanai.set_lang(la);
+		} else {
+			log("asanai object not found");
 		}
 	} else {
 		err(`Language unknown: ${la}`);
