@@ -1,6 +1,6 @@
 {
     "en": {
-	"erkannt_german_only": "",
+	"erkannt": "",
         "predicted_category": "Predicted category",
         "correct_category": "Correct category",
         "model_was_set": "Model was set properly",
@@ -607,6 +607,6 @@
         "compiled_model": "Modell kompiliert",
         "finished_training": "Training beendet",
         "stopped_downloading_because_button_was_clicked": "Download gestoppt, weil der Download-Stoppen-Button geklickt wurde":
-	"erkannt_german_only": "erkannt",
+	"erkannt": "erkannt",
     }
 }
