@@ -869,7 +869,7 @@
 
 		    'the_training_for' => "Das Training für",
 		    'images_of_category' => 'Bilder der Kategorie',
-		    "was_detected_as_category" => "wurden als Kategorie",
+		    "was_detected_as_category" => "wurden erkannt als Kategorie",
 		    "resulted_in" => "hat ergeben",
 		    "this_means" => "Das bedeutet, ",
 		    "were_detected_correctly" => "wurden richtig erkannt",
