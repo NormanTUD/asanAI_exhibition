@@ -786,7 +786,11 @@ function initialize_keyboard(elem) {
 
 	$(elem).data("original_value", original_value)
 
-	elem.value = "";
+	var is_default_name = original_value.match(/^[CK]ategor(ie|y)\s*\d*$/)
+
+	if(is_default_name !== null) {
+		elem.value = "";
+	}
 
 	// Debounce Variable to Prevent Repeated Calls
 	let debounceTimeout = null;
