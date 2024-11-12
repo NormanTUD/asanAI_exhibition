@@ -22,48 +22,48 @@ if(isset($GLOBALS["use_navigation"])) {
         <meta charset="UTF-8">
 <?php
 if(gethostname() == "thinkpad44020211128") {
-    ?>
-            <script src="http://localhost/TensorFlowJS-GUI/asanai.js.php"></script>
-    <?php
+?>
+	    <script src="http://localhost/TensorFlowJS-GUI/asanai.js.php"></script>
+<?php
 } else if (gethostname() == "arbeitsrechner") {
-    ?>
-            <script src="http://localhost/tf/asanai.js.php"></script>
-    <?php
+?>
+	    <script src="http://localhost/tf/asanai.js.php"></script>
+<?php
 } else {
-    ?>
-            <script src="https://asanai.scads.ai/asanai.js.php"></script>
-    <?php
+?>
+	    <script src="https://asanai.scads.ai/asanai.js.php"></script>
+<?php
 }
 
-        $default_max_nr_images = 10;
-        $default_nr_epochs = 100;
-        $default_width_and_height = 40;
+$default_max_nr_images = 10;
+$default_nr_epochs = 100;
+$default_width_and_height = 40;
 
-        // max_nr_images Wert überprüfen und setzen
+// max_nr_images Wert überprüfen und setzen
 if (isset($_GET['max_nr_images']) && is_numeric($_GET['max_nr_images']) && intval($_GET['max_nr_images']) == $_GET['max_nr_images']) {
-    $max_nr_images = intval($_GET['max_nr_images']);
+	$max_nr_images = intval($_GET['max_nr_images']);
 } else {
-    $max_nr_images = $default_max_nr_images;
+	$max_nr_images = $default_max_nr_images;
 }
 
-        // nr_epochs Wert überprüfen und setzen
+// nr_epochs Wert überprüfen und setzen
 if (isset($_GET['nr_epochs']) && is_numeric($_GET['nr_epochs']) && intval($_GET['nr_epochs']) == $_GET['nr_epochs']) {
-    $nr_epochs = intval($_GET['nr_epochs']);
+	$nr_epochs = intval($_GET['nr_epochs']);
 } else {
-    $nr_epochs = $default_nr_epochs;
+	$nr_epochs = $default_nr_epochs;
 }
 
-        // width_and_height Wert überprüfen und setzen
+// width_and_height Wert überprüfen und setzen
 if (isset($_GET['width_and_height']) && is_numeric($_GET['width_and_height']) && intval($_GET['width_and_height']) == $_GET['width_and_height']) {
-    $width_and_height = intval($_GET['width_and_height']);
+	$width_and_height = intval($_GET['width_and_height']);
 } else {
-    $width_and_height = $default_width_and_height;
+	$width_and_height = $default_width_and_height;
 }
 
 if (isset($_GET["quick"])) {
-    $max_nr_images = 2;
-    $nr_epochs = 2;
-    $width_and_height = 30;
+	$max_nr_images = 2;
+	$nr_epochs = 2;
+	$width_and_height = 30;
 }
 ?>
 
