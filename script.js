@@ -112,6 +112,7 @@ $(document).ready(async function() {
 			optimizer_config: default_optimizer_config,			// The config for the optimizer (which trains the model)
 			optimizer_table_div_name: "optimizer_div",		// A div, in which the settings for the optimizer should be written, so the user may change them
 			asanai_object_name: "asanai",				// The name of the variable containing the asanAI object.
+			translations_file: "translations.php?print=1"
 			// This is important for things like "onclick"-events and needs to be changed when you use other variable names than
 			// `var asanai`.
 		});

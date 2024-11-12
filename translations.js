@@ -24,6 +24,11 @@ async function set_lang(la) {
 			//$($("#b_de").children(0)[0]).removeClass(`language_${old_lang}`).addClass(`language_${la}`);
 			$($("#b_de").children(0)[0]).removeClass(`language_${la}`).addClass(`language_${old_lang}`);
 		}
+
+
+		if(asanai) {
+			asanai.set_lang(la);
+		}
 	} else {
 		err(`Language unknown: ${la}`);
 	}
@@ -38,6 +43,8 @@ function switch_language () {
 	}
 
 	set_lang(new_lang);
+
+	asanai.set_lang("de")
 }
 
 // Function to update the translation of elements
