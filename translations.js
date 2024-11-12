@@ -28,6 +28,8 @@ async function set_lang(la) {
 
 		if(asanai) {
 			asanai.set_lang(la);
+
+			translate_labels(la);
 		} else {
 			log("asanai object not found");
 		}

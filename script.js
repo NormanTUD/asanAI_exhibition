@@ -11,6 +11,7 @@ var stringToNumberMap = [];
 var currentNumber = 0;
 var required_nr_images_per_category = 10;
 var is_training = false;
+var label_lang = "de";
 
 function assert(cond, msg) {
 	if(!cond) {
@@ -1148,4 +1149,50 @@ async function startCustomTraining () {
 	} else {
 		console.error(`Custom training not enabled.`);
 	}
+}
+
+function translate_labels (new_lang) {
+	if(!new_lang) {
+		err("No new lang was set for translate_labels");
+		return;
+	}
+	if(new_lang == label_lang) {
+		return;
+	}
+
+	label_lang = new_lang;
+
+	var current_labels = asanai.get_labels();
+
+	var translations_de_en = {
+		"apfel": "apple",
+		"orange": "orange",
+		"schlüssel": "key",
+		"key": "schlüssel",
+		"scheine": "bills",
+		"banane": "banana",
+		"münzen": "coins"
+	};
+
+	var translations_en_de = {};
+
+	for (const [key, value] of Object.entries(translations_de_en)) {
+		if (!translations_en_de[value]) {
+			translations_en_de[value] = key;
+		}
+	}
+
+	var new_labels = [];
+
+	for (var i = 0; i < current_labels.length; i++) {
+		var this_new_label = current_labels[i];
+
+		if(new_lang == "de") {
+			new_labels.push(translations_en_de[this_new_label] || current_labels[i]);
+		} else {
+			new_labels.push(translations_de_en[this_new_label] || current_labels[i]);
+		}
+	}
+
+	asanai.set_labels(new_labels);
 }
