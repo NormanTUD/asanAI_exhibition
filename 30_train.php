@@ -21,7 +21,7 @@
 
         <div hidden="hidden" id="explanation_after_training">
             <div id="fcnn_div"></div>
-            <p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_a_fruit_in_front_of_the_camera"></span><br></p>
+            <p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_one_of_the_objects_you_trained_the_network_on_in_front_of_the_camera"></span><br></p>
             <div id="webcam_prediction"></div>
             <div id="webcam_prediction_results"></div>
             
