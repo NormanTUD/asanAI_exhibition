@@ -782,6 +782,12 @@ function getStackTrace () {
 function initialize_keyboard(elem) {
 	let keyboard = window.SimpleKeyboard.default;
 
+	var original_value = elem.value;
+
+	$(elem).data("original_value", original_value)
+
+	elem.value = "";
+
 	// Debounce Variable to Prevent Repeated Calls
 	let debounceTimeout = null;
 
@@ -896,6 +902,20 @@ function getNextAvailableCategory() {
 	return nextCategory;
 }
 
+function destroy_keyboard (elem) {
+	if(myKeyboard) {
+		myKeyboard.destroy();
+	}
+
+	if(elem.value == "") {
+		var original_value = $(elem).data("original_value")
+
+		if(original_value) {
+			elem.value = original_value;
+		}
+	}
+}
+
 function addCustomCategory() {
 	// Get the target row element by its ID
 	var rowElement = document.getElementById('custom_images');
@@ -911,7 +931,7 @@ function addCustomCategory() {
 	var newCategoryContent = `
 		<div class="class_ui">
 		<button class="take_image box" onclick="generateThumbnail('${thumbnailContainerId}')"> </button>
-		&#9998;<input class="category_name" onclick="show_keyboard(this)" onblur="if(myKeyboard) { myKeyboard.destroy(); }" placeholder="${categoryName}" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
+		&#9998;<input class="category_name" onclick="show_keyboard(this)" onblur="destroy_keyboard(this)" placeholder="${categoryName}" onkeyup="update_after_relevant_change()" onchange="update_after_relevant_change()" value="${categoryName}" />
 		<p class="custom_img_error" id="${'cat'+catN}"></p>
 		<button class="delete_single_image_button box" onclick="delete_category(this)"></button>
 		</div>
