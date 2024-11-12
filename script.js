@@ -790,6 +790,7 @@ function initialize_keyboard(elem) {
 
 	if(is_default_name !== null) {
 		elem.value = "";
+		update_after_relevant_change();
 	}
 
 	// Debounce Variable to Prevent Repeated Calls
@@ -916,6 +917,7 @@ function destroy_keyboard (elem) {
 
 		if(original_value) {
 			elem.value = original_value;
+			update_after_relevant_change();
 		}
 	}
 }
