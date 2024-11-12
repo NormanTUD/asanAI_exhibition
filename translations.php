@@ -37,7 +37,7 @@
                         'in_this_example_there_are' => 'In this example, there are',
                         'passes' => 'passes',
                         'hold_a_fruit_in_front_of_the_camera' => 'Hold a fruit in front of the camera:',
-                        'hold_a_key_coin_or_bill_into_the_camera' => 'Hold a coin, key or bill in fron the of the camera:',
+                        'hold_a_key_coin_or_bill_into_the_camera' => 'Hold a coin, key or bill in front the of the camera:',
                         'the_input_image_is_converted_into_a_matrix_with' => 'The input image is converted into a matrix with',
                         'pixels_representing_the_height_and_width_with_color_channels_red_green_and_blue' => 'pixels, representing the height and width with color channels red, green, and blue.',
                         'in_the_layers_various_features_such_as_edges_are_filtered_from_the_image' => 'In the layers, various features such as edges are filtered from the image.',
