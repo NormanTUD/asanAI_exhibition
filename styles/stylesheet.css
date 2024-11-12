@@ -19,7 +19,7 @@
 * {
 	font-family: "Open Sans regular", sans-serif;
 	align-items: center;
-	text-align: left;
+	text-align: center;
 	border: none;
 	text-decoration: none;
 	user-select: none;
@@ -764,4 +764,9 @@ video {
 	top: 100px;
 	position: relative;
 	height: 80vh;
+}
+
+
+#canvas_grid_visualization {
+	text-align: center;
 }

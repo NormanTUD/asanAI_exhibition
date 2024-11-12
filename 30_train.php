@@ -112,9 +112,6 @@
 
         <div hidden="hidden" class="confusion_matrix" id="confusion_matrix"></div>
 
-        <div hidden="hidden" id="progress-text"></div>
-        <progress hidden="hidden" id="progress" value="0" max="100"></progress>
-
         <script>
             $(document).ready(async function() {
                 if(asanai) {
