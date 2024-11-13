@@ -1157,6 +1157,7 @@ function translate_labels (new_lang) {
 		return;
 	}
 	if(new_lang == label_lang) {
+		log(`new_lang '${new_lang}' is equal to label_lang = '${label_lang}'`);
 		return;
 	}
 
