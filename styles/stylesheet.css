@@ -770,3 +770,8 @@ video {
 #canvas_grid_visualization {
 	text-align: center;
 }
+
+
+button {
+	z-index: 99999999999999;
+}
