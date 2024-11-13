@@ -1189,8 +1189,10 @@ function translate_labels (new_lang) {
 
 		if(new_lang == "de") {
 			new_labels.push(translations_en_de[this_new_label] || current_labels[i]);
+			asanai.set_alternative_labels(Object.keys(translations_en_de));
 		} else {
 			new_labels.push(translations_de_en[this_new_label] || current_labels[i]);
+			asanai.set_alternative_labels(Object.keys(translations_de_en));
 		}
 	}
 
