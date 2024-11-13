@@ -1151,12 +1151,12 @@ async function startCustomTraining () {
 	}
 }
 
-function translate_labels (new_lang) {
+function translate_labels (new_lang, force=false) {
 	if(!new_lang) {
 		err("No new lang was set for translate_labels");
 		return;
 	}
-	if(new_lang == label_lang) {
+	if(new_lang == label_lang && !force) {
 		log(`new_lang '${new_lang}' is equal to label_lang = '${label_lang}'`);
 		return;
 	}
@@ -1193,14 +1193,13 @@ function translate_labels (new_lang) {
 		label_keys.push(this_new_label);
 
 		if(new_lang == "de") {
-			new_labels.push(translations_en_de[this_new_label] || this_new_label);
+			new_labels.push(translations_en_de[this_new_label.toLowerCase()] || this_new_label);
 		} else {
-			new_labels.push(translations_de_en[this_new_label] || this_new_label);
+			new_labels.push(translations_de_en[this_new_label.toLowerCase()] || this_new_label);
 		}
 	}
 
 	asanai.set_labels(new_labels);
-
 
 	asanai.set_alternative_labels([...label_keys, ...new_labels]);
 }
