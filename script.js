@@ -1185,17 +1185,22 @@ function translate_labels (new_lang) {
 
 	var new_labels = [];
 
+	var label_keys = [];
+
 	for (var i = 0; i < current_labels.length; i++) {
 		var this_new_label = current_labels[i];
 
+		label_keys.push(this_new_label);
+
 		if(new_lang == "de") {
-			new_labels.push(translations_en_de[this_new_label] || current_labels[i]);
-			asanai.set_alternative_labels(Object.keys(translations_en_de));
+			new_labels.push(translations_en_de[this_new_label] || this_new_label);
 		} else {
-			new_labels.push(translations_de_en[this_new_label] || current_labels[i]);
-			asanai.set_alternative_labels(Object.keys(translations_de_en));
+			new_labels.push(translations_de_en[this_new_label] || this_new_label);
 		}
 	}
 
 	asanai.set_labels(new_labels);
+
+
+	asanai.set_alternative_labels([...label_keys, ...new_labels]);
 }
