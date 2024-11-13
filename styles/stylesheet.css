@@ -15,7 +15,6 @@
 	--heading-size:29.1px;
 }
 
-
 * {
 	font-family: "Open Sans regular", sans-serif;
 	align-items: center;
@@ -31,7 +30,6 @@ html::-webkit-scrollbar-track{
 	background-color: #60605C;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
-
 
 html::-webkit-scrollbar
 {
@@ -130,8 +128,6 @@ p {
 	background-color: #D9D9D9;
 	color: black;
 }
-
-
 
 #box-wide {
 	width: 50%;
@@ -277,7 +273,6 @@ green {
 	display: none;
 }
 
-
 #webcam_prediction {
 	position: absolute;
 	left: 66px;
@@ -349,9 +344,8 @@ progress::-webkit-progress-bar {
 	top: 50%;
 	height: 100vh;
 	width: 100vw;
+	background: black;
 }
-
-
 
 video {
 	max-height: 100%;
@@ -492,8 +486,6 @@ video {
 	transform: scale(30);
 }
 
-
-
 #custom_images_table {
 	padding-top: 140px;
 }
@@ -597,7 +589,6 @@ video {
 	top: 24px;
 	right: 64px;
 }
-
 
 .b_topLeft {
 	top: 24px;
@@ -766,11 +757,9 @@ video {
 	height: 80vh;
 }
 
-
 #canvas_grid_visualization {
 	text-align: center;
 }
-
 
 button {
 	z-index: 99999999999999;
