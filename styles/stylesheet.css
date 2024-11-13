@@ -276,8 +276,8 @@ green {
 #webcam_prediction {
 	position: absolute;
 	left: 66px;
-	top: 315px;
 	width: 316px;
+	top: 350px
 }
 
 #webcam_prediction_results {
@@ -640,7 +640,7 @@ video {
 .info-box {
 	position: absolute;
 	width: 220px;
-	font-size: 1.6vh;
+	font-size: 1.4vh;
 }
 
 #cam_text {
