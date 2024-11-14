@@ -23,6 +23,7 @@
 	text-decoration: none;
 	user-select: none;
 	color: white;
+	cursor: none;
 }
 
 html::-webkit-scrollbar-track{
