@@ -1,0 +1,43 @@
+#!/bin/bash
+
+if ! command -v xdotool 2>/dev/null >/dev/null; then echo "xdotool not found. Install it"; fi
+if ! command -v chromium 2>/dev/null >/dev/null; then echo "chromium not found. Install it"; fi
+if ! command -v xmodmap 2>/dev/null >/dev/null; then echo "xmodmap not found. Install it"; fi
+if ! command -v xset 2>/dev/null >/dev/null; then echo "xset not found. Install it"; fi
+if ! command -v xprintidle 2>/dev/null >/dev/null; then echo "xprintidle not found. Install it"; fi
+
+move_mouse_randomly() {
+	while true; do
+		idle_time=$(xprintidle)
+		# Generate a random number between 1 and 4 to determine the direction
+
+		if ((idle_time > 60000)); then
+			direction=$((1 + RANDOM % 4))
+
+			case $direction in
+				1) xdotool mousemove_relative -- 1 0 ;;  # Move left
+				2) xdotool mousemove_relative -- 0 1 ;;  # Move down
+				3) xdotool mousemove_relative -- 0 -1 ;; # Move up
+				4) xdotool mousemove_relative -- 1 0 ;;  # Move right
+			esac
+
+			xset s reset
+		fi
+
+		sleep 30
+	done
+}
+
+move_mouse_randomly &
+
+xset dpms 0 0 0
+xset s noblank
+xset s off
+xset -dpms
+
+while [ 1 ]; do
+	xmodmap -e "keycode 67 = F6"
+        xmodmap -e "keycode 70 = F3"
+
+        chromium --kiosk http://localhost:8999/
+done
