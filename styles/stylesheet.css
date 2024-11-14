@@ -46,6 +46,7 @@ html::-webkit-scrollbar-thumb
 body {
 	background-color: black;
 	padding-bottom: 250px;
+	overflow: hidden;
 }
 
 .general {
