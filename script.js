@@ -438,6 +438,8 @@ async function _load_example(example_name, to_div_name, max_nr, model_struct, op
 		console.warn(`loaded_data was undefined! Something went wrong using asanai.load_image_urls_to_div_and_tensor`);
 	}
 
+	$("#text_training").hide();
+
 	createAuswertungTable(local_categories);
 
 	$("#close_button").show();
@@ -527,6 +529,8 @@ function show_auswertung () {
 	for (var i = 0; i < _elems_classes.length; i++) {
 		$("." + _elems_classes[i]).toggle();
 	}
+
+	$("#text_training").hide();
 
 	if($("#fcnn_div").length) {
 		asanai.set_fcnn_height(650);
