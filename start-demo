@@ -14,5 +14,5 @@ while [ 1 ]; do
 	xmodmap -e "keycode 67 = F6"
         xmodmap -e "keycode 70 = F3"
 
-        chromium --kiosk http://localhost:8999/
+        chromium --password-store=basic --kiosk http://localhost:8999/
 done
