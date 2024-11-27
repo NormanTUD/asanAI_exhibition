@@ -114,6 +114,7 @@
 
         <script>
             $(document).ready(async function() {
+                document.body.style.overflowY = 'scroll';
                 if(asanai) {
                     asanai.tf_data_webcam($("#webcam_preview_video")[0])
 

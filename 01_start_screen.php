@@ -1,4 +1,4 @@
-<div>
+<div class="noOverflow">
 	<div class="general">
 		<span onclick="load_page_with_params('10_select_data_screen.php')"><button draggable="false" id="tryit" class="box"><span class="TRANSLATEME_try_it"></span></button></span>
 		<div class="navbar">

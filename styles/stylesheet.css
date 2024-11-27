@@ -18,7 +18,7 @@
 * {
 	font-family: "Open Sans regular", sans-serif;
 	align-items: center;
-	text-align: center;
+	text-align: left;
 	border: none;
 	text-decoration: none;
 	user-select: none;
@@ -47,6 +47,10 @@ body {
 	background-color: black;
 	padding-bottom: 250px;
 	overflow-x: hidden
+}
+
+.noOverflow{
+	overflow: hidden;
 }
 
 .general {
@@ -495,7 +499,7 @@ video {
 #custom_images_ui{
 	width: 30%;
 	position: fixed;
-	padding-left: 66px;
+	padding-left: 20px;
 
 }
 #custom_images_gallery{
@@ -542,7 +546,7 @@ video {
 }
 
 .asanai_logo {
-	position: absolute;
+	position: fixed;
 	top: 10px;
 	left: 66px;
 	width:80px;
@@ -674,8 +678,8 @@ video {
 	position: absolute;
 	border: 1px solid #BC147E;
 	border-top: none;
-	top: 633px;
-	height: 104px;
+	top: 730px;
+	height: 15px;
 }
 
 #line_exp_input {
@@ -687,8 +691,8 @@ video {
 #line_exp_filter {
 	left: 356px;
 	width: 353px;
-	top: 556px;
-	height: 337px;
+	top: 597px;
+	height: 297px;
 	border-left: none;
 }
 
@@ -703,8 +707,8 @@ video {
 #line_exp_classification{
 	right: 334px;
 	width: 124px;
-	top: 568px;
-	height: 138px;
+	top: 514px;
+	height: 198px;
 	border-right: none;
 }
 

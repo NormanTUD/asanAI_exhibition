@@ -143,8 +143,9 @@ $(document).ready(async function() {
 
 	asanai.set_validation_split(0);
 
-	asanai.set_rescale_factor(4);
-	asanai.set_layer_spacing_add(80);
+
+	asanai.set_rescale_factor(3);
+	asanai.set_layer_spacing_add(100);
 
 	$("#nr_epochs").html(nr_epochs);
 	$("#progress").attr("max", nr_epochs);
@@ -1142,6 +1143,9 @@ function enable_or_disable_training_if_needed() {
 }
 
 async function startCustomTraining () {
+	document.body.style.overflow = 'hidden';
+	document.body.style.overflowY = 'hidden';
+	window.scrollTo(0, 0);
 	if(myKeyboard) {
 		myKeyboard.destroy();
 	}
