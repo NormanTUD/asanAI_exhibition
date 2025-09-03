@@ -35,8 +35,8 @@ if(gethostname() == "thinkpad44020211128") {
 <?php
 }
 
-$default_max_nr_images = 1; # 40
-$default_nr_epochs = 1;
+$default_max_nr_images = 40;
+$default_nr_epochs = 100;
 $default_width_and_height = 60;
 
 // max_nr_images Wert überprüfen und setzen
