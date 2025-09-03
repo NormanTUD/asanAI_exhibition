@@ -96,7 +96,6 @@ var default_model_struct = [
 	{conv2d: {filters: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [width_and_height, width_and_height, 3] }},
 	{maxPooling2d: {poolSize: [5, 5] }},
 	{conv2d: {filters: 32, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
-	{conv2d: {filters: 32, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{maxPooling2d: {poolSize: [3, 3] }},
 	{flatten: {}},
 	{dense: {units: 64, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
