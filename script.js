@@ -80,7 +80,7 @@ var __categories = ["apfel", "banane", "orange"];
 var default_optimizer_config = {
 	optimizer: "adam",
 	loss: "categoricalCrossentropy",
-	"learningRate": 0.01
+	"learningRate": 0.1
 };
 
 // This variable will hold the asanAI object. Each object can have exactly one model loaded.
@@ -93,11 +93,13 @@ var _kernel_initializer = "leCunNormal";
 var _bias_initializer = "leCunNormal";
 
 var default_model_struct = [
-	{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [width_and_height, width_and_height, 3] }},
-	{conv2d: {filters: 2, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	{conv2d: {filters: 16, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [width_and_height, width_and_height, 3] }},
+	{maxPooling2d: {poolSize: [5, 5] }},
+	{conv2d: {filters: 32, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+	{conv2d: {filters: 32, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 	{maxPooling2d: {poolSize: [3, 3] }},
 	{flatten: {}},
-	{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+	{dense: {units: 64, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 	{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 ];
 
@@ -211,11 +213,11 @@ function delete_image (elem) {
 
 async function load_and_train_scheine_muenzen_schluessel() {
 	var model_struct = [
-		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
-		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [40, 40, 3] }},
+		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{maxPooling2d: {poolSize: [3, 3] }},
 		{flatten: {}},
-		{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: __categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 
@@ -285,11 +287,11 @@ async function _start_custom_training(optimizer_config) {
 	var _width_and_height = 40;
 
 	var model_struct = [
-		{conv2d: {filters: 6, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [_width_and_height, _width_and_height, 3] }},
-		{conv2d: {filters: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
+		{conv2d: {filters: 6, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3], inputShape: [_width_and_height, _width_and_height, 3] }},
+		{conv2d: {filters: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer, kernelSize: [3, 3] }},
 		{flatten: {}},
-		{dense: {units: 8, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
-		{dense: {units: 4, activation: "tanh", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 8, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
+		{dense: {units: 4, activation: "relu", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}},
 		{dense: {units: local_categories.length, activation: "softmax", kernelInitializer: _kernel_initializer, biasInitializer: _bias_initializer}}
 	];
 	
