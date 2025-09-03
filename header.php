@@ -37,7 +37,7 @@ if(gethostname() == "thinkpad44020211128") {
 
 $default_max_nr_images = 40;
 $default_nr_epochs = 100;
-$default_width_and_height = 40;
+$default_width_and_height = 60;
 
 // max_nr_images Wert überprüfen und setzen
 if (isset($_GET['max_nr_images']) && is_numeric($_GET['max_nr_images']) && intval($_GET['max_nr_images']) == $_GET['max_nr_images']) {
