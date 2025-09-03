@@ -21,19 +21,38 @@ if(isset($GLOBALS["use_navigation"])) {
 ?>
         <meta charset="UTF-8">
 <?php
-if(gethostname() == "thinkpad44020211128") {
-?>
-	    <script src="http://localhost/TensorFlowJS-GUI/asanai.js.php"></script>
-<?php
-} else if (gethostname() == "arbeitsrechner") {
-?>
-	    <script src="http://localhost/tf/asanai.js.php"></script>
-<?php
-} else {
-?>
-	    <script src="https://asanai.scads.ai/asanai.js.php"></script>
-<?php
+function fetch_js($url) {
+    $options = array(
+        "http" => array(
+            "method" => "GET",
+            "timeout" => 5,
+            "header" => "User-Agent: PHP-fetch-js/1.0\r\n"
+        )
+    );
+    $context = stream_context_create($options);
+
+    $content = @file_get_contents($url, false, $context);
+
+    if ($content === false) {
+        return "console.error('Fehler: Konnte JavaScript von " . addslashes($url) . " nicht laden.');";
+    }
+
+    return $content;
 }
+
+$hostname = gethostname();
+
+if ($hostname === "thinkpad44020211128") {
+    $url = "http://localhost/TensorFlowJS-GUI/asanai.js.php";
+} else if ($hostname === "arbeitsrechner") {
+    $url = "http://localhost/tf/asanai.js.php";
+} else {
+    $url = "https://asanai.scads.ai/asanai.js.php";
+}
+
+$js_code = fetch_js($url);
+
+echo "<script>\n" . $js_code . "\n</script>";
 
 $default_max_nr_images = 40;
 $default_nr_epochs = 100;
