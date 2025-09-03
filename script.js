@@ -127,8 +127,6 @@ $(document).ready(async function() {
 
 		done_loading = true;
 
-		alert("ERROR loading asanai")
-
 		return;
 	}
 
