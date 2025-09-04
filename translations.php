@@ -789,7 +789,7 @@
 		    'in_this_example_there_are' => 'In diesem Beispiel sind es',
 		    'passes' => 'Durchgänge',
 		    'hold_a_fruit_in_front_of_the_camera' => 'Halte eine Frucht in die Kamera:',
-		    'hold_a_key_coin_or_bill_into_the_camera' => 'Halte eine Münze, einen Schlüssel oder einen Geldschein vor die Kamera:',
+		    'hold_a_key_coin_or_bill_into_the_camera' => 'Halte Münze, Schlüssel oder Geldschein vor die Kamera:',
 		    'the_input_image_is_converted_into_a_matrix_with' => 'Das Input-Bild wird zu einer',
 		    'pixels_representing_the_height_and_width_with_color_channels_red_green_and_blue' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
 		    "hold_one_of_the_objects_you_trained_the_network_on_in_front_of_the_camera" => "Halte eines der Objekte, auf die du das Netz trainiert hast, vor die Kamera:",
