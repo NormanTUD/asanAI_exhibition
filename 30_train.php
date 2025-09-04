@@ -30,21 +30,17 @@
                 <?php print "{$width_and_height}x{$width_and_height}"; ?>
                 <span class="TRANSLATEME_pixels_representing_height_and_width_and_color_channels_red_green_blue"></span>
             </p>
-            <div id="line_exp_input" class="connectionLine"></div>
             <p id="explanation_filter" class="info-box">
                 <span class="TRANSLATEME_various_features_such_as_edges_are_filtered_from_the_image_in_the_layers"></span>
             </p>
-            <div id="line_exp_filter" class="connectionLine"></div>
 
             <p id="explanation_kernel" class="info-box">
                 <span class="TRANSLATEME_in_each_layer_the_image_is_sampled_section_by_section_using_kernels"></span>
             </p>
-            <div id="line_exp_kernel" class="connectionLine"></div>
 
             <p id="explanation_classification" class="info-box">
                 <span class="TRANSLATEME_based_on_extracted_features_the_image_is_classified"></span>
             </p>
-            <div id="line_exp_classification" class="connectionLine"></div>
         </div>
 
         <table id="auswertung_element" style="display: none">
