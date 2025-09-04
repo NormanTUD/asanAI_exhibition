@@ -692,16 +692,16 @@ video {
 #line_exp_filter {
 	left: 356px;
 	width: 104px;
-	top: 791px;
-	height: 116px;
+	top: 780px;
+	height: 128px;
 	border-left: none;
 }
 
 #line_exp_kernel {
 	right: 334px;
 	width: 758px;
-	top: 754px;
-	height: 143px;
+	top: 760px;
+	height: 137px;
 	border-right: none;
 }
 
