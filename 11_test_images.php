@@ -38,7 +38,7 @@
         </button>
 
         <div hidden="hidden" id="explanation_after_training">
-            <div id="fcnn_div"></div>
+            <div class="center_canvas"><div id="fcnn_div"></div></div>
             <p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_a_fruit_in_front_of_the_camera"></span><br></p>
             <div id="webcam_prediction"></div>
             <div id="webcam_prediction_results"></div>

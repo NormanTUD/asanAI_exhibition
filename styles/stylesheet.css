@@ -782,3 +782,8 @@ button {
 	z-index: 100;
 	position: absolute;
 }
+
+.center_canvas {
+	display: flex;
+	justify-content: center;
+}
