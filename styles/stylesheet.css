@@ -684,7 +684,8 @@ video {
 
 #line_exp_input {
 	left: 356px;
-	width: 101px;
+	width: 61px;
+	height: 1px !important;
 	border-left: none;
 }
 
