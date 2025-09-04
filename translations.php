@@ -815,7 +815,7 @@
 		    'iterations' => 'Durchgänge.',
 		    'show_evaluation' => 'Auswertung anzeigen',
 		    'try_yourself' => 'Ausprobieren',
-		    'hold_a_key_a_banknote_or_a_coin_in_front_of_the_camera' => 'Halte einen Schlüssel, Geldschein oder eine Münze in die Kamera:',
+		    'hold_a_key_a_banknote_or_a_coin_in_front_of_the_camera' => 'Halte Schlüssel, Geldschein oder Münze in die Kamera:',
 		    'the_input_image_is_converted_into_a_matrix_with' => 'Das Input-Bild wird zu einer',
 		    'pixels_representing_height_and_width_and_color_channels_red_green_blue' => '-Pixel-Matrix, die Höhe und Breite sowie in der 3. Dimension die Farbkanäle rot, grün und blau abbildet.',
 		    'various_features_such_as_edges_are_filtered_from_the_image_in_the_layers' => 'In den Layern werden verschiedene Merkmale wie z.B. Kanten aus dem Bild gefiltert.',
