@@ -49,6 +49,8 @@ function switch_language () {
 	set_lang(new_lang);
 
 	asanai.set_lang("de")
+
+	asanai.draw_arrows();
 }
 
 // Function to update the translation of elements
