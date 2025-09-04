@@ -299,6 +299,7 @@ green {
 }
 
 progress {
+	margin-top: 64px;
 	width: 500px;
 	appearance: none;
 }
@@ -381,7 +382,6 @@ video {
 }
 
 #progress-text {
-	margin-top: 64px;
 	color: white;
 	font-family: "Open Sans semibold";
 }
