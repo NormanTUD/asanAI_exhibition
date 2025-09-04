@@ -1212,3 +1212,9 @@ function translate_labels (new_lang, force=false) {
 
 	asanai.set_alternative_labels([...label_keys, ...new_labels]);
 }
+
+window.addEventListener("resize", () => {
+    if (typeof asanai !== "undefined" && asanai && typeof asanai.draw_arrows === "function") {
+        asanai.draw_arrows();
+    }
+});

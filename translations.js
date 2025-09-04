@@ -48,9 +48,13 @@ function switch_language () {
 
 	set_lang(new_lang);
 
-	asanai.set_lang("de")
+	if(asanai) {
+		asanai.set_lang("de")
 
-	asanai.draw_arrows();
+		asanai.draw_arrows();
+	} else {
+		console.warn("asanai not defined")
+	}
 }
 
 // Function to update the translation of elements
