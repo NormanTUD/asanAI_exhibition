@@ -781,9 +781,15 @@ button {
 #fcnn_div {
 	z-index: 100;
 	position: absolute;
+	width: 100%;
+	height: 650px;
 }
 
 .center_canvas {
 	display: flex;
 	justify-content: center;
+}
+
+#fcnn_div canvas {
+    display: block; /* verhindert kleine Lücken */
 }
