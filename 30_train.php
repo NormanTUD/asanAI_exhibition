@@ -77,11 +77,7 @@
                 <p class="smaller"><span class="TRANSLATEME_the_more_iterations_there_are_the_more_effective_the_training"></span></p>
                 <p class="smaller"><span class="TRANSLATEME_the_higher_up_the_images_the_more_sure_the_network_is"></span></p>
 
-                <p class="smaller">
-                    <span class="TRANSLATEME_in_this_example_there_are"></span> 
-                    <span id="nr_epochs"></span> 
-                    <span class="TRANSLATEME_iterations">.</span>
-                </p>
+                <p class="smaller"><span class="TRANSLATEME_in_this_example_there_are"></span> <span id="nr_epochs"></span> <span class="TRANSLATEME_iterations">.</span></p>
             </div>
             <progress id="progress" value="0" max="100" style="display: none"></progress>
             <div id="progress-text" style="display: none"></div>
