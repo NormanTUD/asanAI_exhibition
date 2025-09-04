@@ -70,26 +70,11 @@
             <input hidden="hidden" id="visualize_images_in_grid" type="checkbox" checked/>
             <div id="canvas_grid_visualization"></div>
             <div id="text_training" style="display: none">
-                <p class="smaller">
-                    <span class="TRANSLATEME_for_images_of_each_category_test_images_are_loaded"></span>
-                </p>
-
-                <p class="smaller">
-                    <span class="TRANSLATEME_the_neural_network_selects_a_random_path_through_the_network_for_each_image"></span>
-                </p>
-
-                <p class="smaller">
-                    <span class="TRANSLATEME_if_a_wrong_result_occurs_it_is_corrected"></span>
-                </p>
-
-                <p class="smaller">
-                    <span class="TRANSLATEME_with_the_help_of_this_feedback_the_path_is_adjusted_until_the_network_reaches_a_correct_output"></span>
-                </p>
-
-                <p class="smaller">
-                    <span class="TRANSLATEME_the_more_iterations_there_are_the_more_effective_the_training"></span>
-                </p>
-
+                <p class="smaller"><span class="TRANSLATEME_for_images_of_each_category_test_images_are_loaded"></span></p>
+                <p class="smaller"><span class="TRANSLATEME_the_neural_network_selects_a_random_path_through_the_network_for_each_image"></span</p>
+                <p class="smaller"><span class="TRANSLATEME_if_a_wrong_result_occurs_it_is_corrected"></span></p>
+                <p class="smaller"><span class="TRANSLATEME_with_the_help_of_this_feedback_the_path_is_adjusted_until_the_network_reaches_a_correct_output"></span></p>
+                <p class="smaller"><span class="TRANSLATEME_the_more_iterations_there_are_the_more_effective_the_training"></span></p>
                 <p class="smaller"><span class="TRANSLATEME_the_higher_up_the_images_the_more_sure_the_network_is"></span></p>
 
                 <p class="smaller">
