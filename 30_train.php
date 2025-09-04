@@ -80,8 +80,8 @@
                 <p class="smaller"><span class="TRANSLATEME_in_this_example_there_are"></span> <span id="nr_epochs"></span> <span class="TRANSLATEME_iterations">.</span></p>
             </div>
 		<div id="progress-wrapper" style="text-align: center; margin-top: 20px;">
-		    <progress id="progress" value="0" max="100" style="display: inline-block; vertical-align: middle; display: none;"></progress>
-		    <div id="progress-text" style="display: inline-block; vertical-align: middle; display: none;"></div>
+		    <progress id="progress" value="0" max="100" style="display: block; margin: 0 auto; display: none;"></progress>
+		    <div id="progress-text" style="display: block; text-align: center; margin-top: 5px; display: none;"></div>
 		</div>
         </div>
 
