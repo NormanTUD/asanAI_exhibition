@@ -102,8 +102,8 @@
                     <span class="TRANSLATEME_iterations">.</span>
                 </p>
             </div>
-            <div id="progress-text" style="display: none"></div>
             <progress id="progress" value="0" max="100" style="display: none"></progress>
+            <div id="progress-text" style="display: none"></div>
         </div>
 
         <div style="display: none">

@@ -39,8 +39,8 @@
                         <span class="TRANSLATEME_iterations">.</span>
                     </p>
                 </div>
-                <div style="display: none" id="progress-text"></div>
                 <progress style="display: none" id="progress" value="0" max="100"></progress>
+                <div style="display: none" id="progress-text"></div>
             </div>
 
             <button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
