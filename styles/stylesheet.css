@@ -771,3 +771,8 @@ video {
 button {
 	z-index: 99999999999999;
 }
+
+.load_images_into_div_image_element {
+	margin-left: 2px;
+	margin-right: 2px;
+}
