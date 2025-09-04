@@ -16,10 +16,12 @@
                 return;
             }
 
-            if(is_training) {
-                console.log(`Not switching because currently, I am training.`);
-                return;
-            }
+	    try {
+		    if(is_training) {
+			console.log(`Not switching because currently, I am training.`);
+			return;
+		    }
+	    } catch (e) {}
 
             if(url != "index.php") {
                 $(".button-header").show();
