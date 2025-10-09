@@ -23,11 +23,11 @@ if(isset($GLOBALS["use_navigation"])) {
 <?php
 if(gethostname() == "thinkpad44020211128") {
 ?>
-	    <script src="http://localhost/TensorFlowJS-GUI/asanai.js.php"></script>
+	    <script src="http://localhost/asanai/asanai.js.php"></script>
 <?php
 } else if (gethostname() == "arbeitsrechner") {
 ?>
-	    <script src="http://localhost/tf/asanai.js.php"></script>
+	    <script src="http://localhost/asanai/asanai.js.php"></script>
 <?php
 } else {
 ?>
