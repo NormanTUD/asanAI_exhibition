@@ -8,7 +8,7 @@ function resetTimer() {
 	inactivitysTimeout = setTimeout(() => {
 		const searchParams = new URLSearchParams(window.location.search);
 
-		let indexUrl = 'index.php?reload=1';
+		let indexUrl = '?reload=1';
 
 		if (searchParams.has('quick')) {
 			indexUrl += '&quick=1';

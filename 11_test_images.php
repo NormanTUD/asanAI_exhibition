@@ -19,8 +19,8 @@
                 <p class="smaller"><span class="TRANSLATEME_the_higher_up_the_images_the_more_sure_the_network_is"></span></p>
                 <p class="smaller"><span class="TRANSLATEME_in_this_example_there_are"></span> <span id="nr_epochs">0</span> <span class="TRANSLATEME_passes"></span>.</p>
             </div>
-            <div style="display: none" id="progress-text"></div>
             <progress style="display: none" id="progress" value="0" max="100"></progress>
+            <div style="display: none" id="progress-text"></div>
         </div>
 
         <button hidden="hidden" class="box" id="auswertung_anzeigen" onclick="show_auswertung();">
@@ -38,7 +38,7 @@
         </button>
 
         <div hidden="hidden" id="explanation_after_training">
-            <div id="fcnn_div"></div>
+            <div class="center_canvas"><div id="fcnn_div"></div></div>
             <p id="cam_text" class="info-box"><span class="TRANSLATEME_hold_a_fruit_in_front_of_the_camera"></span><br></p>
             <div id="webcam_prediction"></div>
             <div id="webcam_prediction_results"></div>
@@ -48,21 +48,17 @@
                 <?php print "{$width_and_height}x{$width_and_height}"; ?>
                 <span class="TRANSLATEME_pixels_representing_height_and_width_and_color_channels_red_green_blue"></span>
             </p>
-            <div id="line_exp_input" class="connectionLine"></div>
             <p id="explanation_filter" class="info-box">
                 <span class="TRANSLATEME_various_features_such_as_edges_are_filtered_from_the_image_in_the_layers"></span>
             </p>
-            <div id="line_exp_filter" class="connectionLine"></div>
 
             <p id="explanation_kernel" class="info-box">
                 <span class="TRANSLATEME_in_each_layer_the_image_is_sampled_section_by_section_using_kernels"></span>
             </p>
-            <div id="line_exp_kernel" class="connectionLine"></div>
 
             <p id="explanation_classification" class="info-box">
                 <span class="TRANSLATEME_based_on_extracted_features_the_image_is_classified"></span>
             </p>
-            <div id="line_exp_classification" class="connectionLine"></div>
         </div>
         <script>
             $(document).ready(async function() {

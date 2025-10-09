@@ -62,6 +62,8 @@ if (isset($_GET['width_and_height']) && is_numeric($_GET['width_and_height']) &&
 
 if (isset($_GET["quick"])) {
 	$max_nr_images = 2;
+	$default_max_nr_images = 2;
+	$default_nr_epochs = 2;
 	$nr_epochs = 2;
 	$width_and_height = 30;
 }
